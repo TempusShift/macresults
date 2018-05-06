@@ -25,18 +25,23 @@ def main(args):
                         'this file.')
     config = parser.parse_args(args)
 
+    # When necessary, we should get this number from an argument
+    config.num_morning_times = 3
+
     event_results = read_event_results(config)
     # print('headers: ' + str(event_results['header']))
     # print('first row: ' + str(event_results['rows'][0]))
 
     # Find the first and last time columns.
-    first_time_col, last_time_col = find_time_col_range(event_results['header'])
-    print('  times are in columns: %d - %d' % (first_time_col, last_time_col))
+    config.first_time_col, config.last_time_col = \
+      find_time_col_range(event_results['header'])
+    print('  times are in columns: %d - %d' %
+          (config.first_time_col, config.last_time_col))
 
     # Only keep the valid rows.
     event_results['rows'] = \
       [row for row in event_results['rows'] if \
-           has_valid_time(row, first_time_col, last_time_col)]
+           has_valid_time(row, config)]
     print('  kept %d rows with valid times' % len(event_results['rows']))
 
     # For debugging, print out what we found.
@@ -46,18 +51,7 @@ def main(args):
     summarize_classes(pro_results)
     print('Found %d pro entries.' % len(pro_results['rows']))
 
-    for row in pro_results['rows']:
-        print('%s %s' % (row[0], row[1]))
-        for _, penalty, raw_time in \
-          get_times(row, first_time_col, last_time_col):
-            if raw_time:
-                penalty_str = ''
-                if penalty:
-                    if penalty.isdigit():
-                        penalty_str = ' (' + penalty + ')'
-                    else:
-                        penalty_str = ' ' + penalty
-                print('  %0.3f%s' % (raw_time, penalty_str))
+    print_times(pro_results, config)
 
     print('Will write pro results to:')
     print('  %s' % config.output_filename)
@@ -95,6 +89,41 @@ def get_pro_results(event_results):
     return pro_results
 
 
+# If we never reach split_time_count (e.g., because it is None), we'll
+# put the single best run in the first return value.
+def identify_best_times(times, split_time_count):
+    best_time_1_count = None
+    best_time_2_count = None
+
+    time_count = 0
+    best_time_count = None
+    best_time = None
+    for _, _, raw_time in times:
+        if raw_time:
+            time_count = time_count + 1
+            if not best_time_count or raw_time < best_time:
+                best_time_count = time_count
+                best_time = raw_time
+
+            # If we're done with the morning, record it and reset to
+            # find the next time.
+            if time_count == split_time_count:
+                best_time_1_count = best_time_count
+                best_time_count = None
+                best_time = None
+
+    # Now record the best time. If we never got to the split, just
+    # record this best time in the first spot and leave the second
+    # as None.
+    if not best_time_1_count:
+        best_time_1_count = best_time_count
+    else:
+        best_time_2_count = best_time_count
+
+    # Return the times.
+    return best_time_1_count, best_time_2_count
+
+
 # ------------------------------------------------------------
 # Low level helpers
 
@@ -110,15 +139,15 @@ def find_time_col_range(header):
     return first_col, last_col
 
 
-def has_valid_time(row, first_col, last_col):
-    times = get_times(row, first_col, last_col)
+def has_valid_time(row, config):
+    times = get_times(row, config)
     return len(times) > 0
 
 
-def get_times(row, first_col, last_col):
+def get_times(row, config):
     times = []
-    col = first_col
-    while col < last_col and col < len(row):
+    col = config.first_time_col
+    while col < config.last_time_col and col < len(row):
         scratch_time = row[col]
         col = col + 1
         penalty = row[col]
@@ -188,6 +217,35 @@ def summarize_classes(results):
 
     # Finally, print this out.
     print(str(classes))
+
+
+def print_times(results, config):
+    for row in results['rows']:
+        print('%s %s' % (row[0], row[1]))
+
+        times = get_times(row, config)
+
+        best_time_1_count, best_time_2_count = \
+          identify_best_times(times, config.num_morning_times)
+
+        time_count = 0
+        for _, penalty, raw_time in times:
+            if raw_time:
+                time_count = time_count + 1
+
+                flag_str = ' '
+                if time_count == best_time_1_count or \
+                  time_count == best_time_2_count:
+                    flag_str = '*'
+
+                penalty_str = ''
+                if penalty:
+                    if penalty.isdigit():
+                        penalty_str = ' (' + penalty + ')'
+                    else:
+                        penalty_str = ' ' + penalty
+                print('  %d:  %s  %0.3f%s' %
+                      (time_count, flag_str, raw_time, penalty_str))
 
 
 # ------------------------------------------------------------

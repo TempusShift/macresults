@@ -8,7 +8,7 @@
 #
 # Invoke this as:
 #
-# ./compute-pro-results.py 2018/mowog1.csv 2018/mowog1-pro.csv
+# ./compute_pro_results.py 2018/mowog1.csv 2018/mowog1-pro.csv
 #
 
 import argparse
@@ -28,6 +28,18 @@ def main(args):
     event_results = read_event_results(config)
     # print('headers: ' + str(event_results['header']))
     # print('first row: ' + str(event_results['rows'][0]))
+
+    # Find the first and last time columns.
+    first_col, last_col = find_time_col_range(event_results['header'])
+    print('Times are in columns: %d - %d' % (first_col, last_col))
+
+    # Only keep the valid rows.
+    event_results['rows'] = \
+      [row for row in event_results['rows'] if \
+           has_valid_time(row, first_col, last_col)]
+    print('  kept %d rows with valid times' % len(event_results['rows']))
+
+    # For debugging, print out what we found.
     summarize_classes(event_results)
 
     pro_results = get_pro_results(event_results)
@@ -70,6 +82,58 @@ def get_pro_results(event_results):
     return pro_results
 
 
+# ------------------------------------------------------------
+# Low level helpers
+
+def find_time_col_range(header):
+    first_col = None
+    last_col = None
+    for col, name in enumerate(header):
+        if name.startswith('Run '):
+            if not first_col:
+                first_col = col
+            else:
+                last_col = col
+    return first_col, last_col
+
+
+def has_valid_time(row, first_col, last_col):
+    times = get_times(row, first_col, last_col)
+    return len(times) > 0
+
+
+def get_times(row, first_col, last_col):
+    times = []
+    col = first_col
+    while col < last_col and col < len(row):
+        scratch_time = row[col]
+        col = col + 1
+        penalty = row[col]
+        col = col + 1
+
+        # Start with the raw time.
+        raw_time = float(scratch_time)
+
+        # Handle penalties, add time for cones or nullify time for
+        # DNFs and reruns.
+        if penalty:
+            if penalty.isdigit():
+                # Has cones, add two seconds for each.
+                raw_time = raw_time + 2.0 * int(penalty)
+            elif penalty == 'DNF':
+                # This is not a valid time.
+                raw_time = None
+            elif penalty.startswith('RERUN'):
+                # This is not a valid time.
+                raw_time = None
+            else:
+                raise ValueError('Don\'t know penalty: "%s"' % str(penalty))
+        if scratch_time:
+            times.append((scratch_time, raw_time, penalty))
+
+    return times
+
+
 def has_pro_index(class_spec):
     class_name, index = get_class_name_and_index(class_spec)
     if index == 'P' and class_name:
@@ -86,9 +150,6 @@ def get_class_name_and_index(class_spec):
     raise ValueError('Could not determine class for "%s"' % str(class_spec))
 
 
-# ------------------------------------------------------------
-# Low level helpers
-
 def find_class_column(results):
     header = results['header']
     for col_num, col_name in enumerate(header):
@@ -102,7 +163,7 @@ def find_class_column(results):
 def summarize_classes(results):
     # First, find the class column.
     class_col = find_class_column(results)
-    print('Classes are in column: %d' % class_col)
+    # print('Classes are in column: %d' % class_col)
 
     # Then, count the number of drivers in each class.
     classes = {}

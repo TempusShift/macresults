@@ -30,13 +30,13 @@ def main(args):
     # print('first row: ' + str(event_results['rows'][0]))
 
     # Find the first and last time columns.
-    first_col, last_col = find_time_col_range(event_results['header'])
-    print('Times are in columns: %d - %d' % (first_col, last_col))
+    first_time_col, last_time_col = find_time_col_range(event_results['header'])
+    print('  times are in columns: %d - %d' % (first_time_col, last_time_col))
 
     # Only keep the valid rows.
     event_results['rows'] = \
       [row for row in event_results['rows'] if \
-           has_valid_time(row, first_col, last_col)]
+           has_valid_time(row, first_time_col, last_time_col)]
     print('  kept %d rows with valid times' % len(event_results['rows']))
 
     # For debugging, print out what we found.
@@ -45,6 +45,19 @@ def main(args):
     pro_results = get_pro_results(event_results)
     summarize_classes(pro_results)
     print('Found %d pro entries.' % len(pro_results['rows']))
+
+    for row in pro_results['rows']:
+        print('%s %s' % (row[0], row[1]))
+        for _, penalty, raw_time in \
+          get_times(row, first_time_col, last_time_col):
+            if raw_time:
+                penalty_str = ''
+                if penalty:
+                    if penalty.isdigit():
+                        penalty_str = ' (' + penalty + ')'
+                    else:
+                        penalty_str = ' ' + penalty
+                print('  %0.3f%s' % (raw_time, penalty_str))
 
     print('Will write pro results to:')
     print('  %s' % config.output_filename)
@@ -121,15 +134,15 @@ def get_times(row, first_col, last_col):
                 # Has cones, add two seconds for each.
                 raw_time = raw_time + 2.0 * int(penalty)
             elif penalty == 'DNF':
-                # This is not a valid time.
-                raw_time = None
+                # This is a valid run, but a useless time.
+                raw_time = 9999.999
             elif penalty.startswith('RERUN'):
                 # This is not a valid time.
                 raw_time = None
             else:
                 raise ValueError('Don\'t know penalty: "%s"' % str(penalty))
         if scratch_time:
-            times.append((scratch_time, raw_time, penalty))
+            times.append((scratch_time, penalty, raw_time))
 
     return times
 

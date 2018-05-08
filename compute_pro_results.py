@@ -13,6 +13,7 @@
 
 import argparse
 import csv
+import json
 import sys
 
 def main(args):
@@ -28,6 +29,10 @@ def main(args):
     # When necessary, we should get this number from an argument
     config.num_morning_times = 3
 
+    # Load the PAX factors for later use.
+    load_pax_factors(config)
+
+    # Start with the actual work by reading the event results.
     event_results = read_event_results(config)
     # print('headers: ' + str(event_results['header']))
     # print('first row: ' + str(event_results['rows'][0]))
@@ -59,6 +64,20 @@ def main(args):
 
 # ------------------------------------------------------------
 # Main functionality
+
+def load_pax_factors(config):
+    with open('pax-factors.json') as json_file:
+        pax_data = json.load(json_file)
+
+        print('PAX factors')
+        config.pax_factors = {}
+        for obj in pax_data:
+            name = obj['name']
+            factor = obj['factor']
+
+            config.pax_factors[name] = factor
+            print('  %10s => %0.3f' % (name, factor))
+
 
 def read_event_results(config):
     print('Reading event results from:')
@@ -199,6 +218,11 @@ def find_class_column(results):
             return col_num
 
 
+def get_pax_time(time, class_name, config):
+    pax_factor = config.pax_factors[class_name]
+    return time * pax_factor
+
+
 # ------------------------------------------------------------
 # Summary/printing functions
 
@@ -220,32 +244,55 @@ def summarize_classes(results):
 
 
 def print_times(results, config):
+    class_col = find_class_column(results)
     for row in results['rows']:
-        print('%s %s' % (row[0], row[1]))
+        class_spec = row[class_col]
+        class_name, _ = get_class_name_and_index(class_spec)
+        print('%s %s (%s)' % (row[0], row[1], class_name))
 
         times = get_times(row, config)
 
-        best_time_1_count, best_time_2_count = \
-          identify_best_times(times, config.num_morning_times)
+        best_time_1, best_time_2 = \
+          print_individual_times(times, class_name, config)
 
-        time_count = 0
-        for _, penalty, raw_time in times:
-            if raw_time:
-                time_count = time_count + 1
+        final_time = best_time_1
+        if best_time_2:
+            final_time = final_time + best_time_2
+        print('  combined:             %9.3f' % final_time)
 
-                flag_str = ' '
-                if time_count == best_time_1_count or \
-                  time_count == best_time_2_count:
-                    flag_str = '*'
 
-                penalty_str = ''
-                if penalty:
-                    if penalty.isdigit():
-                        penalty_str = ' (' + penalty + ')'
-                    else:
-                        penalty_str = ' ' + penalty
-                print('  %d:  %s  %0.3f%s' %
-                      (time_count, flag_str, raw_time, penalty_str))
+def print_individual_times(times, class_name, config):
+    best_time_1_count, best_time_2_count = \
+      identify_best_times(times, config.num_morning_times)
+
+    time_count = 0
+    best_time_1 = None
+    best_time_2 = None
+    for _, penalty, raw_time in times:
+        if raw_time:
+            time_count = time_count + 1
+
+            pax_time = get_pax_time(raw_time, class_name, config)
+
+            flag_str = ' '
+            if time_count == best_time_1_count or \
+              time_count == best_time_2_count:
+                flag_str = '*'
+                if best_time_1:
+                    best_time_2 = pax_time
+                else:
+                    best_time_1 = pax_time
+
+            penalty_str = ''
+            if penalty:
+                if penalty.isdigit():
+                    penalty_str = '(+' + penalty + ')'
+                else:
+                    penalty_str = penalty
+
+            print('  %d:  %9.3f %-5s   %9.3f %s' %
+                  (time_count, raw_time, penalty_str, pax_time, flag_str))
+    return best_time_1, best_time_2
 
 
 # ------------------------------------------------------------

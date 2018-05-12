@@ -76,3 +76,9 @@ urgently. We'll make two scripts for this:
    out a CSV with the scores for the pro drivers.
 2. ```publish_pro_standings.py``` -- will read the pro CSV and write
    an HTML file with these in them.
+
+We want to use templates for the output. Mustache
+(https://mustache.github.io/) seems like a good syntax (certainly the
+handlebarsjs version of JavaScript has been useful). The Python
+library for mustache is pystache
+(https://github.com/defunkt/pystache).

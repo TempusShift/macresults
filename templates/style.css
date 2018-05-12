@@ -1,0 +1,50 @@
+body {
+    font-family: "Verdana";
+}
+
+.event-name {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.event-details {
+    font-size: small;
+}
+
+.logo {
+    background: no-repeat url("{{{logoDataUri}}}");
+    background-size: contain;
+    background-position: right;
+
+    height: 75px;
+    width: 75px;
+}
+
+/* Styling tables:
+ * https://www.elated.com/articles/styling-tables-with-css/
+ */
+.results {
+    margin-top: 1em;
+    border-collapse: collapse;
+}
+
+.results td {
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 1px;
+
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}    
+
+.best, .finalTime {
+    font-weight: bold;
+}
+
+.trophy, .number, .driver, .time {
+    border-right-style: none !important;
+}
+
+.rank, .driver, .vehicle, .time {
+    border-left-style: none !important;
+}

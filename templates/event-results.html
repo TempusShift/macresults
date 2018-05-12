@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>{{{eventName}}} Results</title>
+
+<style type="text/css">{{> style}}</style>
+</head
+<body>
+
+<!-- Lay out the header describing the event. This has the event name
+     and details on the left and the logo on the right. -->
+<div style="display: flex;">
+
+<!-- Event name and details. -->
+<div style="flex-grow: 1; display: flex; flex-direction: column;">
+
+<div class="event-name" style="flex-grow: 1;">
+{{{eventName}}} Results
+</div>
+
+<div class="event-details" style="display: flex;">
+
+<div style="flex-grow: 1; display: flex; flex-direction: column;">
+<div>{{{date}}}</div>
+<div>{{{location}}}</div>
+</div>
+
+<div style="flex-grow: 1; display: flex; flex-direction: column;">
+<div style="text-align: right;">participants: {{{numParticipants}}}</div>
+<div style="text-align: right;">runs: {{{numRuns}}}</div>
+</div>
+
+</div>
+</div>
+
+<!-- Logo -->
+<div class="logo" style="flex-grow: 1;">
+</div>
+
+</div>
+
+<table class="results">
+</table>
+
+</body>
+</html>

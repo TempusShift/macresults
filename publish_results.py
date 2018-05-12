@@ -32,10 +32,11 @@ def main(args):
 
     results = pd.read_json(config.results_filename,
                            orient='records', lines=True)
-    print(results.head())
+    print('Read results from: %s' % config.results_filename)
+    # print(results.head())
 
-    # FIXME We should dynamically determine this number from the data.
-    config.max_times = 6
+    config.max_times = determine_max_scored_times(results)
+    print('  number of scored_runs:   %d' % config.max_times)
 
     # Set up the templating.
     stache = pystache.Renderer(file_extension=False,
@@ -44,13 +45,9 @@ def main(args):
     stache.partials['eventResult'] = \
       stache.load_template('templates/event-result.html')
 
-    logo_data_uri = get_image_data_uri('templates/mac-logo-small.png')
-
     # Prepare the data do go in the template.
-
     # FIXME Need to populate most of this information dynamically.
     options = {
-        'logoDataUri': logo_data_uri,
         'eventName': 'MOWOG 1 Pro Class',
         'date': 'Saturday, 28 April 2018',
         'location': 'Canterbury Park',
@@ -60,6 +57,10 @@ def main(args):
         'numCones': results['num_cones'].sum()
     }
 
+    for key, value in options.items():
+        print('  %-25s%s' % (key + ':', value))
+
+    options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
     options['results'] = get_results_for_template(results, config)
 
     # Apply the template and write the result.
@@ -76,6 +77,14 @@ def main(args):
 
 # ------------------------------------------------------------
 # Main functionality
+
+def determine_max_scored_times(results):
+    max_times = 0
+    for times in results['times']:
+        if len(times) > max_times:
+            max_times = len(times)
+    return max_times
+
 
 def get_image_data_uri(filename):
     with open(filename, 'rb') as in_file:

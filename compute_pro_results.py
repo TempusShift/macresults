@@ -12,9 +12,18 @@
 #
 
 import argparse
-import csv
 import json
+import math
+import re
 import sys
+
+import pandas as pd
+
+
+INVALID_TIME = 9999.999
+
+RUN_COL_RE = re.compile(r'^run\s+(\d+)$', re.IGNORECASE)
+
 
 def main(args):
     parser = argparse.ArgumentParser()
@@ -22,6 +31,7 @@ def main(args):
                         help='The input file. Will extract results from ' +
                         'this file.')
     parser.add_argument('output_filename',
+                        nargs='?',
                         help='The output file. Will write pro results to ' +
                         'this file.')
     config = parser.parse_args(args)
@@ -34,32 +44,55 @@ def main(args):
 
     # Start with the actual work by reading the event results.
     event_results = read_event_results(config)
-    # print('headers: ' + str(event_results['header']))
-    # print('first row: ' + str(event_results['rows'][0]))
+    # print(event_results.describe())
 
-    # Find the first and last time columns.
-    config.first_time_col, config.last_time_col = \
-      find_time_col_range(event_results['header'])
-    print('  times are in columns: %d - %d' %
-          (config.first_time_col, config.last_time_col))
+    # Store these on the config because we might eventually get this
+    # information from an external place (e.g., to support results
+    # from other clubs).
+    config.run_cols = identify_run_cols(event_results)
+    print('Columns with runs in them:')
+    print(config.run_cols)
 
-    # Only keep the valid rows.
-    event_results['rows'] = \
-      [row for row in event_results['rows'] if \
-           has_valid_time(row, config)]
-    print('  kept %d rows with valid times' % len(event_results['rows']))
+    # Compute the scratch and raw times. Skips reruns and such.
+    event_results = event_results.apply(add_scored_times, axis=1, args=[config])
+
+    # Only keep rows with valid times. This prevents us from dealing
+    # with rows for drivers who registered but did not show.
+    event_results['has_valid_time'] = \
+      event_results.apply(has_valid_time, axis=1)
+    event_results = event_results.loc[event_results['has_valid_time']]
+    print('  kept %d rows with valid times' % len(event_results))
+
+    # Split up the index and classes.
+    event_results = event_results.apply(add_class_names_and_indexes, axis=1)
+
+    # Merge the PAX factors into the data.
+    event_results = event_results.apply(add_pax_factors, axis=1, args=[config])
+
+    # And add PAX times.
+    event_results = event_results.apply(add_pax_times, axis=1)
+
+    # Compute the best times. For indexed classes, these are PAX
+    # times, otherwise these are raw. For the Pro class, we compute
+    # both a morning and afternoon time.
+    event_results = event_results.apply(add_best_times, axis=1, args=[config])
 
     # For debugging, print out what we found.
-    summarize_classes(event_results)
+    # summarize_classes(event_results)
 
-    pro_results = get_pro_results(event_results)
+    # Down select to just the pro results.
+    pro_results = event_results.loc[event_results['class_index'] == 'P']
+    print('Found %d pro entries.' % len(pro_results))
     summarize_classes(pro_results)
-    print('Found %d pro entries.' % len(pro_results['rows']))
 
-    print_times(pro_results, config)
+    # print(event_results.head())
+    pro_results.apply(print_times, axis=1)
+    # event_results.apply(print_times, axis=1, args=[config])
 
-    print('Will write pro results to:')
-    print('  %s' % config.output_filename)
+    if config.output_filename:
+        print('Will write results to:')
+        print('  %s' % config.output_filename)
+        # FIXME Actually write the results.
 
 
 # ------------------------------------------------------------
@@ -82,37 +115,140 @@ def load_pax_factors(config):
 def read_event_results(config):
     print('Reading event results from:')
     print('  %s' % config.results_filename)
-    with open(config.results_filename) as results_file:
-        results_reader = csv.reader(results_file)
-        header = next(results_reader)
-        print('  results file has:  %d columns' % len(header))
-        rows = [row for row in results_reader]
-        print('               and:  %d rows' % len(rows))
-
-        results = {}
-        results['header'] = header
-        results['rows'] = rows
-        return results
+    results = pd.read_csv(config.results_filename)
+    print(results.head())
+    return results
 
 
-def get_pro_results(event_results):
-    pro_results = {}
-    pro_results['header'] = event_results['header']
+def identify_run_cols(results):
+    run_cols = []
+    for col in results.columns:
+        match = RUN_COL_RE.match(col)
+        if match:
+            pen_col = '%s Pen' % match.group(0)
+            run_cols.append((col, pen_col))
+    return run_cols
 
-    # First, find the class column.
-    class_col = find_class_column(event_results)
 
-    # Make a list of the pro rows.
-    pro_results['rows'] = \
-      [row for row in event_results['rows'] if has_pro_index(row[class_col])]
-    return pro_results
+def add_scored_times(row, config):
+    # print('row? ' + str(row))
+    times = []
+
+    # print('run_cols? ' + str(config.run_cols))
+    for run_col, pen_col in config.run_cols:
+        scratch_time = row[run_col]
+        if not scratch_time or math.isnan(scratch_time):
+            continue
+
+        penalty = row[pen_col]
+        # print('scratch: ' + str(scratch_time) + ' pen? ' + str(penalty))
+
+        # Start with the scratch time.
+        raw_time = scratch_time
+
+        # Handle penalties, add time for cones or nullify time for
+        # DNFs and reruns.
+        if penalty:
+            if isinstance(penalty, float) and math.isnan(penalty):
+                # No penalty.
+                penalty = int(0)
+
+            if penalty == 'DNF':
+                # This is a valid run, but a useless time.
+                raw_time = INVALID_TIME
+            elif str(penalty).startswith('RERUN'):
+                # This is not a valid time.
+                raw_time = None
+            else:
+                # Has cones, add two seconds for each.
+                penalty = int(penalty)
+                raw_time = raw_time + 2.0 * penalty
+
+        times.append((scratch_time, penalty, raw_time))
+
+    # print('times: ' + str(times))
+    row['times'] = times
+    return row
+
+
+def has_valid_time(row):
+    times = row['times']
+    return len(times) > 0
+
+
+def add_class_names_and_indexes(row):
+    class_spec = row['Class']
+    class_name, class_index = get_class_name_and_index(class_spec)
+    row['class_name'] = class_name
+    row['class_index'] = class_index
+    return row
+
+
+def get_class_name_and_index(class_spec):
+    class_parts = class_spec.split('-')
+    if len(class_parts) == 1:
+        return class_parts[0], None
+    if len(class_parts) == 2:
+        return  class_parts[1], class_parts[0]
+    raise ValueError('Could not determine class for "%s"' % str(class_spec))
+
+
+def add_pax_factors(row, config):
+    class_name = row['class_name']
+    pax_factor = config.pax_factors[class_name]
+    row['pax_factor'] = pax_factor
+    return row
+
+
+def add_pax_times(row):
+    pax_factor = row['pax_factor']
+    times = row['times']
+
+    pax_times = []
+    for _, _, raw_time in times:
+        pax_time = raw_time
+        if raw_time and raw_time < INVALID_TIME:
+            pax_time = raw_time * pax_factor
+
+        pax_times.append(pax_time)
+
+    row['pax_times'] = pax_times
+    return row
+
+
+def add_best_times(row, config):
+    pax_factor = row['pax_factor']
+    split = None
+    if row['class_index'] == 'P':
+        split = config.num_morning_times
+    all_times = row['times']
+    best_time_nums, best_times = identify_best_times(all_times, split)
+    row['best_time_nums'] = best_time_nums
+
+    final_time = INVALID_TIME
+    if best_times:
+        # This is an indexed class, use PAX times.
+        if row['class_index']:
+            best_times = [time * pax_factor for time in best_times]
+
+        final_time = 0.0
+        for time in best_times:
+            final_time = final_time + time
+
+    if final_time > INVALID_TIME:
+        final_time = INVALID_TIME
+
+    row['final_time'] = final_time
+    return row
 
 
 # If we never reach split_time_count (e.g., because it is None), we'll
 # put the single best run in the first return value.
 def identify_best_times(times, split_time_count):
     best_time_1_count = None
+    best_time_1 = None
     best_time_2_count = None
+    best_time_2 = None
 
     time_count = 0
     best_time_count = None
@@ -128,6 +264,8 @@ def identify_best_times(times, split_time_count):
             # find the next time.
             if time_count == split_time_count:
                 best_time_1_count = best_time_count
+                best_time_1 = best_time
+                # Reset
                 best_time_count = None
                 best_time = None
 
@@ -136,105 +274,31 @@ def identify_best_times(times, split_time_count):
     # as None.
     if not best_time_1_count:
         best_time_1_count = best_time_count
+        best_time_1 = best_time
     else:
         best_time_2_count = best_time_count
+        best_time_2 = best_time
 
-    # Return the times.
-    return best_time_1_count, best_time_2_count
+    # Return the counts and times.
+    best_counts = []
+    best_times = []
+    if best_time_1_count:
+        best_counts.append(best_time_1_count)
+        best_times.append(best_time_1)
+        if best_time_2_count:
+            best_counts.append(best_time_2_count)
+            best_times.append(best_time_2)
 
-
-# ------------------------------------------------------------
-# Low level helpers
-
-def find_time_col_range(header):
-    first_col = None
-    last_col = None
-    for col, name in enumerate(header):
-        if name.startswith('Run '):
-            if not first_col:
-                first_col = col
-            else:
-                last_col = col
-    return first_col, last_col
-
-
-def has_valid_time(row, config):
-    times = get_times(row, config)
-    return len(times) > 0
-
-
-def get_times(row, config):
-    times = []
-    col = config.first_time_col
-    while col < config.last_time_col and col < len(row):
-        scratch_time = row[col]
-        col = col + 1
-        penalty = row[col]
-        col = col + 1
-
-        # Start with the raw time.
-        raw_time = float(scratch_time)
-
-        # Handle penalties, add time for cones or nullify time for
-        # DNFs and reruns.
-        if penalty:
-            if penalty.isdigit():
-                # Has cones, add two seconds for each.
-                raw_time = raw_time + 2.0 * int(penalty)
-            elif penalty == 'DNF':
-                # This is a valid run, but a useless time.
-                raw_time = 9999.999
-            elif penalty.startswith('RERUN'):
-                # This is not a valid time.
-                raw_time = None
-            else:
-                raise ValueError('Don\'t know penalty: "%s"' % str(penalty))
-        if scratch_time:
-            times.append((scratch_time, penalty, raw_time))
-
-    return times
-
-
-def has_pro_index(class_spec):
-    class_name, index = get_class_name_and_index(class_spec)
-    if index == 'P' and class_name:
-        return True
-    return False
-
-
-def get_class_name_and_index(class_spec):
-    class_parts = class_spec.split('-')
-    if len(class_parts) == 1:
-        return class_parts[0], None
-    if len(class_parts) == 2:
-        return  class_parts[1], class_parts[0]
-    raise ValueError('Could not determine class for "%s"' % str(class_spec))
-
-
-def find_class_column(results):
-    header = results['header']
-    for col_num, col_name in enumerate(header):
-        if col_name == 'Class':
-            return col_num
-
-
-def get_pax_time(time, class_name, config):
-    pax_factor = config.pax_factors[class_name]
-    return time * pax_factor
+    return best_counts, best_times
 
 
 # ------------------------------------------------------------
 # Summary/printing functions
 
 def summarize_classes(results):
-    # First, find the class column.
-    class_col = find_class_column(results)
-    # print('Classes are in column: %d' % class_col)
-
     # Then, count the number of drivers in each class.
     classes = {}
-    for row in results['rows']:
-        class_name = row[class_col]
+    for class_name in results['Class']:
         if class_name not in classes:
             classes[class_name] = 0
         classes[class_name] = classes[class_name] + 1
@@ -243,56 +307,42 @@ def summarize_classes(results):
     print(str(classes))
 
 
-def print_times(results, config):
-    class_col = find_class_column(results)
-    for row in results['rows']:
-        class_spec = row[class_col]
-        class_name, _ = get_class_name_and_index(class_spec)
-        print('%s %s (%s)' % (row[0], row[1], class_name))
+def print_times(row):
+    full_class = '%s-' % row['class_index'] if row['class_index'] else ''
+    full_class = full_class + row['class_name']
+    print('%s %s (%s, %0.3f)' %
+          (row['FirstName'], row['LastName'],
+           full_class, row['pax_factor']))
 
-        times = get_times(row, config)
+    times = row['times']
+    best_time_nums = row['best_time_nums']
+    pax_times = row['pax_times']
 
-        best_time_1, best_time_2 = \
-          print_individual_times(times, class_name, config)
+    print_scored_times(times, best_time_nums, pax_times)
 
-        final_time = best_time_1
-        if best_time_2:
-            final_time = final_time + best_time_2
-        print('  combined:             %9.3f' % final_time)
+    final_time = row['final_time']
+    print('  final time:           %9.3f' % final_time)
 
 
-def print_individual_times(times, class_name, config):
-    best_time_1_count, best_time_2_count = \
-      identify_best_times(times, config.num_morning_times)
-
+def print_scored_times(times, best_time_nums, pax_times):
     time_count = 0
-    best_time_1 = None
-    best_time_2 = None
-    for _, penalty, raw_time in times:
+    for (_, penalty, raw_time), pax_time in zip(times, pax_times):
         if raw_time:
             time_count = time_count + 1
 
-            pax_time = get_pax_time(raw_time, class_name, config)
-
             flag_str = ' '
-            if time_count == best_time_1_count or \
-              time_count == best_time_2_count:
+            if time_count in best_time_nums:
                 flag_str = '*'
-                if best_time_1:
-                    best_time_2 = pax_time
-                else:
-                    best_time_1 = pax_time
 
             penalty_str = ''
             if penalty:
-                if penalty.isdigit():
-                    penalty_str = '(+' + penalty + ')'
+                if isinstance(penalty, int):
+                    penalty_str = '(%d)' % penalty
                 else:
                     penalty_str = penalty
 
             print('  %d:  %9.3f %-5s   %9.3f %s' %
                   (time_count, raw_time, penalty_str, pax_time, flag_str))
-    return best_time_1, best_time_2
 
 
 # ------------------------------------------------------------

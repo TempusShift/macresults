@@ -48,7 +48,9 @@ def main(args):
         'date': 'Saturday, 28 April 2018',
         'location': 'Canterbury Park',
         'numParticipants': len(results),
-        'numRuns': results['num_runs'].sum()
+        'numRuns': results['num_runs'].sum(),
+        'numDnfs': results['num_dnfs'].sum(),
+        'numCones': results['num_cones'].sum()
     }
 
     event_results_template = \

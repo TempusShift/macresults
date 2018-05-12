@@ -71,7 +71,7 @@ def main(args):
         'eventName': config.event_name,
         'date': config.event_date,
         'location': config.event_location,
-        'num_scored_times': config.num_scored_times,
+        'numScoredTimes': config.num_scored_times,
         'numParticipants': len(results),
         'numRuns': results['num_runs'].sum(),
         'numDnfs': results['num_dnfs'].sum(),
@@ -83,6 +83,14 @@ def main(args):
 
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
     options['results'] = get_results_for_template(results, config)
+
+    # FIXME These need to be class-specific. And combined with the
+    # get_results_for_template call above.
+    options['resultsClass'] = 'P'
+    num_drivers = len(results)
+    options['numDrivers'] = num_drivers
+    num_trophies = int(num_drivers * 0.2)
+    options['numTrophies'] = num_trophies
 
     # Apply the template and write the result.
     event_results_template = \

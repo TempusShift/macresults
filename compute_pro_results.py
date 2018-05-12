@@ -55,6 +55,7 @@ def main(args):
 
     # Compute the scratch and raw times. Skips reruns and such.
     event_results = event_results.apply(add_scored_times, axis=1, args=[config])
+    event_results = event_results.apply(add_run_stats, axis=1, args=[config])
 
     # Only keep rows with valid times. This prevents us from dealing
     # with rows for drivers who registered but did not show.
@@ -173,6 +174,32 @@ def has_valid_time(row):
     times = row['times']
     return len(times) > 0
 
+
+def add_run_stats(row, config):
+    num_runs = 0
+    num_dnfs = 0
+    num_reruns = 0
+    num_cones = 0
+    for run_col, pen_col in config.run_cols:
+        scratch_time = row[run_col]
+        if not scratch_time or math.isnan(scratch_time):
+            continue
+
+        num_runs = num_runs + 1
+
+        penalty = row[pen_col]
+        if penalty == 'DNF':
+            num_dnfs = num_dnfs + 1
+        elif str(penalty).startswith('RERUN'):
+            num_reruns = num_reruns + 1
+        elif isinstance(penalty, float) and not math.isnan(penalty):
+            num_cones = num_cones + int(penalty)
+
+    row['num_runs'] = num_runs
+    row['num_dnfs'] = num_dnfs
+    row['num_reruns'] = num_reruns
+    row['num_cones'] = num_cones
+    return row
 
 def add_class_names_and_indexes(row):
     class_spec = row['Class']

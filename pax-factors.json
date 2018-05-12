@@ -104,6 +104,12 @@
   { "name": "JC",
     "factor": 0.718 },
 
+  { "name": "V",
+    "factor": 1.0 },
+  { "name": "N",
+    "factor": 1.0 },
+  { "name": "X",
+    "factor": 1.0 },
   { "name": "None",
     "factor": 1.0 }
 ]

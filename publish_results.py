@@ -32,8 +32,9 @@ def main(args):
 
     stache = pystache.Renderer(file_extension=False,
                                partials={})
-    style_template = stache.load_template('templates/style.css')
-    stache.partials['style'] = style_template
+    stache.partials['style'] = stache.load_template('templates/style.css')
+    stache.partials['eventResult'] = \
+      stache.load_template('templates/event-result.html')
 
     logo_data_uri = get_image_data_uri('templates/mac-logo-small.png')
 
@@ -52,6 +53,28 @@ def main(args):
         'numDnfs': results['num_dnfs'].sum(),
         'numCones': results['num_cones'].sum()
     }
+
+    options['results'] = [
+        {
+        'trophy': '',
+        'rank': 1,
+        'cls': 'FM',
+        'number': 1,
+        'driver': 'Jason Hobbs',
+        'vehicle': '1999 Novakar J9 Mojave',
+        'times': [
+            { 'time': 30.625 },
+            { 'time': 30.318 },
+            { 'time': 29.579 },
+            { 'time': 34.180 },
+            { 'time': 29.498,
+              'timeClass': 'best' },
+            { 'time': 29.514 }
+        ],
+        'finalTime': 27.020,
+        'diffFromFirst': 0.0,
+        'diffFromPrev': 0.0
+    }]
 
     event_results_template = \
       stache.load_template('templates/event-results.html')

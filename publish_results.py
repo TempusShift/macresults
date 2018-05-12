@@ -7,20 +7,23 @@
 #
 # Invoke this as:
 #
+# ./publish_results.py gen/mowog1-pro.json gen/mowog1-pro.html
+#
 
 import argparse
 import base64
 import sys
+
+import pandas as pd
 
 import pystache
 
 
 def main(args):
     parser = argparse.ArgumentParser()
-    # parser.add_argument('results_filename',
-    #                     nargs='?',
-    #                     help='The input file. Will extract results from ' +
-    #                     'this file.')
+    parser.add_argument('results_filename',
+                        help='The results file. Will extract results from ' +
+                        'this file.')
     parser.add_argument('output_filename',
                         nargs='?',
                         help='The output file. Will write the HTML results ' +
@@ -34,14 +37,18 @@ def main(args):
 
     logo_data_uri = get_image_data_uri('templates/mac-logo-small.png')
 
+    results = pd.read_json(config.results_filename,
+                           orient='records', lines=True)
+    print(results.head())
+
     # FIXME Need to populate most of this information dynamically.
     options = {
         'logoDataUri': logo_data_uri,
-        'eventName': 'MOWOG 1',
+        'eventName': 'MOWOG 1 Pro Class',
         'date': 'Saturday, 28 April 2018',
         'location': 'Canterbury Park',
-        'numParticipants': 147,
-        'numRuns': 724
+        'numParticipants': len(results),
+        'numRuns': results['num_runs'].sum()
     }
 
     event_results_template = \

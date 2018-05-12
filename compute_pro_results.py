@@ -192,8 +192,14 @@ def add_run_stats(row, config):
             num_dnfs = num_dnfs + 1
         elif str(penalty).startswith('RERUN'):
             num_reruns = num_reruns + 1
-        elif isinstance(penalty, float) and not math.isnan(penalty):
-            num_cones = num_cones + int(penalty)
+        else:
+            try:
+                cone_count = int(penalty)
+                if cone_count > 0:
+                    num_cones = num_cones + cone_count
+            except ValueError:
+                # We see this if penalty was NaN.
+                pass
 
     row['num_runs'] = num_runs
     row['num_dnfs'] = num_dnfs

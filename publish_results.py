@@ -78,19 +78,23 @@ def main(args):
         'numCones': results['num_cones'].sum()
     }
 
+    # Print the information for the user to verify.
     for key, value in options.items():
         print('  %-25s%s' % (key + ':', value))
 
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
-    options['results'] = get_results_for_template(results, config)
 
-    # FIXME These need to be class-specific. And combined with the
-    # get_results_for_template call above.
+    # Prepare class-specific stuff. Currently these are hard-coded to
+    # Pro class. When we have multiple classes this needs to change.
     options['resultsClass'] = 'P'
     num_drivers = len(results)
     options['numDrivers'] = num_drivers
+    # FIXME This computation needs to be 10% for N and there should be
+    # no trophies for X.
     num_trophies = int(num_drivers * 0.2)
     options['numTrophies'] = num_trophies
+
+    options['results'] = get_results_for_template(results, num_trophies, config)
 
     # Apply the template and write the result.
     event_results_template = \
@@ -123,7 +127,7 @@ def get_image_data_uri(filename):
         return data_uri
 
 
-def get_results_for_template(results_df, config):
+def get_results_for_template(results_df, num_trophies, config):
     sorted_results = results_df.sort_values(by=['final_time'])
     results = []
     rank = 0
@@ -132,10 +136,12 @@ def get_results_for_template(results_df, config):
     prev_time = None
     for _, row in sorted_results.iterrows():
         result = {}
-        # FIXME Need trophy indicator.
-        result['trophy'] = ''
+
         rank = rank + 1
         result['rank'] = rank
+
+        if rank <= num_trophies:
+            result['trophy'] = 'T'
 
         result['cls'] = row['class_name']
         if row['class_index']:

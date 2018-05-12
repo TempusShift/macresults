@@ -197,7 +197,7 @@ def format_time(time, penalty=None):
     try:
         cones = int(penalty)
         if cones > 0:
-            formatted_time = formatted_time + ' (%d)' % cones
+            formatted_time = formatted_time + '&nbsp;(%d)' % cones
     except TypeError:
         pass
     return formatted_time

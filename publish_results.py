@@ -132,12 +132,12 @@ def get_times_for_template(row, config):
 
     # Loop over the times, formatting the times.
     pax_times = row['pax_times']
+    penalties = [penalty for _, penalty, _ in row['times']]
     best_time_nums = row['best_time_nums']
 
-    for index, pax_time in enumerate(pax_times):
+    for index, (pax_time, penalty) in enumerate(zip(pax_times, penalties)):
         time = {}
-        # FIXME Add penalty information.
-        time['time'] = format_time(pax_time)
+        time['time'] = format_time(pax_time, penalty)
         if index + 1 in best_time_nums:
             time['timeClass'] = 'best'
         times[index] = time
@@ -145,8 +145,18 @@ def get_times_for_template(row, config):
     return times
 
 
-def format_time(time):
-    return '%0.3f' % time
+def format_time(time, penalty=None):
+    if penalty == 'DNF':
+        return 'DNF'
+
+    formatted_time = '%0.3f' % time
+    try:
+        cones = int(penalty)
+        if cones > 0:
+            formatted_time = formatted_time + ' (%d)' % cones
+    except TypeError:
+        pass
+    return formatted_time
 
 
 # ------------------------------------------------------------

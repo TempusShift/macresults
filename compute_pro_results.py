@@ -163,7 +163,8 @@ def add_scored_times(row, config):
                 penalty = int(penalty)
                 raw_time = raw_time + 2.0 * penalty
 
-        times.append((scratch_time, penalty, raw_time))
+        if raw_time:
+            times.append((scratch_time, penalty, raw_time))
 
     # print('times: ' + str(times))
     row['times'] = times

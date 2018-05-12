@@ -8,7 +8,7 @@
 #
 # Invoke this as:
 #
-# ./compute_pro_results.py 2018/mowog1.csv 2018/mowog1-pro.csv
+# ./compute_pro_results.py 2018/mowog1.csv gen/mowog1-pro.json
 #
 
 import argparse
@@ -90,9 +90,7 @@ def main(args):
     # event_results.apply(print_times, axis=1, args=[config])
 
     if config.output_filename:
-        print('Will write results to:')
-        print('  %s' % config.output_filename)
-        # FIXME Actually write the results.
+        write_results(pro_results, config.output_filename)
 
 
 # ------------------------------------------------------------
@@ -290,6 +288,14 @@ def identify_best_times(times, split_time_count):
             best_times.append(best_time_2)
 
     return best_counts, best_times
+
+
+def write_results(results, output_filename):
+    print('Will write results to:')
+    print('  %s' % output_filename)
+    json_string = results.to_json(orient='records', lines=True)
+    with open(output_filename, 'wt') as out_file:
+        out_file.write(json_string)
 
 
 # ------------------------------------------------------------

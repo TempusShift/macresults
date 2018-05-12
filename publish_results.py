@@ -6,8 +6,13 @@
 # file with the results neatly formatted.
 #
 # Invoke this as:
+# pylint: disable=line-too-long
 #
 # ./publish_results.py gen/mowog1-pro.json gen/mowog1-pro.html
+#
+# ./publish_results.py gen/mowog1-pro.json gen/mowog1-pro.html -n 'MOWOG 1 Pro Class' -d 'Saturday, 28 April, 2018' -l 'Canterbury Park'
+#
+# pylint: enable=line-too-long
 #
 
 import argparse
@@ -28,6 +33,21 @@ def main(args):
                         nargs='?',
                         help='The output file. Will write the HTML results ' +
                         'to this file.')
+    parser.add_argument('-n',
+                        dest='event_name',
+                        default='',
+                        help='The name of this event, e.g., ' +
+                        '"MOWOG 1".')
+    parser.add_argument('-d',
+                        dest='event_date',
+                        default='',
+                        help='The date of this event, e.g., ' +
+                        '"Saturday, 28 April, 2018".')
+    parser.add_argument('-l',
+                        dest='event_location',
+                        default='',
+                        help='The location of this event, e.g., '+
+                        '"Canterbury Park, MN"')
     config = parser.parse_args(args)
 
     results = pd.read_json(config.results_filename,
@@ -48,9 +68,9 @@ def main(args):
     # Prepare the data do go in the template.
     # FIXME Need to populate most of this information dynamically.
     options = {
-        'eventName': 'MOWOG 1 Pro Class',
-        'date': 'Saturday, 28 April 2018',
-        'location': 'Canterbury Park',
+        'eventName': config.event_name,
+        'date': config.event_date,
+        'location': config.event_location,
         'numParticipants': len(results),
         'numRuns': results['num_runs'].sum(),
         'numDnfs': results['num_dnfs'].sum(),

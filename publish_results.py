@@ -55,8 +55,8 @@ def main(args):
     print('Read results from: %s' % config.results_filename)
     # print(results.head())
 
-    config.max_times = determine_max_scored_times(results)
-    print('  number of scored_runs:   %d' % config.max_times)
+    config.num_scored_times = determine_max_scored_times(results)
+    print('  number of scored_runs:   %d' % config.num_scored_times)
 
     # Set up the templating.
     stache = pystache.Renderer(file_extension=False,
@@ -71,6 +71,7 @@ def main(args):
         'eventName': config.event_name,
         'date': config.event_date,
         'location': config.event_location,
+        'num_scored_times': config.num_scored_times,
         'numParticipants': len(results),
         'numRuns': results['num_runs'].sum(),
         'numDnfs': results['num_dnfs'].sum(),
@@ -157,7 +158,7 @@ def get_results_for_template(results_df, config):
 def get_times_for_template(row, config):
     # Initialize the times array so that we are sure to have a value
     # in each cell.
-    times = [{} for _ in range(config.max_times)]
+    times = [{} for _ in range(config.num_scored_times)]
 
     # Loop over the times, formatting the times.
     pax_times = row['pax_times']

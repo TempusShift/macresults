@@ -28,14 +28,22 @@ body {
     border-collapse: collapse;
 }
 
-.results td {
+.results td, .results th {
     border-style: solid;
     border-color: #ccc;
     border-width: 1px;
 
     padding-left: 0.3em;
     padding-right: 0.3em;
-}    
+}
+
+.summary {
+    text-align: left;
+}
+
+.results th {
+    background-color: #ccc;
+}
 
 .best, .finalTime {
     font-weight: bold;

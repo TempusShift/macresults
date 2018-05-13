@@ -2,13 +2,20 @@
 #
 # pylint: disable=missing-docstring
 #
-# This script reads the event results, extracts the information for
-# the drivers in the pro class, computes split scoring results, and
-# writes a CSV file with the results.
+# This script reads the event results, and prepares the data needed to
+# generate results HTML files. Notably:
+#  - Determines the scored runs (after reruns).
+#    - Computing raw time after penalty
+#  - Filters the results to just entries with scored runs.
+#  - Augments rows with PAX factors.
+#  - Computes PAX times.
+#  - Identifies the best run (or runs for Pro class).
+#  - Computes the final time (PAX or raw, combined when split
+#    scoring).
 #
 # Invoke this as:
 #
-# ./compute_pro_results.py 2018/mowog1.csv gen/mowog1-pro.json
+# ./compute_results.py 2018/mowog1.csv gen/mowog1.json
 #
 
 import argparse
@@ -32,7 +39,7 @@ def main(args):
                         'this file.')
     parser.add_argument('output_filename',
                         nargs='?',
-                        help='The output file. Will write pro results to ' +
+                        help='The output file. Will write results to ' +
                         'this file.')
     config = parser.parse_args(args)
 
@@ -81,17 +88,7 @@ def main(args):
     # For debugging, print out what we found.
     # summarize_classes(event_results)
 
-    # Down select to just the pro results.
-    # pro_results = event_results.loc[event_results['class_index'] == 'P']
-    # print('Found %d pro entries.' % len(pro_results))
-    # summarize_classes(pro_results)
-
-    # print(event_results.head())
-    # pro_results.apply(print_times, axis=1)
-    # event_results.apply(print_times, axis=1, args=[config])
-
     if config.output_filename:
-        # write_results(pro_results, config.output_filename)
         write_results(event_results, config.output_filename)
 
 

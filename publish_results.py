@@ -123,15 +123,16 @@ def prepare_all_class_results(results, config):
 
     # First accumulate the index classes.
     index_classes = [
-        ('P', 'P - Pro'),
-        ('Z', 'Z - Pax Index'),
-        ('C1', 'C1 - Combined 1'),
-        ('C2', 'C2 - Combined 2')
+        ('P', 'Pro'),
+        ('Z', 'Pax Index'),
+        ('C1', 'Combined 1'),
+        ('C2', 'Combined 2')
     ]
     for class_index, label in index_classes:
         selected_results = results.loc[results['class_index'] == class_index]
         class_results = \
-          prepare_class_results(selected_results, label, 'PAX', config)
+          prepare_class_results(selected_results, \
+                                class_index, label, 'PAX', config)
         classes.append(class_results)
 
     # Then accumulate the open classes. We split them by class_name
@@ -149,7 +150,8 @@ def prepare_all_class_results(results, config):
         selected_results = \
           open_results.loc[open_results['class_name'] == class_name]
         class_results = \
-          prepare_class_results(selected_results, class_name, 'Raw', config)
+          prepare_class_results(selected_results, \
+                                class_name, 'Open', 'Raw', config)
         classes.append(class_results)
 
     return classes
@@ -161,17 +163,24 @@ def get_pax_factor(results, class_name):
     return selected_results['pax_factor'].mean()
 
 
-def prepare_class_results(results, label, time_type, config):
+def prepare_class_results(results, class_name, label, time_type, config):
     class_results = {}
 
     # Prepare class-specific stuff. Currently these are hard-coded to
     # Pro class. When we have multiple classes this needs to change.
-    class_results['label'] = label
+    class_results['label'] = class_name
+    if label:
+        class_results['label'] = class_results['label'] + ' - ' + label
     num_drivers = len(results)
     class_results['numDrivers'] = num_drivers
-    # FIXME This computation needs to be 10% for N and there should be
-    # no trophies for X.
-    num_trophies = int(round(num_drivers * 0.2))
+
+    # Choose the trophy rate based on the class.
+    trophy_rate = 0.2
+    if class_name == 'N':
+        trophy_rate = 0.1
+    elif class_name == 'X':
+        trophy_rate = 0.0
+    num_trophies = int(round(num_drivers * trophy_rate))
     class_results['numTrophies'] = num_trophies
 
     class_results['timeType'] = time_type

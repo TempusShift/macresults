@@ -82,16 +82,17 @@ def main(args):
     # summarize_classes(event_results)
 
     # Down select to just the pro results.
-    pro_results = event_results.loc[event_results['class_index'] == 'P']
-    print('Found %d pro entries.' % len(pro_results))
-    summarize_classes(pro_results)
+    # pro_results = event_results.loc[event_results['class_index'] == 'P']
+    # print('Found %d pro entries.' % len(pro_results))
+    # summarize_classes(pro_results)
 
     # print(event_results.head())
-    pro_results.apply(print_times, axis=1)
+    # pro_results.apply(print_times, axis=1)
     # event_results.apply(print_times, axis=1, args=[config])
 
     if config.output_filename:
-        write_results(pro_results, config.output_filename)
+        # write_results(pro_results, config.output_filename)
+        write_results(event_results, config.output_filename)
 
 
 # ------------------------------------------------------------

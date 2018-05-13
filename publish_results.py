@@ -134,11 +134,31 @@ def prepare_all_class_results(results, config):
           prepare_class_results(selected_results, label, 'PAX', config)
         classes.append(class_results)
 
-    # FIXME Then accumulate the open classes.
+    # Then accumulate the open classes. We split them by class_name
+    # and sort them by pax_factor so that the fastest classes come
+    # first. This gives a consistent ordering from event to event.
     open_results = results.loc[results['class_index'].isnull()]
-    classes.append(prepare_class_results(open_results, 'Open', 'Raw', config))
+    open_class_names = open_results['class_name'].unique()
+
+    # Here we look at the pax_factors for the actual results so that
+    # we don't need to load the factors into the config.
+    open_class_names = sorted(open_class_names,
+                              key=lambda x: get_pax_factor(open_results, x))
+
+    for class_name in open_class_names:
+        selected_results = \
+          open_results.loc[open_results['class_name'] == class_name]
+        class_results = \
+          prepare_class_results(selected_results, class_name, 'Raw', config)
+        classes.append(class_results)
 
     return classes
+
+
+def get_pax_factor(results, class_name):
+    selected_results = \
+      results.loc[results['class_name'] == class_name]
+    return selected_results['pax_factor'].mean()
 
 
 def prepare_class_results(results, label, time_type, config):

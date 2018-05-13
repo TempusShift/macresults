@@ -84,21 +84,8 @@ def main(args):
 
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
 
-    # Temporarily, let's grab just the pro class.
-    options['classes'] = []
-    pro_results = results.loc[results['class_index'] == 'P']
-    add_class_results(options, pro_results, 'P', config)
-
-    z_results = results.loc[results['class_index'] == 'Z']
-    add_class_results(options, z_results, 'Z', config)
-
-    c1_results = results.loc[results['class_index'] == 'C1']
-    add_class_results(options, c1_results, 'C1', config)
-
-    c2_results = results.loc[results['class_index'] == 'C2']
-    add_class_results(options, c2_results, 'C2', config)
-
-    print('indexes: ', results['class_index'].unique())
+    # Prepare class results
+    options['classes'] = prepare_all_class_results(results, config)
 
     # Apply the template and write the result.
     event_results_template = \
@@ -131,23 +118,41 @@ def get_image_data_uri(filename):
         return data_uri
 
 
-def add_class_results(options, results, className, config):
+def prepare_all_class_results(results, config):
+    classes = []
+
+    index_classes = [
+        ('P', 'Pro'),
+        ('Z', 'Pax Index'),
+        ('C1', 'Combined 1'),
+        ('C2', 'Combined 2')
+    ]
+    for class_index, label in index_classes:
+        selected_results = results.loc[results['class_index'] == class_index]
+        class_results = prepare_class_results(selected_results, label, config)
+        classes.append(class_results)
+    return classes
+
+
+def prepare_class_results(results, label, config):
     class_results = {}
 
     # Prepare class-specific stuff. Currently these are hard-coded to
     # Pro class. When we have multiple classes this needs to change.
-    class_results['resultsClass'] = className
+    class_results['label'] = label
     num_drivers = len(results)
     class_results['numDrivers'] = num_drivers
     # FIXME This computation needs to be 10% for N and there should be
     # no trophies for X.
-    num_trophies = int(num_drivers * 0.2)
+    num_trophies = int(round(num_drivers * 0.2))
     class_results['numTrophies'] = num_trophies
+
+    class_results['timeType'] = 'PAX'
 
     class_results['results'] = \
       get_results_for_template(results, num_trophies, config)
 
-    options['classes'].append(class_results)
+    return class_results
 
 
 def get_results_for_template(results_df, num_trophies, config):

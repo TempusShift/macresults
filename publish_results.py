@@ -130,15 +130,18 @@ def prepare_all_class_results(results, config):
     ]
     for class_index, label in index_classes:
         selected_results = results.loc[results['class_index'] == class_index]
-        class_results = prepare_class_results(selected_results, label, config)
+        class_results = \
+          prepare_class_results(selected_results, label, 'PAX', config)
         classes.append(class_results)
 
     # FIXME Then accumulate the open classes.
+    open_results = results.loc[results['class_index'].isnull()]
+    classes.append(prepare_class_results(open_results, 'Open', 'Raw', config))
 
     return classes
 
 
-def prepare_class_results(results, label, config):
+def prepare_class_results(results, label, time_type, config):
     class_results = {}
 
     # Prepare class-specific stuff. Currently these are hard-coded to
@@ -151,15 +154,15 @@ def prepare_class_results(results, label, config):
     num_trophies = int(round(num_drivers * 0.2))
     class_results['numTrophies'] = num_trophies
 
-    class_results['timeType'] = 'PAX'
+    class_results['timeType'] = time_type
 
     class_results['results'] = \
-      get_results_for_template(results, num_trophies, config)
+      get_results_for_template(results, num_trophies, time_type, config)
 
     return class_results
 
 
-def get_results_for_template(results_df, num_trophies, config):
+def get_results_for_template(results_df, num_trophies, time_type, config):
     sorted_results = results_df.sort_values(by=['final_time'])
     results = []
     rank = 0
@@ -183,7 +186,7 @@ def get_results_for_template(results_df, num_trophies, config):
         result['driver'] = '%s %s' % (row['FirstName'], row['LastName'])
         result['vehicle'] = row['Car']
 
-        result['times'] = get_times_for_template(row, config)
+        result['times'] = get_times_for_template(row, time_type, config)
 
         final_time = row['final_time']
         result['finalTime'] = format_time(final_time)
@@ -201,19 +204,23 @@ def get_results_for_template(results_df, num_trophies, config):
     return results
 
 
-def get_times_for_template(row, config):
+def get_times_for_template(row, time_type, config):
     # Initialize the times array so that we are sure to have a value
     # in each cell.
     times = [{} for _ in range(config.num_scored_times)]
 
     # Loop over the times, formatting the times.
-    pax_times = row['pax_times']
+    scored_times = []
+    if time_type == 'PAX':
+        scored_times = row['pax_times']
+    else:
+        scored_times = [raw_time for _, _, raw_time in row['times']]
     penalties = [penalty for _, penalty, _ in row['times']]
     best_time_nums = row['best_time_nums']
 
-    for index, (pax_time, penalty) in enumerate(zip(pax_times, penalties)):
+    for index, (scored_time, penalty) in enumerate(zip(scored_times, penalties)):
         time = {}
-        time['time'] = format_time(pax_time, penalty)
+        time['time'] = format_time(scored_time, penalty)
         if index + 1 in best_time_nums:
             time['timeClass'] = 'best'
         times[index] = time

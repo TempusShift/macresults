@@ -47,6 +47,7 @@
 </div>
 
 <table class="results">
+{{#classes}}
 <tr>
   <!--
   <th class="trophy" colspan=2>Pos</th>
@@ -65,7 +66,9 @@
 
 {{#results}}
   {{> eventResult}}  
-{{/results}}  
+{{/results}}
+
+{{/classes}}
 </table>
 
 </body>

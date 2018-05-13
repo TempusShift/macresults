@@ -84,17 +84,21 @@ def main(args):
 
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
 
-    # Prepare class-specific stuff. Currently these are hard-coded to
-    # Pro class. When we have multiple classes this needs to change.
-    options['resultsClass'] = 'P'
-    num_drivers = len(results)
-    options['numDrivers'] = num_drivers
-    # FIXME This computation needs to be 10% for N and there should be
-    # no trophies for X.
-    num_trophies = int(num_drivers * 0.2)
-    options['numTrophies'] = num_trophies
+    # Temporarily, let's grab just the pro class.
+    options['classes'] = []
+    pro_results = results.loc[results['class_index'] == 'P']
+    add_class_results(options, pro_results, 'P', config)
 
-    options['results'] = get_results_for_template(results, num_trophies, config)
+    z_results = results.loc[results['class_index'] == 'Z']
+    add_class_results(options, z_results, 'Z', config)
+
+    c1_results = results.loc[results['class_index'] == 'C1']
+    add_class_results(options, c1_results, 'C1', config)
+
+    c2_results = results.loc[results['class_index'] == 'C2']
+    add_class_results(options, c2_results, 'C2', config)
+
+    print('indexes: ', results['class_index'].unique())
 
     # Apply the template and write the result.
     event_results_template = \
@@ -125,6 +129,25 @@ def get_image_data_uri(filename):
         base64_data = base64.b64encode(raw_data)
         data_uri = 'data:image/png;base64,' + base64_data.decode('utf-8')
         return data_uri
+
+
+def add_class_results(options, results, className, config):
+    class_results = {}
+
+    # Prepare class-specific stuff. Currently these are hard-coded to
+    # Pro class. When we have multiple classes this needs to change.
+    class_results['resultsClass'] = className
+    num_drivers = len(results)
+    class_results['numDrivers'] = num_drivers
+    # FIXME This computation needs to be 10% for N and there should be
+    # no trophies for X.
+    num_trophies = int(num_drivers * 0.2)
+    class_results['numTrophies'] = num_trophies
+
+    class_results['results'] = \
+      get_results_for_template(results, num_trophies, config)
+
+    options['classes'].append(class_results)
 
 
 def get_results_for_template(results_df, num_trophies, config):

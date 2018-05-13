@@ -66,7 +66,6 @@ def main(args):
       stache.load_template('templates/event-result.html')
 
     # Prepare the data do go in the template.
-    # FIXME Need to populate most of this information dynamically.
     options = {
         'eventName': config.event_name,
         'date': config.event_date,
@@ -86,6 +85,7 @@ def main(args):
 
     # Prepare class results
     options['classes'] = prepare_all_class_results(results, config)
+    verify_class_results_counts(options)
 
     # Apply the template and write the result.
     event_results_template = \
@@ -121,16 +121,20 @@ def get_image_data_uri(filename):
 def prepare_all_class_results(results, config):
     classes = []
 
+    # First accumulate the index classes.
     index_classes = [
-        ('P', 'Pro'),
-        ('Z', 'Pax Index'),
-        ('C1', 'Combined 1'),
-        ('C2', 'Combined 2')
+        ('P', 'P - Pro'),
+        ('Z', 'Z - Pax Index'),
+        ('C1', 'C1 - Combined 1'),
+        ('C2', 'C2 - Combined 2')
     ]
     for class_index, label in index_classes:
         selected_results = results.loc[results['class_index'] == class_index]
         class_results = prepare_class_results(selected_results, label, config)
         classes.append(class_results)
+
+    # FIXME Then accumulate the open classes.
+
     return classes
 
 
@@ -229,6 +233,16 @@ def format_time(time, penalty=None):
     except TypeError:
         pass
     return formatted_time
+
+
+def verify_class_results_counts(options):
+    total_count = 0
+    for class_results in options['classes']:
+        class_count = len(class_results['results'])
+        total_count = total_count + class_count
+    if total_count != options['numParticipants']:
+        print('WARNING: Class results cover %d participants, but we had results for %d.' %
+              (total_count, options['numParticipants']))
 
 
 # ------------------------------------------------------------

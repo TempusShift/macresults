@@ -256,7 +256,14 @@ def add_best_times(row, config):
     row['best_time_nums'] = best_time_nums
 
     final_time = INVALID_TIME
+    best_raw_time = INVALID_TIME
+    best_pax_time = INVALID_TIME
     if best_times:
+        for time in best_times:
+            if time < best_raw_time:
+                best_raw_time = time
+                best_pax_time = time * pax_factor
+
         # This is an indexed class, use PAX times.
         if row['class_index']:
             best_times = [time * pax_factor for time in best_times]
@@ -269,6 +276,8 @@ def add_best_times(row, config):
         final_time = INVALID_TIME
 
     row['final_time'] = final_time
+    row['best_raw_time'] = best_raw_time
+    row['best_pax_time'] = best_pax_time
     return row
 
 

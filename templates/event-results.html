@@ -46,18 +46,17 @@
 
 </div>
 
-<div class="section-name">Results by Class</div>
+<div id="class-results" class="section">
+<span class="name">Class Results</span>
+<!-- <a href="#top">results by class</a>, -->
+<a href="#raw-times">raw times</a>,
+<a href="#pax-times">pax times</a>
+</div>
+
 <table class="results">
 {{#classes}}
 <tbody>
 <tr>
-  <!--
-  <th class="trophy" colspan=2>Pos</th>
-  <th class="cls">Class</th>
-  <th class="number">Num</th>
-  <th class="driver">Driver</th>
-  <th class="vehicle">Vehicle</th>
-  -->
   <th class="summary" colspan=6>{{label}} - {{numDrivers}} Drivers - {{numTrophies}} trophies </th>
 
   <th class="summary" colspan={{numScoredTimes}}>{{timeType}} Times</th>
@@ -74,7 +73,13 @@
 {{/classes}}
 </table>
 
-<div class="section-name">Raw Times</div>
+<div id="raw-times" class="section">
+<span class="name">Raw Times</span>
+<a href="#top">class results</a>,
+<!-- <a href="#raw-times">raw times</a>, -->
+<a href="#pax-times">pax times</a>
+</div>
+
 <table class="results">
 {{#rawTimes}}
 <tbody>
@@ -97,7 +102,13 @@
 {{/rawTimes}}
 </table>
 
-<div class="section-name">PAX Times</div>
+<div id="pax-times" class="section">
+<span class="name">PAX Times</span>
+<a href="#top">class results</a>,
+<a href="#raw-times">raw times</a>
+<!-- <a href="#pax-times">pax times</a> -->
+</div>
+
 <table class="results">
 {{#paxTimes}}
 <tbody>

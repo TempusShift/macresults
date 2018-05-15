@@ -29,6 +29,12 @@ body {
     border-collapse: collapse;
 }
 
+tbody tr:nth-child(even){
+    /* background-color: #4C8BF5; */
+    /* color: #fff; */
+    background-color: #eee;
+}
+
 .results td, .results th {
     border-style: solid;
     border-color: #ccc;
@@ -36,6 +42,11 @@ body {
 
     padding-left: 0.3em;
     padding-right: 0.3em;
+}
+
+.results tr:hover {
+    /* hsl(60, 0.95, 0.85) */
+    background: #fdfdb4;
 }
 
 .summary {

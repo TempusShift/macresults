@@ -21,6 +21,12 @@ body {
     width: 75px;
 }
 
+.section-name {
+    padding-top: 25px;
+    font-weight: bold;
+    font-size: large;
+}
+
 /* Styling tables:
  * https://www.elated.com/articles/styling-tables-with-css/
  */

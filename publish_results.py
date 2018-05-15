@@ -62,8 +62,10 @@ def main(args):
     stache = pystache.Renderer(file_extension=False,
                                partials={})
     stache.partials['style'] = stache.load_template('templates/style.css')
-    stache.partials['eventResult'] = \
-      stache.load_template('templates/event-result.html')
+    stache.partials['classResult'] = \
+      stache.load_template('templates/class-result.html')
+    stache.partials['rawResult'] = \
+      stache.load_template('templates/raw-result.html')
 
     # Prepare the data do go in the template.
     options = {
@@ -86,6 +88,8 @@ def main(args):
     # Prepare class results
     options['classes'] = prepare_all_class_results(results, config)
     verify_class_results_counts(options)
+
+    options['rawTimes'] = prepare_raw_times(results)
 
     # Apply the template and write the result.
     event_results_template = \
@@ -279,6 +283,46 @@ def verify_class_results_counts(options):
     if total_count != options['numParticipants']:
         print('WARNING: Class results cover %d participants, but we had results for %d.' %
               (total_count, options['numParticipants']))
+
+
+def prepare_raw_times(results_df):
+    raw_times = {}
+
+    sorted_results = results_df.sort_values(by=['best_raw_time'])
+    results = []
+    rank = 0
+
+    first_time = None
+    prev_time = None
+    for _, row in sorted_results.iterrows():
+        result = {}
+
+        rank = rank + 1
+        result['rank'] = rank
+
+        result['cls'] = row['class_name']
+        if row['class_index']:
+            result['cls'] = row['class_index'] + '-' + result['cls']
+
+        result['number'] = row['CarNumber']
+        result['driver'] = '%s %s' % (row['FirstName'], row['LastName'])
+        result['vehicle'] = row['Car']
+
+        final_time = row['best_raw_time']
+        result['rawTime'] = format_time(final_time)
+        if not first_time:
+            result['diffFromFirst'] = '-'
+            result['diffFromPrev'] = '-'
+            first_time = final_time
+        else:
+            result['diffFromFirst'] = format_time(final_time - first_time)
+            result['diffFromPrev'] = format_time(final_time - prev_time)
+        prev_time = final_time
+
+        results.append(result)
+
+    raw_times['results'] = results
+    return raw_times
 
 
 # ------------------------------------------------------------

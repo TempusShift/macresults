@@ -46,6 +46,7 @@
 
 </div>
 
+<div class="section-name">Results by Class</div>
 <table class="results">
 {{#classes}}
 <tbody>
@@ -66,11 +67,34 @@
 </tr>
 
 {{#results}}
-  {{> eventResult}}  
+  {{> classResult}}  
 {{/results}}
 </tbody>
 
 {{/classes}}
+</table>
+
+<div class="section-name">Raw Times</div>
+<table class="results">
+{{#rawTimes}}
+<tbody>
+<tr>
+  <th class="pos">Pos</th>
+  <th class="cls">Class</th>
+  <th class="number">Num</th>
+  <th class="driver">Driver</th>
+  <th class="vehicle">Vehicle</th>
+  <th class="rawTime">Raw Time</th>
+  <th class="diffFromPrev">From Prev</th>
+  <th class="diffFromFirst">From First</th>
+</tr>
+
+{{#results}}
+  {{> rawResult}}
+{{/results}}
+</tbody>
+
+{{/rawTimes}}
 </table>
 
 </body>

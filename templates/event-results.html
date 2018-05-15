@@ -61,9 +61,9 @@
   <th class="summary" colspan=6>{{label}} - {{numDrivers}} Drivers - {{numTrophies}} trophies </th>
 
   <th class="summary" colspan={{numScoredTimes}}>{{timeType}} Times</th>
-  <th class="finalTime">Time</th>
-  <th class="diffFromPrev">From Prev</th>
-  <th class="diffFromFirst">From First</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
 </tr>
 
 {{#results}}
@@ -84,9 +84,9 @@
   <th class="number">Num</th>
   <th class="driver">Driver</th>
   <th class="vehicle">Vehicle</th>
-  <th class="rawTime">Raw Time</th>
-  <th class="diffFromPrev">From Prev</th>
-  <th class="diffFromFirst">From First</th>
+  <th class="time">Raw Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
 </tr>
 
 {{#results}}
@@ -95,6 +95,32 @@
 </tbody>
 
 {{/rawTimes}}
+</table>
+
+<div class="section-name">PAX Times</div>
+<table class="results">
+{{#paxTimes}}
+<tbody>
+<tr>
+  <th class="pos">Pos</th>
+  <th class="cls">Class</th>
+  <th class="number">Num</th>
+  <th class="driver">Driver</th>
+  <th class="vehicle">Vehicle</th>
+  <th class="time">Raw Time</th>
+  <th class="time">PAX Factor</th>
+  <th class="time">PAX Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+  <th class="time">DOTY Points</th>
+</tr>
+
+{{#results}}
+  {{> paxResult}}
+{{/results}}
+</tbody>
+
+{{/paxTimes}}
 </table>
 
 </body>

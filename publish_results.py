@@ -24,6 +24,9 @@ import pandas as pd
 import pystache
 
 
+INVALID_TIME = 9999.999
+
+
 def main(args):
     parser = argparse.ArgumentParser()
     parser.add_argument('results_filename',
@@ -66,6 +69,8 @@ def main(args):
       stache.load_template('templates/class-result.html')
     stache.partials['rawResult'] = \
       stache.load_template('templates/raw-result.html')
+    stache.partials['paxResult'] = \
+      stache.load_template('templates/pax-result.html')
 
     # Prepare the data do go in the template.
     options = {
@@ -89,7 +94,8 @@ def main(args):
     options['classes'] = prepare_all_class_results(results, config)
     verify_class_results_counts(options)
 
-    options['rawTimes'] = prepare_raw_times(results)
+    options['rawTimes'] = prepare_all_best_times(results, 'best_raw_time')
+    options['paxTimes'] = prepare_all_best_times(results, 'best_pax_time')
 
     # Apply the template and write the result.
     event_results_template = \
@@ -227,6 +233,9 @@ def get_results_for_template(results_df, num_trophies, time_type, config):
             result['diffFromFirst'] = '-'
             result['diffFromPrev'] = '-'
             first_time = final_time
+        elif final_time >= INVALID_TIME:
+            result['diffFromFirst'] = '-'
+            result['diffFromPrev'] = '-'
         else:
             result['diffFromFirst'] = format_time(final_time - first_time)
             result['diffFromPrev'] = format_time(final_time - prev_time)
@@ -285,10 +294,9 @@ def verify_class_results_counts(options):
               (total_count, options['numParticipants']))
 
 
-def prepare_raw_times(results_df):
-    raw_times = {}
+def prepare_all_best_times(results_df, time_col_name):
+    sorted_results = results_df.sort_values(by=[time_col_name])
 
-    sorted_results = results_df.sort_values(by=['best_raw_time'])
     results = []
     rank = 0
 
@@ -308,8 +316,7 @@ def prepare_raw_times(results_df):
         result['driver'] = '%s %s' % (row['FirstName'], row['LastName'])
         result['vehicle'] = row['Car']
 
-        final_time = row['best_raw_time']
-        result['rawTime'] = format_time(final_time)
+        final_time = prepare_best_times(row, time_col_name, result)
         if not first_time:
             result['diffFromFirst'] = '-'
             result['diffFromPrev'] = '-'
@@ -317,12 +324,34 @@ def prepare_raw_times(results_df):
         else:
             result['diffFromFirst'] = format_time(final_time - first_time)
             result['diffFromPrev'] = format_time(final_time - prev_time)
-        prev_time = final_time
 
+        if time_col_name == 'best_pax_time':
+            doty_points = first_time / final_time * 100.0
+            result['dotyPoints'] = format_time(doty_points)
+
+        if final_time >= INVALID_TIME:
+            result['diffFromFirst'] = '-'
+            result['diffFromPrev'] = '-'
+            result['dotyPoints'] = '-'
+
+        prev_time = final_time
         results.append(result)
 
-    raw_times['results'] = results
-    return raw_times
+    best_times = {}
+    best_times['results'] = results
+    return best_times
+
+
+def prepare_best_times(row, time_col_name, result):
+    raw_time = row['best_raw_time']
+    result['rawTime'] = format_time(raw_time)
+    pax_factor = row['pax_factor']
+    result['paxFactor'] = format_time(pax_factor)
+    pax_time = row['best_pax_time']
+    result['paxTime'] = format_time(pax_time)
+
+    final_time = row[time_col_name]
+    return final_time
 
 
 # ------------------------------------------------------------

@@ -82,6 +82,11 @@ library for mustache is pystache
 (https://github.com/defunkt/pystache).
 
 # Notes on Use
+After generating results, use ftp to upload.
+```
+ftp --passive gator3066.hostgator.com
+> cd public_html/results/2018
+```
 
 ## 2018 MOWOG 1
 ```
@@ -94,3 +99,10 @@ library for mustache is pystache
 ./compute_results.py 2018/mowog2.csv gen/mowog2.json
 ./publish_results.py -n 'MOWOG 2' -d 'Sunday, 29 April, 2018' -l 'Canterbury Park' gen/mowog2.json gen/mowog2.html
 ```
+
+## 2018 MOWOG 3
+```
+./compute_results.py 2018/mowog3.csv gen/mowog3.json
+./publish_results.py -n 'MOWOG 3' -d 'Saturday, 9 June, 2018' -l 'Dakota County Technical College' gen/mowog3.json 2018/mowog3-fin.html
+```
+

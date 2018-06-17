@@ -6,7 +6,11 @@
 # points, and creates an HTML file with the results neatly formatted.
 #
 # Invoke this as:
+# pylint: disable=line-too-long
+#
 # ./publish_doty.py -t 'MAC DOTY 2018' -n 9 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json
+#
+# pylint: enable=line-too-long
 #
 
 import argparse

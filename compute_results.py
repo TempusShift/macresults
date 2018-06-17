@@ -84,7 +84,8 @@ def main(args):
     # times, otherwise these are raw. For the Pro class, we compute
     # both a morning and afternoon time.
     event_results = event_results.apply(add_best_times, axis=1, args=[config])
-    event_results['doty_points'] = event_results['best_pax_time'].min() / event_results['best_pax_time'] * 100.0
+    event_results['doty_points'] = \
+      event_results['best_pax_time'].min() / event_results['best_pax_time'] * 100.0
 
     # For debugging, print out what we found.
     # summarize_classes(event_results)

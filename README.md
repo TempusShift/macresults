@@ -84,20 +84,22 @@ library for mustache is pystache
 # Notes on Use
 After generating results, use ftp to upload.
 ```
+cd 2018
 ftp --passive gator3066.hostgator.com
 > cd public_html/results/2018
+> put mowog1-fin.html
 ```
 
 ## 2018 MOWOG 1
 ```
 ./compute_results.py 2018/mowog1.csv gen/mowog1.json
-./publish_results.py -n 'MOWOG 1' -d 'Saturday, 28 April, 2018' -l 'Canterbury Park' gen/mowog1.json gen/mowog1.html
+./publish_results.py -n 'MOWOG 1' -d 'Saturday, 28 April, 2018' -l 'Canterbury Park' gen/mowog1.json 2018/mowog1-fin.html
 ```
 
 ## 2018 MOWOG 2
 ```
 ./compute_results.py 2018/mowog2.csv gen/mowog2.json
-./publish_results.py -n 'MOWOG 2' -d 'Sunday, 29 April, 2018' -l 'Canterbury Park' gen/mowog2.json gen/mowog2.html
+./publish_results.py -n 'MOWOG 2' -d 'Sunday, 29 April, 2018' -l 'Canterbury Park' gen/mowog2.json 2018/mowog2-fin.html
 ```
 
 ## 2018 MOWOG 3

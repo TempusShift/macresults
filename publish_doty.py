@@ -64,7 +64,7 @@ def main(args):
         'events': ['M%d' % event_num for event_num in range(1, config.num_events + 1)]
     }
     # print(options)
-    options['results'] = prepare_results_for_template(results)
+    options['results'] = prepare_results_for_template(results, config)
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
 
     # Apply the template and write the result.
@@ -136,7 +136,7 @@ def add_btp_scores(row, event_names, config):
     return row
 
 
-def prepare_results_for_template(results_df):
+def prepare_results_for_template(results_df, config):
     sorted_results = results_df.sort_values(by=['total_points'],
                                             ascending=False)
     results = []
@@ -165,6 +165,19 @@ def prepare_results_for_template(results_df):
             result['diffFromPrev'] = format_score(final_score - prev_score)
         prev_score = final_score
 
+        event_scores = []
+        for event_num in range(1, config.num_events + 1):
+            event_name = 'M%d' % event_num
+            event_score = None
+            try:
+                event_score = row[event_name]
+            except KeyError:
+                # Didn't have any result for this array, use the
+                # default value.
+                pass
+            event_scores.append(format_score(event_score))
+        result['event_scores'] = event_scores
+
         result['avg_points'] = format_score(row['avg_points'])
         result['btp'] = format_score(row['btp'])
 
@@ -184,7 +197,10 @@ def get_image_data_uri(filename):
 
 
 def format_score(score):
-    formatted_score = '%0.3f' % score
+    if score is None or math.isnan(score):
+        formatted_score = '-'
+    else:
+        formatted_score = '%0.3f' % score
     return formatted_score
 
 

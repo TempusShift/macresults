@@ -268,9 +268,14 @@ def add_best_times(row, config):
         if row['class_index']:
             best_times = [time * pax_factor for time in best_times]
 
-        final_time = 0.0
-        for time in best_times:
-            final_time = final_time + time
+        # If this is the pro class and we only have one time, leave
+        # the final time as INVALID.
+        if row['class_index'] == 'P' and len(best_times) < 2:
+            pass
+        else:
+            final_time = 0.0
+            for time in best_times:
+                final_time = final_time + time
 
     if final_time > INVALID_TIME:
         final_time = INVALID_TIME

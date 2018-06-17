@@ -140,6 +140,9 @@ def prepare_all_class_results(results, config):
     ]
     for class_index, label in index_classes:
         selected_results = results.loc[results['class_index'] == class_index]
+        # If we didn't have any drivers in this class, skip it.
+        if selected_results.empty:
+            continue
         class_results = \
           prepare_class_results(selected_results, \
                                 class_index, label, 'PAX', config)
@@ -176,8 +179,7 @@ def get_pax_factor(results, class_name):
 def prepare_class_results(results, class_name, label, time_type, config):
     class_results = {}
 
-    # Prepare class-specific stuff. Currently these are hard-coded to
-    # Pro class. When we have multiple classes this needs to change.
+    # Prepare class-specific stuff.
     class_results['label'] = class_name
     if label:
         class_results['label'] = class_results['label'] + ' - ' + label

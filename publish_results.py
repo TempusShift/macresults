@@ -328,7 +328,7 @@ def prepare_all_best_times(results_df, time_col_name):
             result['diffFromPrev'] = format_time(final_time - prev_time)
 
         if time_col_name == 'best_pax_time':
-            doty_points = first_time / final_time * 100.0
+            doty_points = row['doty_points']
             result['dotyPoints'] = format_time(doty_points)
 
         if final_time >= INVALID_TIME:

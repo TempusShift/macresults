@@ -46,8 +46,10 @@ def main(args):
 
     # Prepare the data do go in the template.
     options = {
-        'title': config.title
+        'title': config.title,
+        'events': ['M%d' % event_num for event_num in range(1, config.num_events + 1)]
     }
+    # print(options)
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
 
     # Apply the template and write the result.

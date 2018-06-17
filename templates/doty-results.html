@@ -43,7 +43,9 @@ if we come up with stuff to display.
   <th class="diff">From First</th>
   <th class="points">Average Points</th>
 
-  <th class="points">GAH! Need individual event columns...</th>
+  {{#events}}
+  <th class="points">{{.}}</th>
+  {{/events}}
   <th class="points">BTP<a href="#btp-def">*</a></th>
 </tr>
 

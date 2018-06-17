@@ -8,9 +8,9 @@
 # Invoke this as:
 # pylint: disable=line-too-long
 #
-# ./publish_results.py gen/mowog1-pro.json gen/mowog1-pro.html
+# ./publish_results.py gen/mowog1.json gen/mowog1-pro.html
 #
-# ./publish_results.py gen/mowog1-pro.json gen/mowog1-pro.html -n 'MOWOG 1 Pro Class' -d 'Saturday, 28 April, 2018' -l 'Canterbury Park'
+# ./publish_results.py gen/mowog1.json gen/mowog1-pro.html -n 'MOWOG 1 Pro Class' -d 'Saturday, 28 April, 2018' -l 'Canterbury Park'
 #
 # pylint: enable=line-too-long
 #

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>{{{title}}}</title>
+
+<style type="text/css">{{> style}}</style>
+</head
+<body>
+
+<!-- Lay out the header describing the event. This has the event name
+     and details on the left and the logo on the right. -->
+<div style="display: flex;">
+
+<!-- Event name and details. -->
+<div style="flex-grow: 1; display: flex; flex-direction: column;">
+
+<div class="event-name" style="flex-grow: 1;">
+{{{title}}}
+</div>
+
+<!--
+The event results have some meta-data here. We follow that model here
+if we come up with stuff to display.
+-->
+</div>
+
+<!-- Logo -->
+<div class="logo" style="flex-grow: 1;">
+</div>
+
+</div>
+
+<table class="results">
+<tbody>
+<tr>
+  <th class="rank">Rank</th>
+  <th class="driver">Driver</th>
+  <th class="num-events">Num Events</th>
+  <th class="points">Total Points</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+  <th class="points">Average Points</th>
+
+  <th class="points">GAH! Need individual event columns...</th>
+  <th class="points">BTP<a href="#btp-def">*</a></th>
+</tr>
+
+{{#results}}
+  {{> classResult}}  
+{{/results}}
+</tbody>
+</table>
+
+<div id="btp-def">
+* BTP = Best Theoretical Points
+</div>
+
+</body>
+</html>

@@ -10,7 +10,10 @@
 #
 
 import argparse
+import base64
 import sys
+
+import pystache
 
 
 def main(args):
@@ -33,6 +36,43 @@ def main(args):
                         type=int,
                         help='The number of events in the season.')
     config = parser.parse_args(args)
+
+    # FIXME Read the event results files.
+
+    # Set up the templating.
+    stache = pystache.Renderer(file_extension=False,
+                               partials={})
+    stache.partials['style'] = stache.load_template('templates/style.css')
+
+    # Prepare the data do go in the template.
+    options = {
+        'title': config.title
+    }
+    options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
+
+    # Apply the template and write the result.
+    doty_results_template = \
+      stache.load_template('templates/doty-results.html')
+    html = stache.render(doty_results_template, options)
+    if config.output_filename:
+        print('Writing DOTY results to: %s' % config.output_filename)
+        with open(config.output_filename, 'wt') as output_file:
+            output_file.write(html)
+    else:
+        print(html)
+
+
+# ------------------------------------------------------------
+# Helper functions
+
+# FIXME This is duplicated with the publish_results.py script, we
+# should put them in a common place.
+def get_image_data_uri(filename):
+    with open(filename, 'rb') as in_file:
+        raw_data = in_file.read()
+        base64_data = base64.b64encode(raw_data)
+        data_uri = 'data:image/png;base64,' + base64_data.decode('utf-8')
+        return data_uri
 
 
 # ------------------------------------------------------------

@@ -8,14 +8,17 @@
 # Invoke this as:
 # pylint: disable=line-too-long
 #
-# ./publish_doty.py -t 'MAC DOTY 2018' -n 9 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json
+# ./publish_doty.py -t 'MAC DOTY 2018' -n 9 -b 5 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json
 #
 # pylint: enable=line-too-long
 #
 
 import argparse
 import base64
+import math
 import sys
+
+import pandas as pd
 
 import pystache
 
@@ -39,9 +42,16 @@ def main(args):
                         default=9,
                         type=int,
                         help='The number of events in the season.')
+    parser.add_argument('-b',
+                        dest='num_btp_events',
+                        default=5,
+                        type=int,
+                        help='The number of events contributing to the ' +
+                        'final DOTY score.')
     config = parser.parse_args(args)
 
-    # FIXME Read the event results files.
+    # Read the event results files.
+    results = prepare_results(config)
 
     # Set up the templating.
     stache = pystache.Renderer(file_extension=False,
@@ -55,6 +65,7 @@ def main(args):
     }
     # print(options)
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
+    # options['results'] = results
 
     # Apply the template and write the result.
     doty_results_template = \
@@ -70,6 +81,60 @@ def main(args):
 
 # ------------------------------------------------------------
 # Helper functions
+
+def prepare_results(config):
+    results = pd.DataFrame(columns=['driver'])
+    event_num = 1
+    event_names = []
+    for results_filename in config.results_filenames:
+        event_name = 'M%d' % event_num
+        event_names.append(event_name)
+        print('Reading results for %s:' % event_name)
+        print('  %s' % results_filename)
+
+        event_results = pd.read_json(results_filename,
+                                     orient='records', lines=True)
+        event_results['driver'] = \
+          event_results['FirstName'] + event_results['LastName']
+        event_results[event_name] = event_results['doty_points']
+
+        results = results.merge(event_results.loc[:, ['driver', event_name]],
+                                on='driver',
+                                how='outer')
+        event_num = event_num + 1
+
+    results['total_points'] = results[event_names].sum(axis=1)
+    results['avg_points'] = results[event_names].mean(axis=1)
+    results['num_events'] = results[event_names].count(axis=1)
+
+    results = results.apply(add_btp_scores, axis=1, args=[event_names, config])
+
+    print(results)
+    return results
+
+
+def add_btp_scores(row, event_names, config):
+    actual_event_count = len(event_names)
+
+    # Assume 100.0 points for each remaining event.
+    num_remaining_events = config.num_events - actual_event_count
+    if num_remaining_events > config.num_btp_events:
+        num_remaining_events = config.num_btp_events
+    best_remaining_score = 100.0 * num_remaining_events
+
+    # Get the keeper scores.
+    scores = [0.0 if math.isnan(score) else score for score in row[event_names]]
+    scores = sorted(scores, reverse=True)
+
+    num_scores_to_keep = config.num_btp_events - num_remaining_events
+    kept_scores = scores[:num_scores_to_keep]
+
+    kept_score = sum(kept_scores)
+
+    # Record the result
+    row['btp'] = kept_score + best_remaining_score
+    return row
+
 
 # FIXME This is duplicated with the publish_results.py script, we
 # should put them in a common place.

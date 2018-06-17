@@ -38,19 +38,31 @@ if we come up with stuff to display.
   <th class="rank">Rank</th>
   <th class="driver">Driver</th>
   <th class="num-events">Num Events</th>
-  <th class="points">Total Points</th>
+  <th class="score">Total Points</th>
   <th class="diff">From Prev</th>
   <th class="diff">From First</th>
-  <th class="points">Average Points</th>
+  <th class="score">Average Points</th>
 
   {{#events}}
-  <th class="points">{{.}}</th>
+  <th class="score">{{.}}</th>
   {{/events}}
-  <th class="points">BTP<a href="#btp-def">*</a></th>
+  <th class="score">BTP<a href="#btp-def">*</a></th>
 </tr>
 
 {{#results}}
-  {{> classResult}}  
+<tr>
+  <td class="rank">{{rank}}</td>
+  <td class="driver">{{driver}}</td>
+  <td class="num-events">{{num_events}}</td>
+  <td class="score">{{total_points}}</td>
+  <td class="diff">From Prev</td>
+  <td class="diff">From First</td>
+  <td class="score">{{avg_points}}</td>
+  {{#events}}
+  <td class="score">{{.}}</td>
+  {{/events}}
+  <td class="score">{{btp}}</td>
+</tr>
 {{/results}}
 </tbody>
 </table>

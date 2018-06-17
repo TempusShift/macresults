@@ -51,7 +51,7 @@ def main(args):
     config = parser.parse_args(args)
 
     # Read the event results files.
-    results = prepare_results(config)
+    results = load_results(config)
 
     # Set up the templating.
     stache = pystache.Renderer(file_extension=False,
@@ -64,8 +64,8 @@ def main(args):
         'events': ['M%d' % event_num for event_num in range(1, config.num_events + 1)]
     }
     # print(options)
+    options['results'] = prepare_results_for_template(results)
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
-    # options['results'] = results
 
     # Apply the template and write the result.
     doty_results_template = \
@@ -82,7 +82,7 @@ def main(args):
 # ------------------------------------------------------------
 # Helper functions
 
-def prepare_results(config):
+def load_results(config):
     results = pd.DataFrame(columns=['driver'])
     event_num = 1
     event_names = []
@@ -136,6 +136,31 @@ def add_btp_scores(row, event_names, config):
     return row
 
 
+def prepare_results_for_template(results_df):
+    sorted_results = results_df.sort_values(by=['total_points'],
+                                            ascending=False)
+    results = []
+    rank = 0
+
+    first_time = None
+    prev_time = None
+    for _, row in sorted_results.iterrows():
+        result = {}
+        rank = rank + 1
+        result['rank'] = rank
+
+        result['driver'] = row['driver']
+
+        result['num_events'] = row['num_events']
+        result['total_points'] = format_score(row['total_points'])
+        result['avg_points'] = format_score(row['avg_points'])
+        result['btp'] = format_score(row['btp'])
+
+        results.append(result)
+
+    return results
+
+
 # FIXME This is duplicated with the publish_results.py script, we
 # should put them in a common place.
 def get_image_data_uri(filename):
@@ -144,6 +169,11 @@ def get_image_data_uri(filename):
         base64_data = base64.b64encode(raw_data)
         data_uri = 'data:image/png;base64,' + base64_data.decode('utf-8')
         return data_uri
+
+
+def format_score(score):
+    formatted_score = '%0.3f' % score
+    return formatted_score
 
 
 # ------------------------------------------------------------

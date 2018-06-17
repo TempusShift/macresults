@@ -74,10 +74,10 @@ tbody tr:nth-child(even){
     font-weight: bold;
 }
 
-.trophy, .number, .driver, .time {
+.trophy, .number, .driver, .time, .score {
     border-right-style: none !important;
 }
 
-.rank, .driver, .vehicle, .time {
+.rank, .driver, .vehicle, .time, .score {
     border-left-style: none !important;
 }

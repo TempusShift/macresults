@@ -142,8 +142,8 @@ def prepare_results_for_template(results_df):
     results = []
     rank = 0
 
-    first_time = None
-    prev_time = None
+    first_score = None
+    prev_score = None
     for _, row in sorted_results.iterrows():
         result = {}
         rank = rank + 1
@@ -152,7 +152,19 @@ def prepare_results_for_template(results_df):
         result['driver'] = row['driver']
 
         result['num_events'] = row['num_events']
-        result['total_points'] = format_score(row['total_points'])
+
+        final_score = row['total_points']
+        result['total_points'] = format_score(final_score)
+
+        if not first_score:
+            result['diffFromFirst'] = '-'
+            result['diffFromPrev'] = '-'
+            first_score = final_score
+        else:
+            result['diffFromFirst'] = format_score(final_score - first_score)
+            result['diffFromPrev'] = format_score(final_score - prev_score)
+        prev_score = final_score
+
         result['avg_points'] = format_score(row['avg_points'])
         result['btp'] = format_score(row['btp'])
 

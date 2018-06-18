@@ -88,23 +88,30 @@ cd 2018
 ftp --passive gator3066.hostgator.com
 > cd public_html/results/2018
 > put mowog1-fin.html
+> put doty.html
 ```
 
-## 2018 MOWOG 1
+## 2018 Results
+
+### 2018 MOWOG 1
 ```
 ./compute_results.py 2018/mowog1.csv gen/mowog1.json
 ./publish_results.py -n 'MOWOG 1' -d 'Saturday, 28 April, 2018' -l 'Canterbury Park' gen/mowog1.json 2018/mowog1-fin.html
 ```
 
-## 2018 MOWOG 2
+### 2018 MOWOG 2
 ```
 ./compute_results.py 2018/mowog2.csv gen/mowog2.json
 ./publish_results.py -n 'MOWOG 2' -d 'Sunday, 29 April, 2018' -l 'Canterbury Park' gen/mowog2.json 2018/mowog2-fin.html
 ```
 
-## 2018 MOWOG 3
+### 2018 MOWOG 3
 ```
 ./compute_results.py 2018/mowog3.csv gen/mowog3.json
 ./publish_results.py -n 'MOWOG 3' -d 'Saturday, 9 June, 2018' -l 'Dakota County Technical College' gen/mowog3.json 2018/mowog3-fin.html
 ```
 
+### DOTY
+```
+./publish_doty.py -t 'MAC 2018' -n 9 -b 5 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json
+```

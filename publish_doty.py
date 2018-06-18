@@ -95,7 +95,7 @@ def load_results(config):
         event_results = pd.read_json(results_filename,
                                      orient='records', lines=True)
         event_results['driver'] = \
-          event_results['FirstName'] + event_results['LastName']
+          event_results['FirstName'] + ' ' + event_results['LastName']
         event_results[event_name] = event_results['doty_points']
 
         results = results.merge(event_results.loc[:, ['driver', event_name]],
@@ -109,7 +109,7 @@ def load_results(config):
 
     results = results.apply(add_btp_scores, axis=1, args=[event_names, config])
 
-    print(results)
+    # print(results)
     return results
 
 

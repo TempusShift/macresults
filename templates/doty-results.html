@@ -19,6 +19,9 @@
 <div class="event-name" style="flex-grow: 1;">
 {{{title}}}
 </div>
+<div class="event-name" style="flex-grow: 1;">
+Driver of the Year Standings
+</div>
 
 <!--
 The event results have some meta-data here. We follow that model here
@@ -35,7 +38,7 @@ if we come up with stuff to display.
 <table class="results">
 <tbody>
 <tr>
-  <th class="rank">Rank</th>
+  <th class="doty-rank">Rank</th>
   <th class="driver">Driver</th>
   <th class="num-events">Num Events</th>
   <th class="score">Total Points</th>
@@ -46,12 +49,12 @@ if we come up with stuff to display.
   {{#events}}
   <th class="score">{{.}}</th>
   {{/events}}
-  <th class="score">BTP<a href="#btp-def">*</a></th>
+  <th class="score">BTP<a href="#btp-def" style="text-decoration: none;">*</a></th>
 </tr>
 
 {{#results}}
 <tr>
-  <td class="rank">{{rank}}</td>
+  <td class="doty-rank">{{rank}}</td>
   <td class="driver">{{driver}}</td>
   <td class="num-events">{{num_events}}</td>
   <td class="score">{{total_points}}</td>
@@ -67,9 +70,9 @@ if we come up with stuff to display.
 </tbody>
 </table>
 
-<div id="btp-def">
+<p id="btp-def">
 * BTP = Best Theoretical Points
-</div>
+</p>
 
 </body>
 </html>

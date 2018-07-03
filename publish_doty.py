@@ -2,7 +2,7 @@
 #
 # pylint: disable=missing-docstring
 #
-# This scrip reads a series of event results files, computes the DOTY
+# This script reads a series of event results files, computes the DOTY
 # points, and creates an HTML file with the results neatly formatted.
 #
 # Invoke this as:

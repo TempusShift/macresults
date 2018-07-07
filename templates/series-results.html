@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>{{{title}}}</title>
+
+<style type="text/css">{{> style}}</style>
+</head
+<body>
+
+<!-- Lay out the header describing the event. This has the event name
+     and details on the left and the logo on the right. -->
+<div style="display: flex;">
+
+<!-- Event name and details. -->
+<div style="flex-grow: 1; display: flex; flex-direction: column;">
+
+<div class="event-name" style="flex-grow: 1;">
+{{{title}}}
+</div>
+<div class="event-name" style="flex-grow: 1;">
+Series Standings
+</div>
+
+<!--
+The event results have some meta-data here. We follow that model here
+if we come up with stuff to display.
+-->
+</div>
+
+<!-- Logo -->
+<div class="logo" style="flex-grow: 1;">
+</div>
+
+</div>
+
+<table class="results">
+<tbody>
+<tr>
+  <th class="series-rank">Rank</th>
+  <th class="driver">Driver</th>
+  <th class="num-events">Num Events</th>
+  <th class="score">Total Points</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+  <th class="score">Average Points</th>
+
+  {{#events}}
+  <th class="score">{{.}}</th>
+  {{/events}}
+  <th class="score">BTP<a href="#btp-def" style="text-decoration: none;">*</a></th>
+</tr>
+
+{{#results}}
+<tr>
+  <td class="series-rank">{{rank}}</td>
+  <td class="driver">{{driver}}</td>
+  <td class="num-events">{{num_events}}</td>
+  <td class="score">{{total_points}}</td>
+  <td class="diff">{{diffFromPrev}}</td>
+  <td class="diff">{{diffFromFirst}}</td>
+  <td class="score">{{avg_points}}</td>
+  {{#event_scores}}
+  <td class="score">{{.}}</td>
+  {{/event_scores}}
+  <td class="score">{{btp}}</td>
+</tr>
+{{/results}}
+</tbody>
+</table>
+
+<p id="btp-def">
+* BTP = Best Theoretical Points
+</p>
+
+</body>
+</html>

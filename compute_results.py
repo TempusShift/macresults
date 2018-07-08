@@ -34,6 +34,12 @@ RUN_COL_RE = re.compile(r'^run\s+(\d+)$', re.IGNORECASE)
 
 def main(args):
     parser = argparse.ArgumentParser()
+    parser.add_argument('-m',
+                        dest='num_morning_times',
+                        default=3,
+                        type=int,
+                        help='The number of morning runs. Used for ' +
+                        'computing pro split timing.')
     parser.add_argument('results_filename',
                         help='The input file. Will extract results from ' +
                         'this file.')
@@ -42,9 +48,6 @@ def main(args):
                         help='The output file. Will write results to ' +
                         'this file.')
     config = parser.parse_args(args)
-
-    # When necessary, we should get this number from an argument
-    config.num_morning_times = 3
 
     # Load the PAX factors for later use.
     load_pax_factors(config)

@@ -115,3 +115,9 @@ ftp --passive gator3066.hostgator.com
 ```
 ./publish_doty.py -t 'MAC 2018' -n 9 -b 5 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json
 ```
+
+### Other Clubs
+```
+./compute_results.py -m 4 2018/cvscc.csv gen/cvscc.json
+./publish_results.py -n 'CVSCC Grand Prix at the Bridge' -d 'Sunday, 24 June, 2018' -l 'Chippewa Valley Technical College' gen/cvscc.json 2018/cvscc-fin.html
+```

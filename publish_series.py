@@ -147,8 +147,8 @@ def load_results(config):
                             axis=1,
                             args=[event_names, config])
 
-    # FIXME Compute the BTP points.
-    # results = results.apply(add_btp_scores, axis=1, args=[event_names, config])
+    # Compute the BTP points.
+    results = results.apply(add_btp_scores, axis=1, args=[event_names, config])
 
     # Done, time to return the fruits of our labors.
     print(results)
@@ -194,12 +194,9 @@ def add_series_points(row, event_class_groups, event_name, config):
 
 def add_season_points(row, event_names, config):
     # FIXME This will fail once we need to downselect to the N-best
-    # points. But, it should get us moving for now.
+    # points. When this is ready, look down to the add_btp_scores
+    # function for an example of how to do it.
     #
-    # Also, note that we could have done this with vector
-    # operations. But once we need to downselect to the N-best, we'll
-    # need to do it on a row-by-row basis, so we are just doing that
-    # straight away.
     row['total_points'] = row[event_names].sum()
     row['avg_points'] = row[event_names].mean()
     row['num_events'] = row[event_names].count()

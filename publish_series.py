@@ -146,6 +146,9 @@ def load_results(config):
     # Compute the BTP points.
     results = results.apply(add_btp_scores, axis=1, args=[event_names, config])
 
+    # Record the event names on the config for later use.
+    config.event_names = event_names
+
     # Done, time to return the fruits of our labors.
     print(results)
     return results
@@ -319,18 +322,17 @@ def get_results_for_template(results_df, config):
             result['diffFromPrev'] = format_score(final_score - prev_score)
         prev_score = final_score
 
-        # event_scores = []
-        # for event_num in range(1, config.num_events + 1):
-        #     event_name = 'M%d' % event_num
-        #     event_score = None
-        #     try:
-        #         event_score = row[event_name]
-        #     except KeyError:
-        #         # Didn't have any result for this array, use the
-        #         # default value.
-        #         pass
-        #     event_scores.append(format_score(event_score))
-        # result['event_scores'] = event_scores
+        event_scores = []
+        for event_name in config.event_names:
+            event_score = None
+            try:
+                event_score = row[event_name]
+            except KeyError:
+                # Didn't have any result for this array, use the
+                # default value.
+                pass
+            event_scores.append(format_score(event_score))
+        result['event_scores'] = event_scores
 
         result['avg_points'] = format_score(row['avg_points'])
         result['btp'] = format_score(row['btp'])

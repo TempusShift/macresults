@@ -193,13 +193,20 @@ def add_series_points(row, event_class_groups, event_name, config):
 
 
 def add_season_points(row, event_names, config):
-    # FIXME This will fail once we need to downselect to the N-best
-    # points. When this is ready, look down to the add_btp_scores
-    # function for an example of how to do it.
-    #
-    row['total_points'] = row[event_names].sum()
-    row['avg_points'] = row[event_names].mean()
-    row['num_events'] = row[event_names].count()
+    # Decide how many of these scores to keep.
+    num_actual_events = row[event_names].count()
+    num_scores_to_keep = min(num_actual_events, config.num_btp_events)
+
+    # Get the keeper scores.
+    scores = [0.0 if math.isnan(score) else score for score in row[event_names]]
+    scores = sorted(scores, reverse=True)
+    kept_scores = scores[:num_scores_to_keep]
+
+    # Record the season values.
+    row['num_events'] = num_scores_to_keep
+    row['total_points'] = sum(kept_scores)
+    row['avg_points'] = np.mean(kept_scores)
+
     return row
 
 

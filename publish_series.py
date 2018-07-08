@@ -103,11 +103,13 @@ def load_results(config):
     for results_filename in config.results_filenames:
         event_name = 'M%d' % event_num
         event_names.append(event_name)
+
         print('Reading results for %s:' % event_name)
         print('  %s' % results_filename)
-
         event_results = pd.read_json(results_filename,
                                      orient='records', lines=True)
+
+        # Prepare the driver names.
         event_results['driver'] = \
           event_results['FirstName'] + ' ' + event_results['LastName']
 
@@ -115,10 +117,11 @@ def load_results(config):
         event_results = event_results.apply(add_series_values,
                                             axis=1, args=[config])
 
-        # Drop None classes.
+        # Drop rows with no class. This will prune the Novice and X
+        # classes.
         event_results = event_results.dropna(subset=['series_class'])
 
-        # Now, compute the points for this event.
+        # Compute the points for this event.
         event_class_groups = event_results.groupby(by=['series_class'])
         # print(event_class_groups.groups)
         event_results = event_results.apply(add_series_points,
@@ -134,8 +137,6 @@ def load_results(config):
             results = results_to_merge
         else:
             results = results.merge(results_to_merge,
-                                    # left_index=True,
-                                    # right_index=True,
                                     how='outer')
 
         event_num = event_num + 1
@@ -147,8 +148,6 @@ def load_results(config):
     # results['num_events'] = results[event_names].count(axis=1)
 
     # results = results.apply(add_btp_scores, axis=1, args=[event_names, config])
-
-    # FIXME Drop any Novice or X classes.
 
     # Done, time to return the fruits of our labors.
     print(results)

@@ -54,8 +54,6 @@ def main(args):
     # Read the event results files.
     results = load_results(config)
 
-    return
-
     # Set up the templating.
     stache = pystache.Renderer(file_extension=False,
                                partials={})
@@ -69,11 +67,9 @@ def main(args):
     # print(options)
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
 
-    options['results'] = prepare_results_for_template(results, config)
-    # FIXME Now that we have the series classes and times for each
-    # driver for each event, prepare the classes to render. If a
-    # driver ran in multiple classes, they should show up in all of
-    # them with the correct points in each.
+    options['results'] = prepare_all_class_results(results, config)
+
+    return
 
     # FIXME Then, we need to actually pass these class-based values to
     # the template (and the template should render them in groups,
@@ -193,6 +189,9 @@ def add_series_points(row, event_class_groups, event_name, config):
 
 
 def add_season_points(row, event_names, config):
+    # FIXME Write down exactly which events we are keeping, so that we
+    # can highlight these in the results.
+
     # Decide how many of these scores to keep.
     num_actual_events = row[event_names].count()
     num_scores_to_keep = min(num_actual_events, config.num_btp_events)
@@ -233,7 +232,65 @@ def add_btp_scores(row, event_names, config):
     return row
 
 
-def prepare_results_for_template(results_df, config):
+def prepare_all_class_results(results_df, config):
+    # FIXME Here we want to prepare and return a list of classes. In
+    # each class, we need the (sorted) results for all the
+    # drivers. Along with the sorted results, we should include any
+    # summary statistics for the class.
+    class_groups = results_df.groupby('series_class')
+
+    sorted_class_names = sorted(class_groups.groups.keys(),
+                                key=cmp_class,
+                                reverse=True)
+    # print(sorted_class_names)
+    classes = []
+    for class_name in sorted_class_names:
+        class_results = \
+          prepare_class_results(class_name,
+                                class_groups.get_group(class_name),
+                                config)
+        classes.append(class_results)
+
+    # print(classes)
+    return classes
+
+
+def cmp_class(class_name):
+    if class_name == 'P':
+        return 999.0
+    if class_name == 'Z':
+        return 998.0
+    # FIXME We would like to look up the PAX factor for the class_name
+    # and return it here.
+    return 0.0
+
+
+def prepare_class_results(class_name, class_group, config):
+    # print(class_group)
+    class_results = {}
+
+    class_results['label'] = class_name
+    label = get_class_label(class_name)
+    if label:
+        class_results['label'] = class_results['label'] + ' - ' + label
+    num_drivers = len(class_group)
+    class_results['numDrivers'] = num_drivers
+
+    class_results['results'] = \
+      get_results_for_template(class_group, config)
+
+    return class_results
+
+
+def get_class_label(class_name):
+    if class_name == 'P':
+        return 'Pro'
+    if class_name == 'Z':
+        return 'Pax Index'
+    return 'Open'
+
+
+def get_results_for_template(results_df, config):
     sorted_results = results_df.sort_values(by=['total_points'],
                                             ascending=False)
     results = []
@@ -262,18 +319,18 @@ def prepare_results_for_template(results_df, config):
             result['diffFromPrev'] = format_score(final_score - prev_score)
         prev_score = final_score
 
-        event_scores = []
-        for event_num in range(1, config.num_events + 1):
-            event_name = 'M%d' % event_num
-            event_score = None
-            try:
-                event_score = row[event_name]
-            except KeyError:
-                # Didn't have any result for this array, use the
-                # default value.
-                pass
-            event_scores.append(format_score(event_score))
-        result['event_scores'] = event_scores
+        # event_scores = []
+        # for event_num in range(1, config.num_events + 1):
+        #     event_name = 'M%d' % event_num
+        #     event_score = None
+        #     try:
+        #         event_score = row[event_name]
+        #     except KeyError:
+        #         # Didn't have any result for this array, use the
+        #         # default value.
+        #         pass
+        #     event_scores.append(format_score(event_score))
+        # result['event_scores'] = event_scores
 
         result['avg_points'] = format_score(row['avg_points'])
         result['btp'] = format_score(row['btp'])
@@ -281,6 +338,14 @@ def prepare_results_for_template(results_df, config):
         results.append(result)
 
     return results
+
+
+def format_score(score):
+    if score is None or math.isnan(score):
+        formatted_score = '-'
+    else:
+        formatted_score = '%0.3f' % score
+    return formatted_score
 
 
 # FIXME This is duplicated with the publish_results.py script, we
@@ -291,14 +356,6 @@ def get_image_data_uri(filename):
         base64_data = base64.b64encode(raw_data)
         data_uri = 'data:image/png;base64,' + base64_data.decode('utf-8')
         return data_uri
-
-
-def format_score(score):
-    if score is None or math.isnan(score):
-        formatted_score = '-'
-    else:
-        formatted_score = '%0.3f' % score
-    return formatted_score
 
 
 # ------------------------------------------------------------

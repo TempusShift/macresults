@@ -18,6 +18,7 @@ import base64
 import math
 import sys
 
+import numpy as np
 import pandas as pd
 
 import pystache
@@ -52,6 +53,8 @@ def main(args):
 
     # Read the event results files.
     results = load_results(config)
+
+    return
 
     # Set up the templating.
     stache = pystache.Renderer(file_extension=False,
@@ -92,7 +95,9 @@ def main(args):
 # Helper functions
 
 def load_results(config):
-    results = pd.DataFrame(columns=['driver'])
+    # results = pd.DataFrame(index=['driver', 'series_class'])
+    results = None
+
     event_num = 1
     event_names = []
     for results_filename in config.results_filenames:
@@ -106,24 +111,85 @@ def load_results(config):
         event_results['driver'] = \
           event_results['FirstName'] + ' ' + event_results['LastName']
 
-        # FIXME Compute series class and series time here.
-        event_results[event_name] = event_results['doty_points']
+        # Compute series class and series time here.
+        event_results = event_results.apply(add_series_values,
+                                            axis=1, args=[config])
 
-        results = results.merge(event_results.loc[:, ['driver', event_name]],
-                                on='driver',
-                                how='outer')
+        # Drop None classes.
+        event_results = event_results.dropna(subset=['series_class'])
+
+        # Now, compute the points for this event.
+        event_class_groups = event_results.groupby(by=['series_class'])
+        # print(event_class_groups.groups)
+        event_results = event_results.apply(add_series_points,
+                                            axis=1,
+                                            args=[event_class_groups, event_name, config])
+
+        # Merge these results into the main results. We are merging on
+        # the shared columns, so be careful what goes into the
+        # sub-dataframe.
+        results_to_merge = event_results[['driver', 'series_class', event_name]]
+        # print(results_to_merge)
+        if results is None:
+            results = results_to_merge
+        else:
+            results = results.merge(results_to_merge,
+                                    # left_index=True,
+                                    # right_index=True,
+                                    how='outer')
+
         event_num = event_num + 1
 
     # FIXME These cannot be done here. They need to be done on a
     # class-by-class basis.
-    results['total_points'] = results[event_names].sum(axis=1)
-    results['avg_points'] = results[event_names].mean(axis=1)
-    results['num_events'] = results[event_names].count(axis=1)
+    # results['total_points'] = results[event_names].sum(axis=1)
+    # results['avg_points'] = results[event_names].mean(axis=1)
+    # results['num_events'] = results[event_names].count(axis=1)
 
-    results = results.apply(add_btp_scores, axis=1, args=[event_names, config])
+    # results = results.apply(add_btp_scores, axis=1, args=[event_names, config])
 
-    # print(results)
+    # FIXME Drop any Novice or X classes.
+
+    # Done, time to return the fruits of our labors.
+    print(results)
     return results
+
+
+def add_series_values(row, config):
+    excluded_classes = set(['N', 'X'])
+
+    # final_time is the combined time for Pro and the indexed time for
+    # Z. For all other classes (notably including those in combined
+    # classes), we just take the raw time.
+    if row['class_index'] == 'P':
+        series_class = 'P'
+        series_time = row['final_time']
+    elif row['class_index'] == 'Z':
+        series_class = 'Z'
+        series_time = row['final_time']
+    elif row['class_name'] in excluded_classes:
+        series_class = None
+        series_time = None
+    else:
+        series_class = row['class_name']
+        series_time = row['best_raw_time']
+
+    row['series_class'] = series_class
+    row['series_time'] = series_time
+    return row
+
+
+def add_series_points(row, event_class_groups, event_name, config):
+    series_class = row['series_class']
+    series_time = row['series_time']
+    if series_class in event_class_groups.groups:
+        series_group = event_class_groups.get_group(series_class)
+        best_class_time = series_group['series_time'].min()
+        series_points = best_class_time / series_time * 100.0
+        # print('class? %s  =>  %0.3f / %0.3f = %0.3f' %
+        #       (series_class, best_class_time, series_time, series_points))
+        row[event_name] = series_points
+    return row
 
 
 def add_btp_scores(row, event_names, config):

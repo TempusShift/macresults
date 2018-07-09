@@ -72,7 +72,7 @@ I wrote two scripts for this.
 
 1. ```compute_results.py``` -- reads the event CSV and writes a JSON
    file with the complete results.
-2. ```publish_results.py``` -- reads the event JSON and writes an HTML
+2. ```publish_event.py``` -- reads the event JSON and writes an HTML
    file with the full results.
 
 We use templates for the output. Mustache
@@ -96,19 +96,19 @@ ftp --passive gator3066.hostgator.com
 ### 2018 MOWOG 1
 ```
 ./compute_results.py 2018/mowog1.csv gen/mowog1.json
-./publish_results.py -n 'MOWOG 1' -d 'Saturday, 28 April, 2018' -l 'Canterbury Park' gen/mowog1.json 2018/mowog1-fin.html
+./publish_event.py -n 'MOWOG 1' -d 'Saturday, 28 April, 2018' -l 'Canterbury Park' gen/mowog1.json 2018/mowog1-fin.html
 ```
 
 ### 2018 MOWOG 2
 ```
 ./compute_results.py 2018/mowog2.csv gen/mowog2.json
-./publish_results.py -n 'MOWOG 2' -d 'Sunday, 29 April, 2018' -l 'Canterbury Park' gen/mowog2.json 2018/mowog2-fin.html
+./publish_event.py -n 'MOWOG 2' -d 'Sunday, 29 April, 2018' -l 'Canterbury Park' gen/mowog2.json 2018/mowog2-fin.html
 ```
 
 ### 2018 MOWOG 3
 ```
 ./compute_results.py 2018/mowog3.csv gen/mowog3.json
-./publish_results.py -n 'MOWOG 3' -d 'Saturday, 9 June, 2018' -l 'Dakota County Technical College' gen/mowog3.json 2018/mowog3-fin.html
+./publish_event.py -n 'MOWOG 3' -d 'Saturday, 9 June, 2018' -l 'Dakota County Technical College' gen/mowog3.json 2018/mowog3-fin.html
 ```
 
 ### DOTY
@@ -124,5 +124,5 @@ ftp --passive gator3066.hostgator.com
 ### Other Clubs
 ```
 ./compute_results.py -m 4 2018/cvscc.csv gen/cvscc.json
-./publish_results.py -n 'CVSCC Grand Prix at the Bridge' -d 'Sunday, 24 June, 2018' -l 'Chippewa Valley Technical College' gen/cvscc.json 2018/cvscc-fin.html
+./publish_event.py -n 'CVSCC Grand Prix at the Bridge' -d 'Sunday, 24 June, 2018' -l 'Chippewa Valley Technical College' gen/cvscc.json 2018/cvscc-fin.html
 ```

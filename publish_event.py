@@ -66,7 +66,7 @@ def main(args):
                                partials={})
     stache.partials['style'] = stache.load_template('templates/style.css')
     stache.partials['classResult'] = \
-      stache.load_template('templates/class-result.html')
+      stache.load_template('templates/event-class-result.html')
     stache.partials['rawResult'] = \
       stache.load_template('templates/raw-result.html')
     stache.partials['paxResult'] = \

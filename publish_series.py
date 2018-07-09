@@ -172,6 +172,10 @@ def add_series_values(row, _):
         series_class = row['class_name']
         series_time = row['best_raw_time']
 
+    if series_time == 9999.999:
+        series_time = None
+        series_class = None
+        
     row['series_class'] = series_class
     row['series_time'] = series_time
     return row

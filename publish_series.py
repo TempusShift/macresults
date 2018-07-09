@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 #
 # pylint: disable=missing-docstring
+# pylint: disable=fixme
 #
 # This script reads a series of event results files, computes the DOTY
 # points, and creates an HTML file with the results neatly formatted.
@@ -36,7 +37,7 @@ def main(args):
                         'to this file.')
     parser.add_argument('-t',
                         dest='title',
-                        default='MAC DOTY Results',
+                        default='MAC MOWOG',
                         help='The title to put in the results file.')
     parser.add_argument('-n',
                         dest='num_events',
@@ -48,7 +49,7 @@ def main(args):
                         default=5,
                         type=int,
                         help='The number of events contributing to the ' +
-                        'final DOTY score.')
+                        'final score.')
     config = parser.parse_args(args)
 
     # Read the event results files.
@@ -58,27 +59,24 @@ def main(args):
     stache = pystache.Renderer(file_extension=False,
                                partials={})
     stache.partials['style'] = stache.load_template('templates/style.css')
+    stache.partials['classResult'] = \
+      stache.load_template('templates/series-class-result.html')
 
     # Prepare the data do go in the template.
     options = {
         'title': config.title,
         'events': ['M%d' % event_num for event_num in range(1, config.num_events + 1)]
     }
-    # print(options)
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
 
-    options['results'] = prepare_all_class_results(results, config)
-
-    return
-
-    # FIXME Then, we need to actually pass these class-based values to
-    # the template (and the template should render them in groups,
-    # like the publish_results.py script does).
+    # This is the big one, where we organize all the data for the
+    # template.
+    options['classes'] = prepare_all_class_results(results, config)
 
     # Apply the template and write the result.
-    doty_results_template = \
+    series_results_template = \
       stache.load_template('templates/series-results.html')
-    html = stache.render(doty_results_template, options)
+    html = stache.render(series_results_template, options)
     if config.output_filename:
         print('Writing series results to: %s' % config.output_filename)
         with open(config.output_filename, 'wt') as output_file:
@@ -150,11 +148,12 @@ def load_results(config):
     config.event_names = event_names
 
     # Done, time to return the fruits of our labors.
-    print(results)
+    # print(results)
     return results
 
 
-def add_series_values(row, config):
+# Second arg is config, kept in case needed later.
+def add_series_values(row, _):
     excluded_classes = set(['N', 'X'])
 
     # final_time is the combined time for Pro and the indexed time for
@@ -178,7 +177,8 @@ def add_series_values(row, config):
     return row
 
 
-def add_series_points(row, event_class_groups, event_name, config):
+# Final arg is config, kept in case needed later.
+def add_series_points(row, event_class_groups, event_name, _):
     series_class = row['series_class']
     series_time = row['series_time']
     if series_class in event_class_groups.groups:
@@ -236,10 +236,10 @@ def add_btp_scores(row, event_names, config):
 
 
 def prepare_all_class_results(results_df, config):
-    # FIXME Here we want to prepare and return a list of classes. In
-    # each class, we need the (sorted) results for all the
-    # drivers. Along with the sorted results, we should include any
-    # summary statistics for the class.
+    # Here we prepare and return a list of classes. In each class, we
+    # need the (sorted) results for all the drivers. Along with the
+    # sorted results, we should include any summary statistics for the
+    # class.
     class_groups = results_df.groupby('series_class')
 
     sorted_class_names = sorted(class_groups.groups.keys(),
@@ -322,16 +322,20 @@ def get_results_for_template(results_df, config):
             result['diffFromPrev'] = format_score(final_score - prev_score)
         prev_score = final_score
 
-        event_scores = []
-        for event_name in config.event_names:
-            event_score = None
+        # Initialize to the right number of events.
+        event_scores = [format_score(None)] * config.num_events
+        for event_num, event_name in enumerate(config.event_names):
             try:
                 event_score = row[event_name]
+                event_scores[event_num] = format_score(event_score)
             except KeyError:
                 # Didn't have any result for this array, use the
                 # default value.
                 pass
-            event_scores.append(format_score(event_score))
+        if len(event_scores) != config.num_events:
+            raise ValueError('Somehow we got the wrong number of event ' +
+                             'scores %d, but expected %d.' %
+                             (len(event_scores), config.num_events))
         result['event_scores'] = event_scores
 
         result['avg_points'] = format_score(row['avg_points'])

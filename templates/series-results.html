@@ -36,10 +36,13 @@ if we come up with stuff to display.
 </div>
 
 <table class="results">
+{{#classes}}
 <tbody>
 <tr>
-  <th class="series-rank">Rank</th>
-  <th class="driver">Driver</th>
+  <th class="summary" colspan=2>{{label}} - {{numDrivers}} Drivers</th>
+
+  <!-- <th class="series-rank">Rank</th> -->
+  <!-- <th class="driver">Driver</th> -->
   <th class="num-events">Num Events</th>
   <th class="score">Total Points</th>
   <th class="diff">From Prev</th>
@@ -53,21 +56,11 @@ if we come up with stuff to display.
 </tr>
 
 {{#results}}
-<tr>
-  <td class="series-rank">{{rank}}</td>
-  <td class="driver">{{driver}}</td>
-  <td class="num-events">{{num_events}}</td>
-  <td class="score">{{total_points}}</td>
-  <td class="diff">{{diffFromPrev}}</td>
-  <td class="diff">{{diffFromFirst}}</td>
-  <td class="score">{{avg_points}}</td>
-  {{#event_scores}}
-  <td class="score">{{.}}</td>
-  {{/event_scores}}
-  <td class="score">{{btp}}</td>
-</tr>
+  {{> classResult}}  
 {{/results}}
 </tbody>
+
+{{/classes}}
 </table>
 
 <p id="btp-def">

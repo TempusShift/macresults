@@ -1,0 +1,14 @@
+<tr>
+  <td class="series-rank">{{rank}}</td>
+  <td class="driver">{{driver}}</td>
+  <td class="num-events">{{num_events}}</td>
+  <td class="score">{{total_points}}</td>
+  <td class="diff">{{diffFromPrev}}</td>
+  <td class="diff">{{diffFromFirst}}</td>
+  <td class="score">{{avg_points}}</td>
+
+  {{#event_scores}}
+  <td class="score">{{.}}</td>
+  {{/event_scores}}
+  <td class="score">{{btp}}</td>
+</tr>

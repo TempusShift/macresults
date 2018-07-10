@@ -118,6 +118,12 @@ def read_event_results(config):
     print('Reading event results from:')
     print('  %s' % config.results_filename)
     results = pd.read_csv(config.results_filename)
+
+    # Strip whitespace wherever possible.
+    # https://stackoverflow.com/a/40950485
+    str_df = results.select_dtypes(['object'])
+    results[str_df.columns] = str_df.apply(lambda x: x.str.strip())
+
     print(results.head())
     return results
 

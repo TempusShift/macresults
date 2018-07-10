@@ -89,6 +89,7 @@ ftp --passive gator3066.hostgator.com
 > cd public_html/results/2018
 > put mowog1-fin.html
 > put doty.html
+> put mowog-series.html
 ```
 
 ## 2018 Results

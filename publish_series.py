@@ -100,12 +100,22 @@ def load_results(config):
 
         print('Reading results for %s:' % event_name)
         print('  %s' % results_filename)
-        event_results = pd.read_json(results_filename,
-                                     orient='records', lines=True)
+        if results_filename.endswith('.json'):
+            event_results = pd.read_json(results_filename,
+                                         orient='records', lines=True)
+        elif results_filename.endswith('.xlsx'):
+            event_results = pd.read_excel(results_filename)
+        else:
+            raise ValueError('Did not recognize type of the results file: %s' %
+                             results_filename)
 
         # Prepare the driver names.
-        event_results['driver'] = \
-          event_results['FirstName'] + ' ' + event_results['LastName']
+        if 'NAME' in event_results:
+            known_names = dict((name.lower(), name) for name in results['driver'])
+            event_results['driver'] = event_results['NAME'].apply(lookup_name, args=[known_names])
+        else:
+            event_results['driver'] = \
+              event_results['FirstName'] + ' ' + event_results['LastName']
 
         # Compute series class and series time here.
         event_results = event_results.apply(add_series_values,
@@ -152,6 +162,14 @@ def load_results(config):
     return results
 
 
+def lookup_name(orig_name, known_names):
+    if isinstance(orig_name, str):
+        lower_name = orig_name.lower()
+        if lower_name in known_names:
+            return known_names[lower_name]
+    return orig_name
+
+
 # Second arg is config, kept in case needed later.
 def add_series_values(row, _):
     excluded_classes = set(['N', 'X'])
@@ -175,7 +193,7 @@ def add_series_values(row, _):
     if series_time == 9999.999:
         series_time = None
         series_class = None
-        
+
     row['series_class'] = series_class
     row['series_time'] = series_time
     return row

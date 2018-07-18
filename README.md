@@ -122,6 +122,11 @@ ftp --passive gator3066.hostgator.com
 ./publish_series.py -t 'MOWOG 2018' -n 9 -b 5 -o 2018/mowog-series.html gen/mowog1.json gen/mowog2.json gen/mowog3.json
 ```
 
+### Met Council Series
+```
+./publish_series.py -t 'MCAS 2018' -n 7 -b 4 -o 2018/mcas-series.html gen/mowog2.json gen/cvscc.json 2018/com-mcas-points-20180715.xls
+```
+
 ### Other Clubs
 ```
 ./compute_results.py -m 4 2018/cvscc.csv gen/cvscc.json

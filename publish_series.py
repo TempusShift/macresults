@@ -17,7 +17,10 @@
 import argparse
 import base64
 import math
+import os
 import sys
+
+from collections import deque
 
 import numpy as np
 import pandas as pd
@@ -54,6 +57,7 @@ def main(args):
 
     # Read the event results files.
     results = load_results(config)
+    check_for_possible_duplicates(results)
 
     # Set up the templating.
     stache = pystache.Renderer(file_extension=False,
@@ -255,6 +259,46 @@ def add_btp_scores(row, event_names, config):
     # Record the result
     row['btp'] = kept_score + best_remaining_score
     return row
+
+
+def check_for_possible_duplicates(results):
+    print('Looking for possible duplicates')
+    results['partial_name'] = results['driver'].apply(get_partial_name)
+    sorted_results = results.sort_values('partial_name')
+    for ((_, row1), (_, row2)) in window(sorted_results.iterrows()):
+        name1 = row1['partial_name']
+        name2 = row2['partial_name']
+        common = os.path.commonprefix([name1, name2])
+        # print('%s == %s?  %s' % (str(name1), str(name2), common))
+        threshold = 1.0 * min(len(name1), len(name2))
+        if len(common) >= threshold:
+            # print('Possible duplicates:')
+            # print('  %s' % str(row1))
+            # print('  %s' % str(row2))
+            if row1['series_class'] != row2['series_class']:
+                # The driver probably drove in multiple classes.
+                print('     Multiple classes:  %s (%s vs. %s)' %
+                      (row1['driver'], row1['series_class'],
+                       row2['series_class']))
+            else:
+                print('  => DUPLICATE?         %s, %s' %
+                      (row1['driver'], row2['driver']))
+
+
+def get_partial_name(name):
+    parts = deque(name.split())
+    parts.rotate()
+    return ''.join(parts).lower()
+
+
+# From: https://stackoverflow.com/a/6822761
+def window(seq, length=2):
+    iterator = iter(seq)
+    win = deque((next(iterator, None) for _ in range(length)), maxlen=length)
+    yield win
+    for element in iterator:
+        win.append(element)
+        yield win
 
 
 def prepare_all_class_results(results_df, config):

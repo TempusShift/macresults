@@ -113,6 +113,11 @@ def load_results(config):
             raise ValueError('Did not recognize type of the results file: %s' %
                              results_filename)
 
+        # Strip whitespace wherever possible.
+        # https://stackoverflow.com/a/40950485
+        str_df = event_results.select_dtypes(['object'])
+        event_results[str_df.columns] = str_df.apply(lambda x: x.str.strip())
+
         # Prepare the driver names.
         if 'NAME' in event_results:
             known_names = dict((name.lower(), name) for name in results['driver'])
@@ -120,6 +125,12 @@ def load_results(config):
         else:
             event_results['driver'] = \
               event_results['FirstName'] + ' ' + event_results['LastName']
+
+        # Drop rows without names.
+        event_results = event_results.dropna(subset=['driver'])
+
+        # Make the names consistent.
+        event_results['driver'] = event_results['driver'].apply(dealias_name)
 
         # Compute series class and series time here.
         event_results = event_results.apply(add_series_values,
@@ -172,6 +183,23 @@ def lookup_name(orig_name, known_names):
         if lower_name in known_names:
             return known_names[lower_name]
     return orig_name
+
+
+def dealias_name(name):
+    # FIXME We should get these as an argument. They should have been
+    # read in from a file, probably JSON, probably with config for the
+    # whole season.
+    aliases = {
+        'jeff rye': 'Jeffrey Rye',
+        'kim crumb': 'Kim John Crumb',
+        'kim john  crumb': 'Kim John Crumb',
+        'phil ethier': 'Philip Ethier',
+        'stu naber': 'Stuart Naber'
+    }
+    lower_name = name.lower()
+    if lower_name in aliases:
+        return aliases[lower_name]
+    return name
 
 
 # Second arg is config, kept in case needed later.

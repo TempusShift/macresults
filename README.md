@@ -124,7 +124,7 @@ ftp --passive gator3066.hostgator.com
 
 ### Met Council Series
 ```
-./publish_series.py -t 'MCAS 2018' -n 7 -b 4 -o 2018/mcas-series.html gen/mowog2.json gen/cvscc.json 2018/com-mcas-points-20180715.xls
+./publish_series.py -t 'MCAS 2018' -n 7 -b 4 -o 2018/mcas-series.html gen/mowog2.json gen/cvscc.json 2018/com-mcas-points-20180715.xlsx
 ```
 
 ### Other Clubs

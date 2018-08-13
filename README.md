@@ -90,6 +90,7 @@ ftp --passive gator3066.hostgator.com
 > put mowog1-fin.html
 > put doty.html
 > put mowog-series.html
+> put mcas-series.html
 ```
 
 ## 2018 Results
@@ -112,19 +113,25 @@ ftp --passive gator3066.hostgator.com
 ./publish_event.py -n 'MOWOG 3' -d 'Saturday, 9 June, 2018' -l 'Dakota County Technical College' gen/mowog3.json 2018/mowog3-fin.html
 ```
 
+### 2018 MOWOG 4
+```
+./compute_results.py 2018/mowog4.csv gen/mowog4.json
+./publish_event.py -n 'MOWOG 4' -d 'Sunday, 29 July, 2018' -l 'Dakota County Technical College' gen/mowog4.json 2018/mowog4-fin.html
+```
+
 ### DOTY
 ```
-./publish_doty.py -t 'MAC 2018' -n 9 -b 5 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json
+./publish_doty.py -t 'MAC 2018' -n 9 -b 5 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json
 ```
 
 ### MOWOG Series
 ```
-./publish_series.py -t 'MOWOG 2018' -n 9 -b 5 -o 2018/mowog-series.html gen/mowog1.json gen/mowog2.json gen/mowog3.json
+./publish_series.py -t 'MOWOG 2018' -n 9 -b 5 -o 2018/mowog-series.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json
 ```
 
 ### Met Council Series
 ```
-./publish_series.py -t 'MCAS 2018' -n 7 -b 4 -o 2018/mcas-series.html gen/mowog2.json gen/cvscc.json 2018/com-mcas-points-20180715.xlsx
+./publish_series.py -t 'MCAS 2018' -n 7 -b 4 -o 2018/mcas-series.html gen/mowog2.json gen/cvscc.json 2018/com-mcas-points-20180715.xlsx gen/mowog4.json
 ```
 
 ### Other Clubs

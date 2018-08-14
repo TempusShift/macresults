@@ -119,14 +119,20 @@ ftp --passive gator3066.hostgator.com
 ./publish_event.py -n 'MOWOG 4' -d 'Sunday, 29 July, 2018' -l 'Dakota County Technical College' gen/mowog4.json 2018/mowog4-fin.html
 ```
 
+### 2018 MOWOG 5
+```
+./compute_results.py 2018/mowog5.csv gen/mowog5.json
+./publish_event.py -n 'MOWOG 5' -d 'Sunday, 12 August, 2018' -l 'Dakota County Technical College' gen/mowog5.json 2018/mowog5-fin.html
+```
+
 ### DOTY
 ```
-./publish_doty.py -t 'MAC 2018' -n 9 -b 5 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json
+./publish_doty.py -t 'MAC 2018' -n 9 -b 5 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json gen/mowog5.json
 ```
 
 ### MOWOG Series
 ```
-./publish_series.py -t 'MOWOG 2018' -n 9 -b 5 -o 2018/mowog-series.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json
+./publish_series.py -t 'MOWOG 2018' -n 9 -b 5 -o 2018/mowog-series.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json gen/mowog5.json
 ```
 
 ### Met Council Series

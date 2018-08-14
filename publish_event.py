@@ -81,7 +81,8 @@ def main(args):
         'numParticipants': len(results),
         'numRuns': results['num_runs'].sum(),
         'numDnfs': results['num_dnfs'].sum(),
-        'numCones': results['num_cones'].sum()
+        'numCones': results['num_cones'].sum(),
+        'numDirtyRuns': results['num_dirty_runs'].sum()
     }
 
     # Print the information for the user to verify.

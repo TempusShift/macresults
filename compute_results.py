@@ -73,6 +73,8 @@ def main(args):
       event_results.apply(has_valid_time, axis=1)
     event_results = event_results.loc[event_results['has_valid_time']]
     print('  kept %d rows with valid times' % len(event_results))
+    print('  %d runs, %d of these were dirty' %
+          (event_results['num_runs'].sum(), event_results['num_dirty_runs'].sum()))
 
     # Split up the index and classes.
     event_results = event_results.apply(add_class_names_and_indexes, axis=1)
@@ -190,6 +192,7 @@ def add_run_stats(row, config):
     num_dnfs = 0
     num_reruns = 0
     num_cones = 0
+    num_dirty_runs = 0
     for run_col, pen_col in config.run_cols:
         scratch_time = row[run_col]
         if not scratch_time or math.isnan(scratch_time):
@@ -200,6 +203,7 @@ def add_run_stats(row, config):
         penalty = row[pen_col]
         if penalty == 'DNF':
             num_dnfs = num_dnfs + 1
+            num_dirty_runs = num_dirty_runs + 1
         elif str(penalty).startswith('RERUN'):
             num_reruns = num_reruns + 1
         else:
@@ -207,6 +211,7 @@ def add_run_stats(row, config):
                 cone_count = int(penalty)
                 if cone_count > 0:
                     num_cones = num_cones + cone_count
+                    num_dirty_runs = num_dirty_runs + 1
             except ValueError:
                 # We see this if penalty was NaN.
                 pass
@@ -215,6 +220,7 @@ def add_run_stats(row, config):
     row['num_dnfs'] = num_dnfs
     row['num_reruns'] = num_reruns
     row['num_cones'] = num_cones
+    row['num_dirty_runs'] = num_dirty_runs
     return row
 
 def add_class_names_and_indexes(row):

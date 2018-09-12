@@ -140,6 +140,10 @@ ftp --passive gator3066.hostgator.com
 ./publish_series.py -t 'MCAS 2018' -n 7 -b 4 -o 2018/mcas-series.html gen/mowog2.json gen/cvscc.json 2018/com-mcas-points-20180715.xlsx gen/mowog4.json
 ```
 
+```
+./publish_series.py -c 2018/mcas-series-conf.json
+```
+
 ### Other Clubs
 ```
 ./compute_results.py -m 4 2018/cvscc.csv gen/cvscc.json

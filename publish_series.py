@@ -16,6 +16,7 @@
 
 import argparse
 import base64
+import json
 import math
 import os
 import sys
@@ -31,9 +32,13 @@ import pystache
 def main(args):
     parser = argparse.ArgumentParser()
     parser.add_argument('results_filenames',
-                        nargs='+',
+                        nargs='*',
                         help='The results files. Will extract results from ' +
                         'these.')
+    parser.add_argument('-c',
+                        dest='config_filename',
+                        help='The name of a JSON file containing the ' +
+                        'configuration for this run.')
     parser.add_argument('-o',
                         dest='output_filename',
                         help='The output file. Will write the HTML results ' +
@@ -54,6 +59,14 @@ def main(args):
                         help='The number of events contributing to the ' +
                         'final score.')
     config = parser.parse_args(args)
+    # Make the config a dictionary.
+    config = vars(config)
+
+    # Load the JSON config. Override anything from the command line.
+    if config['config_filename']:
+        with open(config['config_filename']) as json_data:
+            json_config = json.load(json_data)
+            config.update(json_config)
 
     # Read the event results files.
     results = load_results(config)
@@ -68,8 +81,8 @@ def main(args):
 
     # Prepare the data do go in the template.
     options = {
-        'title': config.title,
-        'events': ['M%d' % event_num for event_num in range(1, config.num_events + 1)]
+        'title': config['title'],
+        'events': ['M%d' % event_num for event_num in range(1, config['num_events'] + 1)]
     }
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
 
@@ -81,9 +94,9 @@ def main(args):
     series_results_template = \
       stache.load_template('templates/series-results.html')
     html = stache.render(series_results_template, options)
-    if config.output_filename:
-        print('Writing series results to: %s' % config.output_filename)
-        with open(config.output_filename, 'wt') as output_file:
+    if config['output_filename']:
+        print('Writing series results to: %s' % config['output_filename'])
+        with open(config['output_filename'], 'wt') as output_file:
             output_file.write(html)
     else:
         print(html)
@@ -98,7 +111,7 @@ def load_results(config):
 
     event_num = 1
     event_names = []
-    for results_filename in config.results_filenames:
+    for results_filename in config['results_filenames']:
         event_name = 'M%d' % event_num
         event_names.append(event_name)
 
@@ -170,7 +183,7 @@ def load_results(config):
     results = results.apply(add_btp_scores, axis=1, args=[event_names, config])
 
     # Record the event names on the config for later use.
-    config.event_names = event_names
+    config['event_names'] = event_names
 
     # Done, time to return the fruits of our labors.
     # print(results)
@@ -253,7 +266,7 @@ def add_season_points(row, event_names, config):
 
     # Decide how many of these scores to keep.
     num_actual_events = row[event_names].count()
-    num_scores_to_keep = min(num_actual_events, config.num_btp_events)
+    num_scores_to_keep = min(num_actual_events, config['num_btp_events'])
 
     # Get the keeper scores.
     scores = [0.0 if math.isnan(score) else score for score in row[event_names]]
@@ -272,16 +285,16 @@ def add_btp_scores(row, event_names, config):
     actual_event_count = len(event_names)
 
     # Assume 100.0 points for each remaining event.
-    num_remaining_events = config.num_events - actual_event_count
-    if num_remaining_events > config.num_btp_events:
-        num_remaining_events = config.num_btp_events
+    num_remaining_events = config['num_events'] - actual_event_count
+    if num_remaining_events > config['num_btp_events']:
+        num_remaining_events = config['num_btp_events']
     best_remaining_score = 100.0 * num_remaining_events
 
     # Get the keeper scores.
     scores = [0.0 if math.isnan(score) else score for score in row[event_names]]
     scores = sorted(scores, reverse=True)
 
-    num_scores_to_keep = config.num_btp_events - num_remaining_events
+    num_scores_to_keep = config['num_btp_events'] - num_remaining_events
     kept_scores = scores[:num_scores_to_keep]
 
     kept_score = sum(kept_scores)
@@ -419,8 +432,8 @@ def get_results_for_template(results_df, config):
         prev_score = final_score
 
         # Initialize to the right number of events.
-        event_scores = [format_score(None)] * config.num_events
-        for event_num, event_name in enumerate(config.event_names):
+        event_scores = [format_score(None)] * config['num_events']
+        for event_num, event_name in enumerate(config['event_names']):
             try:
                 event_score = row[event_name]
                 event_scores[event_num] = format_score(event_score)
@@ -428,10 +441,10 @@ def get_results_for_template(results_df, config):
                 # Didn't have any result for this array, use the
                 # default value.
                 pass
-        if len(event_scores) != config.num_events:
+        if len(event_scores) != config['num_events']:
             raise ValueError('Somehow we got the wrong number of event ' +
                              'scores %d, but expected %d.' %
-                             (len(event_scores), config.num_events))
+                             (len(event_scores), config['num_events']))
         result['event_scores'] = event_scores
 
         result['avg_points'] = format_score(row['avg_points'])

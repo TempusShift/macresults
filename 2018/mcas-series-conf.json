@@ -1,0 +1,12 @@
+{
+  "output_filename": "2018/mcas-series.html",
+  "results_filenames": [
+    "gen/mowog2.json",
+    "gen/cvscc.json",
+    "2018/com-mcas-points-20180715.xlsx",
+    "gen/mowog4.json"
+  ],
+  "title": "MCAS 2018",
+  "num_events": 7,
+  "num_btp_events": 4
+}

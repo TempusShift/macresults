@@ -132,16 +132,22 @@ ftp --passive gator3066.hostgator.com
 
 ### MOWOG Series
 ```
+./publish_series.py -c 2018/mowog-series-conf.json
+```
+
+Or, deprecated all-args form:
+```
 ./publish_series.py -t 'MOWOG 2018' -n 9 -b 5 -o 2018/mowog-series.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json gen/mowog5.json
 ```
 
 ### Met Council Series
 ```
-./publish_series.py -t 'MCAS 2018' -n 7 -b 4 -o 2018/mcas-series.html gen/mowog2.json gen/cvscc.json 2018/com-mcas-points-20180715.xlsx gen/mowog4.json
+./publish_series.py -c 2018/mcas-series-conf.json
 ```
 
+Or, deprecated all-args form:
 ```
-./publish_series.py -c 2018/mcas-series-conf.json
+./publish_series.py -t 'MCAS 2018' -n 7 -b 4 -o 2018/mcas-series.html gen/mowog2.json gen/cvscc.json 2018/com-mcas-points-20180715.xlsx gen/mowog4.json
 ```
 
 ### Other Clubs

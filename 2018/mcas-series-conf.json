@@ -6,6 +6,15 @@
     "2018/com-mcas-points-20180715.xlsx",
     "gen/mowog4.json"
   ],
+  "event_labels": [
+    "M2 4/29",
+    "CVSCC 6/24",
+    "COM 7/15",
+    "M4 7/29",
+    "SCCA 8/5",
+    "COM 9/9",
+    "M8 10/14"
+  ],
   "title": "MCAS 2018",
   "num_events": 7,
   "num_btp_events": 4

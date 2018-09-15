@@ -82,8 +82,8 @@ def main(args):
     # Prepare the data do go in the template.
     options = {
         'title': config['title'],
-        'events': ['M%d' % event_num for event_num in range(1, config['num_events'] + 1)]
     }
+    options['eventLabels'] = get_event_labels(config)
     options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
 
     # This is the big one, where we organize all the data for the
@@ -461,6 +461,16 @@ def format_score(score):
     else:
         formatted_score = '%0.3f' % score
     return formatted_score
+
+
+def get_event_labels(config):
+    event_labels = []
+    if 'event_labels' in config:
+        event_labels = config['event_labels']
+    while len(event_labels) < config['num_events']:
+        event_label = 'Event %d' % (len(event_labels) + 1)
+        event_labels.append(event_label)
+    return event_labels
 
 
 # FIXME This is duplicated with the publish_results.py script, we

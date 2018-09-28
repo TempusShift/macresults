@@ -18,6 +18,7 @@ import base64
 import math
 import sys
 
+import numpy as np
 import pandas as pd
 
 import pystache
@@ -103,14 +104,39 @@ def load_results(config):
                                 how='outer')
         event_num = event_num + 1
 
-    results['total_points'] = results[event_names].sum(axis=1)
-    results['avg_points'] = results[event_names].mean(axis=1)
-    results['num_events'] = results[event_names].count(axis=1)
+    # Compute the season points (and related summary values). These
+    # are what we're really trying to get to.
+    results = results.apply(add_season_points,
+                            axis=1,
+                            args=[event_names, config])
 
+    # Compute the BTP points.
     results = results.apply(add_btp_scores, axis=1, args=[event_names, config])
 
     # print(results)
     return results
+
+
+def add_season_points(row, event_names, config):
+    # FIXME Write down exactly which events we are keeping, so that we
+    # can highlight these in the results.
+
+    # Decide how many of these scores to keep.
+    num_actual_events = row[event_names].count()
+    num_scores_to_keep = min(num_actual_events, config.num_btp_events)
+
+    # Get the keeper scores.
+    scores = [0.0 if math.isnan(score) else score for score in row[event_names]]
+    scores = sorted(scores, reverse=True)
+    kept_scores = scores[:num_scores_to_keep]
+
+    # Record the season values.
+    row['num_actual_events'] = num_actual_events
+    row['num_kept_events'] = num_scores_to_keep
+    row['total_points'] = sum(kept_scores)
+    row['avg_points'] = np.mean(kept_scores)
+
+    return row
 
 
 def add_btp_scores(row, event_names, config):
@@ -151,7 +177,8 @@ def prepare_results_for_template(results_df, config):
 
         result['driver'] = row['driver']
 
-        result['num_events'] = row['num_events']
+        result['num_actual_events'] = row['num_actual_events']
+        result['num_kept_events'] = row['num_kept_events']
 
         final_score = row['total_points']
         result['total_points'] = format_score(final_score)

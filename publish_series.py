@@ -274,7 +274,8 @@ def add_season_points(row, event_names, config):
     kept_scores = scores[:num_scores_to_keep]
 
     # Record the season values.
-    row['num_events'] = num_scores_to_keep
+    row['num_actual_events'] = num_actual_events
+    row['num_kept_events'] = num_scores_to_keep
     row['total_points'] = sum(kept_scores)
     row['avg_points'] = np.mean(kept_scores)
 
@@ -417,7 +418,8 @@ def get_results_for_template(results_df, config):
 
         result['driver'] = row['driver']
 
-        result['num_events'] = row['num_events']
+        result['num_actual_events'] = row['num_actual_events']
+        result['num_kept_events'] = row['num_kept_events']
 
         final_score = row['total_points']
         result['total_points'] = format_score(final_score)

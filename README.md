@@ -125,9 +125,15 @@ ftp --passive gator3066.hostgator.com
 ./publish_event.py -n 'MOWOG 5' -d 'Sunday, 12 August, 2018' -l 'Dakota County Technical College' gen/mowog5.json 2018/mowog5-fin.html
 ```
 
+### 2018 MOWOG 6
+```
+./compute_results.py 2018/mowog6.csv gen/mowog6.json
+./publish_event.py -n 'MOWOG 6' -d 'Saturday, 22 September, 2018' -l 'Dakota County Technical College' gen/mowog6.json 2018/mowog6-fin.html
+```
+
 ### DOTY
 ```
-./publish_doty.py -t 'MAC 2018' -n 9 -b 5 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json gen/mowog5.json
+./publish_doty.py -t 'MAC 2018' -n 9 -b 5 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json gen/mowog5.json gen/mowog6.json
 ```
 
 ### MOWOG Series

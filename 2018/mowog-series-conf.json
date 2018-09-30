@@ -5,7 +5,8 @@
     "gen/mowog2.json",
     "gen/mowog3.json",
     "gen/mowog4.json",
-    "gen/mowog5.json"
+    "gen/mowog5.json",
+    "gen/mowog6.json"
   ],
   "event_labels": [
     "M1 4/28",

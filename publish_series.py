@@ -209,7 +209,8 @@ def dealias_name(name):
         'phil ethier': 'Philip Ethier',
         'stu naber': 'Stuart Naber',
         'charlie hoffman': 'Charlie Hoffman',
-        'steve yang': 'Steve Yang'
+        'steve yang': 'Steve Yang',
+        'steven pahl': 'Steve Pahl'
     }
     lower_name = name.lower()
     if lower_name in aliases:

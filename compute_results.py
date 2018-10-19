@@ -40,6 +40,13 @@ def main(args):
                         type=int,
                         help='The number of morning runs. Used for ' +
                         'computing pro split timing.')
+    parser.add_argument('--no-pro-split',
+                        dest='compute_split_pro_times',
+                        default=True,
+                        action='store_false',
+                        help='If set, do not compute split times for ' +
+                        'the pro class. This is useful if the event was ' +
+                        'canceled after morning runs.')
     parser.add_argument('results_filename',
                         help='The input file. Will extract results from ' +
                         'this file.')
@@ -266,7 +273,7 @@ def add_pax_times(row):
 def add_best_times(row, config):
     pax_factor = row['pax_factor']
     split = None
-    if row['class_index'] == 'P':
+    if row['class_index'] == 'P' and config.compute_split_pro_times:
         split = config.num_morning_times
     all_times = row['times']
     best_time_nums, best_times = identify_best_times(all_times, split)
@@ -287,7 +294,7 @@ def add_best_times(row, config):
 
         # If this is the pro class and we only have one time, leave
         # the final time as INVALID.
-        if row['class_index'] == 'P' and len(best_times) < 2:
+        if row['class_index'] == 'P' and config.compute_split_pro_times and len(best_times) < 2:
             pass
         else:
             final_time = 0.0

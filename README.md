@@ -139,13 +139,13 @@ ftp --passive gator3066.hostgator.com
 
 ### 2018 MOWOG 8
 ```
-./compute_results.py 2018/mowog8.csv gen/mowog8.json
+./compute_results.py --no-pro-split 2018/mowog8.csv gen/mowog8.json
 ./publish_event.py -n 'MOWOG 8' -d 'Sunday, 14 October, 2018' -l 'Canterbury Park' gen/mowog8.json 2018/mowog8-fin.html
 ```
 
 ### DOTY
 ```
-./publish_doty.py -t 'MAC 2018' -n 9 -b 5 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json gen/mowog5.json gen/mowog6.json gen/mowog7.json gen/mowog8.json
+./publish_doty.py -t 'MAC DOTY 2018' -n 9 -b 5 -o 2018/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json gen/mowog5.json gen/mowog6.json gen/mowog7.json gen/mowog8.json
 ```
 
 ### MOWOG Series

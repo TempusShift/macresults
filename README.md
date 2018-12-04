@@ -86,6 +86,7 @@ After generating results, use ftp to upload.
 ```
 cd 2018
 ftp --passive gator3066.hostgator.com
+sftp -P 2222 mnautox@gator3066.hostgator.com
 > cd public_html/results/2018
 > put mowog1-fin.html
 > put doty.html

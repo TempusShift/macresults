@@ -180,3 +180,16 @@ Or, deprecated all-args form:
 ./compute_results.py -m 4 2018/cvscc.csv gen/cvscc.json
 ./publish_event.py -n 'CVSCC Grand Prix at the Bridge' -d 'Sunday, 24 June, 2018' -l 'Chippewa Valley Technical College' gen/cvscc.json 2018/cvscc-fin.html
 ```
+
+## 2019 Results
+
+### 2019 MOWOG 1
+```
+./compute_results.py 2019/mowog1.csv gen/mowog1.json
+./publish_event.py -n 'MOWOG 1' -d 'Saturday, 27 April, 2019' -l 'Canterbury Park' gen/mowog1.json 2019/mowog1-fin.html
+```
+
+### 2019 MOWOG 2
+```
+./compute_results.py 2019/mowog2.csv gen/mowog2.json
+./publish_event.py -n 'MOWOG 2' -d 'Sunday, 28 April, 2019' -l 'Canterbury Park' gen/mowog2.json 2019/mowog2-fin.html

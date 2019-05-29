@@ -1,0 +1,22 @@
+{
+  "output_filename": "2019/mowog-series.html",
+  "results_filenames": [
+    "gen/mowog1.json",
+    "gen/mowog2.json",
+    "gen/mowog3.json"
+  ],
+  "event_labels": [
+    "M1 4/27",
+    "M2 4/28",
+    "M3 5/18",
+    "M4 6/8",
+    "M5 7/27",
+    "M6 8/4",
+    "M7 9/22",
+    "M8 10/5",
+    "M9 10/6"
+  ],
+  "title": "MOWOG 2019",
+  "num_events": 9,
+  "num_btp_events": 5
+}

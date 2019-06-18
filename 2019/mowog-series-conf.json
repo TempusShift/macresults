@@ -3,7 +3,8 @@
   "results_filenames": [
     "gen/mowog1.json",
     "gen/mowog2.json",
-    "gen/mowog3.json"
+    "gen/mowog3.json",
+    "gen/mowog4.json"
   ],
   "event_labels": [
     "M1 4/27",

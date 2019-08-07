@@ -1,0 +1,20 @@
+{
+  "output_filename": "2019/mcas-series.html",
+  "results_filenames": [
+    "gen/mowog2.json",
+    "2019/cvscc-20190623.xlsx",
+    "2019/com-20190714.xlsx"
+  ],
+  "event_labels": [
+    "M2 4/28",
+    "CVSCC 6/23",
+    "COM 7/14",
+    "M6 8/4",
+    "COM 9/8",
+    "SCCA 9/29",
+    "M8 10/5"
+  ],
+  "title": "MCAS 2019",
+  "num_events": 7,
+  "num_btp_events": 4
+}

@@ -222,3 +222,8 @@ Or, deprecated all-args form:
 ```
 ./publish_series.py -c 2019/mowog-series-conf.json
 ```
+
+### Met Council Series
+```
+./publish_series.py -c 2019/mcas-series-conf.json
+```

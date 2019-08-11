@@ -192,6 +192,11 @@ def load_results(config):
 
 def lookup_name(orig_name, known_names):
     if isinstance(orig_name, str):
+        # If this is "last, first", make it "first last"
+        parts = orig_name.split(',')
+        if len(parts) == 2:
+            orig_name = parts[1].strip() + ' ' + parts[0].strip()
+
         lower_name = orig_name.lower()
         if lower_name in known_names:
             return known_names[lower_name]
@@ -212,7 +217,8 @@ def dealias_name(name):
         'steve yang': 'Steve Yang',
         'steven pahl': 'Steve Pahl',
         'tyler salminen': 'Tyler Salminen',
-        'ronnie s soliman': 'Ron Soliman'
+        'ronnie s soliman': 'Ron Soliman',
+        'william cooke': 'Will Cooke'
     }
     lower_name = name.lower()
     if lower_name in aliases:

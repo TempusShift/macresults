@@ -3,7 +3,8 @@
   "results_filenames": [
     "gen/mowog2.json",
     "2019/cvscc-20190623.xlsx",
-    "2019/com-20190714-simplified.xlsx"
+    "2019/com-20190714-simplified.xlsx",
+    "gen/mowog6.json"
   ],
   "event_labels": [
     "M2 4/28",
@@ -16,5 +17,6 @@
   ],
   "title": "MCAS 2019",
   "num_events": 7,
-  "num_btp_events": 4
+  "num_btp_events": 4,
+  "use_mac_logo": false
 }

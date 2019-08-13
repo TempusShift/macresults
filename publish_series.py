@@ -58,6 +58,11 @@ def main(args):
                         type=int,
                         help='The number of events contributing to the ' +
                         'final score.')
+    parser.add_argument('--no-logo',
+                        dest='use_mac_logo',
+                        default=True,
+                        type=bool,
+                        help='If set, omit the MAC logo.')
     config = parser.parse_args(args)
     # Make the config a dictionary.
     config = vars(config)
@@ -84,7 +89,8 @@ def main(args):
         'title': config['title'],
     }
     options['eventLabels'] = get_event_labels(config)
-    options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
+    if config['use_mac_logo']:
+        options['logoDataUri'] = get_image_data_uri('templates/mac-logo-small.png')
 
     # This is the big one, where we organize all the data for the
     # template.

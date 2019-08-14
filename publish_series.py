@@ -133,9 +133,8 @@ def load_results(config):
                              results_filename)
 
         # Strip whitespace wherever possible.
-        # https://stackoverflow.com/a/40950485
-        str_df = event_results.select_dtypes(['object'])
-        event_results[str_df.columns] = str_df.apply(lambda x: x.str.strip())
+        # https://stackoverflow.com/a/45270483
+        event_results = event_results.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 
         # Prepare the driver names.
         if 'NAME' in event_results:

@@ -81,18 +81,7 @@ handlebarsjs version of JavaScript has been useful). The Python
 library for mustache is pystache
 (https://github.com/defunkt/pystache).
 
-# Notes on Use
-After generating results, use ftp to upload.
-```
-cd 2018
-ftp --passive gator3066.hostgator.com
-sftp -P 2222 mnautox@gator3066.hostgator.com
-> cd public_html/results/2018
-> put mowog1-fin.html
-> put doty.html
-> put mowog-series.html
-> put mcas-series.html
-```
+# Results Generation Commands
 
 ## 2018 Results
 
@@ -232,4 +221,17 @@ Or, deprecated all-args form:
 ### Met Council Series
 ```
 ./publish_series.py -c 2019/mcas-series-conf.json
+```
+
+# Publishing
+After generating results, use ftp to upload.
+```
+cd 2019
+ftp --passive gator3066.hostgator.com
+sftp -P 2222 mnautox@gator3066.hostgator.com
+> cd public_html/results/2019
+> put mowog1-fin.html
+> put doty.html
+> put mowog-series.html
+> put mcas-series.html
 ```

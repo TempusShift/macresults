@@ -150,6 +150,10 @@ def load_results(config):
         # Make the names consistent.
         event_results['driver'] = event_results['driver'].apply(dealias_name)
 
+        # And fix up times.
+        event_results['best_raw_time'] = event_results['best_raw_time'].apply(clean_up_time)
+        event_results['final_time'] = event_results['final_time'].apply(clean_up_time)
+
         # Compute series class and series time here.
         event_results = event_results.apply(add_series_values,
                                             axis=1, args=[config])
@@ -229,6 +233,26 @@ def dealias_name(name):
     if lower_name in aliases:
         return aliases[lower_name]
     return name
+
+
+def clean_up_time(orig_time):
+    if isinstance(orig_time, str):
+        # First try to handle cases where the time is in min:second.frac_second.
+        parts = orig_time.split(':')
+        if len(parts) == 2:
+            secs = float(parts[0]) * 60.0 + float(parts[1])
+            return secs
+
+        # If we didn't have any minute/second split, just try to parse the
+        # string as a float. If this fails it is likely that the string is an
+        # intermediate heading or blank line or something.
+        try:
+            return float(parts[0])
+        except ValueError:
+            return None
+
+    # If we get here, the time was not a string, just return it.
+    return orig_time
 
 
 # Second arg is config, kept in case needed later.

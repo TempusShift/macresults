@@ -126,15 +126,17 @@ def add_season_points(row, event_names, config):
     num_scores_to_keep = min(num_actual_events, config.num_btp_events)
 
     # Get the keeper scores.
-    scores = [0.0 if math.isnan(score) else score for score in row[event_names]]
-    scores = sorted(scores, reverse=True)
+    scores = zip([0.0 if math.isnan(score) else score for score in row[event_names]],
+                 event_names)
+    scores = sorted(scores, reverse=True, key=lambda x: x[0])
     kept_scores = scores[:num_scores_to_keep]
 
     # Record the season values.
     row['num_actual_events'] = num_actual_events
     row['num_kept_events'] = num_scores_to_keep
-    row['total_points'] = sum(kept_scores)
-    row['avg_points'] = np.mean(kept_scores)
+    row['total_points'] = sum([score for score, _event_name in kept_scores])
+    row['avg_points'] = np.mean([score for score, _event_name in kept_scores])
+    row['kept_events'] = set([event_name for _score, event_name in kept_scores])
 
     return row
 
@@ -193,6 +195,7 @@ def prepare_results_for_template(results_df, config):
         prev_score = final_score
 
         event_scores = []
+        event_classes = []
         for event_num in range(1, config.num_events + 1):
             event_name = 'M%d' % event_num
             event_score = None
@@ -202,7 +205,10 @@ def prepare_results_for_template(results_df, config):
                 # Didn't have any result for this array, use the
                 # default value.
                 pass
-            event_scores.append(format_score(event_score))
+            event_scores.append({
+                'score': format_score(event_score),
+                'class': 'best' if event_name in row['kept_events'] else ''
+            })
         result['event_scores'] = event_scores
 
         result['avg_points'] = format_score(row['avg_points'])

@@ -241,13 +241,42 @@ Or, deprecated all-args form:
 ./publish_series.py -c 2019/mcas-series-conf.json
 ```
 
+## 2020 Results
+
+### 2020 MOWOG 1
+```
+./compute_results.py 2020/mowog1.csv gen/mowog1.json
+./publish_event.py -n 'MOWOG 1' -d 'Saturday, 30 May, 2020' -l 'Canterbury Park' gen/mowog1.json 2020/mowog1-fin.html
+```
+
+### 2020 MOWOG 2
+```
+./compute_results.py 2020/mowog2.csv gen/mowog2.json
+./publish_event.py -n 'MOWOG 2' -d 'Sunday, 31 May, 2020' -l 'Canterbury Park' gen/mowog2.json 2020/mowog2-fin.html
+```
+
+### DOTY
+```
+./publish_doty.py -t 'MAC DOTY 2020' -n 10 -b 6 -o 2020/doty.html gen/mowog1.json gen/mowog2.json
+```
+
+### MOWOG Series
+```
+./publish_series.py -c 2020/mowog-series-conf.json
+```
+
+### Met Council Series
+```
+./publish_series.py -c 2020/mcas-series-conf.json
+```
+
 # Publishing
 After generating results, use ftp to upload.
 ```
-cd 2019
+cd 2020
 ftp --passive gator3066.hostgator.com
 sftp -P 2222 mnautox@gator3066.hostgator.com
-> cd public_html/results/2019
+> cd public_html/results/2020
 > put mowog1-fin.html
 > put doty.html
 > put mowog-series.html

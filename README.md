@@ -272,13 +272,19 @@ Or, deprecated all-args form:
 
 # Publishing
 After generating results, use ftp to upload.
-```
+```sh
 cd 2020
-ftp --passive gator3066.hostgator.com
-sftp -P 2222 mnautox@gator3066.hostgator.com
+sftp -P 2222 mnautox@ftp.mnautox.com
 > cd public_html/results/2020
 > put mowog1-fin.html
 > put doty.html
 > put mowog-series.html
 > put mcas-series.html
+```
+
+I used to ftp as shown below. But in mid-June 2020 I started getting a
+fingerprint error. After logging into the HostGator customer portal I was able
+to determine that ftp.mnautox.com works.
+```sh
+sftp -P 2222 mnautox@gator3066.hostgator.com
 ```

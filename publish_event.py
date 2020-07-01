@@ -274,8 +274,8 @@ def get_times_for_template(row, time_type, config):
 
 
 def format_time(time, penalty=None):
-    if penalty == 'DNF':
-        return 'DNF'
+    if penalty in ('DNF', 'OFF'):
+        return penalty
 
     formatted_time = '%0.3f' % time
     try:

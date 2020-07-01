@@ -170,7 +170,7 @@ def add_scored_times(row, config):
                 # No penalty.
                 penalty = int(0)
 
-            if penalty == 'DNF':
+            if penalty in ('DNF', 'OFF'):
                 # This is a valid run, but a useless time.
                 raw_time = INVALID_TIME
             elif str(penalty).startswith('RERUN'):

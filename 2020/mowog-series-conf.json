@@ -2,11 +2,13 @@
   "output_filename": "2020/mowog-series.html",
   "results_filenames": [
     "gen/mowog1.json",
-    "gen/mowog2.json"
+    "gen/mowog2.json",
+    "gen/mowog3.json"
   ],
   "event_labels": [
     "M1 5/30",
-    "M2 5/31"
+    "M2 5/31",
+    "M3 6/21"
   ],
   "title": "MOWOG 2020",
   "num_events": 10,

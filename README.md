@@ -255,9 +255,15 @@ Or, deprecated all-args form:
 ./publish_event.py -n 'MOWOG 2' -d 'Sunday, 31 May, 2020' -l 'Canterbury Park' gen/mowog2.json 2020/mowog2-fin.html
 ```
 
+### 2020 MOWOG 3
+```
+./compute_results.py 2020/mowog3.csv gen/mowog3.json
+./publish_event.py -n 'MOWOG 3' -d 'Sunday, 21 June, 2020' -l 'DCTC' gen/mowog3.json 2020/mowog3-fin.html
+```
+
 ### DOTY
 ```
-./publish_doty.py -t 'MAC DOTY 2020' -n 10 -b 6 -o 2020/doty.html gen/mowog1.json gen/mowog2.json
+./publish_doty.py -t 'MAC DOTY 2020' -n 10 -b 6 -o 2020/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json
 ```
 
 ### MOWOG Series

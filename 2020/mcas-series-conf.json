@@ -1,0 +1,20 @@
+{
+  "output_filename": "2020/mcas-series.html",
+  "results_filenames": [
+    "gen/mowog2.json",
+    "2020/scca-20200614.xlsx",
+    "2020/com-20200712.xlsx"
+  ],
+  "event_labels": [
+    "M2 5/31",
+    "SCCA 6/14",
+    "COM 7/12",
+    "M5 8/2",
+    "COM 9/20",
+    "M8 10/4"
+  ],
+  "title": "MCAS 2020",
+  "num_events": 6,
+  "num_btp_events": 4,
+  "use_mac_logo": false
+}

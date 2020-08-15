@@ -3,7 +3,8 @@
   "results_filenames": [
     "gen/mowog2.json",
     "2020/scca-20200614.xlsx",
-    "2020/com-20200712.xlsx"
+    "2020/com-20200712.xlsx",
+    "gen/mowog5.json"
   ],
   "event_labels": [
     "M2 5/31",

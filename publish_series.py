@@ -138,11 +138,16 @@ def load_results(config):
 
         # Prepare the driver names.
         if 'NAME' in event_results:
-            known_names = dict((name.lower(), name) for name in results['driver'])
-            event_results['driver'] = event_results['NAME'].apply(lookup_name, args=[known_names])
+            event_results['driver'] = event_results['NAME']
         else:
             event_results['driver'] = \
               event_results['FirstName'] + ' ' + event_results['LastName']
+
+        if results is not None:
+            known_names = \
+                dict((name.lower(), name) for name in results['driver'])
+            event_results['driver'] = \
+                event_results['driver'].apply(lookup_name, args=[known_names])
 
         # Drop rows without names.
         event_results = event_results.dropna(subset=['driver'])
@@ -231,7 +236,8 @@ def dealias_name(name):
         'jason thompson': 'Jason Thompson',
         'jason a thompson': 'Jason Thompson',
         'jon thompson': 'John Thompson',
-        'blake doblinger': 'Blake Doblinger'
+        'blake doblinger': 'Blake Doblinger',
+        'jen fohrenkamm': 'Jennifer Fohrenkamm'
     }
     lower_name = name.lower()
     if lower_name in aliases:

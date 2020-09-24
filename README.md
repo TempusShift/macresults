@@ -279,9 +279,15 @@ Or, deprecated all-args form:
 ./publish_event.py -n 'MOWOG 6' -d 'Saturday, 22 August, 2020' -l 'DCTC' gen/mowog6.json 2020/mowog6-fin.html
 ```
 
+### 2020 MOWOG 7
+```
+./compute_results.py --no-pro-split 2020/mowog7.csv gen/mowog7.json
+./publish_event.py -n 'MOWOG 7' -d 'Sunday, 13 September, 2020' -l 'BIR' gen/mowog7.json 2020/mowog7-fin.html
+```
+
 ### DOTY
 ```
-./publish_doty.py -t 'MAC DOTY 2020' -n 10 -b 6 -o 2020/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json gen/mowog5.json gen/mowog6.json
+./publish_doty.py -t 'MAC DOTY 2020' -n 10 -b 6 -o 2020/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json gen/mowog5.json gen/mowog6.json gen/mowog7.json
 ```
 
 ### MOWOG Series

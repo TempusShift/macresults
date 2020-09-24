@@ -6,7 +6,8 @@
     "gen/mowog3.json",
     "gen/mowog4.json",
     "gen/mowog5.json",
-    "gen/mowog6.json"
+    "gen/mowog6.json",
+    "gen/mowog7.json"
   ],
   "event_labels": [
     "M1 5/30",
@@ -14,7 +15,8 @@
     "M3 6/21",
     "M4 7/19",
     "M5 8/2",
-    "M6 8/22"
+    "M6 8/22",
+    "M7 9/13"
   ],
   "title": "MOWOG 2020",
   "num_events": 10,

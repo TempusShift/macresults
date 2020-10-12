@@ -294,12 +294,18 @@ Or, deprecated all-args form:
 ### 2020 MOWOG 9
 ```
 ./compute_results.py 2020/mowog9.csv gen/mowog9.json
-./publish_event.py -n 'MOWOG 9' -d 'Sunday, 9 October, 2020' -l 'Canterbury' gen/mowog9.json 2020/mowog9-fin.html
+./publish_event.py -n 'MOWOG 9' -d 'Saturday, 10 October, 2020' -l 'Canterbury' gen/mowog9.json 2020/mowog9-fin.html
+```
+
+### 2020 MOWOG 10
+```
+./compute_results.py 2020/mowog10.csv gen/mowog10.json
+./publish_event.py -n 'MOWOG 10' -d 'Sunday, 11 October, 2020' -l 'Canterbury' gen/mowog10.json 2020/mowog10-fin.html
 ```
 
 ### DOTY
 ```
-./publish_doty.py -t 'MAC DOTY 2020' -n 10 -b 6 -o 2020/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json gen/mowog5.json gen/mowog6.json gen/mowog7.json gen/mowog8.json gen/mowog9.json
+./publish_doty.py -t 'MAC DOTY 2020' -n 10 -b 6 -o 2020/doty.html gen/mowog1.json gen/mowog2.json gen/mowog3.json gen/mowog4.json gen/mowog5.json gen/mowog6.json gen/mowog7.json gen/mowog8.json gen/mowog9.json gen/mowog10.json
 ```
 
 ### MOWOG Series

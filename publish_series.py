@@ -237,7 +237,8 @@ def dealias_name(name):
         'jason a thompson': 'Jason Thompson',
         'jon thompson': 'John Thompson',
         'blake doblinger': 'Blake Doblinger',
-        'jen fohrenkamm': 'Jennifer Fohrenkamm'
+        'jen fohrenkamm': 'Jennifer Fohrenkamm',
+        'matthew murphy': 'Matt Murphy'
     }
     lower_name = name.lower()
     if lower_name in aliases:

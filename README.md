@@ -293,13 +293,13 @@ Or, deprecated all-args form:
 
 ### 2020 MOWOG 9
 ```
-./compute_results.py 2020/mowog9.csv gen/mowog9.json
+./compute_results.py -m 4 2020/mowog9.csv gen/mowog9.json
 ./publish_event.py -n 'MOWOG 9' -d 'Saturday, 10 October, 2020' -l 'Canterbury' gen/mowog9.json 2020/mowog9-fin.html
 ```
 
 ### 2020 MOWOG 10
 ```
-./compute_results.py 2020/mowog10.csv gen/mowog10.json
+./compute_results.py -m 4 2020/mowog10.csv gen/mowog10.json
 ./publish_event.py -n 'MOWOG 10' -d 'Sunday, 11 October, 2020' -l 'Canterbury' gen/mowog10.json 2020/mowog10-fin.html
 ```
 

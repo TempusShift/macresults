@@ -292,6 +292,14 @@ Or, deprecated all-args form:
 ```
 
 ### 2020 MOWOG 9
+Jay McKoskey was driving Felipe's STS car in the morning. But the engine failed
+before afternoon runs. Jay finished the event in my ES car. Since he is in Pro,
+we are giving him the ES PAX for the afternoon. My scripts don't handle this, so
+I manually edited his times to yield the correct PAX times in the results.
+
+ES PAX is 0.793 and STS PAX is 0.812. I made a trivial Excel sheet in the 2020
+directory that walks through the calculations.
+
 ```
 ./compute_results.py -m 4 2020/mowog9.csv gen/mowog9.json
 ./publish_event.py -n 'MOWOG 9' -d 'Saturday, 10 October, 2020' -l 'Canterbury' gen/mowog9.json 2020/mowog9-fin.html

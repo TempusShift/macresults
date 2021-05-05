@@ -334,9 +334,21 @@ directory that walks through the calculations.
 ./publish_event.py -n 'MOWOG 1' -d 'Saturday, 24 April, 2021' -l 'Canterbury Park' 2021/mowog1.json 2021/mowog1-fin.html
 ```
 
+### 2021 MOWOG 2
+```
+./compute_results.py 2021/mowog2.csv 2021/mowog2.json
+./publish_event.py -n 'MOWOG 2' -d 'Sunday, 25 April, 2021' -l 'Canterbury Park' 2021/mowog2.json 2021/mowog2-fin.html
+```
+
+### 2021 MOWOG 3
+```
+./compute_results.py 2021/mowog3.csv 2021/mowog3.json
+./publish_event.py -n 'MOWOG 3' -d 'Sunday, 2 May, 2021' -l 'DCTC' 2021/mowog3.json 2021/mowog3-fin.html
+```
+
 ### DOTY
 ```
-./publish_doty.py -t 'MAC DOTY 2021' -n 10 -b 6 -o 2021/doty.html 2021/mowog1.json
+./publish_doty.py -t 'MAC DOTY 2021' -n 10 -b 6 -o 2021/doty.html 2021/mowog1.json 2021/mowog2.json 2021/mowog3.json
 ```
 
 ### MOWOG Series

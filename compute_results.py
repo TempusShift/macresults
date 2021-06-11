@@ -130,11 +130,21 @@ def read_event_results(config):
 
     # Strip whitespace wherever possible.
     # https://stackoverflow.com/a/40950485
-    str_df = results.select_dtypes(['object'])
-    results[str_df.columns] = str_df.apply(lambda x: x.str.strip())
+    #
+    # str_df = results.select_dtypes(['object'])
+    # results[str_df.columns] = str_df.apply(lambda x: x.str.strip())
+    #
+    # Improved answer:
+    # https://stackoverflow.com/a/45270483
+    results.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 
     print(results.head())
     return results
+
+
+def strip_str(x):
+    print(x)
+    return
 
 
 def identify_run_cols(results):

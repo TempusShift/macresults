@@ -346,7 +346,7 @@ directory that walks through the calculations.
 ./publish_event.py -n 'MOWOG 3' -d 'Sunday, 2 May, 2021' -l 'DCTC' 2021/mowog3.json 2021/mowog3-fin.html
 ```
 
-### 2021 MOWOG 3
+### 2021 MOWOG 4
 ```
 ./compute_results.py 2021/mowog4.csv 2021/mowog4.json
 ./publish_event.py -n 'MOWOG 4' -d 'Sunday, 23 May, 2021' -l 'DCTC' 2021/mowog4.json 2021/mowog4-fin.html

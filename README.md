@@ -346,9 +346,15 @@ directory that walks through the calculations.
 ./publish_event.py -n 'MOWOG 3' -d 'Sunday, 2 May, 2021' -l 'DCTC' 2021/mowog3.json 2021/mowog3-fin.html
 ```
 
+### 2021 MOWOG 3
+```
+./compute_results.py 2021/mowog4.csv 2021/mowog4.json
+./publish_event.py -n 'MOWOG 4' -d 'Sunday, 23 May, 2021' -l 'DCTC' 2021/mowog4.json 2021/mowog4-fin.html
+```
+
 ### DOTY
 ```
-./publish_doty.py -t 'MAC DOTY 2021' -n 10 -b 6 -o 2021/doty.html 2021/mowog1.json 2021/mowog2.json 2021/mowog3.json
+./publish_doty.py -t 'MAC DOTY 2021' -n 10 -b 6 -o 2021/doty.html 2021/mowog1.json 2021/mowog2.json 2021/mowog3.json 2021/mowog4.json
 ```
 
 ### MOWOG Series
@@ -357,9 +363,8 @@ directory that walks through the calculations.
 ```
 
 ### Met Council Series
-TBD
 ```
-./publish_series.py -c 2020/mcas-series-conf.json
+./publish_series.py -c 2021/mcas-series-conf.json
 ```
 
 # Publishing

@@ -1,0 +1,20 @@
+{
+  "output_filename": "2021/mcas-series.html",
+  "results_filenames": [
+    "2021/mowog2.json",
+    "2021/cvscc-20200516.xlsx"
+  ],
+  "event_labels": [
+    "M2 4/25",
+    "CVSCC 5/16",
+    "COM 6/20",
+    "SCCA 7/25",
+    "CVSCC 8/8",
+    "COM 9/12",
+    "M10 10/3"
+  ],
+  "title": "MCAS 2021",
+  "num_events": 7,
+  "num_btp_events": 4,
+  "use_mac_logo": false
+}

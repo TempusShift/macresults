@@ -136,7 +136,7 @@ def read_event_results(config):
     #
     # Improved answer:
     # https://stackoverflow.com/a/45270483
-    results.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+    results = results.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 
     print(results.head())
     return results

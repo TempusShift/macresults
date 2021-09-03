@@ -7,7 +7,8 @@
     "2021/mowog4.json",
     "2021/mowog5.json",
     "2021/mowog6.json",
-    "2021/mowog7.json"
+    "2021/mowog7.json",
+    "2021/mowog8.json"
   ],
   "event_labels": [
     "M1 4/24",
@@ -19,9 +20,10 @@
     "M7 7/18",
     "M8 8/29",
     "M9 10/2",
-    "M10 10/3"
+    "M10 10/3",
+    "M11 10/10"
   ],
   "title": "MOWOG 2021",
-  "num_events": 10,
+  "num_events": 11,
   "num_btp_events": 6
 }

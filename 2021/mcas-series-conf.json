@@ -2,8 +2,10 @@
   "output_filename": "2021/mcas-series.html",
   "results_filenames": [
     "2021/mowog2.json",
-    "2021/cvscc-20200516.xlsx",
-    "2021/com-20210620.xlsx"
+    "2021/cvscc-20210516.xlsx",
+    "2021/com-20210620.xlsx",
+    "2021/scclac-20210725.xlsx",
+    "2021/cvscc-20210808.xlsx"
   ],
   "event_labels": [
     "M2 4/25",

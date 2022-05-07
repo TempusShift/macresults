@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "mac-results"
+version = "0.1.0"
+description = "Results Preparation for MAC."
+authors = ["Jeff Rye <mnautox.com@ryeworx.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.4.2"
+pystache = "^0.6.0"
+xlrd = "^2.0.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

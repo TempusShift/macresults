@@ -419,7 +419,7 @@ directory that walks through the calculations.
 
 ### 2022 MOWOG 2
 ```
-./compute_results.py 2022/mowog2.csv 2022/mowog2.json
+./compute_results.py -m 4 2022/mowog2.csv 2022/mowog2.json
 ./publish_event.py -n 'MOWOG 2' -d 'Sunday, 1 May, 2022' -l 'Canterbury Park' 2022/mowog2.json 2022/mowog2-fin.html
 ```
 
@@ -438,7 +438,7 @@ After generating results, use ftp to upload.
 ```sh
 cd 2022
 sftp -P 2222 mnautox@ftp.mnautox.com
-> cd public_html/results/2021
+> cd public_html/results/2022
 > put mowog1.html
 > put mowog1.csv
 > put mowog1-fin.html

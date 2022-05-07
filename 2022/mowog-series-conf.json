@@ -1,0 +1,22 @@
+{
+  "output_filename": "2022/mowog-series.html",
+  "results_filenames": [
+    "2022/mowog1.json",
+    "2022/mowog2.json"
+  ],
+  "event_labels": [
+    "M1 4/30",
+    "M2 5/1",
+    "M3 6/11",
+    "M4 6/12",
+    "M5 7/17",
+    "M6 7/31",
+    "M7 8/27",
+    "M8 8/28",
+    "M9 10/1",
+    "M10 10/2"
+  ],
+  "title": "MOWOG 2022",
+  "num_events": 10,
+  "num_btp_events": 6
+}

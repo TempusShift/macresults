@@ -409,10 +409,34 @@ directory that walks through the calculations.
 ./publish_series.py -c 2021/mcas-series-conf.json
 ```
 
+## 2022 Results
+
+### 2022 MOWOG 1
+```
+./compute_results.py 2022/mowog1.csv 2022/mowog1.json
+./publish_event.py -n 'MOWOG 1' -d 'Saturday, 30 April, 2022' -l 'Canterbury Park' 2022/mowog1.json 2022/mowog1-fin.html
+```
+
+### 2022 MOWOG 2
+```
+./compute_results.py 2022/mowog2.csv 2022/mowog2.json
+./publish_event.py -n 'MOWOG 2' -d 'Sunday, 1 May, 2022' -l 'Canterbury Park' 2022/mowog2.json 2022/mowog2-fin.html
+```
+
+### DOTY
+```
+./publish_doty.py -t 'MAC DOTY 2022' -n 10 -b 6 -o 2022/doty.html 2022/mowog1.json 2022/mowog2.json
+```
+
+### MOWOG Series
+```
+./publish_series.py -c 2022/mowog-series-conf.json
+```
+
 # Publishing
 After generating results, use ftp to upload.
 ```sh
-cd 2021
+cd 2022
 sftp -P 2222 mnautox@ftp.mnautox.com
 > cd public_html/results/2021
 > put mowog1.html

@@ -1,0 +1,21 @@
+{
+  "output_filename": "2022/mcas-series.html",
+  "results_filenames": [
+    "2022/mowog2.json",
+    "2022/cvscc-20220515.xlsx",
+    "2022/com-20220522.xlsx"
+  ],
+  "event_labels": [
+    "M2 5/1",
+    "CVSCC 5/15",
+    "COM 5/22",
+    "SCCA 7/24",
+    "COM 9/11",
+    "CVSCC 9/24",
+    "M10 10/2"
+  ],
+  "title": "MCAS 2022",
+  "num_events": 7,
+  "num_btp_events": 4,
+  "use_mac_logo": false
+}

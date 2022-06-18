@@ -433,6 +433,11 @@ directory that walks through the calculations.
 ./publish_series.py -c 2022/mowog-series-conf.json
 ```
 
+### Met Council Series
+```
+./publish_series.py -c 2022/mcas-series-conf.json
+```
+
 # Publishing
 After generating results, use ftp to upload.
 ```sh

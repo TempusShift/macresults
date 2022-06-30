@@ -423,9 +423,21 @@ directory that walks through the calculations.
 ./publish_event.py -n 'MOWOG 2' -d 'Sunday, 1 May, 2022' -l 'Canterbury Park' 2022/mowog2.json 2022/mowog2-fin.html
 ```
 
+### 2022 MOWOG 3
+```
+./compute_results.py 2022/mowog3.csv 2022/mowog3.json
+./publish_event.py -n 'MOWOG 3' -d 'Saturday, 11 June, 2022' -l 'MN State Fairgrounds' 2022/mowog3.json 2022/mowog3-fin.html
+```
+
+### 2022 MOWOG 4
+```
+./compute_results.py -m 4 2022/mowog4.csv 2022/mowog4.json
+./publish_event.py -n 'MOWOG 4' -d 'Sunday, 12 June, 2022' -l 'MN State Fairgrounds' 2022/mowog4.json 2022/mowog4-fin.html
+```
+
 ### DOTY
 ```
-./publish_doty.py -t 'MAC DOTY 2022' -n 10 -b 6 -o 2022/doty.html 2022/mowog1.json 2022/mowog2.json
+./publish_doty.py -t 'MAC DOTY 2022' -n 10 -b 6 -o 2022/doty.html 2022/mowog1.json 2022/mowog2.json 2022/mowog3.json 2022/mowog4.json
 ```
 
 ### MOWOG Series

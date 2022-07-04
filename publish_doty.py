@@ -15,6 +15,7 @@
 
 import argparse
 import base64
+import json
 import math
 import sys
 
@@ -50,6 +51,10 @@ def main(args):
                         help='The number of events contributing to the ' +
                         'final DOTY score.')
     config = parser.parse_args(args)
+
+    # Load the alias information.
+    with open('aliases.json', 'rt', encoding='utf-8') as json_data:
+        config.aliases = json.load(json_data)
 
     # Read the event results files.
     results = load_results(config)
@@ -95,8 +100,19 @@ def load_results(config):
 
         event_results = pd.read_json(results_filename,
                                      orient='records', lines=True)
+
+        # FIXME This little bit of name fixing is duplicated from
+        # publish_series.py.
+        event_results['FirstName'].fillna('', inplace=True)
+        event_results['LastName'].fillna('', inplace=True)
         event_results['driver'] = \
-          event_results['FirstName'] + ' ' + event_results['LastName']
+            event_results['FirstName'] + ' ' + event_results['LastName']
+        event_results['driver'] = event_results['driver'].str.strip()
+
+        # Make the names consistent.
+        event_results['driver'] = \
+            event_results['driver'].apply(dealias_name, args=[config.aliases])
+
         event_results[event_name] = event_results['doty_points']
 
         results = results.merge(event_results.loc[:, ['driver', event_name]],
@@ -162,6 +178,14 @@ def add_btp_scores(row, event_names, config):
     # Record the result
     row['btp'] = kept_score + best_remaining_score
     return row
+
+
+# FIXME This is duplicated with the one in publish_series.py.
+def dealias_name(name, aliases):
+    lower_name = name.lower()
+    if lower_name in aliases:
+        return aliases[lower_name]
+    return name
 
 
 def prepare_results_for_template(results_df, config):

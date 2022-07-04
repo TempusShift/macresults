@@ -73,6 +73,10 @@ def main(args):
             json_config = json.load(json_data)
             config.update(json_config)
 
+    # Load the alias information.
+    with open('aliases.json', 'rt', encoding='utf-8') as json_data:
+        config['aliases'] = json.load(json_data)
+
     # Read the event results files.
     results = load_results(config)
     check_for_possible_duplicates(results)
@@ -140,8 +144,11 @@ def load_results(config):
         if 'NAME' in event_results:
             event_results['driver'] = event_results['NAME']
         else:
+            event_results['FirstName'].fillna('', inplace=True)
+            event_results['LastName'].fillna('', inplace=True)
             event_results['driver'] = \
-              event_results['FirstName'] + ' ' + event_results['LastName']
+                event_results['FirstName'] + ' ' + event_results['LastName']
+            event_results['driver'] = event_results['driver'].str.strip()
 
         if results is not None:
             known_names = \
@@ -153,7 +160,8 @@ def load_results(config):
         event_results = event_results.dropna(subset=['driver'])
 
         # Make the names consistent.
-        event_results['driver'] = event_results['driver'].apply(dealias_name)
+        event_results['driver'] = \
+            event_results['driver'].apply(dealias_name, args=[config['aliases']])
 
         # And fix up times.
         event_results['best_raw_time'] = event_results['best_raw_time'].apply(clean_up_time)
@@ -217,29 +225,7 @@ def lookup_name(orig_name, known_names):
     return orig_name
 
 
-def dealias_name(name):
-    # FIXME We should get these as an argument. They should have been
-    # read in from a file, probably JSON, probably with config for the
-    # whole season.
-    aliases = {
-        'jeff rye': 'Jeffrey Rye',
-        'kim crumb': 'Kim John Crumb',
-        'kim john  crumb': 'Kim John Crumb',
-        'phil ethier': 'Philip Ethier',
-        'stu naber': 'Stuart Naber',
-        'charlie hoffman': 'Charlie Hoffman',
-        'steve yang': 'Steve Yang',
-        'steven pahl': 'Steve Pahl',
-        'tyler salminen': 'Tyler Salminen',
-        'ronnie s soliman': 'Ron Soliman',
-        'william cooke': 'Will Cooke',
-        'jason thompson': 'Jason Thompson',
-        'jason a thompson': 'Jason Thompson',
-        'jon thompson': 'John Thompson',
-        'blake doblinger': 'Blake Doblinger',
-        'jen fohrenkamm': 'Jennifer Fohrenkamm',
-        'matthew murphy': 'Matt Murphy'
-    }
+def dealias_name(name, aliases):
     lower_name = name.lower()
     if lower_name in aliases:
         return aliases[lower_name]

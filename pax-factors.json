@@ -72,9 +72,9 @@
     "factor": 0.883 },
 
   { "name": "CAMC",
-    "factor": 0.816 },
-  { "name": "CAMT",
     "factor": 0.819 },
+  { "name": "CAMT",
+    "factor": 0.816 },
   { "name": "CAMS",
     "factor": 0.838 },
 

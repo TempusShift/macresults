@@ -442,6 +442,9 @@ directory that walks through the calculations.
 ```
 
 ### 2022 MOWOG 6
+Discovered that PAX factors for CAM-C and CAM-T were transposed. Switched them
+for this event, but not for any prior ones.
+
 ```
 ./compute_results.py 2022/mowog6.csv 2022/mowog6.json
 ./publish_event.py -n 'MOWOG 6' -d 'Sunday, 31 July, 2022' -l 'DCTC' 2022/mowog6.json 2022/mowog6-fin.html

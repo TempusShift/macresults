@@ -517,9 +517,21 @@ for this event, but not for any prior ones.
 ./publish_event.py -n 'MOWOG 8' -d 'Sunday, 28 August, 2022' -l 'DCTC' 2022/mowog8.json 2022/mowog8-fin.html
 ```
 
+### 2022 MOWOG 9
+```
+./compute_results.py 2022/mowog9.csv 2022/mowog9.json
+./publish_event.py -n 'MOWOG 9' -d 'Saturday, 1 October, 2022' -l 'DCTC' 2022/mowog9.json 2022/mowog9-fin.html
+```
+
+### 2022 MOWOG 10
+```
+./compute_results.py 2022/mowog10.csv 2022/mowog10.json
+./publish_event.py -n 'MOWOG 10' -d 'Sunday, 2 October, 2022' -l 'DCTC' 2022/mowog10.json 2022/mowog10-fin.html
+```
+
 ### DOTY
 ```
-./publish_doty.py -t 'MAC DOTY 2022' -n 10 -b 6 -o 2022/doty.html 2022/mowog1.json 2022/mowog2.json 2022/mowog3.json 2022/mowog4.json 2022/mowog5.json 2022/mowog6.json 2022/mowog7.json 2022/mowog8.json
+./publish_doty.py -t 'MAC DOTY 2022' -n 10 -b 6 -o 2022/doty.html 2022/mowog1.json 2022/mowog2.json 2022/mowog3.json 2022/mowog4.json 2022/mowog5.json 2022/mowog6.json 2022/mowog7.json 2022/mowog8.json 2022/mowog9.json 2022/mowog10.json
 ```
 
 ### MOWOG Series

@@ -5,4 +5,4 @@ poetry shell
 ./publish_event.py -n 'MOWOG 7' -d 'Saturday, 26 August, 2023' -l 'DCTC' 2023/2023-mowog7.json 2023/2023-mowog7-fin.html
 ./publish_event.py -n 'MOWOG 6' -d 'Sunday, 27 August, 2023' -l 'DCTC' 2023/2023-mowog8.json 2023/2023-mowog8-fin.html
 ./publish_doty.py -t 'MAC DOTY 2023' -n 9 -b 5 -o 2023/doty.html 2023/2023-mowog1.json 2023/2023-mowog2.json 2023/2023-mowog3.json 2023/2023-mowog4.json 2023/2023-mowog5.json 2023/2023-mowog6.json 2023/2023-mowog7.json 2023/2023-mowog8.json
-./publish_series.py -c 2023/mowog-series-conf.jsons
+./publish_series.py -c 2023/mowog-series-conf.json

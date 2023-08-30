@@ -1,0 +1,6022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>MOWOG 6 Results</title>
+
+<style type="text/css">body {
+    font-family: "Helvetica Neue";
+    /* font-family: "Verdana"; */
+}
+
+.event-name {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.event-details {
+    font-size: small;
+}
+
+.logo {
+    background: no-repeat url("data:image/png;base64,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");
+    background-size: contain;
+    background-position: right;
+
+    height: 75px;
+    width: 75px;
+}
+
+.section {
+    padding-top: 25px;
+}
+
+.section .name {
+    font-weight: bold;
+    font-size: large;
+}
+
+.section a {
+    font-size: small;
+}
+
+/* Styling tables:
+ * https://www.elated.com/articles/styling-tables-with-css/
+ */
+.results {
+    margin-top: 1em;
+    border-collapse: collapse;
+}
+
+tbody tr:nth-child(even){
+    /* background-color: #4C8BF5; */
+    /* color: #fff; */
+    background-color: #eee;
+}
+
+.results td, .results th {
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 1px;
+
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+.results tr:hover {
+    /* hsl(60, 0.95, 0.85) */
+    background: #fdfdb4;
+}
+
+.summary {
+    text-align: left;
+}
+
+.results th {
+    background-color: #ccc;
+}
+
+.best, .final-ime {
+    font-weight: bold;
+}
+
+.trophy, .number, .driver, .time {
+    border-right-style: none !important;
+}
+
+.rank, .driver, .vehicle, .time {
+    border-left-style: none !important;
+}
+</style>
+</head
+<body>
+
+<!-- Lay out the header describing the event. This has the event name
+     and details on the left and the logo on the right. -->
+<div style="display: flex;">
+
+<!-- Event name and details. -->
+<div style="flex-grow: 1; display: flex; flex-direction: column;">
+
+<div class="event-name" style="flex-grow: 1;">
+MOWOG 6 Results
+</div>
+
+<div class="event-details" style="display: flex;">
+
+<div style="flex-grow: 1; display: flex; flex-direction: column;">
+<div>Sunday, 27 August, 2023</div>
+<div>DCTC</div>
+</div>
+
+<div style="flex-grow: 1; display: flex; flex-direction: column;">
+<div style="text-align: right;">participants: 107</div>
+<div style="text-align: right;">runs: 644</div>
+</div>
+
+<div style="flex-grow: 1; display: flex; flex-direction: column;">
+<div style="text-align: right;">DNFs: 19</div>
+<div style="text-align: right;">cones: 326</div>
+<div style="text-align: right;">dirty runs: 231</div>
+</div>
+
+</div>
+</div>
+
+<!-- Logo -->
+<div class="logo" style="flex-grow: 1;">
+</div>
+
+</div>
+
+<div id="class-results" class="section">
+<span class="name">Class Results</span>
+<!-- <a href="#top">results by class</a>, -->
+<a href="#raw-times">raw times</a>,
+<a href="#pax-times">pax times</a>
+</div>
+
+<table class="results">
+<tbody>
+<tr>
+  <th class="summary" colspan=6>P - Pro - 12 Drivers - 2 trophies </th>
+
+  <th class="summary" colspan=6>PAX Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">P-STS</td>
+  <td class="number">1</td>
+  <td class="driver">Adam Barber</td>
+  <td class="vehicle">1988 Honda CRX Si</td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    57.227&nbsp;(1)
+  </td>
+  <td class="time best">
+    55.553
+  </td>
+  <td class="time ">
+    55.562
+  </td>
+  <td class="time ">
+    55.466
+  </td>
+  <td class="time best">
+    55.327
+  </td>
+  <td class="final-time">110.880</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">2</td>
+  <td class="cls">P-DS</td>
+  <td class="number">88</td>
+  <td class="driver">Neal Tovsen</td>
+  <td class="vehicle">2022 Toyota FRS</td>
+  <td class="time ">
+    58.969&nbsp;(1)
+  </td>
+  <td class="time best">
+    56.461
+  </td>
+  <td class="time ">
+    57.593&nbsp;(1)
+  </td>
+  <td class="time best">
+    55.779
+  </td>
+  <td class="time ">
+    55.931
+  </td>
+  <td class="time ">
+    58.566&nbsp;(2)
+  </td>
+  <td class="final-time">112.241</td>
+  <td class="diff">1.361</td>
+  <td class="diff">1.361</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">3</td>
+  <td class="cls">P-STU</td>
+  <td class="number">962</td>
+  <td class="driver">Brent Schneekloth</td>
+  <td class="vehicle">2006 Mitsubishi Evo IX RS</td>
+  <td class="time best">
+    57.745&nbsp;(1)
+  </td>
+  <td class="time ">
+    57.791&nbsp;(2)
+  </td>
+  <td class="time ">
+    58.121&nbsp;(2)
+  </td>
+  <td class="time ">
+    58.644&nbsp;(2)
+  </td>
+  <td class="time ">
+    55.208
+  </td>
+  <td class="time best">
+    54.816
+  </td>
+  <td class="final-time">112.560</td>
+  <td class="diff">0.320</td>
+  <td class="diff">1.681</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">4</td>
+  <td class="cls">P-STS</td>
+  <td class="number">487</td>
+  <td class="driver">Nathan Witt</td>
+  <td class="vehicle">1992 Mazda Miata</td>
+  <td class="time ">
+    57.410
+  </td>
+  <td class="time best">
+    56.973
+  </td>
+  <td class="time ">
+    60.989&nbsp;(3)
+  </td>
+  <td class="time ">
+    60.186&nbsp;(2)
+  </td>
+  <td class="time ">
+    59.870&nbsp;(2)
+  </td>
+  <td class="time best">
+    56.206
+  </td>
+  <td class="final-time">113.179</td>
+  <td class="diff">0.619</td>
+  <td class="diff">2.300</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">5</td>
+  <td class="cls">P-GS</td>
+  <td class="number">79</td>
+  <td class="driver">Robin Newborg</td>
+  <td class="vehicle">2022 Volkswagen Golf GTI</td>
+  <td class="time ">
+    57.093
+  </td>
+  <td class="time best">
+    56.732
+  </td>
+  <td class="time ">
+    57.894&nbsp;(1)
+  </td>
+  <td class="time best">
+    56.719
+  </td>
+  <td class="time ">
+    57.097
+  </td>
+  <td class="time ">
+    61.316&nbsp;(2)
+  </td>
+  <td class="final-time">113.451</td>
+  <td class="diff">0.271</td>
+  <td class="diff">2.571</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">6</td>
+  <td class="cls">P-DS</td>
+  <td class="number">421</td>
+  <td class="driver">Bernie Kaeferlein</td>
+  <td class="vehicle">2022 Toyota GR86</td>
+  <td class="time ">
+    57.282
+  </td>
+  <td class="time best">
+    56.617
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    60.909&nbsp;(2)
+  </td>
+  <td class="time best">
+    56.949
+  </td>
+  <td class="time ">
+    60.251&nbsp;(2)
+  </td>
+  <td class="final-time">113.565</td>
+  <td class="diff">0.115</td>
+  <td class="diff">2.685</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">7</td>
+  <td class="cls">P-STS</td>
+  <td class="number">990</td>
+  <td class="driver">Jake Rogers</td>
+  <td class="vehicle">1990 Mazda Mx-5 Miata</td>
+  <td class="time ">
+    58.120
+  </td>
+  <td class="time ">
+    58.659&nbsp;(1)
+  </td>
+  <td class="time best">
+    56.955
+  </td>
+  <td class="time ">
+    57.962
+  </td>
+  <td class="time ">
+    56.682
+  </td>
+  <td class="time best">
+    56.669
+  </td>
+  <td class="final-time">113.624</td>
+  <td class="diff">0.059</td>
+  <td class="diff">2.744</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">8</td>
+  <td class="cls">P-GS</td>
+  <td class="number">17</td>
+  <td class="driver">John Moravec</td>
+  <td class="vehicle">2022 Volkwagen GTI</td>
+  <td class="time ">
+    61.586&nbsp;(2)
+  </td>
+  <td class="time best">
+    58.995
+  </td>
+  <td class="time ">
+    62.387&nbsp;(2)
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    62.290&nbsp;(2)
+  </td>
+  <td class="time best">
+    57.985
+  </td>
+  <td class="final-time">116.980</td>
+  <td class="diff">3.356</td>
+  <td class="diff">6.100</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">9</td>
+  <td class="cls">P-STH</td>
+  <td class="number">175</td>
+  <td class="driver">Michael Waich</td>
+  <td class="vehicle">2016 Volkswagen GTR</td>
+  <td class="time ">
+    58.803
+  </td>
+  <td class="time best">
+    58.061
+  </td>
+  <td class="time ">
+    58.073
+  </td>
+  <td class="time ">
+    60.337&nbsp;(1)
+  </td>
+  <td class="time ">
+    61.685&nbsp;(2)
+  </td>
+  <td class="time best">
+    59.670
+  </td>
+  <td class="final-time">117.731</td>
+  <td class="diff">0.751</td>
+  <td class="diff">6.851</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">10</td>
+  <td class="cls">P-STH</td>
+  <td class="number">75</td>
+  <td class="driver">Steve Garnjobst</td>
+  <td class="vehicle">2016 Volkswagen GTI</td>
+  <td class="time ">
+    59.896
+  </td>
+  <td class="time ">
+    62.676&nbsp;(2)
+  </td>
+  <td class="time best">
+    59.662
+  </td>
+  <td class="time best">
+    59.759
+  </td>
+  <td class="time ">
+    59.824
+  </td>
+  <td class="time ">
+    60.024
+  </td>
+  <td class="final-time">119.421</td>
+  <td class="diff">1.690</td>
+  <td class="diff">8.541</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">11</td>
+  <td class="cls">P-STS</td>
+  <td class="number">117</td>
+  <td class="driver">Chris Medower</td>
+  <td class="vehicle">Mazda Miata</td>
+  <td class="time ">
+    60.961
+  </td>
+  <td class="time ">
+    61.161
+  </td>
+  <td class="time best">
+    60.165
+  </td>
+  <td class="time best">
+    59.310
+  </td>
+  <td class="time ">
+    60.647&nbsp;(1)
+  </td>
+  <td class="time ">
+    60.107&nbsp;(1)
+  </td>
+  <td class="final-time">119.475</td>
+  <td class="diff">0.054</td>
+  <td class="diff">8.595</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">12</td>
+  <td class="cls">P-STS</td>
+  <td class="number">182</td>
+  <td class="driver">Jashua Rodriguez</td>
+  <td class="vehicle">1990 Mazda Miata</td>
+  <td class="time best">
+    61.483
+  </td>
+  <td class="time ">
+    71.733&nbsp;(2)
+  </td>
+  <td class="time ">
+    OFF
+  </td>
+  <td class="time best">
+    63.020&nbsp;(1)
+  </td>
+  <td class="time ">
+    65.901&nbsp;(3)
+  </td>
+  <td class="time ">
+    64.291&nbsp;(2)
+  </td>
+  <td class="final-time">124.503</td>
+  <td class="diff">5.028</td>
+  <td class="diff">13.623</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>Z - Pax Index - 19 Drivers - 4 trophies </th>
+
+  <th class="summary" colspan=6>PAX Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">Z-STS</td>
+  <td class="number">371</td>
+  <td class="driver">Steve Pahl</td>
+  <td class="vehicle">1991 Honda CRX</td>
+  <td class="time ">
+    64.524&nbsp;(4)
+  </td>
+  <td class="time ">
+    64.270&nbsp;(2)
+  </td>
+  <td class="time ">
+    59.795&nbsp;(2)
+  </td>
+  <td class="time ">
+    61.875&nbsp;(3)
+  </td>
+  <td class="time best">
+    56.762
+  </td>
+  <td class="time ">
+    56.982
+  </td>
+  <td class="final-time">56.762</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">2</td>
+  <td class="cls">Z-DS</td>
+  <td class="number">99</td>
+  <td class="driver">Kyle Greene</td>
+  <td class="vehicle">2018 Honda Civic Type R</td>
+  <td class="time ">
+    59.804&nbsp;(1)
+  </td>
+  <td class="time ">
+    57.666
+  </td>
+  <td class="time ">
+    59.706&nbsp;(2)
+  </td>
+  <td class="time best">
+    57.097
+  </td>
+  <td class="time ">
+    61.283&nbsp;(3)
+  </td>
+  <td class="time ">
+    57.663
+  </td>
+  <td class="final-time">57.097</td>
+  <td class="diff">0.335</td>
+  <td class="diff">0.335</td>
+</tr>
+  
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">3</td>
+  <td class="cls">Z-DS</td>
+  <td class="number">311</td>
+  <td class="driver">Ross Jacobs</td>
+  <td class="vehicle">2017 Ford Focus RS</td>
+  <td class="time ">
+    60.709&nbsp;(1)
+  </td>
+  <td class="time ">
+    58.327
+  </td>
+  <td class="time ">
+    58.767&nbsp;(1)
+  </td>
+  <td class="time ">
+    57.315
+  </td>
+  <td class="time ">
+    58.955&nbsp;(1)
+  </td>
+  <td class="time best">
+    57.104
+  </td>
+  <td class="final-time">57.104</td>
+  <td class="diff">0.006</td>
+  <td class="diff">0.342</td>
+</tr>
+  
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">4</td>
+  <td class="cls">Z-DS</td>
+  <td class="number">45</td>
+  <td class="driver">Peter Hsu</td>
+  <td class="vehicle">2019 Honda Type R</td>
+  <td class="time ">
+    57.968
+  </td>
+  <td class="time ">
+    58.384
+  </td>
+  <td class="time ">
+    58.473&nbsp;(1)
+  </td>
+  <td class="time ">
+    60.252&nbsp;(1)
+  </td>
+  <td class="time best">
+    57.329
+  </td>
+  <td class="time ">
+    58.899
+  </td>
+  <td class="final-time">57.329</td>
+  <td class="diff">0.225</td>
+  <td class="diff">0.567</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">5</td>
+  <td class="cls">Z-DS</td>
+  <td class="number">656</td>
+  <td class="driver">Adam Quimby</td>
+  <td class="vehicle">2022 Toyota GR 86</td>
+  <td class="time ">
+    58.578
+  </td>
+  <td class="time ">
+    61.326&nbsp;(2)
+  </td>
+  <td class="time ">
+    59.155&nbsp;(1)
+  </td>
+  <td class="time ">
+    57.790
+  </td>
+  <td class="time best">
+    57.491
+  </td>
+  <td class="time ">
+    58.630&nbsp;(1)
+  </td>
+  <td class="final-time">57.491</td>
+  <td class="diff">0.162</td>
+  <td class="diff">0.729</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">6</td>
+  <td class="cls">Z-ES</td>
+  <td class="number">16</td>
+  <td class="driver">Brian Ksicinski</td>
+  <td class="vehicle">1999 Mazda Miata</td>
+  <td class="time ">
+    59.114
+  </td>
+  <td class="time ">
+    58.636
+  </td>
+  <td class="time ">
+    57.902
+  </td>
+  <td class="time ">
+    59.410&nbsp;(1)
+  </td>
+  <td class="time ">
+    58.787
+  </td>
+  <td class="time best">
+    57.778
+  </td>
+  <td class="final-time">57.778</td>
+  <td class="diff">0.287</td>
+  <td class="diff">1.016</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">7</td>
+  <td class="cls">Z-ES</td>
+  <td class="number">71</td>
+  <td class="driver">Lucas Reller</td>
+  <td class="vehicle">1999 Mazda Miata</td>
+  <td class="time ">
+    62.566&nbsp;(2)
+  </td>
+  <td class="time best">
+    57.778
+  </td>
+  <td class="time ">
+    60.184&nbsp;(2)
+  </td>
+  <td class="time ">
+    58.667&nbsp;(1)
+  </td>
+  <td class="time ">
+    59.709&nbsp;(2)
+  </td>
+  <td class="time ">
+    58.194
+  </td>
+  <td class="final-time">57.778</td>
+  <td class="diff">0.000</td>
+  <td class="diff">1.016</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">8</td>
+  <td class="cls">Z-STS</td>
+  <td class="number">31</td>
+  <td class="driver">Steve Meschke</td>
+  <td class="vehicle">1990 Mazda Miata</td>
+  <td class="time ">
+    60.879
+  </td>
+  <td class="time ">
+    59.225
+  </td>
+  <td class="time ">
+    58.378
+  </td>
+  <td class="time ">
+    59.591&nbsp;(1)
+  </td>
+  <td class="time ">
+    58.282
+  </td>
+  <td class="time best">
+    58.125
+  </td>
+  <td class="final-time">58.125</td>
+  <td class="diff">0.347</td>
+  <td class="diff">1.363</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">9</td>
+  <td class="cls">Z-DS</td>
+  <td class="number">475</td>
+  <td class="driver">Tim Malzahn</td>
+  <td class="vehicle">2017 Honda Civic Type-R</td>
+  <td class="time ">
+    60.459
+  </td>
+  <td class="time ">
+    58.845
+  </td>
+  <td class="time best">
+    58.491
+  </td>
+  <td class="time ">
+    60.623&nbsp;(1)
+  </td>
+  <td class="time ">
+    60.511&nbsp;(1)
+  </td>
+  <td class="time ">
+    58.758
+  </td>
+  <td class="final-time">58.491</td>
+  <td class="diff">0.366</td>
+  <td class="diff">1.729</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">10</td>
+  <td class="cls">Z-HS</td>
+  <td class="number">843</td>
+  <td class="driver">Dwight Anderson</td>
+  <td class="vehicle">2019 Ford Fiesta ST</td>
+  <td class="time ">
+    59.058
+  </td>
+  <td class="time ">
+    62.140&nbsp;(2)
+  </td>
+  <td class="time best">
+    58.717
+  </td>
+  <td class="time ">
+    58.998
+  </td>
+  <td class="time ">
+    60.388&nbsp;(1)
+  </td>
+  <td class="time ">
+    60.450&nbsp;(1)
+  </td>
+  <td class="final-time">58.717</td>
+  <td class="diff">0.226</td>
+  <td class="diff">1.955</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">11</td>
+  <td class="cls">Z-DS</td>
+  <td class="number">665</td>
+  <td class="driver">Tyler Blomquist</td>
+  <td class="vehicle">2022 Toyota GR86</td>
+  <td class="time ">
+    60.156
+  </td>
+  <td class="time ">
+    62.149&nbsp;(2)
+  </td>
+  <td class="time ">
+    60.135&nbsp;(1)
+  </td>
+  <td class="time ">
+    61.961&nbsp;(1)
+  </td>
+  <td class="time ">
+    61.593&nbsp;(2)
+  </td>
+  <td class="time best">
+    59.223
+  </td>
+  <td class="final-time">59.223</td>
+  <td class="diff">0.506</td>
+  <td class="diff">2.461</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">12</td>
+  <td class="cls">Z-ES</td>
+  <td class="number">812</td>
+  <td class="driver">Andy Naughton</td>
+  <td class="vehicle">1994 Mazda Miata</td>
+  <td class="time ">
+    62.357
+  </td>
+  <td class="time ">
+    60.576
+  </td>
+  <td class="time ">
+    61.316&nbsp;(1)
+  </td>
+  <td class="time ">
+    61.064
+  </td>
+  <td class="time ">
+    59.406
+  </td>
+  <td class="time best">
+    59.318
+  </td>
+  <td class="final-time">59.318</td>
+  <td class="diff">0.094</td>
+  <td class="diff">2.556</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">13</td>
+  <td class="cls">Z-DS</td>
+  <td class="number">186</td>
+  <td class="driver">Andrew Dehmer</td>
+  <td class="vehicle">2017 Subaru BRZ Limited</td>
+  <td class="time ">
+    63.257
+  </td>
+  <td class="time ">
+    61.375
+  </td>
+  <td class="time best">
+    60.407
+  </td>
+  <td class="time ">
+    60.846
+  </td>
+  <td class="time ">
+    60.700
+  </td>
+  <td class="time ">
+    62.497&nbsp;(1)
+  </td>
+  <td class="final-time">60.407</td>
+  <td class="diff">1.089</td>
+  <td class="diff">3.645</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">14</td>
+  <td class="cls">Z-ES</td>
+  <td class="number">81</td>
+  <td class="driver">Giuseppe Pellizzer</td>
+  <td class="vehicle">1999 Mazda 10AE Miata</td>
+  <td class="time ">
+    62.890&nbsp;(1)
+  </td>
+  <td class="time ">
+    62.664&nbsp;(1)
+  </td>
+  <td class="time ">
+    61.964&nbsp;(1)
+  </td>
+  <td class="time best">
+    60.499
+  </td>
+  <td class="time ">
+    60.769
+  </td>
+  <td class="time ">
+    61.189
+  </td>
+  <td class="final-time">60.499</td>
+  <td class="diff">0.092</td>
+  <td class="diff">3.737</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">15</td>
+  <td class="cls">Z-STS</td>
+  <td class="number">48</td>
+  <td class="driver">Ron Schwanz</td>
+  <td class="vehicle">1990 Mazda Miata</td>
+  <td class="time ">
+    61.516
+  </td>
+  <td class="time best">
+    60.624
+  </td>
+  <td class="time ">
+    64.636&nbsp;(3)
+  </td>
+  <td class="time ">
+    62.953&nbsp;(2)
+  </td>
+  <td class="time ">
+    62.963&nbsp;(2)
+  </td>
+  <td class="time ">
+    60.960&nbsp;(1)
+  </td>
+  <td class="final-time">60.624</td>
+  <td class="diff">0.125</td>
+  <td class="diff">3.862</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">16</td>
+  <td class="cls">Z-BS</td>
+  <td class="number">7</td>
+  <td class="driver">Philip Ethier</td>
+  <td class="vehicle">2011 Porsche Cayman 2.9</td>
+  <td class="time ">
+    67.866&nbsp;(1)
+  </td>
+  <td class="time ">
+    69.812&nbsp;(4)
+  </td>
+  <td class="time ">
+    64.195
+  </td>
+  <td class="time ">
+    62.390
+  </td>
+  <td class="time ">
+    63.723
+  </td>
+  <td class="time best">
+    61.918
+  </td>
+  <td class="final-time">61.918</td>
+  <td class="diff">1.293</td>
+  <td class="diff">5.156</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">17</td>
+  <td class="cls">Z-GS</td>
+  <td class="number">737</td>
+  <td class="driver">Gary Schmidt</td>
+  <td class="vehicle">2023 Acura Integra</td>
+  <td class="time ">
+    66.693
+  </td>
+  <td class="time ">
+    63.370
+  </td>
+  <td class="time ">
+    63.315
+  </td>
+  <td class="time ">
+    62.864
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time best">
+    62.061
+  </td>
+  <td class="final-time">62.061</td>
+  <td class="diff">0.143</td>
+  <td class="diff">5.299</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">18</td>
+  <td class="cls">Z-GS</td>
+  <td class="number">718</td>
+  <td class="driver">Eric Romani</td>
+  <td class="vehicle">2023 Honda Civic SI</td>
+  <td class="time ">
+    66.783
+  </td>
+  <td class="time ">
+    63.739
+  </td>
+  <td class="time ">
+    62.614
+  </td>
+  <td class="time best">
+    62.288
+  </td>
+  <td class="time ">
+    63.391&nbsp;(1)
+  </td>
+  <td class="time ">
+    68.024&nbsp;(2)
+  </td>
+  <td class="final-time">62.288</td>
+  <td class="diff">0.227</td>
+  <td class="diff">5.526</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">19</td>
+  <td class="cls">Z-STR</td>
+  <td class="number">155</td>
+  <td class="driver">Bryan Blumenschein</td>
+  <td class="vehicle">2007 Mazda MX-5</td>
+  <td class="time ">
+    66.053
+  </td>
+  <td class="time best">
+    63.653
+  </td>
+  <td class="time ">
+    64.044
+  </td>
+  <td class="time ">
+    64.664
+  </td>
+  <td class="time ">
+    64.407
+  </td>
+  <td class="time ">
+    65.679&nbsp;(1)
+  </td>
+  <td class="final-time">63.653</td>
+  <td class="diff">1.365</td>
+  <td class="diff">6.891</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>C2 - Combined 2 - 12 Drivers - 2 trophies </th>
+
+  <th class="summary" colspan=6>PAX Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">C2-STR</td>
+  <td class="number">440</td>
+  <td class="driver">Gavyn Gill</td>
+  <td class="vehicle">2019 Mazda Miata</td>
+  <td class="time ">
+    60.400
+  </td>
+  <td class="time ">
+    59.904
+  </td>
+  <td class="time best">
+    58.476
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="final-time">58.476</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">2</td>
+  <td class="cls">C2-EVX</td>
+  <td class="number">247</td>
+  <td class="driver">Jon-Eric Deutsch</td>
+  <td class="vehicle">2021 Tesla Model 3</td>
+  <td class="time ">
+    65.885
+  </td>
+  <td class="time ">
+    61.920&nbsp;(1)
+  </td>
+  <td class="time ">
+    60.335
+  </td>
+  <td class="time ">
+    60.194
+  </td>
+  <td class="time best">
+    59.025
+  </td>
+  <td class="time ">
+    OFF
+  </td>
+  <td class="final-time">59.025</td>
+  <td class="diff">0.549</td>
+  <td class="diff">0.549</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">3</td>
+  <td class="cls">C2-SST</td>
+  <td class="number">792</td>
+  <td class="driver">Quincy Tambo</td>
+  <td class="vehicle">2014 Porsche Cayman S</td>
+  <td class="time ">
+    61.012
+  </td>
+  <td class="time ">
+    61.040
+  </td>
+  <td class="time ">
+    62.694&nbsp;(1)
+  </td>
+  <td class="time ">
+    62.931&nbsp;(1)
+  </td>
+  <td class="time ">
+    60.783
+  </td>
+  <td class="time best">
+    60.604
+  </td>
+  <td class="final-time">60.604</td>
+  <td class="diff">1.579</td>
+  <td class="diff">2.128</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">4</td>
+  <td class="cls">C2-EM</td>
+  <td class="number">780</td>
+  <td class="driver">Jeremy Anderson</td>
+  <td class="vehicle">2022 Exomotive Exocet</td>
+  <td class="time ">
+    63.619&nbsp;(1)
+  </td>
+  <td class="time ">
+    64.584&nbsp;(2)
+  </td>
+  <td class="time ">
+    61.071
+  </td>
+  <td class="time ">
+    65.157&nbsp;(2)
+  </td>
+  <td class="time ">
+    62.366&nbsp;(1)
+  </td>
+  <td class="time best">
+    61.019
+  </td>
+  <td class="final-time">61.019</td>
+  <td class="diff">0.415</td>
+  <td class="diff">2.543</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">5</td>
+  <td class="cls">C2-XB</td>
+  <td class="number">621</td>
+  <td class="driver">Blake Doblinger</td>
+  <td class="vehicle">1995 Mazda Miata</td>
+  <td class="time ">
+    64.481
+  </td>
+  <td class="time ">
+    65.258&nbsp;(2)
+  </td>
+  <td class="time ">
+    65.370&nbsp;(2)
+  </td>
+  <td class="time ">
+    62.144
+  </td>
+  <td class="time best">
+    61.907
+  </td>
+  <td class="time ">
+    64.220&nbsp;(2)
+  </td>
+  <td class="final-time">61.907</td>
+  <td class="diff">0.889</td>
+  <td class="diff">3.432</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">6</td>
+  <td class="cls">C2-SS</td>
+  <td class="number">427</td>
+  <td class="driver">Rick Sellner</td>
+  <td class="vehicle">2016 Chevrolet corvette z07</td>
+  <td class="time ">
+    66.177&nbsp;(1)
+  </td>
+  <td class="time ">
+    62.976
+  </td>
+  <td class="time best">
+    61.936
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="final-time">61.936</td>
+  <td class="diff">0.029</td>
+  <td class="diff">3.460</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">7</td>
+  <td class="cls">C2-STR</td>
+  <td class="number">701</td>
+  <td class="driver">Darren Hagford</td>
+  <td class="vehicle">2000 Mazda Miata</td>
+  <td class="time ">
+    67.171&nbsp;(1)
+  </td>
+  <td class="time ">
+    65.917&nbsp;(1)
+  </td>
+  <td class="time best">
+    63.108
+  </td>
+  <td class="time ">
+    66.726&nbsp;(2)
+  </td>
+  <td class="time ">
+    64.140&nbsp;(1)
+  </td>
+  <td class="time ">
+    69.349&nbsp;(4)
+  </td>
+  <td class="final-time">63.108</td>
+  <td class="diff">1.172</td>
+  <td class="diff">4.632</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">8</td>
+  <td class="cls">C2-SSR</td>
+  <td class="number">10</td>
+  <td class="driver">Heidi Halverson</td>
+  <td class="vehicle">2005 Lotus Elise</td>
+  <td class="time ">
+    66.189
+  </td>
+  <td class="time ">
+    69.580&nbsp;(3)
+  </td>
+  <td class="time ">
+    66.951&nbsp;(1)
+  </td>
+  <td class="time ">
+    65.942&nbsp;(1)
+  </td>
+  <td class="time ">
+    68.908&nbsp;(2)
+  </td>
+  <td class="time best">
+    64.079
+  </td>
+  <td class="final-time">64.079</td>
+  <td class="diff">0.971</td>
+  <td class="diff">5.603</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">9</td>
+  <td class="cls">C2-AM</td>
+  <td class="number">53</td>
+  <td class="driver">Tim Brueske</td>
+  <td class="vehicle">2022 Suzuki Buster</td>
+  <td class="time ">
+    73.062&nbsp;(2)
+  </td>
+  <td class="time best">
+    64.259
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="final-time">64.259</td>
+  <td class="diff">0.180</td>
+  <td class="diff">5.783</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">10</td>
+  <td class="cls">C2-FS</td>
+  <td class="number">335</td>
+  <td class="driver">Eric Schroeder</td>
+  <td class="vehicle">2023 BMW 540i</td>
+  <td class="time ">
+    67.276
+  </td>
+  <td class="time ">
+    65.838
+  </td>
+  <td class="time best">
+    64.607
+  </td>
+  <td class="time ">
+    66.618
+  </td>
+  <td class="time ">
+    66.175
+  </td>
+  <td class="time ">
+    65.132
+  </td>
+  <td class="final-time">64.607</td>
+  <td class="diff">0.348</td>
+  <td class="diff">6.131</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">11</td>
+  <td class="cls">C2-XP</td>
+  <td class="number">411</td>
+  <td class="driver">Dan Nielsen</td>
+  <td class="vehicle">1988 Chevrolet corvette</td>
+  <td class="time ">
+    73.444&nbsp;(4)
+  </td>
+  <td class="time ">
+    OFF
+  </td>
+  <td class="time best">
+    66.779&nbsp;(1)
+  </td>
+  <td class="time ">
+    67.272&nbsp;(1)
+  </td>
+  <td class="time ">
+    67.717&nbsp;(1)
+  </td>
+  <td class="time ">
+    69.777&nbsp;(2)
+  </td>
+  <td class="final-time">66.779</td>
+  <td class="diff">2.172</td>
+  <td class="diff">8.303</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">12</td>
+  <td class="cls">C2-XP</td>
+  <td class="number">271</td>
+  <td class="driver">Neal Hanson</td>
+  <td class="vehicle">1988 Chevrolet corvette</td>
+  <td class="time ">
+    97.371
+  </td>
+  <td class="time ">
+    83.329
+  </td>
+  <td class="time ">
+    80.740
+  </td>
+  <td class="time ">
+    83.908
+  </td>
+  <td class="time ">
+    81.900&nbsp;(1)
+  </td>
+  <td class="time best">
+    80.041
+  </td>
+  <td class="final-time">80.041</td>
+  <td class="diff">13.262</td>
+  <td class="diff">21.565</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>HS - Open - 3 Drivers - 1 trophies </th>
+
+  <th class="summary" colspan=6>Raw Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">HS</td>
+  <td class="number">930</td>
+  <td class="driver">Grant Long</td>
+  <td class="vehicle">2008 Saab 9-3 aero sportcombi</td>
+  <td class="time ">
+    95.407
+  </td>
+  <td class="time ">
+    86.783&nbsp;(1)
+  </td>
+  <td class="time ">
+    83.925&nbsp;(1)
+  </td>
+  <td class="time ">
+    81.937
+  </td>
+  <td class="time ">
+    80.861
+  </td>
+  <td class="time best">
+    79.745
+  </td>
+  <td class="final-time">79.745</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">2</td>
+  <td class="cls">HS</td>
+  <td class="number">209</td>
+  <td class="driver">Aaryk Neubert</td>
+  <td class="vehicle">2012 Chevrolet Volt</td>
+  <td class="time ">
+    89.755
+  </td>
+  <td class="time ">
+    86.301&nbsp;(1)
+  </td>
+  <td class="time ">
+    88.057&nbsp;(2)
+  </td>
+  <td class="time ">
+    87.578
+  </td>
+  <td class="time ">
+    85.797
+  </td>
+  <td class="time best">
+    84.522
+  </td>
+  <td class="final-time">84.522</td>
+  <td class="diff">4.777</td>
+  <td class="diff">4.777</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">3</td>
+  <td class="cls">HS</td>
+  <td class="number">67</td>
+  <td class="driver">Gordon Handeland</td>
+  <td class="vehicle">2002 Mini R50 Cooper Base</td>
+  <td class="time ">
+    94.011
+  </td>
+  <td class="time best">
+    90.319
+  </td>
+  <td class="time ">
+    90.806
+  </td>
+  <td class="time ">
+    92.764
+  </td>
+  <td class="time ">
+    91.594
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="final-time">90.319</td>
+  <td class="diff">5.797</td>
+  <td class="diff">10.574</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>CS - Open - 4 Drivers - 1 trophies </th>
+
+  <th class="summary" colspan=6>Raw Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">CS</td>
+  <td class="number">713</td>
+  <td class="driver">Chris Lottes</td>
+  <td class="vehicle">2022 Mazda MX-5 Club</td>
+  <td class="time ">
+    73.942
+  </td>
+  <td class="time ">
+    71.901
+  </td>
+  <td class="time ">
+    93.853&nbsp;(3)
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    76.134&nbsp;(2)
+  </td>
+  <td class="time best">
+    71.749
+  </td>
+  <td class="final-time">71.749</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">2</td>
+  <td class="cls">CS</td>
+  <td class="number">726</td>
+  <td class="driver">Peter Nolden</td>
+  <td class="vehicle">2020 Mazda MX-5 Club</td>
+  <td class="time ">
+    75.968&nbsp;(1)
+  </td>
+  <td class="time ">
+    73.184
+  </td>
+  <td class="time ">
+    78.611&nbsp;(3)
+  </td>
+  <td class="time ">
+    74.542
+  </td>
+  <td class="time best">
+    73.106
+  </td>
+  <td class="time ">
+    74.980&nbsp;(1)
+  </td>
+  <td class="final-time">73.106</td>
+  <td class="diff">1.357</td>
+  <td class="diff">1.357</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">3</td>
+  <td class="cls">CS</td>
+  <td class="number">97</td>
+  <td class="driver">Randy Williams</td>
+  <td class="vehicle">2017 Mazda RF Club</td>
+  <td class="time ">
+    76.031
+  </td>
+  <td class="time ">
+    79.902&nbsp;(3)
+  </td>
+  <td class="time best">
+    73.492
+  </td>
+  <td class="time ">
+    76.215
+  </td>
+  <td class="time ">
+    74.126
+  </td>
+  <td class="time ">
+    73.757
+  </td>
+  <td class="final-time">73.492</td>
+  <td class="diff">0.386</td>
+  <td class="diff">1.743</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">4</td>
+  <td class="cls">CS</td>
+  <td class="number">24</td>
+  <td class="driver">Will Schafer</td>
+  <td class="vehicle">2019 Fiat 124 Spider Abarth</td>
+  <td class="time ">
+    78.709
+  </td>
+  <td class="time ">
+    75.019
+  </td>
+  <td class="time ">
+    77.335&nbsp;(1)
+  </td>
+  <td class="time ">
+    87.289&nbsp;(1)
+  </td>
+  <td class="time ">
+    75.840
+  </td>
+  <td class="time best">
+    74.392
+  </td>
+  <td class="final-time">74.392</td>
+  <td class="diff">0.900</td>
+  <td class="diff">2.643</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>STH - Open - 4 Drivers - 1 trophies </th>
+
+  <th class="summary" colspan=6>Raw Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">STH</td>
+  <td class="number">805</td>
+  <td class="driver">Jon Stef</td>
+  <td class="vehicle">2011 Subaru WRX</td>
+  <td class="time ">
+    76.938&nbsp;(1)
+  </td>
+  <td class="time ">
+    77.001&nbsp;(1)
+  </td>
+  <td class="time ">
+    76.255&nbsp;(2)
+  </td>
+  <td class="time ">
+    73.500
+  </td>
+  <td class="time best">
+    72.512
+  </td>
+  <td class="time ">
+    76.178&nbsp;(2)
+  </td>
+  <td class="final-time">72.512</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">2</td>
+  <td class="cls">STH</td>
+  <td class="number">497</td>
+  <td class="driver">Ian Schmitz</td>
+  <td class="vehicle">2012 Mazda Mazdaspeed 3</td>
+  <td class="time ">
+    OFF
+  </td>
+  <td class="time best">
+    73.574
+  </td>
+  <td class="time ">
+    74.049
+  </td>
+  <td class="time ">
+    78.442&nbsp;(2)
+  </td>
+  <td class="time ">
+    73.863
+  </td>
+  <td class="time ">
+    73.707
+  </td>
+  <td class="final-time">73.574</td>
+  <td class="diff">1.062</td>
+  <td class="diff">1.062</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">3</td>
+  <td class="cls">STH</td>
+  <td class="number">770</td>
+  <td class="driver">Jethro Land</td>
+  <td class="vehicle">2017 Volkswagen Golf GTI</td>
+  <td class="time ">
+    84.916
+  </td>
+  <td class="time ">
+    80.055
+  </td>
+  <td class="time ">
+    79.335
+  </td>
+  <td class="time ">
+    78.521
+  </td>
+  <td class="time ">
+    77.931
+  </td>
+  <td class="time best">
+    77.376
+  </td>
+  <td class="final-time">77.376</td>
+  <td class="diff">3.802</td>
+  <td class="diff">4.864</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">4</td>
+  <td class="cls">STH</td>
+  <td class="number">912</td>
+  <td class="driver">Christian Schuster</td>
+  <td class="vehicle">2019 Volkswagen GTI</td>
+  <td class="time ">
+    93.520
+  </td>
+  <td class="time ">
+    86.757
+  </td>
+  <td class="time best">
+    84.370
+  </td>
+  <td class="time ">
+    85.079
+  </td>
+  <td class="time ">
+    88.082&nbsp;(1)
+  </td>
+  <td class="time ">
+    85.343
+  </td>
+  <td class="final-time">84.370</td>
+  <td class="diff">6.994</td>
+  <td class="diff">11.858</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>AS - Open - 5 Drivers - 1 trophies </th>
+
+  <th class="summary" colspan=6>Raw Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">AS</td>
+  <td class="number">243</td>
+  <td class="driver">Tyler Horn</td>
+  <td class="vehicle">2002 Chevrolet Corvette Z06</td>
+  <td class="time ">
+    83.255
+  </td>
+  <td class="time ">
+    80.447
+  </td>
+  <td class="time ">
+    80.464&nbsp;(1)
+  </td>
+  <td class="time ">
+    80.168
+  </td>
+  <td class="time ">
+    78.091
+  </td>
+  <td class="time best">
+    78.070
+  </td>
+  <td class="final-time">78.070</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">2</td>
+  <td class="cls">AS</td>
+  <td class="number">4</td>
+  <td class="driver">Don Gettinger</td>
+  <td class="vehicle">2001 Chevrolet Z-06 Corvette</td>
+  <td class="time ">
+    87.907
+  </td>
+  <td class="time ">
+    82.278
+  </td>
+  <td class="time ">
+    82.049
+  </td>
+  <td class="time ">
+    85.288
+  </td>
+  <td class="time best">
+    81.449
+  </td>
+  <td class="time ">
+    81.485
+  </td>
+  <td class="final-time">81.449</td>
+  <td class="diff">3.379</td>
+  <td class="diff">3.379</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">3</td>
+  <td class="cls">AS</td>
+  <td class="number">27</td>
+  <td class="driver">Drew Baumbach</td>
+  <td class="vehicle">2009 Porsche Cayman S</td>
+  <td class="time ">
+    87.524
+  </td>
+  <td class="time ">
+    83.616
+  </td>
+  <td class="time ">
+    82.775
+  </td>
+  <td class="time ">
+    85.040&nbsp;(1)
+  </td>
+  <td class="time ">
+    82.536
+  </td>
+  <td class="time best">
+    82.025
+  </td>
+  <td class="final-time">82.025</td>
+  <td class="diff">0.576</td>
+  <td class="diff">3.955</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">4</td>
+  <td class="cls">AS</td>
+  <td class="number">193</td>
+  <td class="driver">Jeff Lawrence</td>
+  <td class="vehicle">2002 Chevrolet Corvette Z06</td>
+  <td class="time ">
+    84.542
+  </td>
+  <td class="time ">
+    83.533
+  </td>
+  <td class="time best">
+    82.593
+  </td>
+  <td class="time ">
+    86.435&nbsp;(2)
+  </td>
+  <td class="time ">
+    84.337&nbsp;(1)
+  </td>
+  <td class="time ">
+    82.791
+  </td>
+  <td class="final-time">82.593</td>
+  <td class="diff">0.568</td>
+  <td class="diff">4.523</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">5</td>
+  <td class="cls">AS</td>
+  <td class="number">611</td>
+  <td class="driver">Dennis OMeara</td>
+  <td class="vehicle">2011 Chevrolet Corvette</td>
+  <td class="time ">
+    91.494
+  </td>
+  <td class="time ">
+    90.972&nbsp;(2)
+  </td>
+  <td class="time ">
+    86.956&nbsp;(1)
+  </td>
+  <td class="time best">
+    85.996
+  </td>
+  <td class="time ">
+    87.571&nbsp;(1)
+  </td>
+  <td class="time ">
+    87.685
+  </td>
+  <td class="final-time">85.996</td>
+  <td class="diff">3.403</td>
+  <td class="diff">7.926</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>CAMC - Open - 7 Drivers - 1 trophies </th>
+
+  <th class="summary" colspan=6>Raw Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">CAMC</td>
+  <td class="number">430</td>
+  <td class="driver">Lyndrell Novotny</td>
+  <td class="vehicle">2018 Chevrolet Camaro</td>
+  <td class="time ">
+    76.270
+  </td>
+  <td class="time ">
+    73.990
+  </td>
+  <td class="time ">
+    73.416
+  </td>
+  <td class="time ">
+    74.212
+  </td>
+  <td class="time ">
+    74.557
+  </td>
+  <td class="time best">
+    73.316
+  </td>
+  <td class="final-time">73.316</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">2</td>
+  <td class="cls">CAMC</td>
+  <td class="number">74</td>
+  <td class="driver">Anthony Onceler</td>
+  <td class="vehicle">2017 Chevrolet Camaro</td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    76.538&nbsp;(1)
+  </td>
+  <td class="time ">
+    79.059&nbsp;(2)
+  </td>
+  <td class="time ">
+    OFF
+  </td>
+  <td class="time best">
+    75.035
+  </td>
+  <td class="time ">
+    75.169
+  </td>
+  <td class="final-time">75.035</td>
+  <td class="diff">1.719</td>
+  <td class="diff">1.719</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">3</td>
+  <td class="cls">CAMC</td>
+  <td class="number">738</td>
+  <td class="driver">Randy Cameron</td>
+  <td class="vehicle">2012 Ford Mustang Boss 302</td>
+  <td class="time ">
+    77.078
+  </td>
+  <td class="time ">
+    75.837
+  </td>
+  <td class="time ">
+    76.832
+  </td>
+  <td class="time ">
+    76.421
+  </td>
+  <td class="time best">
+    75.043
+  </td>
+  <td class="time ">
+    77.998&nbsp;(2)
+  </td>
+  <td class="final-time">75.043</td>
+  <td class="diff">0.008</td>
+  <td class="diff">1.727</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">4</td>
+  <td class="cls">CAMC</td>
+  <td class="number">610</td>
+  <td class="driver">Josh Howard</td>
+  <td class="vehicle">2015 Ford Mustang</td>
+  <td class="time ">
+    79.516
+  </td>
+  <td class="time ">
+    77.583&nbsp;(1)
+  </td>
+  <td class="time ">
+    82.665&nbsp;(1)
+  </td>
+  <td class="time ">
+    79.612&nbsp;(1)
+  </td>
+  <td class="time ">
+    77.071
+  </td>
+  <td class="time best">
+    76.911
+  </td>
+  <td class="final-time">76.911</td>
+  <td class="diff">1.868</td>
+  <td class="diff">3.595</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">5</td>
+  <td class="cls">CAMC</td>
+  <td class="number">29</td>
+  <td class="driver">Curt Crouse</td>
+  <td class="vehicle">2003 Mercury Marauder</td>
+  <td class="time ">
+    82.969&nbsp;(2)
+  </td>
+  <td class="time ">
+    80.672&nbsp;(1)
+  </td>
+  <td class="time ">
+    81.870&nbsp;(2)
+  </td>
+  <td class="time ">
+    78.232
+  </td>
+  <td class="time ">
+    79.249
+  </td>
+  <td class="time best">
+    77.279
+  </td>
+  <td class="final-time">77.279</td>
+  <td class="diff">0.368</td>
+  <td class="diff">3.963</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">6</td>
+  <td class="cls">CAMC</td>
+  <td class="number">315</td>
+  <td class="driver">Courtney Sampson</td>
+  <td class="vehicle">2015 Dodge Challenger hellcat</td>
+  <td class="time ">
+    80.910
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time best">
+    77.547
+  </td>
+  <td class="time ">
+    78.248
+  </td>
+  <td class="time ">
+    83.653&nbsp;(3)
+  </td>
+  <td class="time ">
+    83.756&nbsp;(3)
+  </td>
+  <td class="final-time">77.547</td>
+  <td class="diff">0.268</td>
+  <td class="diff">4.231</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">7</td>
+  <td class="cls">CAMC</td>
+  <td class="number">539</td>
+  <td class="driver">John Witthaus</td>
+  <td class="vehicle">2004 Mercury Grand Marquis</td>
+  <td class="time ">
+    94.016
+  </td>
+  <td class="time ">
+    86.520&nbsp;(1)
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    85.710
+  </td>
+  <td class="time best">
+    82.956
+  </td>
+  <td class="time ">
+    83.557
+  </td>
+  <td class="final-time">82.956</td>
+  <td class="diff">5.409</td>
+  <td class="diff">9.640</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>STU - Open - 3 Drivers - 1 trophies </th>
+
+  <th class="summary" colspan=6>Raw Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">STU</td>
+  <td class="number">358</td>
+  <td class="driver">Chase Malkow</td>
+  <td class="vehicle">2005 Nissan 350z</td>
+  <td class="time ">
+    75.164
+  </td>
+  <td class="time ">
+    74.541
+  </td>
+  <td class="time ">
+    75.795&nbsp;(1)
+  </td>
+  <td class="time ">
+    73.447
+  </td>
+  <td class="time ">
+    73.029
+  </td>
+  <td class="time best">
+    72.832
+  </td>
+  <td class="final-time">72.832</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">2</td>
+  <td class="cls">STU</td>
+  <td class="number">159</td>
+  <td class="driver">Thomas Braun</td>
+  <td class="vehicle">2004 Mazda Mazdaspeed Miata</td>
+  <td class="time ">
+    77.202
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time best">
+    73.524
+  </td>
+  <td class="time ">
+    74.882
+  </td>
+  <td class="time ">
+    73.951
+  </td>
+  <td class="time ">
+    75.025
+  </td>
+  <td class="final-time">73.524</td>
+  <td class="diff">0.692</td>
+  <td class="diff">0.692</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">3</td>
+  <td class="cls">STU</td>
+  <td class="number">165</td>
+  <td class="driver">Terry Schuster</td>
+  <td class="vehicle">2003 Nissan 350z</td>
+  <td class="time ">
+    81.341
+  </td>
+  <td class="time ">
+    80.675&nbsp;(1)
+  </td>
+  <td class="time best">
+    79.411&nbsp;(1)
+  </td>
+  <td class="time ">
+    80.169&nbsp;(1)
+  </td>
+  <td class="time ">
+    83.402&nbsp;(1)
+  </td>
+  <td class="time ">
+    80.011
+  </td>
+  <td class="final-time">79.411</td>
+  <td class="diff">5.887</td>
+  <td class="diff">6.579</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>XA - Open - 13 Drivers - 3 trophies </th>
+
+  <th class="summary" colspan=6>Raw Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">XA</td>
+  <td class="number">350</td>
+  <td class="driver">Joe Deleon</td>
+  <td class="vehicle">2003 Nissan 350z</td>
+  <td class="time ">
+    68.909
+  </td>
+  <td class="time best">
+    68.038
+  </td>
+  <td class="time ">
+    71.463&nbsp;(2)
+  </td>
+  <td class="time ">
+    70.639&nbsp;(1)
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    68.879
+  </td>
+  <td class="final-time">68.038</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">2</td>
+  <td class="cls">XA</td>
+  <td class="number">510</td>
+  <td class="driver">Piero Pucci</td>
+  <td class="vehicle">2013 Scion Frs</td>
+  <td class="time ">
+    72.782
+  </td>
+  <td class="time ">
+    75.909&nbsp;(2)
+  </td>
+  <td class="time ">
+    69.624
+  </td>
+  <td class="time ">
+    71.869&nbsp;(1)
+  </td>
+  <td class="time ">
+    68.884
+  </td>
+  <td class="time best">
+    68.265
+  </td>
+  <td class="final-time">68.265</td>
+  <td class="diff">0.227</td>
+  <td class="diff">0.227</td>
+</tr>
+  
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">3</td>
+  <td class="cls">XA</td>
+  <td class="number">556</td>
+  <td class="driver">Sean Wilke</td>
+  <td class="vehicle">2022 Toyota GR86</td>
+  <td class="time ">
+    74.839&nbsp;(2)
+  </td>
+  <td class="time ">
+    72.178&nbsp;(1)
+  </td>
+  <td class="time ">
+    71.833&nbsp;(1)
+  </td>
+  <td class="time ">
+    70.531
+  </td>
+  <td class="time best">
+    69.830
+  </td>
+  <td class="time ">
+    72.352&nbsp;(1)
+  </td>
+  <td class="final-time">69.830</td>
+  <td class="diff">1.565</td>
+  <td class="diff">1.792</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">4</td>
+  <td class="cls">XA</td>
+  <td class="number">711</td>
+  <td class="driver">Nathan Thalhuber</td>
+  <td class="vehicle">1991 Toyota MR2</td>
+  <td class="time ">
+    75.552&nbsp;(2)
+  </td>
+  <td class="time ">
+    70.902
+  </td>
+  <td class="time best">
+    70.398
+  </td>
+  <td class="time ">
+    72.018&nbsp;(1)
+  </td>
+  <td class="time ">
+    74.569&nbsp;(2)
+  </td>
+  <td class="time ">
+    70.541
+  </td>
+  <td class="final-time">70.398</td>
+  <td class="diff">0.568</td>
+  <td class="diff">2.360</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">5</td>
+  <td class="cls">XA</td>
+  <td class="number">309</td>
+  <td class="driver">Tony Starks</td>
+  <td class="vehicle">2004 Acura TL</td>
+  <td class="time ">
+    71.687
+  </td>
+  <td class="time ">
+    73.905&nbsp;(1)
+  </td>
+  <td class="time best">
+    70.687
+  </td>
+  <td class="time ">
+    73.048&nbsp;(1)
+  </td>
+  <td class="time ">
+    73.315&nbsp;(1)
+  </td>
+  <td class="time ">
+    72.539&nbsp;(1)
+  </td>
+  <td class="final-time">70.687</td>
+  <td class="diff">0.289</td>
+  <td class="diff">2.649</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">6</td>
+  <td class="cls">XA</td>
+  <td class="number">172</td>
+  <td class="driver">Mark Maenpaa</td>
+  <td class="vehicle">2018 Subaru Wrx</td>
+  <td class="time ">
+    74.864&nbsp;(1)
+  </td>
+  <td class="time ">
+    75.690&nbsp;(2)
+  </td>
+  <td class="time ">
+    72.030
+  </td>
+  <td class="time ">
+    73.168
+  </td>
+  <td class="time best">
+    70.924
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="final-time">70.924</td>
+  <td class="diff">0.237</td>
+  <td class="diff">2.886</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">7</td>
+  <td class="cls">XA</td>
+  <td class="number">341</td>
+  <td class="driver">Chris Weiske</td>
+  <td class="vehicle">2011 Subaru WRX STi</td>
+  <td class="time ">
+    73.332&nbsp;(1)
+  </td>
+  <td class="time ">
+    73.289&nbsp;(2)
+  </td>
+  <td class="time ">
+    73.457&nbsp;(2)
+  </td>
+  <td class="time best">
+    71.063
+  </td>
+  <td class="time ">
+    72.656&nbsp;(1)
+  </td>
+  <td class="time ">
+    72.919&nbsp;(2)
+  </td>
+  <td class="final-time">71.063</td>
+  <td class="diff">0.139</td>
+  <td class="diff">3.025</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">8</td>
+  <td class="cls">XA</td>
+  <td class="number">244</td>
+  <td class="driver">Gopihath Ramchand</td>
+  <td class="vehicle">2002 Honda S2000</td>
+  <td class="time ">
+    74.579
+  </td>
+  <td class="time ">
+    88.419
+  </td>
+  <td class="time best">
+    71.325
+  </td>
+  <td class="time ">
+    74.058&nbsp;(1)
+  </td>
+  <td class="time ">
+    71.569
+  </td>
+  <td class="time ">
+    73.554&nbsp;(1)
+  </td>
+  <td class="final-time">71.325</td>
+  <td class="diff">0.262</td>
+  <td class="diff">3.287</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">9</td>
+  <td class="cls">XA</td>
+  <td class="number">500</td>
+  <td class="driver">Daniel Personius</td>
+  <td class="vehicle">BMW 318ti</td>
+  <td class="time ">
+    76.527
+  </td>
+  <td class="time ">
+    78.202&nbsp;(2)
+  </td>
+  <td class="time ">
+    73.653
+  </td>
+  <td class="time ">
+    76.627&nbsp;(1)
+  </td>
+  <td class="time best">
+    72.849
+  </td>
+  <td class="time ">
+    72.897
+  </td>
+  <td class="final-time">72.849</td>
+  <td class="diff">1.524</td>
+  <td class="diff">4.811</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">10</td>
+  <td class="cls">XA</td>
+  <td class="number">403</td>
+  <td class="driver">Brandon Cottrell</td>
+  <td class="vehicle">2021 Toyota Supra</td>
+  <td class="time ">
+    75.932
+  </td>
+  <td class="time ">
+    76.964&nbsp;(1)
+  </td>
+  <td class="time ">
+    75.407
+  </td>
+  <td class="time ">
+    74.794
+  </td>
+  <td class="time ">
+    75.285
+  </td>
+  <td class="time best">
+    73.667
+  </td>
+  <td class="final-time">73.667</td>
+  <td class="diff">0.818</td>
+  <td class="diff">5.629</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">11</td>
+  <td class="cls">XA</td>
+  <td class="number">948</td>
+  <td class="driver">Harold Kachelmyer</td>
+  <td class="vehicle">1984 Porsche 944</td>
+  <td class="time ">
+    OFF
+  </td>
+  <td class="time ">
+    77.885
+  </td>
+  <td class="time ">
+    75.259
+  </td>
+  <td class="time ">
+    76.853
+  </td>
+  <td class="time ">
+    75.453
+  </td>
+  <td class="time best">
+    75.040
+  </td>
+  <td class="final-time">75.040</td>
+  <td class="diff">1.373</td>
+  <td class="diff">7.002</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">12</td>
+  <td class="cls">XA</td>
+  <td class="number">961</td>
+  <td class="driver">JUSTIN SEELEY</td>
+  <td class="vehicle">2013 BMW 335IS</td>
+  <td class="time ">
+    80.812
+  </td>
+  <td class="time ">
+    78.672
+  </td>
+  <td class="time ">
+    78.416
+  </td>
+  <td class="time ">
+    77.922
+  </td>
+  <td class="time best">
+    75.884
+  </td>
+  <td class="time ">
+    76.576
+  </td>
+  <td class="final-time">75.884</td>
+  <td class="diff">0.844</td>
+  <td class="diff">7.846</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">13</td>
+  <td class="cls">XA</td>
+  <td class="number">242</td>
+  <td class="driver">Douglas Lindman</td>
+  <td class="vehicle">1986 Mazda Rx-15</td>
+  <td class="time ">
+    89.368&nbsp;(1)
+  </td>
+  <td class="time ">
+    83.853
+  </td>
+  <td class="time best">
+    81.382&nbsp;(1)
+  </td>
+  <td class="time ">
+    82.521
+  </td>
+  <td class="time ">
+    82.669
+  </td>
+  <td class="time ">
+    81.755
+  </td>
+  <td class="final-time">81.382</td>
+  <td class="diff">5.498</td>
+  <td class="diff">13.344</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>CAMS - Open - 3 Drivers - 1 trophies </th>
+
+  <th class="summary" colspan=6>Raw Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">CAMS</td>
+  <td class="number">176</td>
+  <td class="driver">Matthew Sebelski</td>
+  <td class="vehicle">2001 Chevrolet Corvette Z06</td>
+  <td class="time ">
+    72.788
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time best">
+    69.386
+  </td>
+  <td class="time ">
+    73.411&nbsp;(1)
+  </td>
+  <td class="time ">
+    70.638
+  </td>
+  <td class="time ">
+    70.501
+  </td>
+  <td class="final-time">69.386</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">2</td>
+  <td class="cls">CAMS</td>
+  <td class="number">214</td>
+  <td class="driver">Michael Jensen</td>
+  <td class="vehicle">2014 Chevrolet Corvette</td>
+  <td class="time ">
+    79.958
+  </td>
+  <td class="time ">
+    75.042
+  </td>
+  <td class="time ">
+    74.255
+  </td>
+  <td class="time ">
+    74.227
+  </td>
+  <td class="time best">
+    73.433
+  </td>
+  <td class="time ">
+    74.016
+  </td>
+  <td class="final-time">73.433</td>
+  <td class="diff">4.047</td>
+  <td class="diff">4.047</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">3</td>
+  <td class="cls">CAMS</td>
+  <td class="number">206</td>
+  <td class="driver">Nick Wernet</td>
+  <td class="vehicle">2006 Chevrolet Corvette Z06</td>
+  <td class="time ">
+    OFF
+  </td>
+  <td class="time ">
+    79.268
+  </td>
+  <td class="time best">
+    76.196
+  </td>
+  <td class="time ">
+    79.038&nbsp;(1)
+  </td>
+  <td class="time ">
+    79.194&nbsp;(2)
+  </td>
+  <td class="time ">
+    77.782&nbsp;(1)
+  </td>
+  <td class="final-time">76.196</td>
+  <td class="diff">2.763</td>
+  <td class="diff">6.810</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>N - Open - 18 Drivers - 2 trophies </th>
+
+  <th class="summary" colspan=6>Raw Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">N</td>
+  <td class="number">87</td>
+  <td class="driver">Michael Russell</td>
+  <td class="vehicle">1996 BMW M3</td>
+  <td class="time ">
+    76.111
+  </td>
+  <td class="time ">
+    73.338
+  </td>
+  <td class="time ">
+    72.956
+  </td>
+  <td class="time ">
+    73.744
+  </td>
+  <td class="time ">
+    73.388
+  </td>
+  <td class="time best">
+    72.061
+  </td>
+  <td class="final-time">72.061</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">2</td>
+  <td class="cls">N</td>
+  <td class="number">847</td>
+  <td class="driver">Ethan Saunders</td>
+  <td class="vehicle">2003 Toyota MR2 Spyder</td>
+  <td class="time ">
+    79.543
+  </td>
+  <td class="time ">
+    74.799
+  </td>
+  <td class="time ">
+    74.281
+  </td>
+  <td class="time ">
+    78.342&nbsp;(1)
+  </td>
+  <td class="time ">
+    74.799
+  </td>
+  <td class="time best">
+    73.621
+  </td>
+  <td class="final-time">73.621</td>
+  <td class="diff">1.560</td>
+  <td class="diff">1.560</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">3</td>
+  <td class="cls">N</td>
+  <td class="number">227</td>
+  <td class="driver">Adam Radtke</td>
+  <td class="vehicle">1994 Acura Integra</td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    78.420&nbsp;(1)
+  </td>
+  <td class="time ">
+    77.046
+  </td>
+  <td class="time ">
+    77.480
+  </td>
+  <td class="time best">
+    76.266
+  </td>
+  <td class="time ">
+    76.759
+  </td>
+  <td class="final-time">76.266</td>
+  <td class="diff">2.645</td>
+  <td class="diff">4.205</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">4</td>
+  <td class="cls">N</td>
+  <td class="number">107</td>
+  <td class="driver">Jason Grant</td>
+  <td class="vehicle">1990 Chevy Corvette</td>
+  <td class="time ">
+    84.238
+  </td>
+  <td class="time ">
+    78.660
+  </td>
+  <td class="time best">
+    77.340
+  </td>
+  <td class="time ">
+    82.980&nbsp;(1)
+  </td>
+  <td class="time ">
+    78.215
+  </td>
+  <td class="time ">
+    77.948
+  </td>
+  <td class="final-time">77.340</td>
+  <td class="diff">1.074</td>
+  <td class="diff">5.279</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">5</td>
+  <td class="cls">N</td>
+  <td class="number">763</td>
+  <td class="driver">Eric Thor</td>
+  <td class="vehicle">2008 Mitsubishi evolution</td>
+  <td class="time ">
+    85.036
+  </td>
+  <td class="time ">
+    79.964
+  </td>
+  <td class="time ">
+    80.107&nbsp;(1)
+  </td>
+  <td class="time best">
+    78.558
+  </td>
+  <td class="time ">
+    81.114&nbsp;(1)
+  </td>
+  <td class="time ">
+    79.016
+  </td>
+  <td class="final-time">78.558</td>
+  <td class="diff">1.218</td>
+  <td class="diff">6.497</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">6</td>
+  <td class="cls">N</td>
+  <td class="number">54</td>
+  <td class="driver">Christopher Stromme</td>
+  <td class="vehicle">1999 Saab 9-3 Convertible SE</td>
+  <td class="time ">
+    87.588
+  </td>
+  <td class="time ">
+    83.781&nbsp;(1)
+  </td>
+  <td class="time ">
+    84.726&nbsp;(2)
+  </td>
+  <td class="time ">
+    80.466
+  </td>
+  <td class="time ">
+    84.892&nbsp;(2)
+  </td>
+  <td class="time best">
+    79.839
+  </td>
+  <td class="final-time">79.839</td>
+  <td class="diff">1.281</td>
+  <td class="diff">7.778</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">7</td>
+  <td class="cls">N</td>
+  <td class="number">127</td>
+  <td class="driver">Max Grant</td>
+  <td class="vehicle">1990 Chevy Corvette</td>
+  <td class="time ">
+    82.889&nbsp;(1)
+  </td>
+  <td class="time ">
+    89.134&nbsp;(4)
+  </td>
+  <td class="time ">
+    81.828
+  </td>
+  <td class="time ">
+    85.327&nbsp;(3)
+  </td>
+  <td class="time ">
+    81.771&nbsp;(1)
+  </td>
+  <td class="time best">
+    80.176
+  </td>
+  <td class="final-time">80.176</td>
+  <td class="diff">0.337</td>
+  <td class="diff">8.115</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">8</td>
+  <td class="cls">N</td>
+  <td class="number">944</td>
+  <td class="driver">Jacob Giesen</td>
+  <td class="vehicle">1986 Porsche 944 turbo</td>
+  <td class="time ">
+    95.040
+  </td>
+  <td class="time ">
+    87.330
+  </td>
+  <td class="time ">
+    83.235
+  </td>
+  <td class="time ">
+    84.063&nbsp;(1)
+  </td>
+  <td class="time ">
+    83.175&nbsp;(1)
+  </td>
+  <td class="time best">
+    81.585
+  </td>
+  <td class="final-time">81.585</td>
+  <td class="diff">1.409</td>
+  <td class="diff">9.524</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">9</td>
+  <td class="cls">N</td>
+  <td class="number">789</td>
+  <td class="driver">Aaron Kvidera</td>
+  <td class="vehicle">1984 Pontiac Fiero</td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    92.303
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    91.836
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time best">
+    83.068
+  </td>
+  <td class="final-time">83.068</td>
+  <td class="diff">1.483</td>
+  <td class="diff">11.007</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">10</td>
+  <td class="cls">N</td>
+  <td class="number">786</td>
+  <td class="driver">Alexander Kvidera</td>
+  <td class="vehicle">1984 Pontiac Fiero</td>
+  <td class="time ">
+    89.283
+  </td>
+  <td class="time ">
+    84.091
+  </td>
+  <td class="time best">
+    83.568
+  </td>
+  <td class="time ">
+    85.051
+  </td>
+  <td class="time ">
+    84.202
+  </td>
+  <td class="time ">
+    87.824
+  </td>
+  <td class="final-time">83.568</td>
+  <td class="diff">0.500</td>
+  <td class="diff">11.507</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">11</td>
+  <td class="cls">N</td>
+  <td class="number">996</td>
+  <td class="driver">Matthew Salfer</td>
+  <td class="vehicle">2002 Porsche 911 carrera 4 cabriolet</td>
+  <td class="time ">
+    87.368
+  </td>
+  <td class="time ">
+    84.745
+  </td>
+  <td class="time ">
+    85.248&nbsp;(1)
+  </td>
+  <td class="time ">
+    85.064&nbsp;(1)
+  </td>
+  <td class="time ">
+    83.912&nbsp;(1)
+  </td>
+  <td class="time best">
+    83.832
+  </td>
+  <td class="final-time">83.832</td>
+  <td class="diff">0.264</td>
+  <td class="diff">11.771</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">12</td>
+  <td class="cls">N</td>
+  <td class="number">104</td>
+  <td class="driver">Thomas Haider</td>
+  <td class="vehicle">2022 Ford Shelby GT 500</td>
+  <td class="time ">
+    94.082&nbsp;(1)
+  </td>
+  <td class="time best">
+    85.032&nbsp;(1)
+  </td>
+  <td class="time ">
+    86.272&nbsp;(2)
+  </td>
+  <td class="time ">
+    92.849&nbsp;(2)
+  </td>
+  <td class="time ">
+    88.534
+  </td>
+  <td class="time ">
+    90.085&nbsp;(1)
+  </td>
+  <td class="final-time">85.032</td>
+  <td class="diff">1.200</td>
+  <td class="diff">12.971</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">13</td>
+  <td class="cls">N</td>
+  <td class="number">774</td>
+  <td class="driver">Micah Land</td>
+  <td class="vehicle">1992 Mazda Miata</td>
+  <td class="time ">
+    93.720
+  </td>
+  <td class="time ">
+    85.568
+  </td>
+  <td class="time ">
+    87.935&nbsp;(2)
+  </td>
+  <td class="time ">
+    86.344&nbsp;(2)
+  </td>
+  <td class="time best">
+    85.070
+  </td>
+  <td class="time ">
+    85.076&nbsp;(1)
+  </td>
+  <td class="final-time">85.070</td>
+  <td class="diff">0.038</td>
+  <td class="diff">13.009</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">14</td>
+  <td class="cls">N</td>
+  <td class="number">541</td>
+  <td class="driver">Matthew Lopez</td>
+  <td class="vehicle">Nissan 350z</td>
+  <td class="time best">
+    85.119&nbsp;(2)
+  </td>
+  <td class="time ">
+    86.151&nbsp;(2)
+  </td>
+  <td class="time ">
+    94.508&nbsp;(3)
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    90.542&nbsp;(3)
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="final-time">85.119</td>
+  <td class="diff">0.049</td>
+  <td class="diff">13.058</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">15</td>
+  <td class="cls">N</td>
+  <td class="number">921</td>
+  <td class="driver">Mark Kern</td>
+  <td class="vehicle">1998 Chevrolet Corvette</td>
+  <td class="time ">
+    90.902
+  </td>
+  <td class="time ">
+    86.541&nbsp;(1)
+  </td>
+  <td class="time best">
+    85.129&nbsp;(1)
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="final-time">85.129</td>
+  <td class="diff">0.010</td>
+  <td class="diff">13.068</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">16</td>
+  <td class="cls">N</td>
+  <td class="number">520</td>
+  <td class="driver">Elynn Horn</td>
+  <td class="vehicle">2017 Volkswagen GTI</td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    89.833
+  </td>
+  <td class="time ">
+    85.754
+  </td>
+  <td class="time ">
+    89.466
+  </td>
+  <td class="time best">
+    85.381
+  </td>
+  <td class="time ">
+    87.189
+  </td>
+  <td class="final-time">85.381</td>
+  <td class="diff">0.252</td>
+  <td class="diff">13.320</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">17</td>
+  <td class="cls">N</td>
+  <td class="number">710</td>
+  <td class="driver">Patrick O&#x27;Keefe</td>
+  <td class="vehicle">2019 Mazda MX-5 Club</td>
+  <td class="time ">
+    89.646
+  </td>
+  <td class="time ">
+    DNF
+  </td>
+  <td class="time ">
+    89.979
+  </td>
+  <td class="time ">
+    91.683
+  </td>
+  <td class="time ">
+    89.090
+  </td>
+  <td class="time best">
+    89.013
+  </td>
+  <td class="final-time">89.013</td>
+  <td class="diff">3.632</td>
+  <td class="diff">16.952</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">18</td>
+  <td class="cls">N</td>
+  <td class="number">419</td>
+  <td class="driver">Dale Seeley</td>
+  <td class="vehicle">2011 Chevrolet Corvette GS</td>
+  <td class="time ">
+    97.021
+  </td>
+  <td class="time best">
+    89.023
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="time ">
+    
+  </td>
+  <td class="final-time">89.023</td>
+  <td class="diff">0.010</td>
+  <td class="diff">16.962</td>
+</tr>
+  
+</tbody>
+
+<tbody>
+<tr>
+  <th class="summary" colspan=6>V - Open - 4 Drivers - 1 trophies </th>
+
+  <th class="summary" colspan=6>Raw Times</th>
+  <th class="final-time">Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+  <td class="trophy">T</td>
+  <td class="rank">1</td>
+  <td class="cls">V</td>
+  <td class="number">28</td>
+  <td class="driver">Jess Meyer</td>
+  <td class="vehicle">1980 Porsche 911</td>
+  <td class="time ">
+    74.315
+  </td>
+  <td class="time ">
+    72.735
+  </td>
+  <td class="time ">
+    73.643&nbsp;(1)
+  </td>
+  <td class="time ">
+    73.151
+  </td>
+  <td class="time ">
+    72.499
+  </td>
+  <td class="time best">
+    72.457
+  </td>
+  <td class="final-time">72.457</td>
+  <td class="diff">-</td>
+  <td class="diff">-</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">2</td>
+  <td class="cls">V</td>
+  <td class="number">788</td>
+  <td class="driver">Max Currie</td>
+  <td class="vehicle">1997 Porsche 911</td>
+  <td class="time ">
+    75.603
+  </td>
+  <td class="time ">
+    75.136&nbsp;(1)
+  </td>
+  <td class="time best">
+    73.758
+  </td>
+  <td class="time ">
+    74.462
+  </td>
+  <td class="time ">
+    73.836
+  </td>
+  <td class="time ">
+    79.160&nbsp;(3)
+  </td>
+  <td class="final-time">73.758</td>
+  <td class="diff">1.301</td>
+  <td class="diff">1.301</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">3</td>
+  <td class="cls">V</td>
+  <td class="number">163</td>
+  <td class="driver">Mark Hagemann</td>
+  <td class="vehicle">1963 Chevrolet corvette</td>
+  <td class="time ">
+    88.123
+  </td>
+  <td class="time ">
+    81.407
+  </td>
+  <td class="time ">
+    78.837
+  </td>
+  <td class="time ">
+    81.861&nbsp;(1)
+  </td>
+  <td class="time best">
+    77.767
+  </td>
+  <td class="time ">
+    79.835
+  </td>
+  <td class="final-time">77.767</td>
+  <td class="diff">4.009</td>
+  <td class="diff">5.310</td>
+</tr>
+  
+  <tr>
+  <td class="trophy"></td>
+  <td class="rank">4</td>
+  <td class="cls">V</td>
+  <td class="number">447</td>
+  <td class="driver">Karl Svedberg</td>
+  <td class="vehicle">1968 Chevrolet Corvette 327 ci, 4sp man</td>
+  <td class="time ">
+    88.343
+  </td>
+  <td class="time ">
+    85.046
+  </td>
+  <td class="time ">
+    82.532
+  </td>
+  <td class="time ">
+    82.129&nbsp;(1)
+  </td>
+  <td class="time ">
+    81.987&nbsp;(2)
+  </td>
+  <td class="time best">
+    81.632&nbsp;(1)
+  </td>
+  <td class="final-time">81.632</td>
+  <td class="diff">3.865</td>
+  <td class="diff">9.175</td>
+</tr>
+  
+</tbody>
+
+</table>
+
+<div id="raw-times" class="section">
+<span class="name">Raw Times</span>
+<a href="#top">class results</a>,
+<!-- <a href="#raw-times">raw times</a>, -->
+<a href="#pax-times">pax times</a>
+</div>
+
+<table class="results">
+<tbody>
+<tr>
+  <th class="pos">Pos</th>
+  <th class="cls">Class</th>
+  <th class="number">Num</th>
+  <th class="driver">Driver</th>
+  <th class="vehicle">Vehicle</th>
+  <th class="time">Raw Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+</tr>
+
+  <tr>
+    <td class="rank">1</td>
+    <td class="cls">C2-AM</td>
+    <td class="number">53</td>
+    <td class="driver">Tim Brueske</td>
+    <td class="vehicle">2022 Suzuki Buster</td>
+    <td class="time">64.259</td>
+    <td class="diff">-</td>
+    <td class="diff">-</td>
+  </tr>
+  <tr>
+    <td class="rank">2</td>
+    <td class="cls">P-STU</td>
+    <td class="number">962</td>
+    <td class="driver">Brent Schneekloth</td>
+    <td class="vehicle">2006 Mitsubishi Evo IX RS</td>
+    <td class="time">66.043</td>
+    <td class="diff">1.784</td>
+    <td class="diff">1.784</td>
+  </tr>
+  <tr>
+    <td class="rank">3</td>
+    <td class="cls">C2-EM</td>
+    <td class="number">780</td>
+    <td class="driver">Jeremy Anderson</td>
+    <td class="vehicle">2022 Exomotive Exocet</td>
+    <td class="time">66.980</td>
+    <td class="diff">0.937</td>
+    <td class="diff">2.721</td>
+  </tr>
+  <tr>
+    <td class="rank">4</td>
+    <td class="cls">P-STS</td>
+    <td class="number">1</td>
+    <td class="driver">Adam Barber</td>
+    <td class="vehicle">1988 Honda CRX Si</td>
+    <td class="time">67.969</td>
+    <td class="diff">0.989</td>
+    <td class="diff">3.710</td>
+  </tr>
+  <tr>
+    <td class="rank">5</td>
+    <td class="cls">XA</td>
+    <td class="number">350</td>
+    <td class="driver">Joe Deleon</td>
+    <td class="vehicle">2003 Nissan 350z</td>
+    <td class="time">68.038</td>
+    <td class="diff">0.069</td>
+    <td class="diff">3.779</td>
+  </tr>
+  <tr>
+    <td class="rank">6</td>
+    <td class="cls">XA</td>
+    <td class="number">510</td>
+    <td class="driver">Piero Pucci</td>
+    <td class="vehicle">2013 Scion Frs</td>
+    <td class="time">68.265</td>
+    <td class="diff">0.227</td>
+    <td class="diff">4.006</td>
+  </tr>
+  <tr>
+    <td class="rank">7</td>
+    <td class="cls">P-DS</td>
+    <td class="number">88</td>
+    <td class="driver">Neal Tovsen</td>
+    <td class="vehicle">2022 Toyota FRS</td>
+    <td class="time">69.034</td>
+    <td class="diff">0.769</td>
+    <td class="diff">4.775</td>
+  </tr>
+  <tr>
+    <td class="rank">8</td>
+    <td class="cls">P-STS</td>
+    <td class="number">487</td>
+    <td class="driver">Nathan Witt</td>
+    <td class="vehicle">1992 Mazda Miata</td>
+    <td class="time">69.049</td>
+    <td class="diff">0.015</td>
+    <td class="diff">4.790</td>
+  </tr>
+  <tr>
+    <td class="rank">9</td>
+    <td class="cls">CAMS</td>
+    <td class="number">176</td>
+    <td class="driver">Matthew Sebelski</td>
+    <td class="vehicle">2001 Chevrolet Corvette Z06</td>
+    <td class="time">69.386</td>
+    <td class="diff">0.337</td>
+    <td class="diff">5.127</td>
+  </tr>
+  <tr>
+    <td class="rank">10</td>
+    <td class="cls">P-STS</td>
+    <td class="number">990</td>
+    <td class="driver">Jake Rogers</td>
+    <td class="vehicle">1990 Mazda Mx-5 Miata</td>
+    <td class="time">69.618</td>
+    <td class="diff">0.232</td>
+    <td class="diff">5.359</td>
+  </tr>
+  <tr>
+    <td class="rank">11</td>
+    <td class="cls">Z-STS</td>
+    <td class="number">371</td>
+    <td class="driver">Steve Pahl</td>
+    <td class="vehicle">1991 Honda CRX</td>
+    <td class="time">69.732</td>
+    <td class="diff">0.114</td>
+    <td class="diff">5.473</td>
+  </tr>
+  <tr>
+    <td class="rank">12</td>
+    <td class="cls">XA</td>
+    <td class="number">556</td>
+    <td class="driver">Sean Wilke</td>
+    <td class="vehicle">2022 Toyota GR86</td>
+    <td class="time">69.830</td>
+    <td class="diff">0.098</td>
+    <td class="diff">5.571</td>
+  </tr>
+  <tr>
+    <td class="rank">13</td>
+    <td class="cls">P-DS</td>
+    <td class="number">421</td>
+    <td class="driver">Bernie Kaeferlein</td>
+    <td class="vehicle">2022 Toyota GR86</td>
+    <td class="time">70.070</td>
+    <td class="diff">0.240</td>
+    <td class="diff">5.811</td>
+  </tr>
+  <tr>
+    <td class="rank">14</td>
+    <td class="cls">C2-STR</td>
+    <td class="number">440</td>
+    <td class="driver">Gavyn Gill</td>
+    <td class="vehicle">2019 Mazda Miata</td>
+    <td class="time">70.368</td>
+    <td class="diff">0.298</td>
+    <td class="diff">6.109</td>
+  </tr>
+  <tr>
+    <td class="rank">15</td>
+    <td class="cls">XA</td>
+    <td class="number">711</td>
+    <td class="driver">Nathan Thalhuber</td>
+    <td class="vehicle">1991 Toyota MR2</td>
+    <td class="time">70.398</td>
+    <td class="diff">0.030</td>
+    <td class="diff">6.139</td>
+  </tr>
+  <tr>
+    <td class="rank">16</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">99</td>
+    <td class="driver">Kyle Greene</td>
+    <td class="vehicle">2018 Honda Civic Type R</td>
+    <td class="time">70.665</td>
+    <td class="diff">0.267</td>
+    <td class="diff">6.406</td>
+  </tr>
+  <tr>
+    <td class="rank">17</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">311</td>
+    <td class="driver">Ross Jacobs</td>
+    <td class="vehicle">2017 Ford Focus RS</td>
+    <td class="time">70.673</td>
+    <td class="diff">0.008</td>
+    <td class="diff">6.414</td>
+  </tr>
+  <tr>
+    <td class="rank">18</td>
+    <td class="cls">XA</td>
+    <td class="number">309</td>
+    <td class="driver">Tony Starks</td>
+    <td class="vehicle">2004 Acura TL</td>
+    <td class="time">70.687</td>
+    <td class="diff">0.014</td>
+    <td class="diff">6.428</td>
+  </tr>
+  <tr>
+    <td class="rank">19</td>
+    <td class="cls">XA</td>
+    <td class="number">172</td>
+    <td class="driver">Mark Maenpaa</td>
+    <td class="vehicle">2018 Subaru Wrx</td>
+    <td class="time">70.924</td>
+    <td class="diff">0.237</td>
+    <td class="diff">6.665</td>
+  </tr>
+  <tr>
+    <td class="rank">20</td>
+    <td class="cls">C2-EVX</td>
+    <td class="number">247</td>
+    <td class="driver">Jon-Eric Deutsch</td>
+    <td class="vehicle">2021 Tesla Model 3</td>
+    <td class="time">70.943</td>
+    <td class="diff">0.019</td>
+    <td class="diff">6.684</td>
+  </tr>
+  <tr>
+    <td class="rank">21</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">45</td>
+    <td class="driver">Peter Hsu</td>
+    <td class="vehicle">2019 Honda Type R</td>
+    <td class="time">70.952</td>
+    <td class="diff">0.009</td>
+    <td class="diff">6.693</td>
+  </tr>
+  <tr>
+    <td class="rank">22</td>
+    <td class="cls">XA</td>
+    <td class="number">341</td>
+    <td class="driver">Chris Weiske</td>
+    <td class="vehicle">2011 Subaru WRX STi</td>
+    <td class="time">71.063</td>
+    <td class="diff">0.111</td>
+    <td class="diff">6.804</td>
+  </tr>
+  <tr>
+    <td class="rank">23</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">656</td>
+    <td class="driver">Adam Quimby</td>
+    <td class="vehicle">2022 Toyota GR 86</td>
+    <td class="time">71.152</td>
+    <td class="diff">0.089</td>
+    <td class="diff">6.893</td>
+  </tr>
+  <tr>
+    <td class="rank">24</td>
+    <td class="cls">XA</td>
+    <td class="number">244</td>
+    <td class="driver">Gopihath Ramchand</td>
+    <td class="vehicle">2002 Honda S2000</td>
+    <td class="time">71.325</td>
+    <td class="diff">0.173</td>
+    <td class="diff">7.066</td>
+  </tr>
+  <tr>
+    <td class="rank">25</td>
+    <td class="cls">Z-STS</td>
+    <td class="number">31</td>
+    <td class="driver">Steve Meschke</td>
+    <td class="vehicle">1990 Mazda Miata</td>
+    <td class="time">71.407</td>
+    <td class="diff">0.082</td>
+    <td class="diff">7.148</td>
+  </tr>
+  <tr>
+    <td class="rank">26</td>
+    <td class="cls">P-GS</td>
+    <td class="number">79</td>
+    <td class="driver">Robin Newborg</td>
+    <td class="vehicle">2022 Volkswagen Golf GTI</td>
+    <td class="time">71.434</td>
+    <td class="diff">0.027</td>
+    <td class="diff">7.175</td>
+  </tr>
+  <tr>
+    <td class="rank">27</td>
+    <td class="cls">P-STH</td>
+    <td class="number">175</td>
+    <td class="driver">Michael Waich</td>
+    <td class="vehicle">2016 Volkswagen GTR</td>
+    <td class="time">71.504</td>
+    <td class="diff">0.070</td>
+    <td class="diff">7.245</td>
+  </tr>
+  <tr>
+    <td class="rank">28</td>
+    <td class="cls">CS</td>
+    <td class="number">713</td>
+    <td class="driver">Chris Lottes</td>
+    <td class="vehicle">2022 Mazda MX-5 Club</td>
+    <td class="time">71.749</td>
+    <td class="diff">0.245</td>
+    <td class="diff">7.490</td>
+  </tr>
+  <tr>
+    <td class="rank">29</td>
+    <td class="cls">N</td>
+    <td class="number">87</td>
+    <td class="driver">Michael Russell</td>
+    <td class="vehicle">1996 BMW M3</td>
+    <td class="time">72.061</td>
+    <td class="diff">0.312</td>
+    <td class="diff">7.802</td>
+  </tr>
+  <tr>
+    <td class="rank">30</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">475</td>
+    <td class="driver">Tim Malzahn</td>
+    <td class="vehicle">2017 Honda Civic Type-R</td>
+    <td class="time">72.390</td>
+    <td class="diff">0.329</td>
+    <td class="diff">8.131</td>
+  </tr>
+  <tr>
+    <td class="rank">31</td>
+    <td class="cls">C2-SST</td>
+    <td class="number">792</td>
+    <td class="driver">Quincy Tambo</td>
+    <td class="vehicle">2014 Porsche Cayman S</td>
+    <td class="time">72.406</td>
+    <td class="diff">0.016</td>
+    <td class="diff">8.147</td>
+  </tr>
+  <tr>
+    <td class="rank">32</td>
+    <td class="cls">V</td>
+    <td class="number">28</td>
+    <td class="driver">Jess Meyer</td>
+    <td class="vehicle">1980 Porsche 911</td>
+    <td class="time">72.457</td>
+    <td class="diff">0.051</td>
+    <td class="diff">8.198</td>
+  </tr>
+  <tr>
+    <td class="rank">33</td>
+    <td class="cls">STH</td>
+    <td class="number">805</td>
+    <td class="driver">Jon Stef</td>
+    <td class="vehicle">2011 Subaru WRX</td>
+    <td class="time">72.512</td>
+    <td class="diff">0.055</td>
+    <td class="diff">8.253</td>
+  </tr>
+  <tr>
+    <td class="rank">34</td>
+    <td class="cls">STU</td>
+    <td class="number">358</td>
+    <td class="driver">Chase Malkow</td>
+    <td class="vehicle">2005 Nissan 350z</td>
+    <td class="time">72.832</td>
+    <td class="diff">0.320</td>
+    <td class="diff">8.573</td>
+  </tr>
+  <tr>
+    <td class="rank">35</td>
+    <td class="cls">XA</td>
+    <td class="number">500</td>
+    <td class="driver">Daniel Personius</td>
+    <td class="vehicle">BMW 318ti</td>
+    <td class="time">72.849</td>
+    <td class="diff">0.017</td>
+    <td class="diff">8.590</td>
+  </tr>
+  <tr>
+    <td class="rank">36</td>
+    <td class="cls">P-STS</td>
+    <td class="number">117</td>
+    <td class="driver">Chris Medower</td>
+    <td class="vehicle">Mazda Miata</td>
+    <td class="time">72.862</td>
+    <td class="diff">0.013</td>
+    <td class="diff">8.603</td>
+  </tr>
+  <tr>
+    <td class="rank">37</td>
+    <td class="cls">Z-ES</td>
+    <td class="number">16</td>
+    <td class="driver">Brian Ksicinski</td>
+    <td class="vehicle">1999 Mazda Miata</td>
+    <td class="time">72.952</td>
+    <td class="diff">0.090</td>
+    <td class="diff">8.693</td>
+  </tr>
+  <tr>
+    <td class="rank">38</td>
+    <td class="cls">Z-ES</td>
+    <td class="number">71</td>
+    <td class="driver">Lucas Reller</td>
+    <td class="vehicle">1999 Mazda Miata</td>
+    <td class="time">72.952</td>
+    <td class="diff">0.000</td>
+    <td class="diff">8.693</td>
+  </tr>
+  <tr>
+    <td class="rank">39</td>
+    <td class="cls">C2-XB</td>
+    <td class="number">621</td>
+    <td class="driver">Blake Doblinger</td>
+    <td class="vehicle">1995 Mazda Miata</td>
+    <td class="time">73.004</td>
+    <td class="diff">0.052</td>
+    <td class="diff">8.745</td>
+  </tr>
+  <tr>
+    <td class="rank">40</td>
+    <td class="cls">P-GS</td>
+    <td class="number">17</td>
+    <td class="driver">John Moravec</td>
+    <td class="vehicle">2022 Volkwagen GTI</td>
+    <td class="time">73.029</td>
+    <td class="diff">0.025</td>
+    <td class="diff">8.770</td>
+  </tr>
+  <tr>
+    <td class="rank">41</td>
+    <td class="cls">CS</td>
+    <td class="number">726</td>
+    <td class="driver">Peter Nolden</td>
+    <td class="vehicle">2020 Mazda MX-5 Club</td>
+    <td class="time">73.106</td>
+    <td class="diff">0.077</td>
+    <td class="diff">8.847</td>
+  </tr>
+  <tr>
+    <td class="rank">42</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">665</td>
+    <td class="driver">Tyler Blomquist</td>
+    <td class="vehicle">2022 Toyota GR86</td>
+    <td class="time">73.296</td>
+    <td class="diff">0.190</td>
+    <td class="diff">9.037</td>
+  </tr>
+  <tr>
+    <td class="rank">43</td>
+    <td class="cls">CAMC</td>
+    <td class="number">430</td>
+    <td class="driver">Lyndrell Novotny</td>
+    <td class="vehicle">2018 Chevrolet Camaro</td>
+    <td class="time">73.316</td>
+    <td class="diff">0.020</td>
+    <td class="diff">9.057</td>
+  </tr>
+  <tr>
+    <td class="rank">44</td>
+    <td class="cls">CAMS</td>
+    <td class="number">214</td>
+    <td class="driver">Michael Jensen</td>
+    <td class="vehicle">2014 Chevrolet Corvette</td>
+    <td class="time">73.433</td>
+    <td class="diff">0.117</td>
+    <td class="diff">9.174</td>
+  </tr>
+  <tr>
+    <td class="rank">45</td>
+    <td class="cls">P-STH</td>
+    <td class="number">75</td>
+    <td class="driver">Steve Garnjobst</td>
+    <td class="vehicle">2016 Volkswagen GTI</td>
+    <td class="time">73.475</td>
+    <td class="diff">0.042</td>
+    <td class="diff">9.216</td>
+  </tr>
+  <tr>
+    <td class="rank">46</td>
+    <td class="cls">CS</td>
+    <td class="number">97</td>
+    <td class="driver">Randy Williams</td>
+    <td class="vehicle">2017 Mazda RF Club</td>
+    <td class="time">73.492</td>
+    <td class="diff">0.017</td>
+    <td class="diff">9.233</td>
+  </tr>
+  <tr>
+    <td class="rank">47</td>
+    <td class="cls">STU</td>
+    <td class="number">159</td>
+    <td class="driver">Thomas Braun</td>
+    <td class="vehicle">2004 Mazda Mazdaspeed Miata</td>
+    <td class="time">73.524</td>
+    <td class="diff">0.032</td>
+    <td class="diff">9.265</td>
+  </tr>
+  <tr>
+    <td class="rank">48</td>
+    <td class="cls">STH</td>
+    <td class="number">497</td>
+    <td class="driver">Ian Schmitz</td>
+    <td class="vehicle">2012 Mazda Mazdaspeed 3</td>
+    <td class="time">73.574</td>
+    <td class="diff">0.050</td>
+    <td class="diff">9.315</td>
+  </tr>
+  <tr>
+    <td class="rank">49</td>
+    <td class="cls">N</td>
+    <td class="number">847</td>
+    <td class="driver">Ethan Saunders</td>
+    <td class="vehicle">2003 Toyota MR2 Spyder</td>
+    <td class="time">73.621</td>
+    <td class="diff">0.047</td>
+    <td class="diff">9.362</td>
+  </tr>
+  <tr>
+    <td class="rank">50</td>
+    <td class="cls">XA</td>
+    <td class="number">403</td>
+    <td class="driver">Brandon Cottrell</td>
+    <td class="vehicle">2021 Toyota Supra</td>
+    <td class="time">73.667</td>
+    <td class="diff">0.046</td>
+    <td class="diff">9.408</td>
+  </tr>
+  <tr>
+    <td class="rank">51</td>
+    <td class="cls">V</td>
+    <td class="number">788</td>
+    <td class="driver">Max Currie</td>
+    <td class="vehicle">1997 Porsche 911</td>
+    <td class="time">73.758</td>
+    <td class="diff">0.091</td>
+    <td class="diff">9.499</td>
+  </tr>
+  <tr>
+    <td class="rank">52</td>
+    <td class="cls">C2-SS</td>
+    <td class="number">427</td>
+    <td class="driver">Rick Sellner</td>
+    <td class="vehicle">2016 Chevrolet corvette z07</td>
+    <td class="time">74.353</td>
+    <td class="diff">0.595</td>
+    <td class="diff">10.094</td>
+  </tr>
+  <tr>
+    <td class="rank">53</td>
+    <td class="cls">CS</td>
+    <td class="number">24</td>
+    <td class="driver">Will Schafer</td>
+    <td class="vehicle">2019 Fiat 124 Spider Abarth</td>
+    <td class="time">74.392</td>
+    <td class="diff">0.039</td>
+    <td class="diff">10.133</td>
+  </tr>
+  <tr>
+    <td class="rank">54</td>
+    <td class="cls">Z-STS</td>
+    <td class="number">48</td>
+    <td class="driver">Ron Schwanz</td>
+    <td class="vehicle">1990 Mazda Miata</td>
+    <td class="time">74.477</td>
+    <td class="diff">0.085</td>
+    <td class="diff">10.218</td>
+  </tr>
+  <tr>
+    <td class="rank">55</td>
+    <td class="cls">Z-HS</td>
+    <td class="number">843</td>
+    <td class="driver">Dwight Anderson</td>
+    <td class="vehicle">2019 Ford Fiesta ST</td>
+    <td class="time">74.704</td>
+    <td class="diff">0.227</td>
+    <td class="diff">10.445</td>
+  </tr>
+  <tr>
+    <td class="rank">56</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">186</td>
+    <td class="driver">Andrew Dehmer</td>
+    <td class="vehicle">2017 Subaru BRZ Limited</td>
+    <td class="time">74.761</td>
+    <td class="diff">0.057</td>
+    <td class="diff">10.502</td>
+  </tr>
+  <tr>
+    <td class="rank">57</td>
+    <td class="cls">Z-ES</td>
+    <td class="number">812</td>
+    <td class="driver">Andy Naughton</td>
+    <td class="vehicle">1994 Mazda Miata</td>
+    <td class="time">74.896</td>
+    <td class="diff">0.135</td>
+    <td class="diff">10.637</td>
+  </tr>
+  <tr>
+    <td class="rank">58</td>
+    <td class="cls">CAMC</td>
+    <td class="number">74</td>
+    <td class="driver">Anthony Onceler</td>
+    <td class="vehicle">2017 Chevrolet Camaro</td>
+    <td class="time">75.035</td>
+    <td class="diff">0.139</td>
+    <td class="diff">10.776</td>
+  </tr>
+  <tr>
+    <td class="rank">59</td>
+    <td class="cls">XA</td>
+    <td class="number">948</td>
+    <td class="driver">Harold Kachelmyer</td>
+    <td class="vehicle">1984 Porsche 944</td>
+    <td class="time">75.040</td>
+    <td class="diff">0.005</td>
+    <td class="diff">10.781</td>
+  </tr>
+  <tr>
+    <td class="rank">60</td>
+    <td class="cls">CAMC</td>
+    <td class="number">738</td>
+    <td class="driver">Randy Cameron</td>
+    <td class="vehicle">2012 Ford Mustang Boss 302</td>
+    <td class="time">75.043</td>
+    <td class="diff">0.003</td>
+    <td class="diff">10.784</td>
+  </tr>
+  <tr>
+    <td class="rank">61</td>
+    <td class="cls">P-STS</td>
+    <td class="number">182</td>
+    <td class="driver">Jashua Rodriguez</td>
+    <td class="vehicle">1990 Mazda Miata</td>
+    <td class="time">75.532</td>
+    <td class="diff">0.489</td>
+    <td class="diff">11.273</td>
+  </tr>
+  <tr>
+    <td class="rank">62</td>
+    <td class="cls">C2-XP</td>
+    <td class="number">411</td>
+    <td class="driver">Dan Nielsen</td>
+    <td class="vehicle">1988 Chevrolet corvette</td>
+    <td class="time">75.542</td>
+    <td class="diff">0.010</td>
+    <td class="diff">11.283</td>
+  </tr>
+  <tr>
+    <td class="rank">63</td>
+    <td class="cls">Z-BS</td>
+    <td class="number">7</td>
+    <td class="driver">Philip Ethier</td>
+    <td class="vehicle">2011 Porsche Cayman 2.9</td>
+    <td class="time">75.694</td>
+    <td class="diff">0.152</td>
+    <td class="diff">11.435</td>
+  </tr>
+  <tr>
+    <td class="rank">64</td>
+    <td class="cls">C2-SSR</td>
+    <td class="number">10</td>
+    <td class="driver">Heidi Halverson</td>
+    <td class="vehicle">2005 Lotus Elise</td>
+    <td class="time">75.743</td>
+    <td class="diff">0.049</td>
+    <td class="diff">11.484</td>
+  </tr>
+  <tr>
+    <td class="rank">65</td>
+    <td class="cls">XA</td>
+    <td class="number">961</td>
+    <td class="driver">JUSTIN SEELEY</td>
+    <td class="vehicle">2013 BMW 335IS</td>
+    <td class="time">75.884</td>
+    <td class="diff">0.141</td>
+    <td class="diff">11.625</td>
+  </tr>
+  <tr>
+    <td class="rank">66</td>
+    <td class="cls">C2-STR</td>
+    <td class="number">701</td>
+    <td class="driver">Darren Hagford</td>
+    <td class="vehicle">2000 Mazda Miata</td>
+    <td class="time">75.942</td>
+    <td class="diff">0.058</td>
+    <td class="diff">11.683</td>
+  </tr>
+  <tr>
+    <td class="rank">67</td>
+    <td class="cls">CAMS</td>
+    <td class="number">206</td>
+    <td class="driver">Nick Wernet</td>
+    <td class="vehicle">2006 Chevrolet Corvette Z06</td>
+    <td class="time">76.196</td>
+    <td class="diff">0.254</td>
+    <td class="diff">11.937</td>
+  </tr>
+  <tr>
+    <td class="rank">68</td>
+    <td class="cls">N</td>
+    <td class="number">227</td>
+    <td class="driver">Adam Radtke</td>
+    <td class="vehicle">1994 Acura Integra</td>
+    <td class="time">76.266</td>
+    <td class="diff">0.070</td>
+    <td class="diff">12.007</td>
+  </tr>
+  <tr>
+    <td class="rank">69</td>
+    <td class="cls">Z-ES</td>
+    <td class="number">81</td>
+    <td class="driver">Giuseppe Pellizzer</td>
+    <td class="vehicle">1999 Mazda 10AE Miata</td>
+    <td class="time">76.388</td>
+    <td class="diff">0.122</td>
+    <td class="diff">12.129</td>
+  </tr>
+  <tr>
+    <td class="rank">70</td>
+    <td class="cls">Z-STR</td>
+    <td class="number">155</td>
+    <td class="driver">Bryan Blumenschein</td>
+    <td class="vehicle">2007 Mazda MX-5</td>
+    <td class="time">76.598</td>
+    <td class="diff">0.210</td>
+    <td class="diff">12.339</td>
+  </tr>
+  <tr>
+    <td class="rank">71</td>
+    <td class="cls">CAMC</td>
+    <td class="number">610</td>
+    <td class="driver">Josh Howard</td>
+    <td class="vehicle">2015 Ford Mustang</td>
+    <td class="time">76.911</td>
+    <td class="diff">0.313</td>
+    <td class="diff">12.652</td>
+  </tr>
+  <tr>
+    <td class="rank">72</td>
+    <td class="cls">CAMC</td>
+    <td class="number">29</td>
+    <td class="driver">Curt Crouse</td>
+    <td class="vehicle">2003 Mercury Marauder</td>
+    <td class="time">77.279</td>
+    <td class="diff">0.368</td>
+    <td class="diff">13.020</td>
+  </tr>
+  <tr>
+    <td class="rank">73</td>
+    <td class="cls">N</td>
+    <td class="number">107</td>
+    <td class="driver">Jason Grant</td>
+    <td class="vehicle">1990 Chevy Corvette</td>
+    <td class="time">77.340</td>
+    <td class="diff">0.061</td>
+    <td class="diff">13.081</td>
+  </tr>
+  <tr>
+    <td class="rank">74</td>
+    <td class="cls">STH</td>
+    <td class="number">770</td>
+    <td class="driver">Jethro Land</td>
+    <td class="vehicle">2017 Volkswagen Golf GTI</td>
+    <td class="time">77.376</td>
+    <td class="diff">0.036</td>
+    <td class="diff">13.117</td>
+  </tr>
+  <tr>
+    <td class="rank">75</td>
+    <td class="cls">CAMC</td>
+    <td class="number">315</td>
+    <td class="driver">Courtney Sampson</td>
+    <td class="vehicle">2015 Dodge Challenger hellcat</td>
+    <td class="time">77.547</td>
+    <td class="diff">0.171</td>
+    <td class="diff">13.288</td>
+  </tr>
+  <tr>
+    <td class="rank">76</td>
+    <td class="cls">V</td>
+    <td class="number">163</td>
+    <td class="driver">Mark Hagemann</td>
+    <td class="vehicle">1963 Chevrolet corvette</td>
+    <td class="time">77.767</td>
+    <td class="diff">0.220</td>
+    <td class="diff">13.508</td>
+  </tr>
+  <tr>
+    <td class="rank">77</td>
+    <td class="cls">AS</td>
+    <td class="number">243</td>
+    <td class="driver">Tyler Horn</td>
+    <td class="vehicle">2002 Chevrolet Corvette Z06</td>
+    <td class="time">78.070</td>
+    <td class="diff">0.303</td>
+    <td class="diff">13.811</td>
+  </tr>
+  <tr>
+    <td class="rank">78</td>
+    <td class="cls">Z-GS</td>
+    <td class="number">737</td>
+    <td class="driver">Gary Schmidt</td>
+    <td class="vehicle">2023 Acura Integra</td>
+    <td class="time">78.162</td>
+    <td class="diff">0.092</td>
+    <td class="diff">13.903</td>
+  </tr>
+  <tr>
+    <td class="rank">79</td>
+    <td class="cls">Z-GS</td>
+    <td class="number">718</td>
+    <td class="driver">Eric Romani</td>
+    <td class="vehicle">2023 Honda Civic SI</td>
+    <td class="time">78.448</td>
+    <td class="diff">0.286</td>
+    <td class="diff">14.189</td>
+  </tr>
+  <tr>
+    <td class="rank">80</td>
+    <td class="cls">N</td>
+    <td class="number">763</td>
+    <td class="driver">Eric Thor</td>
+    <td class="vehicle">2008 Mitsubishi evolution</td>
+    <td class="time">78.558</td>
+    <td class="diff">0.110</td>
+    <td class="diff">14.299</td>
+  </tr>
+  <tr>
+    <td class="rank">81</td>
+    <td class="cls">STU</td>
+    <td class="number">165</td>
+    <td class="driver">Terry Schuster</td>
+    <td class="vehicle">2003 Nissan 350z</td>
+    <td class="time">79.411</td>
+    <td class="diff">0.853</td>
+    <td class="diff">15.152</td>
+  </tr>
+  <tr>
+    <td class="rank">82</td>
+    <td class="cls">C2-FS</td>
+    <td class="number">335</td>
+    <td class="driver">Eric Schroeder</td>
+    <td class="vehicle">2023 BMW 540i</td>
+    <td class="time">79.467</td>
+    <td class="diff">0.056</td>
+    <td class="diff">15.208</td>
+  </tr>
+  <tr>
+    <td class="rank">83</td>
+    <td class="cls">HS</td>
+    <td class="number">930</td>
+    <td class="driver">Grant Long</td>
+    <td class="vehicle">2008 Saab 9-3 aero sportcombi</td>
+    <td class="time">79.745</td>
+    <td class="diff">0.278</td>
+    <td class="diff">15.486</td>
+  </tr>
+  <tr>
+    <td class="rank">84</td>
+    <td class="cls">N</td>
+    <td class="number">54</td>
+    <td class="driver">Christopher Stromme</td>
+    <td class="vehicle">1999 Saab 9-3 Convertible SE</td>
+    <td class="time">79.839</td>
+    <td class="diff">0.094</td>
+    <td class="diff">15.580</td>
+  </tr>
+  <tr>
+    <td class="rank">85</td>
+    <td class="cls">N</td>
+    <td class="number">127</td>
+    <td class="driver">Max Grant</td>
+    <td class="vehicle">1990 Chevy Corvette</td>
+    <td class="time">80.176</td>
+    <td class="diff">0.337</td>
+    <td class="diff">15.917</td>
+  </tr>
+  <tr>
+    <td class="rank">86</td>
+    <td class="cls">XA</td>
+    <td class="number">242</td>
+    <td class="driver">Douglas Lindman</td>
+    <td class="vehicle">1986 Mazda Rx-15</td>
+    <td class="time">81.382</td>
+    <td class="diff">1.206</td>
+    <td class="diff">17.123</td>
+  </tr>
+  <tr>
+    <td class="rank">87</td>
+    <td class="cls">AS</td>
+    <td class="number">4</td>
+    <td class="driver">Don Gettinger</td>
+    <td class="vehicle">2001 Chevrolet Z-06 Corvette</td>
+    <td class="time">81.449</td>
+    <td class="diff">0.067</td>
+    <td class="diff">17.190</td>
+  </tr>
+  <tr>
+    <td class="rank">88</td>
+    <td class="cls">N</td>
+    <td class="number">944</td>
+    <td class="driver">Jacob Giesen</td>
+    <td class="vehicle">1986 Porsche 944 turbo</td>
+    <td class="time">81.585</td>
+    <td class="diff">0.136</td>
+    <td class="diff">17.326</td>
+  </tr>
+  <tr>
+    <td class="rank">89</td>
+    <td class="cls">V</td>
+    <td class="number">447</td>
+    <td class="driver">Karl Svedberg</td>
+    <td class="vehicle">1968 Chevrolet Corvette 327 ci, 4sp man</td>
+    <td class="time">81.632</td>
+    <td class="diff">0.047</td>
+    <td class="diff">17.373</td>
+  </tr>
+  <tr>
+    <td class="rank">90</td>
+    <td class="cls">AS</td>
+    <td class="number">27</td>
+    <td class="driver">Drew Baumbach</td>
+    <td class="vehicle">2009 Porsche Cayman S</td>
+    <td class="time">82.025</td>
+    <td class="diff">0.393</td>
+    <td class="diff">17.766</td>
+  </tr>
+  <tr>
+    <td class="rank">91</td>
+    <td class="cls">AS</td>
+    <td class="number">193</td>
+    <td class="driver">Jeff Lawrence</td>
+    <td class="vehicle">2002 Chevrolet Corvette Z06</td>
+    <td class="time">82.593</td>
+    <td class="diff">0.568</td>
+    <td class="diff">18.334</td>
+  </tr>
+  <tr>
+    <td class="rank">92</td>
+    <td class="cls">CAMC</td>
+    <td class="number">539</td>
+    <td class="driver">John Witthaus</td>
+    <td class="vehicle">2004 Mercury Grand Marquis</td>
+    <td class="time">82.956</td>
+    <td class="diff">0.363</td>
+    <td class="diff">18.697</td>
+  </tr>
+  <tr>
+    <td class="rank">93</td>
+    <td class="cls">N</td>
+    <td class="number">789</td>
+    <td class="driver">Aaron Kvidera</td>
+    <td class="vehicle">1984 Pontiac Fiero</td>
+    <td class="time">83.068</td>
+    <td class="diff">0.112</td>
+    <td class="diff">18.809</td>
+  </tr>
+  <tr>
+    <td class="rank">94</td>
+    <td class="cls">N</td>
+    <td class="number">786</td>
+    <td class="driver">Alexander Kvidera</td>
+    <td class="vehicle">1984 Pontiac Fiero</td>
+    <td class="time">83.568</td>
+    <td class="diff">0.500</td>
+    <td class="diff">19.309</td>
+  </tr>
+  <tr>
+    <td class="rank">95</td>
+    <td class="cls">N</td>
+    <td class="number">996</td>
+    <td class="driver">Matthew Salfer</td>
+    <td class="vehicle">2002 Porsche 911 carrera 4 cabriolet</td>
+    <td class="time">83.832</td>
+    <td class="diff">0.264</td>
+    <td class="diff">19.573</td>
+  </tr>
+  <tr>
+    <td class="rank">96</td>
+    <td class="cls">STH</td>
+    <td class="number">912</td>
+    <td class="driver">Christian Schuster</td>
+    <td class="vehicle">2019 Volkswagen GTI</td>
+    <td class="time">84.370</td>
+    <td class="diff">0.538</td>
+    <td class="diff">20.111</td>
+  </tr>
+  <tr>
+    <td class="rank">97</td>
+    <td class="cls">HS</td>
+    <td class="number">209</td>
+    <td class="driver">Aaryk Neubert</td>
+    <td class="vehicle">2012 Chevrolet Volt</td>
+    <td class="time">84.522</td>
+    <td class="diff">0.152</td>
+    <td class="diff">20.263</td>
+  </tr>
+  <tr>
+    <td class="rank">98</td>
+    <td class="cls">N</td>
+    <td class="number">104</td>
+    <td class="driver">Thomas Haider</td>
+    <td class="vehicle">2022 Ford Shelby GT 500</td>
+    <td class="time">85.032</td>
+    <td class="diff">0.510</td>
+    <td class="diff">20.773</td>
+  </tr>
+  <tr>
+    <td class="rank">99</td>
+    <td class="cls">N</td>
+    <td class="number">774</td>
+    <td class="driver">Micah Land</td>
+    <td class="vehicle">1992 Mazda Miata</td>
+    <td class="time">85.070</td>
+    <td class="diff">0.038</td>
+    <td class="diff">20.811</td>
+  </tr>
+  <tr>
+    <td class="rank">100</td>
+    <td class="cls">N</td>
+    <td class="number">541</td>
+    <td class="driver">Matthew Lopez</td>
+    <td class="vehicle">Nissan 350z</td>
+    <td class="time">85.119</td>
+    <td class="diff">0.049</td>
+    <td class="diff">20.860</td>
+  </tr>
+  <tr>
+    <td class="rank">101</td>
+    <td class="cls">N</td>
+    <td class="number">921</td>
+    <td class="driver">Mark Kern</td>
+    <td class="vehicle">1998 Chevrolet Corvette</td>
+    <td class="time">85.129</td>
+    <td class="diff">0.010</td>
+    <td class="diff">20.870</td>
+  </tr>
+  <tr>
+    <td class="rank">102</td>
+    <td class="cls">N</td>
+    <td class="number">520</td>
+    <td class="driver">Elynn Horn</td>
+    <td class="vehicle">2017 Volkswagen GTI</td>
+    <td class="time">85.381</td>
+    <td class="diff">0.252</td>
+    <td class="diff">21.122</td>
+  </tr>
+  <tr>
+    <td class="rank">103</td>
+    <td class="cls">AS</td>
+    <td class="number">611</td>
+    <td class="driver">Dennis OMeara</td>
+    <td class="vehicle">2011 Chevrolet Corvette</td>
+    <td class="time">85.996</td>
+    <td class="diff">0.615</td>
+    <td class="diff">21.737</td>
+  </tr>
+  <tr>
+    <td class="rank">104</td>
+    <td class="cls">N</td>
+    <td class="number">710</td>
+    <td class="driver">Patrick O&#x27;Keefe</td>
+    <td class="vehicle">2019 Mazda MX-5 Club</td>
+    <td class="time">89.013</td>
+    <td class="diff">3.017</td>
+    <td class="diff">24.754</td>
+  </tr>
+  <tr>
+    <td class="rank">105</td>
+    <td class="cls">N</td>
+    <td class="number">419</td>
+    <td class="driver">Dale Seeley</td>
+    <td class="vehicle">2011 Chevrolet Corvette GS</td>
+    <td class="time">89.023</td>
+    <td class="diff">0.010</td>
+    <td class="diff">24.764</td>
+  </tr>
+  <tr>
+    <td class="rank">106</td>
+    <td class="cls">HS</td>
+    <td class="number">67</td>
+    <td class="driver">Gordon Handeland</td>
+    <td class="vehicle">2002 Mini R50 Cooper Base</td>
+    <td class="time">90.319</td>
+    <td class="diff">1.296</td>
+    <td class="diff">26.060</td>
+  </tr>
+  <tr>
+    <td class="rank">107</td>
+    <td class="cls">C2-XP</td>
+    <td class="number">271</td>
+    <td class="driver">Neal Hanson</td>
+    <td class="vehicle">1988 Chevrolet corvette</td>
+    <td class="time">90.544</td>
+    <td class="diff">0.225</td>
+    <td class="diff">26.285</td>
+  </tr>
+</tbody>
+
+</table>
+
+<div id="pax-times" class="section">
+<span class="name">PAX Times</span>
+<a href="#top">class results</a>,
+<a href="#raw-times">raw times</a>
+<!-- <a href="#pax-times">pax times</a> -->
+</div>
+
+<table class="results">
+<tbody>
+<tr>
+  <th class="pos">Pos</th>
+  <th class="cls">Class</th>
+  <th class="number">Num</th>
+  <th class="driver">Driver</th>
+  <th class="vehicle">Vehicle</th>
+  <th class="time">Raw Time</th>
+  <th class="time">PAX Factor</th>
+  <th class="time">PAX Time</th>
+  <th class="diff">From Prev</th>
+  <th class="diff">From First</th>
+  <th class="time">DOTY Points</th>
+</tr>
+
+  <tr>
+    <td class="rank">1</td>
+    <td class="cls">P-STU</td>
+    <td class="number">962</td>
+    <td class="driver">Brent Schneekloth</td>
+    <td class="vehicle">2006 Mitsubishi Evo IX RS</td>
+    <td class="time">66.043</td>
+    <td class="time">0.830</td>
+    <td class="time">54.816</td>
+    <td class="diff">-</td>
+    <td class="diff">-</td>
+    <td class="time">100.000</td>
+  </tr>
+  <tr>
+    <td class="rank">2</td>
+    <td class="cls">P-STS</td>
+    <td class="number">1</td>
+    <td class="driver">Adam Barber</td>
+    <td class="vehicle">1988 Honda CRX Si</td>
+    <td class="time">67.969</td>
+    <td class="time">0.814</td>
+    <td class="time">55.327</td>
+    <td class="diff">0.511</td>
+    <td class="diff">0.511</td>
+    <td class="time">99.076</td>
+  </tr>
+  <tr>
+    <td class="rank">3</td>
+    <td class="cls">P-DS</td>
+    <td class="number">88</td>
+    <td class="driver">Neal Tovsen</td>
+    <td class="vehicle">2022 Toyota FRS</td>
+    <td class="time">69.034</td>
+    <td class="time">0.808</td>
+    <td class="time">55.779</td>
+    <td class="diff">0.453</td>
+    <td class="diff">0.964</td>
+    <td class="time">98.272</td>
+  </tr>
+  <tr>
+    <td class="rank">4</td>
+    <td class="cls">P-STS</td>
+    <td class="number">487</td>
+    <td class="driver">Nathan Witt</td>
+    <td class="vehicle">1992 Mazda Miata</td>
+    <td class="time">69.049</td>
+    <td class="time">0.814</td>
+    <td class="time">56.206</td>
+    <td class="diff">0.426</td>
+    <td class="diff">1.390</td>
+    <td class="time">97.527</td>
+  </tr>
+  <tr>
+    <td class="rank">5</td>
+    <td class="cls">P-DS</td>
+    <td class="number">421</td>
+    <td class="driver">Bernie Kaeferlein</td>
+    <td class="vehicle">2022 Toyota GR86</td>
+    <td class="time">70.070</td>
+    <td class="time">0.808</td>
+    <td class="time">56.617</td>
+    <td class="diff">0.411</td>
+    <td class="diff">1.801</td>
+    <td class="time">96.819</td>
+  </tr>
+  <tr>
+    <td class="rank">6</td>
+    <td class="cls">P-STS</td>
+    <td class="number">990</td>
+    <td class="driver">Jake Rogers</td>
+    <td class="vehicle">1990 Mazda Mx-5 Miata</td>
+    <td class="time">69.618</td>
+    <td class="time">0.814</td>
+    <td class="time">56.669</td>
+    <td class="diff">0.052</td>
+    <td class="diff">1.853</td>
+    <td class="time">96.729</td>
+  </tr>
+  <tr>
+    <td class="rank">7</td>
+    <td class="cls">P-GS</td>
+    <td class="number">79</td>
+    <td class="driver">Robin Newborg</td>
+    <td class="vehicle">2022 Volkswagen Golf GTI</td>
+    <td class="time">71.434</td>
+    <td class="time">0.794</td>
+    <td class="time">56.719</td>
+    <td class="diff">0.050</td>
+    <td class="diff">1.903</td>
+    <td class="time">96.645</td>
+  </tr>
+  <tr>
+    <td class="rank">8</td>
+    <td class="cls">Z-STS</td>
+    <td class="number">371</td>
+    <td class="driver">Steve Pahl</td>
+    <td class="vehicle">1991 Honda CRX</td>
+    <td class="time">69.732</td>
+    <td class="time">0.814</td>
+    <td class="time">56.762</td>
+    <td class="diff">0.043</td>
+    <td class="diff">1.946</td>
+    <td class="time">96.571</td>
+  </tr>
+  <tr>
+    <td class="rank">9</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">99</td>
+    <td class="driver">Kyle Greene</td>
+    <td class="vehicle">2018 Honda Civic Type R</td>
+    <td class="time">70.665</td>
+    <td class="time">0.808</td>
+    <td class="time">57.097</td>
+    <td class="diff">0.335</td>
+    <td class="diff">2.282</td>
+    <td class="time">96.004</td>
+  </tr>
+  <tr>
+    <td class="rank">10</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">311</td>
+    <td class="driver">Ross Jacobs</td>
+    <td class="vehicle">2017 Ford Focus RS</td>
+    <td class="time">70.673</td>
+    <td class="time">0.808</td>
+    <td class="time">57.104</td>
+    <td class="diff">0.006</td>
+    <td class="diff">2.288</td>
+    <td class="time">95.993</td>
+  </tr>
+  <tr>
+    <td class="rank">11</td>
+    <td class="cls">XA</td>
+    <td class="number">350</td>
+    <td class="driver">Joe Deleon</td>
+    <td class="vehicle">2003 Nissan 350z</td>
+    <td class="time">68.038</td>
+    <td class="time">0.842</td>
+    <td class="time">57.288</td>
+    <td class="diff">0.184</td>
+    <td class="diff">2.472</td>
+    <td class="time">95.684</td>
+  </tr>
+  <tr>
+    <td class="rank">12</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">45</td>
+    <td class="driver">Peter Hsu</td>
+    <td class="vehicle">2019 Honda Type R</td>
+    <td class="time">70.952</td>
+    <td class="time">0.808</td>
+    <td class="time">57.329</td>
+    <td class="diff">0.041</td>
+    <td class="diff">2.514</td>
+    <td class="time">95.616</td>
+  </tr>
+  <tr>
+    <td class="rank">13</td>
+    <td class="cls">XA</td>
+    <td class="number">510</td>
+    <td class="driver">Piero Pucci</td>
+    <td class="vehicle">2013 Scion Frs</td>
+    <td class="time">68.265</td>
+    <td class="time">0.842</td>
+    <td class="time">57.479</td>
+    <td class="diff">0.150</td>
+    <td class="diff">2.663</td>
+    <td class="time">95.366</td>
+  </tr>
+  <tr>
+    <td class="rank">14</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">656</td>
+    <td class="driver">Adam Quimby</td>
+    <td class="vehicle">2022 Toyota GR 86</td>
+    <td class="time">71.152</td>
+    <td class="time">0.808</td>
+    <td class="time">57.491</td>
+    <td class="diff">0.012</td>
+    <td class="diff">2.675</td>
+    <td class="time">95.347</td>
+  </tr>
+  <tr>
+    <td class="rank">15</td>
+    <td class="cls">Z-ES</td>
+    <td class="number">16</td>
+    <td class="driver">Brian Ksicinski</td>
+    <td class="vehicle">1999 Mazda Miata</td>
+    <td class="time">72.952</td>
+    <td class="time">0.792</td>
+    <td class="time">57.778</td>
+    <td class="diff">0.287</td>
+    <td class="diff">2.962</td>
+    <td class="time">94.873</td>
+  </tr>
+  <tr>
+    <td class="rank">16</td>
+    <td class="cls">Z-ES</td>
+    <td class="number">71</td>
+    <td class="driver">Lucas Reller</td>
+    <td class="vehicle">1999 Mazda Miata</td>
+    <td class="time">72.952</td>
+    <td class="time">0.792</td>
+    <td class="time">57.778</td>
+    <td class="diff">0.000</td>
+    <td class="diff">2.962</td>
+    <td class="time">94.873</td>
+  </tr>
+  <tr>
+    <td class="rank">17</td>
+    <td class="cls">P-GS</td>
+    <td class="number">17</td>
+    <td class="driver">John Moravec</td>
+    <td class="vehicle">2022 Volkwagen GTI</td>
+    <td class="time">73.029</td>
+    <td class="time">0.794</td>
+    <td class="time">57.985</td>
+    <td class="diff">0.207</td>
+    <td class="diff">3.169</td>
+    <td class="time">94.534</td>
+  </tr>
+  <tr>
+    <td class="rank">18</td>
+    <td class="cls">P-STH</td>
+    <td class="number">175</td>
+    <td class="driver">Michael Waich</td>
+    <td class="vehicle">2016 Volkswagen GTR</td>
+    <td class="time">71.504</td>
+    <td class="time">0.812</td>
+    <td class="time">58.061</td>
+    <td class="diff">0.076</td>
+    <td class="diff">3.246</td>
+    <td class="time">94.410</td>
+  </tr>
+  <tr>
+    <td class="rank">19</td>
+    <td class="cls">Z-STS</td>
+    <td class="number">31</td>
+    <td class="driver">Steve Meschke</td>
+    <td class="vehicle">1990 Mazda Miata</td>
+    <td class="time">71.407</td>
+    <td class="time">0.814</td>
+    <td class="time">58.125</td>
+    <td class="diff">0.064</td>
+    <td class="diff">3.310</td>
+    <td class="time">94.306</td>
+  </tr>
+  <tr>
+    <td class="rank">20</td>
+    <td class="cls">CS</td>
+    <td class="number">713</td>
+    <td class="driver">Chris Lottes</td>
+    <td class="vehicle">2022 Mazda MX-5 Club</td>
+    <td class="time">71.749</td>
+    <td class="time">0.811</td>
+    <td class="time">58.188</td>
+    <td class="diff">0.063</td>
+    <td class="diff">3.373</td>
+    <td class="time">94.204</td>
+  </tr>
+  <tr>
+    <td class="rank">21</td>
+    <td class="cls">C2-STR</td>
+    <td class="number">440</td>
+    <td class="driver">Gavyn Gill</td>
+    <td class="vehicle">2019 Mazda Miata</td>
+    <td class="time">70.368</td>
+    <td class="time">0.831</td>
+    <td class="time">58.476</td>
+    <td class="diff">0.287</td>
+    <td class="diff">3.660</td>
+    <td class="time">93.741</td>
+  </tr>
+  <tr>
+    <td class="rank">22</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">475</td>
+    <td class="driver">Tim Malzahn</td>
+    <td class="vehicle">2017 Honda Civic Type-R</td>
+    <td class="time">72.390</td>
+    <td class="time">0.808</td>
+    <td class="time">58.491</td>
+    <td class="diff">0.015</td>
+    <td class="diff">3.675</td>
+    <td class="time">93.716</td>
+  </tr>
+  <tr>
+    <td class="rank">23</td>
+    <td class="cls">CAMS</td>
+    <td class="number">176</td>
+    <td class="driver">Matthew Sebelski</td>
+    <td class="vehicle">2001 Chevrolet Corvette Z06</td>
+    <td class="time">69.386</td>
+    <td class="time">0.845</td>
+    <td class="time">58.631</td>
+    <td class="diff">0.140</td>
+    <td class="diff">3.815</td>
+    <td class="time">93.492</td>
+  </tr>
+  <tr>
+    <td class="rank">24</td>
+    <td class="cls">Z-HS</td>
+    <td class="number">843</td>
+    <td class="driver">Dwight Anderson</td>
+    <td class="vehicle">2019 Ford Fiesta ST</td>
+    <td class="time">74.704</td>
+    <td class="time">0.786</td>
+    <td class="time">58.717</td>
+    <td class="diff">0.086</td>
+    <td class="diff">3.902</td>
+    <td class="time">93.355</td>
+  </tr>
+  <tr>
+    <td class="rank">25</td>
+    <td class="cls">XA</td>
+    <td class="number">556</td>
+    <td class="driver">Sean Wilke</td>
+    <td class="vehicle">2022 Toyota GR86</td>
+    <td class="time">69.830</td>
+    <td class="time">0.842</td>
+    <td class="time">58.797</td>
+    <td class="diff">0.080</td>
+    <td class="diff">3.981</td>
+    <td class="time">93.229</td>
+  </tr>
+  <tr>
+    <td class="rank">26</td>
+    <td class="cls">STH</td>
+    <td class="number">805</td>
+    <td class="driver">Jon Stef</td>
+    <td class="vehicle">2011 Subaru WRX</td>
+    <td class="time">72.512</td>
+    <td class="time">0.812</td>
+    <td class="time">58.880</td>
+    <td class="diff">0.083</td>
+    <td class="diff">4.064</td>
+    <td class="time">93.098</td>
+  </tr>
+  <tr>
+    <td class="rank">27</td>
+    <td class="cls">C2-EVX</td>
+    <td class="number">247</td>
+    <td class="driver">Jon-Eric Deutsch</td>
+    <td class="vehicle">2021 Tesla Model 3</td>
+    <td class="time">70.943</td>
+    <td class="time">0.832</td>
+    <td class="time">59.025</td>
+    <td class="diff">0.145</td>
+    <td class="diff">4.209</td>
+    <td class="time">92.869</td>
+  </tr>
+  <tr>
+    <td class="rank">28</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">665</td>
+    <td class="driver">Tyler Blomquist</td>
+    <td class="vehicle">2022 Toyota GR86</td>
+    <td class="time">73.296</td>
+    <td class="time">0.808</td>
+    <td class="time">59.223</td>
+    <td class="diff">0.199</td>
+    <td class="diff">4.407</td>
+    <td class="time">92.558</td>
+  </tr>
+  <tr>
+    <td class="rank">29</td>
+    <td class="cls">XA</td>
+    <td class="number">711</td>
+    <td class="driver">Nathan Thalhuber</td>
+    <td class="vehicle">1991 Toyota MR2</td>
+    <td class="time">70.398</td>
+    <td class="time">0.842</td>
+    <td class="time">59.275</td>
+    <td class="diff">0.052</td>
+    <td class="diff">4.459</td>
+    <td class="time">92.477</td>
+  </tr>
+  <tr>
+    <td class="rank">30</td>
+    <td class="cls">CS</td>
+    <td class="number">726</td>
+    <td class="driver">Peter Nolden</td>
+    <td class="vehicle">2020 Mazda MX-5 Club</td>
+    <td class="time">73.106</td>
+    <td class="time">0.811</td>
+    <td class="time">59.289</td>
+    <td class="diff">0.014</td>
+    <td class="diff">4.473</td>
+    <td class="time">92.455</td>
+  </tr>
+  <tr>
+    <td class="rank">31</td>
+    <td class="cls">P-STS</td>
+    <td class="number">117</td>
+    <td class="driver">Chris Medower</td>
+    <td class="vehicle">Mazda Miata</td>
+    <td class="time">72.862</td>
+    <td class="time">0.814</td>
+    <td class="time">59.310</td>
+    <td class="diff">0.021</td>
+    <td class="diff">4.494</td>
+    <td class="time">92.423</td>
+  </tr>
+  <tr>
+    <td class="rank">32</td>
+    <td class="cls">Z-ES</td>
+    <td class="number">812</td>
+    <td class="driver">Andy Naughton</td>
+    <td class="vehicle">1994 Mazda Miata</td>
+    <td class="time">74.896</td>
+    <td class="time">0.792</td>
+    <td class="time">59.318</td>
+    <td class="diff">0.008</td>
+    <td class="diff">4.502</td>
+    <td class="time">92.410</td>
+  </tr>
+  <tr>
+    <td class="rank">33</td>
+    <td class="cls">XA</td>
+    <td class="number">309</td>
+    <td class="driver">Tony Starks</td>
+    <td class="vehicle">2004 Acura TL</td>
+    <td class="time">70.687</td>
+    <td class="time">0.842</td>
+    <td class="time">59.518</td>
+    <td class="diff">0.201</td>
+    <td class="diff">4.703</td>
+    <td class="time">92.099</td>
+  </tr>
+  <tr>
+    <td class="rank">34</td>
+    <td class="cls">CS</td>
+    <td class="number">97</td>
+    <td class="driver">Randy Williams</td>
+    <td class="vehicle">2017 Mazda RF Club</td>
+    <td class="time">73.492</td>
+    <td class="time">0.811</td>
+    <td class="time">59.602</td>
+    <td class="diff">0.084</td>
+    <td class="diff">4.786</td>
+    <td class="time">91.970</td>
+  </tr>
+  <tr>
+    <td class="rank">35</td>
+    <td class="cls">P-STH</td>
+    <td class="number">75</td>
+    <td class="driver">Steve Garnjobst</td>
+    <td class="vehicle">2016 Volkswagen GTI</td>
+    <td class="time">73.475</td>
+    <td class="time">0.812</td>
+    <td class="time">59.662</td>
+    <td class="diff">0.060</td>
+    <td class="diff">4.846</td>
+    <td class="time">91.878</td>
+  </tr>
+  <tr>
+    <td class="rank">36</td>
+    <td class="cls">XA</td>
+    <td class="number">172</td>
+    <td class="driver">Mark Maenpaa</td>
+    <td class="vehicle">2018 Subaru Wrx</td>
+    <td class="time">70.924</td>
+    <td class="time">0.842</td>
+    <td class="time">59.718</td>
+    <td class="diff">0.056</td>
+    <td class="diff">4.902</td>
+    <td class="time">91.791</td>
+  </tr>
+  <tr>
+    <td class="rank">37</td>
+    <td class="cls">STH</td>
+    <td class="number">497</td>
+    <td class="driver">Ian Schmitz</td>
+    <td class="vehicle">2012 Mazda Mazdaspeed 3</td>
+    <td class="time">73.574</td>
+    <td class="time">0.812</td>
+    <td class="time">59.742</td>
+    <td class="diff">0.024</td>
+    <td class="diff">4.926</td>
+    <td class="time">91.754</td>
+  </tr>
+  <tr>
+    <td class="rank">38</td>
+    <td class="cls">XA</td>
+    <td class="number">341</td>
+    <td class="driver">Chris Weiske</td>
+    <td class="vehicle">2011 Subaru WRX STi</td>
+    <td class="time">71.063</td>
+    <td class="time">0.842</td>
+    <td class="time">59.835</td>
+    <td class="diff">0.093</td>
+    <td class="diff">5.019</td>
+    <td class="time">91.611</td>
+  </tr>
+  <tr>
+    <td class="rank">39</td>
+    <td class="cls">XA</td>
+    <td class="number">244</td>
+    <td class="driver">Gopihath Ramchand</td>
+    <td class="vehicle">2002 Honda S2000</td>
+    <td class="time">71.325</td>
+    <td class="time">0.842</td>
+    <td class="time">60.056</td>
+    <td class="diff">0.221</td>
+    <td class="diff">5.240</td>
+    <td class="time">91.275</td>
+  </tr>
+  <tr>
+    <td class="rank">40</td>
+    <td class="cls">CS</td>
+    <td class="number">24</td>
+    <td class="driver">Will Schafer</td>
+    <td class="vehicle">2019 Fiat 124 Spider Abarth</td>
+    <td class="time">74.392</td>
+    <td class="time">0.811</td>
+    <td class="time">60.332</td>
+    <td class="diff">0.276</td>
+    <td class="diff">5.516</td>
+    <td class="time">90.857</td>
+  </tr>
+  <tr>
+    <td class="rank">41</td>
+    <td class="cls">Z-DS</td>
+    <td class="number">186</td>
+    <td class="driver">Andrew Dehmer</td>
+    <td class="vehicle">2017 Subaru BRZ Limited</td>
+    <td class="time">74.761</td>
+    <td class="time">0.808</td>
+    <td class="time">60.407</td>
+    <td class="diff">0.075</td>
+    <td class="diff">5.591</td>
+    <td class="time">90.744</td>
+  </tr>
+  <tr>
+    <td class="rank">42</td>
+    <td class="cls">STU</td>
+    <td class="number">358</td>
+    <td class="driver">Chase Malkow</td>
+    <td class="vehicle">2005 Nissan 350z</td>
+    <td class="time">72.832</td>
+    <td class="time">0.830</td>
+    <td class="time">60.451</td>
+    <td class="diff">0.044</td>
+    <td class="diff">5.635</td>
+    <td class="time">90.679</td>
+  </tr>
+  <tr>
+    <td class="rank">43</td>
+    <td class="cls">Z-ES</td>
+    <td class="number">81</td>
+    <td class="driver">Giuseppe Pellizzer</td>
+    <td class="vehicle">1999 Mazda 10AE Miata</td>
+    <td class="time">76.388</td>
+    <td class="time">0.792</td>
+    <td class="time">60.499</td>
+    <td class="diff">0.049</td>
+    <td class="diff">5.684</td>
+    <td class="time">90.606</td>
+  </tr>
+  <tr>
+    <td class="rank">44</td>
+    <td class="cls">C2-SST</td>
+    <td class="number">792</td>
+    <td class="driver">Quincy Tambo</td>
+    <td class="vehicle">2014 Porsche Cayman S</td>
+    <td class="time">72.406</td>
+    <td class="time">0.837</td>
+    <td class="time">60.604</td>
+    <td class="diff">0.105</td>
+    <td class="diff">5.788</td>
+    <td class="time">90.449</td>
+  </tr>
+  <tr>
+    <td class="rank">45</td>
+    <td class="cls">Z-STS</td>
+    <td class="number">48</td>
+    <td class="driver">Ron Schwanz</td>
+    <td class="vehicle">1990 Mazda Miata</td>
+    <td class="time">74.477</td>
+    <td class="time">0.814</td>
+    <td class="time">60.624</td>
+    <td class="diff">0.020</td>
+    <td class="diff">5.809</td>
+    <td class="time">90.419</td>
+  </tr>
+  <tr>
+    <td class="rank">46</td>
+    <td class="cls">CAMC</td>
+    <td class="number">430</td>
+    <td class="driver">Lyndrell Novotny</td>
+    <td class="vehicle">2018 Chevrolet Camaro</td>
+    <td class="time">73.316</td>
+    <td class="time">0.827</td>
+    <td class="time">60.632</td>
+    <td class="diff">0.008</td>
+    <td class="diff">5.817</td>
+    <td class="time">90.407</td>
+  </tr>
+  <tr>
+    <td class="rank">47</td>
+    <td class="cls">C2-EM</td>
+    <td class="number">780</td>
+    <td class="driver">Jeremy Anderson</td>
+    <td class="vehicle">2022 Exomotive Exocet</td>
+    <td class="time">66.980</td>
+    <td class="time">0.911</td>
+    <td class="time">61.019</td>
+    <td class="diff">0.386</td>
+    <td class="diff">6.203</td>
+    <td class="time">89.834</td>
+  </tr>
+  <tr>
+    <td class="rank">48</td>
+    <td class="cls">STU</td>
+    <td class="number">159</td>
+    <td class="driver">Thomas Braun</td>
+    <td class="vehicle">2004 Mazda Mazdaspeed Miata</td>
+    <td class="time">73.524</td>
+    <td class="time">0.830</td>
+    <td class="time">61.025</td>
+    <td class="diff">0.006</td>
+    <td class="diff">6.209</td>
+    <td class="time">89.825</td>
+  </tr>
+  <tr>
+    <td class="rank">49</td>
+    <td class="cls">XA</td>
+    <td class="number">500</td>
+    <td class="driver">Daniel Personius</td>
+    <td class="vehicle">BMW 318ti</td>
+    <td class="time">72.849</td>
+    <td class="time">0.842</td>
+    <td class="time">61.339</td>
+    <td class="diff">0.314</td>
+    <td class="diff">6.523</td>
+    <td class="time">89.365</td>
+  </tr>
+  <tr>
+    <td class="rank">50</td>
+    <td class="cls">P-STS</td>
+    <td class="number">182</td>
+    <td class="driver">Jashua Rodriguez</td>
+    <td class="vehicle">1990 Mazda Miata</td>
+    <td class="time">75.532</td>
+    <td class="time">0.814</td>
+    <td class="time">61.483</td>
+    <td class="diff">0.144</td>
+    <td class="diff">6.667</td>
+    <td class="time">89.156</td>
+  </tr>
+  <tr>
+    <td class="rank">51</td>
+    <td class="cls">C2-XB</td>
+    <td class="number">621</td>
+    <td class="driver">Blake Doblinger</td>
+    <td class="vehicle">1995 Mazda Miata</td>
+    <td class="time">73.004</td>
+    <td class="time">0.848</td>
+    <td class="time">61.907</td>
+    <td class="diff">0.424</td>
+    <td class="diff">7.092</td>
+    <td class="time">88.545</td>
+  </tr>
+  <tr>
+    <td class="rank">52</td>
+    <td class="cls">Z-BS</td>
+    <td class="number">7</td>
+    <td class="driver">Philip Ethier</td>
+    <td class="vehicle">2011 Porsche Cayman 2.9</td>
+    <td class="time">75.694</td>
+    <td class="time">0.818</td>
+    <td class="time">61.918</td>
+    <td class="diff">0.010</td>
+    <td class="diff">7.102</td>
+    <td class="time">88.530</td>
+  </tr>
+  <tr>
+    <td class="rank">53</td>
+    <td class="cls">C2-SS</td>
+    <td class="number">427</td>
+    <td class="driver">Rick Sellner</td>
+    <td class="vehicle">2016 Chevrolet corvette z07</td>
+    <td class="time">74.353</td>
+    <td class="time">0.833</td>
+    <td class="time">61.936</td>
+    <td class="diff">0.018</td>
+    <td class="diff">7.120</td>
+    <td class="time">88.504</td>
+  </tr>
+  <tr>
+    <td class="rank">54</td>
+    <td class="cls">XA</td>
+    <td class="number">403</td>
+    <td class="driver">Brandon Cottrell</td>
+    <td class="vehicle">2021 Toyota Supra</td>
+    <td class="time">73.667</td>
+    <td class="time">0.842</td>
+    <td class="time">62.028</td>
+    <td class="diff">0.092</td>
+    <td class="diff">7.212</td>
+    <td class="time">88.373</td>
+  </tr>
+  <tr>
+    <td class="rank">55</td>
+    <td class="cls">CAMS</td>
+    <td class="number">214</td>
+    <td class="driver">Michael Jensen</td>
+    <td class="vehicle">2014 Chevrolet Corvette</td>
+    <td class="time">73.433</td>
+    <td class="time">0.845</td>
+    <td class="time">62.051</td>
+    <td class="diff">0.023</td>
+    <td class="diff">7.235</td>
+    <td class="time">88.340</td>
+  </tr>
+  <tr>
+    <td class="rank">56</td>
+    <td class="cls">CAMC</td>
+    <td class="number">74</td>
+    <td class="driver">Anthony Onceler</td>
+    <td class="vehicle">2017 Chevrolet Camaro</td>
+    <td class="time">75.035</td>
+    <td class="time">0.827</td>
+    <td class="time">62.054</td>
+    <td class="diff">0.003</td>
+    <td class="diff">7.238</td>
+    <td class="time">88.336</td>
+  </tr>
+  <tr>
+    <td class="rank">57</td>
+    <td class="cls">CAMC</td>
+    <td class="number">738</td>
+    <td class="driver">Randy Cameron</td>
+    <td class="vehicle">2012 Ford Mustang Boss 302</td>
+    <td class="time">75.043</td>
+    <td class="time">0.827</td>
+    <td class="time">62.061</td>
+    <td class="diff">0.007</td>
+    <td class="diff">7.245</td>
+    <td class="time">88.326</td>
+  </tr>
+  <tr>
+    <td class="rank">58</td>
+    <td class="cls">Z-GS</td>
+    <td class="number">737</td>
+    <td class="driver">Gary Schmidt</td>
+    <td class="vehicle">2023 Acura Integra</td>
+    <td class="time">78.162</td>
+    <td class="time">0.794</td>
+    <td class="time">62.061</td>
+    <td class="diff">0.000</td>
+    <td class="diff">7.245</td>
+    <td class="time">88.326</td>
+  </tr>
+  <tr>
+    <td class="rank">59</td>
+    <td class="cls">Z-GS</td>
+    <td class="number">718</td>
+    <td class="driver">Eric Romani</td>
+    <td class="vehicle">2023 Honda Civic SI</td>
+    <td class="time">78.448</td>
+    <td class="time">0.794</td>
+    <td class="time">62.288</td>
+    <td class="diff">0.227</td>
+    <td class="diff">7.472</td>
+    <td class="time">88.004</td>
+  </tr>
+  <tr>
+    <td class="rank">60</td>
+    <td class="cls">HS</td>
+    <td class="number">930</td>
+    <td class="driver">Grant Long</td>
+    <td class="vehicle">2008 Saab 9-3 aero sportcombi</td>
+    <td class="time">79.745</td>
+    <td class="time">0.786</td>
+    <td class="time">62.680</td>
+    <td class="diff">0.392</td>
+    <td class="diff">7.864</td>
+    <td class="time">87.454</td>
+  </tr>
+  <tr>
+    <td class="rank">61</td>
+    <td class="cls">STH</td>
+    <td class="number">770</td>
+    <td class="driver">Jethro Land</td>
+    <td class="vehicle">2017 Volkswagen Golf GTI</td>
+    <td class="time">77.376</td>
+    <td class="time">0.812</td>
+    <td class="time">62.829</td>
+    <td class="diff">0.150</td>
+    <td class="diff">8.014</td>
+    <td class="time">87.245</td>
+  </tr>
+  <tr>
+    <td class="rank">62</td>
+    <td class="cls">C2-STR</td>
+    <td class="number">701</td>
+    <td class="driver">Darren Hagford</td>
+    <td class="vehicle">2000 Mazda Miata</td>
+    <td class="time">75.942</td>
+    <td class="time">0.831</td>
+    <td class="time">63.108</td>
+    <td class="diff">0.278</td>
+    <td class="diff">8.292</td>
+    <td class="time">86.860</td>
+  </tr>
+  <tr>
+    <td class="rank">63</td>
+    <td class="cls">XA</td>
+    <td class="number">948</td>
+    <td class="driver">Harold Kachelmyer</td>
+    <td class="vehicle">1984 Porsche 944</td>
+    <td class="time">75.040</td>
+    <td class="time">0.842</td>
+    <td class="time">63.184</td>
+    <td class="diff">0.076</td>
+    <td class="diff">8.368</td>
+    <td class="time">86.756</td>
+  </tr>
+  <tr>
+    <td class="rank">64</td>
+    <td class="cls">CAMC</td>
+    <td class="number">610</td>
+    <td class="driver">Josh Howard</td>
+    <td class="vehicle">2015 Ford Mustang</td>
+    <td class="time">76.911</td>
+    <td class="time">0.827</td>
+    <td class="time">63.605</td>
+    <td class="diff">0.422</td>
+    <td class="diff">8.790</td>
+    <td class="time">86.181</td>
+  </tr>
+  <tr>
+    <td class="rank">65</td>
+    <td class="cls">Z-STR</td>
+    <td class="number">155</td>
+    <td class="driver">Bryan Blumenschein</td>
+    <td class="vehicle">2007 Mazda MX-5</td>
+    <td class="time">76.598</td>
+    <td class="time">0.831</td>
+    <td class="time">63.653</td>
+    <td class="diff">0.048</td>
+    <td class="diff">8.837</td>
+    <td class="time">86.117</td>
+  </tr>
+  <tr>
+    <td class="rank">66</td>
+    <td class="cls">XA</td>
+    <td class="number">961</td>
+    <td class="driver">JUSTIN SEELEY</td>
+    <td class="vehicle">2013 BMW 335IS</td>
+    <td class="time">75.884</td>
+    <td class="time">0.842</td>
+    <td class="time">63.894</td>
+    <td class="diff">0.241</td>
+    <td class="diff">9.079</td>
+    <td class="time">85.791</td>
+  </tr>
+  <tr>
+    <td class="rank">67</td>
+    <td class="cls">CAMC</td>
+    <td class="number">29</td>
+    <td class="driver">Curt Crouse</td>
+    <td class="vehicle">2003 Mercury Marauder</td>
+    <td class="time">77.279</td>
+    <td class="time">0.827</td>
+    <td class="time">63.910</td>
+    <td class="diff">0.015</td>
+    <td class="diff">9.094</td>
+    <td class="time">85.770</td>
+  </tr>
+  <tr>
+    <td class="rank">68</td>
+    <td class="cls">C2-SSR</td>
+    <td class="number">10</td>
+    <td class="driver">Heidi Halverson</td>
+    <td class="vehicle">2005 Lotus Elise</td>
+    <td class="time">75.743</td>
+    <td class="time">0.846</td>
+    <td class="time">64.079</td>
+    <td class="diff">0.169</td>
+    <td class="diff">9.263</td>
+    <td class="time">85.544</td>
+  </tr>
+  <tr>
+    <td class="rank">69</td>
+    <td class="cls">CAMC</td>
+    <td class="number">315</td>
+    <td class="driver">Courtney Sampson</td>
+    <td class="vehicle">2015 Dodge Challenger hellcat</td>
+    <td class="time">77.547</td>
+    <td class="time">0.827</td>
+    <td class="time">64.131</td>
+    <td class="diff">0.053</td>
+    <td class="diff">9.316</td>
+    <td class="time">85.474</td>
+  </tr>
+  <tr>
+    <td class="rank">70</td>
+    <td class="cls">AS</td>
+    <td class="number">243</td>
+    <td class="driver">Tyler Horn</td>
+    <td class="vehicle">2002 Chevrolet Corvette Z06</td>
+    <td class="time">78.070</td>
+    <td class="time">0.823</td>
+    <td class="time">64.252</td>
+    <td class="diff">0.120</td>
+    <td class="diff">9.436</td>
+    <td class="time">85.314</td>
+  </tr>
+  <tr>
+    <td class="rank">71</td>
+    <td class="cls">C2-AM</td>
+    <td class="number">53</td>
+    <td class="driver">Tim Brueske</td>
+    <td class="vehicle">2022 Suzuki Buster</td>
+    <td class="time">64.259</td>
+    <td class="time">1.000</td>
+    <td class="time">64.259</td>
+    <td class="diff">0.007</td>
+    <td class="diff">9.443</td>
+    <td class="time">85.304</td>
+  </tr>
+  <tr>
+    <td class="rank">72</td>
+    <td class="cls">CAMS</td>
+    <td class="number">206</td>
+    <td class="driver">Nick Wernet</td>
+    <td class="vehicle">2006 Chevrolet Corvette Z06</td>
+    <td class="time">76.196</td>
+    <td class="time">0.845</td>
+    <td class="time">64.386</td>
+    <td class="diff">0.127</td>
+    <td class="diff">9.570</td>
+    <td class="time">85.137</td>
+  </tr>
+  <tr>
+    <td class="rank">73</td>
+    <td class="cls">C2-FS</td>
+    <td class="number">335</td>
+    <td class="driver">Eric Schroeder</td>
+    <td class="vehicle">2023 BMW 540i</td>
+    <td class="time">79.467</td>
+    <td class="time">0.813</td>
+    <td class="time">64.607</td>
+    <td class="diff">0.221</td>
+    <td class="diff">9.791</td>
+    <td class="time">84.845</td>
+  </tr>
+  <tr>
+    <td class="rank">74</td>
+    <td class="cls">STU</td>
+    <td class="number">165</td>
+    <td class="driver">Terry Schuster</td>
+    <td class="vehicle">2003 Nissan 350z</td>
+    <td class="time">79.411</td>
+    <td class="time">0.830</td>
+    <td class="time">65.911</td>
+    <td class="diff">1.304</td>
+    <td class="diff">11.095</td>
+    <td class="time">83.166</td>
+  </tr>
+  <tr>
+    <td class="rank">75</td>
+    <td class="cls">HS</td>
+    <td class="number">209</td>
+    <td class="driver">Aaryk Neubert</td>
+    <td class="vehicle">2012 Chevrolet Volt</td>
+    <td class="time">84.522</td>
+    <td class="time">0.786</td>
+    <td class="time">66.434</td>
+    <td class="diff">0.523</td>
+    <td class="diff">11.619</td>
+    <td class="time">82.511</td>
+  </tr>
+  <tr>
+    <td class="rank">76</td>
+    <td class="cls">C2-XP</td>
+    <td class="number">411</td>
+    <td class="driver">Dan Nielsen</td>
+    <td class="vehicle">1988 Chevrolet corvette</td>
+    <td class="time">75.542</td>
+    <td class="time">0.884</td>
+    <td class="time">66.779</td>
+    <td class="diff">0.345</td>
+    <td class="diff">11.963</td>
+    <td class="time">82.085</td>
+  </tr>
+  <tr>
+    <td class="rank">77</td>
+    <td class="cls">AS</td>
+    <td class="number">4</td>
+    <td class="driver">Don Gettinger</td>
+    <td class="vehicle">2001 Chevrolet Z-06 Corvette</td>
+    <td class="time">81.449</td>
+    <td class="time">0.823</td>
+    <td class="time">67.033</td>
+    <td class="diff">0.253</td>
+    <td class="diff">12.217</td>
+    <td class="time">81.775</td>
+  </tr>
+  <tr>
+    <td class="rank">78</td>
+    <td class="cls">AS</td>
+    <td class="number">27</td>
+    <td class="driver">Drew Baumbach</td>
+    <td class="vehicle">2009 Porsche Cayman S</td>
+    <td class="time">82.025</td>
+    <td class="time">0.823</td>
+    <td class="time">67.507</td>
+    <td class="diff">0.474</td>
+    <td class="diff">12.691</td>
+    <td class="time">81.201</td>
+  </tr>
+  <tr>
+    <td class="rank">79</td>
+    <td class="cls">AS</td>
+    <td class="number">193</td>
+    <td class="driver">Jeff Lawrence</td>
+    <td class="vehicle">2002 Chevrolet Corvette Z06</td>
+    <td class="time">82.593</td>
+    <td class="time">0.823</td>
+    <td class="time">67.974</td>
+    <td class="diff">0.467</td>
+    <td class="diff">13.158</td>
+    <td class="time">80.642</td>
+  </tr>
+  <tr>
+    <td class="rank">80</td>
+    <td class="cls">STH</td>
+    <td class="number">912</td>
+    <td class="driver">Christian Schuster</td>
+    <td class="vehicle">2019 Volkswagen GTI</td>
+    <td class="time">84.370</td>
+    <td class="time">0.812</td>
+    <td class="time">68.508</td>
+    <td class="diff">0.534</td>
+    <td class="diff">13.693</td>
+    <td class="time">80.013</td>
+  </tr>
+  <tr>
+    <td class="rank">81</td>
+    <td class="cls">XA</td>
+    <td class="number">242</td>
+    <td class="driver">Douglas Lindman</td>
+    <td class="vehicle">1986 Mazda Rx-15</td>
+    <td class="time">81.382</td>
+    <td class="time">0.842</td>
+    <td class="time">68.524</td>
+    <td class="diff">0.015</td>
+    <td class="diff">13.708</td>
+    <td class="time">79.995</td>
+  </tr>
+  <tr>
+    <td class="rank">82</td>
+    <td class="cls">CAMC</td>
+    <td class="number">539</td>
+    <td class="driver">John Witthaus</td>
+    <td class="vehicle">2004 Mercury Grand Marquis</td>
+    <td class="time">82.956</td>
+    <td class="time">0.827</td>
+    <td class="time">68.605</td>
+    <td class="diff">0.081</td>
+    <td class="diff">13.789</td>
+    <td class="time">79.901</td>
+  </tr>
+  <tr>
+    <td class="rank">83</td>
+    <td class="cls">AS</td>
+    <td class="number">611</td>
+    <td class="driver">Dennis OMeara</td>
+    <td class="vehicle">2011 Chevrolet Corvette</td>
+    <td class="time">85.996</td>
+    <td class="time">0.823</td>
+    <td class="time">70.775</td>
+    <td class="diff">2.170</td>
+    <td class="diff">15.959</td>
+    <td class="time">77.451</td>
+  </tr>
+  <tr>
+    <td class="rank">84</td>
+    <td class="cls">HS</td>
+    <td class="number">67</td>
+    <td class="driver">Gordon Handeland</td>
+    <td class="vehicle">2002 Mini R50 Cooper Base</td>
+    <td class="time">90.319</td>
+    <td class="time">0.786</td>
+    <td class="time">70.991</td>
+    <td class="diff">0.216</td>
+    <td class="diff">16.175</td>
+    <td class="time">77.215</td>
+  </tr>
+  <tr>
+    <td class="rank">85</td>
+    <td class="cls">N</td>
+    <td class="number">87</td>
+    <td class="driver">Michael Russell</td>
+    <td class="vehicle">1996 BMW M3</td>
+    <td class="time">72.061</td>
+    <td class="time">1.000</td>
+    <td class="time">72.061</td>
+    <td class="diff">1.070</td>
+    <td class="diff">17.245</td>
+    <td class="time">76.068</td>
+  </tr>
+  <tr>
+    <td class="rank">86</td>
+    <td class="cls">V</td>
+    <td class="number">28</td>
+    <td class="driver">Jess Meyer</td>
+    <td class="vehicle">1980 Porsche 911</td>
+    <td class="time">72.457</td>
+    <td class="time">1.000</td>
+    <td class="time">72.457</td>
+    <td class="diff">0.396</td>
+    <td class="diff">17.641</td>
+    <td class="time">75.653</td>
+  </tr>
+  <tr>
+    <td class="rank">87</td>
+    <td class="cls">N</td>
+    <td class="number">847</td>
+    <td class="driver">Ethan Saunders</td>
+    <td class="vehicle">2003 Toyota MR2 Spyder</td>
+    <td class="time">73.621</td>
+    <td class="time">1.000</td>
+    <td class="time">73.621</td>
+    <td class="diff">1.164</td>
+    <td class="diff">18.805</td>
+    <td class="time">74.457</td>
+  </tr>
+  <tr>
+    <td class="rank">88</td>
+    <td class="cls">V</td>
+    <td class="number">788</td>
+    <td class="driver">Max Currie</td>
+    <td class="vehicle">1997 Porsche 911</td>
+    <td class="time">73.758</td>
+    <td class="time">1.000</td>
+    <td class="time">73.758</td>
+    <td class="diff">0.137</td>
+    <td class="diff">18.942</td>
+    <td class="time">74.318</td>
+  </tr>
+  <tr>
+    <td class="rank">89</td>
+    <td class="cls">N</td>
+    <td class="number">227</td>
+    <td class="driver">Adam Radtke</td>
+    <td class="vehicle">1994 Acura Integra</td>
+    <td class="time">76.266</td>
+    <td class="time">1.000</td>
+    <td class="time">76.266</td>
+    <td class="diff">2.508</td>
+    <td class="diff">21.450</td>
+    <td class="time">71.874</td>
+  </tr>
+  <tr>
+    <td class="rank">90</td>
+    <td class="cls">N</td>
+    <td class="number">107</td>
+    <td class="driver">Jason Grant</td>
+    <td class="vehicle">1990 Chevy Corvette</td>
+    <td class="time">77.340</td>
+    <td class="time">1.000</td>
+    <td class="time">77.340</td>
+    <td class="diff">1.074</td>
+    <td class="diff">22.524</td>
+    <td class="time">70.876</td>
+  </tr>
+  <tr>
+    <td class="rank">91</td>
+    <td class="cls">V</td>
+    <td class="number">163</td>
+    <td class="driver">Mark Hagemann</td>
+    <td class="vehicle">1963 Chevrolet corvette</td>
+    <td class="time">77.767</td>
+    <td class="time">1.000</td>
+    <td class="time">77.767</td>
+    <td class="diff">0.427</td>
+    <td class="diff">22.951</td>
+    <td class="time">70.487</td>
+  </tr>
+  <tr>
+    <td class="rank">92</td>
+    <td class="cls">N</td>
+    <td class="number">763</td>
+    <td class="driver">Eric Thor</td>
+    <td class="vehicle">2008 Mitsubishi evolution</td>
+    <td class="time">78.558</td>
+    <td class="time">1.000</td>
+    <td class="time">78.558</td>
+    <td class="diff">0.791</td>
+    <td class="diff">23.742</td>
+    <td class="time">69.777</td>
+  </tr>
+  <tr>
+    <td class="rank">93</td>
+    <td class="cls">N</td>
+    <td class="number">54</td>
+    <td class="driver">Christopher Stromme</td>
+    <td class="vehicle">1999 Saab 9-3 Convertible SE</td>
+    <td class="time">79.839</td>
+    <td class="time">1.000</td>
+    <td class="time">79.839</td>
+    <td class="diff">1.281</td>
+    <td class="diff">25.023</td>
+    <td class="time">68.658</td>
+  </tr>
+  <tr>
+    <td class="rank">94</td>
+    <td class="cls">C2-XP</td>
+    <td class="number">271</td>
+    <td class="driver">Neal Hanson</td>
+    <td class="vehicle">1988 Chevrolet corvette</td>
+    <td class="time">90.544</td>
+    <td class="time">0.884</td>
+    <td class="time">80.041</td>
+    <td class="diff">0.202</td>
+    <td class="diff">25.225</td>
+    <td class="time">68.485</td>
+  </tr>
+  <tr>
+    <td class="rank">95</td>
+    <td class="cls">N</td>
+    <td class="number">127</td>
+    <td class="driver">Max Grant</td>
+    <td class="vehicle">1990 Chevy Corvette</td>
+    <td class="time">80.176</td>
+    <td class="time">1.000</td>
+    <td class="time">80.176</td>
+    <td class="diff">0.135</td>
+    <td class="diff">25.360</td>
+    <td class="time">68.369</td>
+  </tr>
+  <tr>
+    <td class="rank">96</td>
+    <td class="cls">N</td>
+    <td class="number">944</td>
+    <td class="driver">Jacob Giesen</td>
+    <td class="vehicle">1986 Porsche 944 turbo</td>
+    <td class="time">81.585</td>
+    <td class="time">1.000</td>
+    <td class="time">81.585</td>
+    <td class="diff">1.409</td>
+    <td class="diff">26.769</td>
+    <td class="time">67.188</td>
+  </tr>
+  <tr>
+    <td class="rank">97</td>
+    <td class="cls">V</td>
+    <td class="number">447</td>
+    <td class="driver">Karl Svedberg</td>
+    <td class="vehicle">1968 Chevrolet Corvette 327 ci, 4sp man</td>
+    <td class="time">81.632</td>
+    <td class="time">1.000</td>
+    <td class="time">81.632</td>
+    <td class="diff">0.047</td>
+    <td class="diff">26.816</td>
+    <td class="time">67.150</td>
+  </tr>
+  <tr>
+    <td class="rank">98</td>
+    <td class="cls">N</td>
+    <td class="number">789</td>
+    <td class="driver">Aaron Kvidera</td>
+    <td class="vehicle">1984 Pontiac Fiero</td>
+    <td class="time">83.068</td>
+    <td class="time">1.000</td>
+    <td class="time">83.068</td>
+    <td class="diff">1.436</td>
+    <td class="diff">28.252</td>
+    <td class="time">65.989</td>
+  </tr>
+  <tr>
+    <td class="rank">99</td>
+    <td class="cls">N</td>
+    <td class="number">786</td>
+    <td class="driver">Alexander Kvidera</td>
+    <td class="vehicle">1984 Pontiac Fiero</td>
+    <td class="time">83.568</td>
+    <td class="time">1.000</td>
+    <td class="time">83.568</td>
+    <td class="diff">0.500</td>
+    <td class="diff">28.752</td>
+    <td class="time">65.594</td>
+  </tr>
+  <tr>
+    <td class="rank">100</td>
+    <td class="cls">N</td>
+    <td class="number">996</td>
+    <td class="driver">Matthew Salfer</td>
+    <td class="vehicle">2002 Porsche 911 carrera 4 cabriolet</td>
+    <td class="time">83.832</td>
+    <td class="time">1.000</td>
+    <td class="time">83.832</td>
+    <td class="diff">0.264</td>
+    <td class="diff">29.016</td>
+    <td class="time">65.388</td>
+  </tr>
+  <tr>
+    <td class="rank">101</td>
+    <td class="cls">N</td>
+    <td class="number">104</td>
+    <td class="driver">Thomas Haider</td>
+    <td class="vehicle">2022 Ford Shelby GT 500</td>
+    <td class="time">85.032</td>
+    <td class="time">1.000</td>
+    <td class="time">85.032</td>
+    <td class="diff">1.200</td>
+    <td class="diff">30.216</td>
+    <td class="time">64.465</td>
+  </tr>
+  <tr>
+    <td class="rank">102</td>
+    <td class="cls">N</td>
+    <td class="number">774</td>
+    <td class="driver">Micah Land</td>
+    <td class="vehicle">1992 Mazda Miata</td>
+    <td class="time">85.070</td>
+    <td class="time">1.000</td>
+    <td class="time">85.070</td>
+    <td class="diff">0.038</td>
+    <td class="diff">30.254</td>
+    <td class="time">64.436</td>
+  </tr>
+  <tr>
+    <td class="rank">103</td>
+    <td class="cls">N</td>
+    <td class="number">541</td>
+    <td class="driver">Matthew Lopez</td>
+    <td class="vehicle">Nissan 350z</td>
+    <td class="time">85.119</td>
+    <td class="time">1.000</td>
+    <td class="time">85.119</td>
+    <td class="diff">0.049</td>
+    <td class="diff">30.303</td>
+    <td class="time">64.399</td>
+  </tr>
+  <tr>
+    <td class="rank">104</td>
+    <td class="cls">N</td>
+    <td class="number">921</td>
+    <td class="driver">Mark Kern</td>
+    <td class="vehicle">1998 Chevrolet Corvette</td>
+    <td class="time">85.129</td>
+    <td class="time">1.000</td>
+    <td class="time">85.129</td>
+    <td class="diff">0.010</td>
+    <td class="diff">30.313</td>
+    <td class="time">64.391</td>
+  </tr>
+  <tr>
+    <td class="rank">105</td>
+    <td class="cls">N</td>
+    <td class="number">520</td>
+    <td class="driver">Elynn Horn</td>
+    <td class="vehicle">2017 Volkswagen GTI</td>
+    <td class="time">85.381</td>
+    <td class="time">1.000</td>
+    <td class="time">85.381</td>
+    <td class="diff">0.252</td>
+    <td class="diff">30.565</td>
+    <td class="time">64.201</td>
+  </tr>
+  <tr>
+    <td class="rank">106</td>
+    <td class="cls">N</td>
+    <td class="number">710</td>
+    <td class="driver">Patrick O&#x27;Keefe</td>
+    <td class="vehicle">2019 Mazda MX-5 Club</td>
+    <td class="time">89.013</td>
+    <td class="time">1.000</td>
+    <td class="time">89.013</td>
+    <td class="diff">3.632</td>
+    <td class="diff">34.197</td>
+    <td class="time">61.582</td>
+  </tr>
+  <tr>
+    <td class="rank">107</td>
+    <td class="cls">N</td>
+    <td class="number">419</td>
+    <td class="driver">Dale Seeley</td>
+    <td class="vehicle">2011 Chevrolet Corvette GS</td>
+    <td class="time">89.023</td>
+    <td class="time">1.000</td>
+    <td class="time">89.023</td>
+    <td class="diff">0.010</td>
+    <td class="diff">34.207</td>
+    <td class="time">61.575</td>
+  </tr>
+</tbody>
+
+</table>
+
+</body>
+</html>

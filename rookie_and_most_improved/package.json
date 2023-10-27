@@ -1,0 +1,14 @@
+{
+  "name": "rookie_and_most_improved",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rookie_most_improved.js",
+  "dependencies": {
+    "htmlparser2": "^9.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

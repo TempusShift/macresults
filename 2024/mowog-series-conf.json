@@ -1,0 +1,21 @@
+{
+  "output_filename": "2024/mowog-series.html",
+  "results_filenames": [
+    "2024/2024-mowog1.json",
+    "2024/2024-mowog2.json"
+  ],
+  "event_labels": [
+    "M1 4/27",
+    "M2 4/28",
+    "M3 5/19",
+    "M4 6/06",
+    "M5 6/09",
+    "M6 7/13",
+    "M7 7/14",
+    "M8 8/24",
+    "M9 10/06"
+  ],
+  "title": "MOWOG 2024",
+  "num_events": 9,
+  "num_btp_events": 5
+}

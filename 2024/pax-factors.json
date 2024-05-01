@@ -1,5 +1,4 @@
 [
-
     {
         "name": "SS",
         "factor": 0.835
@@ -191,21 +190,5 @@
     {
         "name": "SST",
         "factor": 0.836
-    },
-    {
-        "name": "V",
-        "factor": 1
-    },
-    {
-        "name": "N",
-        "factor": 1
-    },
-    {
-        "name": "X",
-        "factor": 1
-    },
-    {
-        "name": "None",
-        "factor": 1
     }
 ]

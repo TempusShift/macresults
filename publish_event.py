@@ -137,7 +137,8 @@ def prepare_all_class_results(results, config):
         ('P', 'Pro'),
         ('Z', 'Pax Index'),
         ('C1', 'Combined 1'),
-        ('C2', 'Combined 2')
+        ('C2', 'Combined 2'),
+        ('Consolidated','Consolidated')
     ]
     for class_index, label in index_classes:
         selected_results = results.loc[results['class_index'] == class_index]

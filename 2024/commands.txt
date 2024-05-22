@@ -1,10 +1,8 @@
 poetry shell
 
-./compute_results.py -m 3 2024/2024-mowog1.csv 2024/2024-mowog1.json
-./compute_results.py -m 3 2024/2024-mowog2.csv 2024/2024-mowog2.json
+./compute_results.py -m 3 2024/2024-mowog3.csv 2024/2024-mowog3.json
 
-./publish_event.py -n 'MOWOG 1' -d 'Saturday, 27 April, 2024' -l 'DCTC' 2024/2024-mowog1.json 2024/2024-mowog1-fin.html
-./publish_event.py -n 'MOWOG 2' -d 'Sunday, 28 April, 2024' -l 'DCTC' 2024/2024-mowog2.json 2024/2024-mowog2-fin.html
+./publish_event.py -n 'MOWOG 3' -d 'Sunday, 19 May, 2024' -l 'DCTC' 2024/2024-mowog3.json 2024/2024-mowog3-fin.html
 
-./publish_doty.py -t 'MAC DOTY 2024' -n 9 -b 5 -o 2024/doty.html 2024/2024-mowog1.json 2024/2024-mowog2.json
+./publish_doty.py -t 'MAC DOTY 2024' -n 9 -b 5 -o 2024/doty.html 2024/2024-mowog1.json 2024/2024-mowog2.json 2024/2024-mowog3.json
 ./publish_series.py -c 2024/mowog-series-conf.json

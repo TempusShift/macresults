@@ -95,6 +95,9 @@ def main(args):
     # Compute the best times. For indexed classes, these are PAX
     # times, otherwise these are raw. For the Pro class, we compute
     # both a morning and afternoon time.
+    if config.num_morning_times < 1:
+        config.compute_split_pro_times = False
+    
     event_results = event_results.apply(add_best_times, axis=1, args=[config])
     event_results['doty_points'] = \
       event_results['best_pax_time'].min() / event_results['best_pax_time'] * 100.0
@@ -284,7 +287,14 @@ def add_best_times(row, config):
     pax_factor = row['pax_factor']
     split = None
     if row['class_index'] == 'P' and config.compute_split_pro_times:
+        print('times split')
+        print(config.compute_split_pro_times)
+        print(config.num_morning_times)
         split = config.num_morning_times
+    else:
+        print('notimes split')
+        print(config.compute_split_pro_times)
+        print(config.num_morning_times)
     all_times = row['times']
     best_time_nums, best_times = identify_best_times(all_times, split)
     row['best_time_nums'] = best_time_nums

@@ -1,0 +1,1407 @@
+<html>
+<style class="adjust-screen-brightness" media="screen">
+  html::before {
+    content: " ";
+    z-index: 2147483647;
+    pointer-events: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>AXti.me Event Results: 2024 MAC #00</title>
+  <style>
+    body {
+      font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif
+    }
+
+    table {
+      border: 1px solid #e8eef4;
+      border-collapse: collapse
+    }
+
+    table th {
+      background-color: #e8eef4;
+      padding: 6px 5px;
+      text-align: left
+    }
+
+    table th,
+    table td {
+      border: 1px solid #e8eef4;
+      color: #696969
+    }
+
+    table td {
+      padding: 5px
+    }
+
+    .divider {
+      background-color: #e8eef4;
+      font-weight: 700
+    }
+
+    .time {
+      width: 100px;
+      padding: 2px;
+      float: left
+    }
+
+    .time .pen {
+      color: red
+    }
+
+    .time.best {
+      font-weight: 700;
+      background-color: #ff0
+    }
+
+    #result-overall tbody tr:nth-child(even),
+    #result-pax tbody tr:nth-child(even) {
+      background-color: #fff8dc
+    }
+
+    .clearfix {
+      *zoom: 1
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+      display: table;
+      content: "";
+      line-height: 0
+    }
+
+    .clearfix:after {
+      clear: both
+    }
+
+    .hide-text {
+      font: 0/0 a;
+      color: transparent;
+      text-shadow: none;
+      background-color: transparent;
+      border: 0
+    }
+
+    .input-block-level {
+      display: block;
+      width: 100%;
+      min-height: 30px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box
+    }
+
+    .btn {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      padding: 4px 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      color: #333;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
+      background-color: #f5f5f5;
+      background-image: -moz-linear-gradient(top, #fff, #e6e6e6);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e6e6e6));
+      background-image: -webkit-linear-gradient(top, #fff, #e6e6e6);
+      background-image: -o-linear-gradient(top, #fff, #e6e6e6);
+      background-image: linear-gradient(to bottom, #fff, #e6e6e6);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+      border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+      *background-color: #e6e6e6;
+      filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+      border: 1px solid #ccc;
+      *border: 0;
+      border-bottom-color: #b3b3b3;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      *margin-left: .3em;
+      -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+      -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05)
+    }
+
+    .btn:hover {
+      background-color: #e6e6e6;
+      *background-color: #d9d9d9
+    }
+
+    .btn:focus,
+    .btn:active,
+    .btn.active,
+    .btn.disabled,
+    .btn[disabled] {
+      color: #333;
+      background-color: #e6e6e6;
+      *background-color: #d9d9d9
+    }
+
+    .btn:active,
+    .btn.active {
+      background-color: #ccc \9
+    }
+
+    .btn:first-child {
+      *margin-left: 0
+    }
+
+    .btn:hover,
+    .btn:focus {
+      color: #333;
+      text-decoration: none;
+      background-position: 0 -15px;
+      -webkit-transition: background-position .1s linear;
+      -moz-transition: background-position .1s linear;
+      -o-transition: background-position .1s linear;
+      transition: background-position .1s linear
+    }
+
+    .btn:focus {
+      outline: thin dotted #333;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px
+    }
+
+    .btn.active,
+    .btn:active {
+      background-image: none;
+      outline: 0;
+      -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
+      -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05)
+    }
+
+    .btn.disabled,
+    .btn[disabled] {
+      cursor: default;
+      background-image: none;
+      opacity: .65;
+      filter: alpha(opacity=65);
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none
+    }
+
+    .btn-large {
+      padding: 11px 19px;
+      font-size: 17.5px;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px
+    }
+
+    .btn-large [class^="icon-"],
+    .btn-large [class*=" icon-"] {
+      margin-top: 4px
+    }
+
+    .btn-small {
+      padding: 2px 10px;
+      font-size: 11.9px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px
+    }
+
+    .btn-small [class^="icon-"],
+    .btn-small [class*=" icon-"] {
+      margin-top: 0
+    }
+
+    .btn-mini [class^="icon-"],
+    .btn-mini [class*=" icon-"] {
+      margin-top: -1px
+    }
+
+    .btn-mini {
+      padding: 0 6px;
+      font-size: 10.5px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px
+    }
+
+    .btn-block {
+      display: block;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box
+    }
+
+    .btn-block+.btn-block {
+      margin-top: 5px
+    }
+
+    input[type="submit"].btn-block,
+    input[type="reset"].btn-block,
+    input[type="button"].btn-block {
+      width: 100%
+    }
+
+    .btn-primary.active,
+    .btn-warning.active,
+    .btn-danger.active,
+    .btn-success.active,
+    .btn-info.active,
+    .btn-inverse.active {
+      color: rgba(255, 255, 255, .75)
+    }
+
+    .btn-primary {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+      background-color: #006dcc;
+      background-image: -moz-linear-gradient(top, #08c, #04c);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#08c), to(#04c));
+      background-image: -webkit-linear-gradient(top, #08c, #04c);
+      background-image: -o-linear-gradient(top, #08c, #04c);
+      background-image: linear-gradient(to bottom, #08c, #04c);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+      border-color: #04c #04c #002a80;
+      border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+      *background-color: #04c;
+      filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .btn-primary.disabled,
+    .btn-primary[disabled] {
+      color: #fff;
+      background-color: #04c;
+      *background-color: #003bb3
+    }
+
+    .btn-primary:active,
+    .btn-primary.active {
+      background-color: #039 \9
+    }
+
+    .btn-warning {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+      background-color: #faa732;
+      background-image: -moz-linear-gradient(top, #fbb450, #f89406);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
+      background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
+      background-image: -o-linear-gradient(top, #fbb450, #f89406);
+      background-image: linear-gradient(to bottom, #fbb450, #f89406);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
+      border-color: #f89406 #f89406 #ad6704;
+      border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+      *background-color: #f89406;
+      filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+    }
+
+    .btn-warning:hover,
+    .btn-warning:focus,
+    .btn-warning:active,
+    .btn-warning.active,
+    .btn-warning.disabled,
+    .btn-warning[disabled] {
+      color: #fff;
+      background-color: #f89406;
+      *background-color: #df8505
+    }
+
+    .btn-warning:active,
+    .btn-warning.active {
+      background-color: #c67605 \9
+    }
+
+    .btn-danger {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+      background-color: #da4f49;
+      background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+      background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+      background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+      background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+      border-color: #bd362f #bd362f #802420;
+      border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+      *background-color: #bd362f;
+      filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+    }
+
+    .btn-danger:hover,
+    .btn-danger:focus,
+    .btn-danger:active,
+    .btn-danger.active,
+    .btn-danger.disabled,
+    .btn-danger[disabled] {
+      color: #fff;
+      background-color: #bd362f;
+      *background-color: #a9302a
+    }
+
+    .btn-danger:active,
+    .btn-danger.active {
+      background-color: #942a25 \9
+    }
+
+    .btn-success {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+      background-color: #5bb75b;
+      background-image: -moz-linear-gradient(top, #62c462, #51a351);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+      background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+      background-image: -o-linear-gradient(top, #62c462, #51a351);
+      background-image: linear-gradient(to bottom, #62c462, #51a351);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+      border-color: #51a351 #51a351 #387038;
+      border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+      *background-color: #51a351;
+      filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+    }
+
+    .btn-success:hover,
+    .btn-success:focus,
+    .btn-success:active,
+    .btn-success.active,
+    .btn-success.disabled,
+    .btn-success[disabled] {
+      color: #fff;
+      background-color: #51a351;
+      *background-color: #499249
+    }
+
+    .btn-success:active,
+    .btn-success.active {
+      background-color: #408140 \9
+    }
+
+    .btn-info {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+      background-color: #49afcd;
+      background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
+      background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+      background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+      background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+      border-color: #2f96b4 #2f96b4 #1f6377;
+      border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+      *background-color: #2f96b4;
+      filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+    }
+
+    .btn-info:hover,
+    .btn-info:focus,
+    .btn-info:active,
+    .btn-info.active,
+    .btn-info.disabled,
+    .btn-info[disabled] {
+      color: #fff;
+      background-color: #2f96b4;
+      *background-color: #2a85a0
+    }
+
+    .btn-info:active,
+    .btn-info.active {
+      background-color: #24748c \9
+    }
+
+    .btn-inverse {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+      background-color: #363636;
+      background-image: -moz-linear-gradient(top, #444, #222);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444), to(#222));
+      background-image: -webkit-linear-gradient(top, #444, #222);
+      background-image: -o-linear-gradient(top, #444, #222);
+      background-image: linear-gradient(to bottom, #444, #222);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);
+      border-color: #222 #222 #000;
+      border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+      *background-color: #222;
+      filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+    }
+
+    .btn-inverse:hover,
+    .btn-inverse:focus,
+    .btn-inverse:active,
+    .btn-inverse.active,
+    .btn-inverse.disabled,
+    .btn-inverse[disabled] {
+      color: #fff;
+      background-color: #222;
+      *background-color: #151515
+    }
+
+    .btn-inverse:active,
+    .btn-inverse.active {
+      background-color: #080808 \9
+    }
+
+    button.btn,
+    input[type="submit"].btn {
+      *padding-top: 3px;
+      *padding-bottom: 3px
+    }
+
+    button.btn::-moz-focus-inner,
+    input[type="submit"].btn::-moz-focus-inner {
+      padding: 0;
+      border: 0
+    }
+
+    button.btn.btn-large,
+    input[type="submit"].btn.btn-large {
+      *padding-top: 7px;
+      *padding-bottom: 7px
+    }
+
+    button.btn.btn-small,
+    input[type="submit"].btn.btn-small {
+      *padding-top: 3px;
+      *padding-bottom: 3px
+    }
+
+    button.btn.btn-mini,
+    input[type="submit"].btn.btn-mini {
+      *padding-top: 1px;
+      *padding-bottom: 1px
+    }
+
+    .btn-link,
+    .btn-link:active,
+    .btn-link[disabled] {
+      background-color: transparent;
+      background-image: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none
+    }
+
+    .btn-link {
+      border-color: transparent;
+      cursor: pointer;
+      color: #08c;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0
+    }
+
+    .btn-link:hover,
+    .btn-link:focus {
+      color: #005580;
+      text-decoration: underline;
+      background-color: transparent
+    }
+
+    .btn-link[disabled]:hover,
+    .btn-link[disabled]:focus {
+      color: #333;
+      text-decoration: none
+    }
+  </style>
+</head>
+
+<body>
+  <div style="float:right;">Participants: 46<br>Runs: 491</div>
+  <h1>Minnesota Autosports Club</h1>
+  <h2 style="margin-bottom:4px;">2024 MAC Novice School #02</h2>
+  <h4 style="margin-top:0px;">06/02/2024</h4>
+  <div class="clearfix"></div>
+  <table id="result-class">
+    <thead>
+      <tr>
+        <th>Driver</th>
+        <th>Car</th>
+        <th>Best</th>
+        <th>Raw Times</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="row">
+        <td nowrap="nowrap">Ben Allen #255</td>
+        <td nowrap="nowrap">2006 Mazda MX-5 Miata</td>
+        <td><strong>42.166</strong></td>
+        <td>
+          <div class="time">51.224</div>
+          <div class="time">49.353</div>
+          <div class="time">48.050</div>
+          <div class="time">44.514</div>
+          <div class="time">42.888</div>
+          <div class="time">43.052</div>
+          <div class="time best">42.166</div>
+          <div class="time">42.734</div>
+          <div class="time">42.435 <span class="pen">+2</span></div>
+          <div class="time">43.467</div>
+          <div class="time">43.690 <span class="pen">+1</span></div>
+          <div class="time">43.022 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Blake Zeise #420</td>
+        <td nowrap="nowrap">1995 Subaru BRZ</td>
+        <td><strong>40.064</strong></td>
+        <td>
+          <div class="time">50.944</div>
+          <div class="time">44.813 <span class="pen">+1</span></div>
+          <div class="time">42.170</div>
+          <div class="time">42.088 <span class="pen">+1</span></div>
+          <div class="time">41.563 <span class="pen">+1</span></div>
+          <div class="time">42.101 <span class="pen">+1</span></div>
+          <div class="time">110.870 <span class="pen">RRN</span></div>
+          <div class="time">40.947</div>
+          <div class="time">41.079</div>
+          <div class="time">40.517</div>
+          <div class="time best">40.064</div>
+          <div class="time">40.659</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Brad Smith #516</td>
+        <td nowrap="nowrap">2002 Honda Civic Si</td>
+        <td><strong>43.421</strong></td>
+        <td>
+          <div class="time">50.787</div>
+          <div class="time">47.005 <span class="pen">+1</span></div>
+          <div class="time">46.724</div>
+          <div class="time">45.433</div>
+          <div class="time">44.405 <span class="pen">+1</span></div>
+          <div class="time">43.906 <span class="pen">+1</span></div>
+          <div class="time">44.083 <span class="pen">+1</span></div>
+          <div class="time">43.851</div>
+          <div class="time">44.335</div>
+          <div class="time">43.870 <span class="pen">+1</span></div>
+          <div class="time best">43.421</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Brayden Harr #106</td>
+        <td nowrap="nowrap">2009 Lexus Is250</td>
+        <td><strong>43.037</strong></td>
+        <td>
+          <div class="time">50.436</div>
+          <div class="time">48.160</div>
+          <div class="time">45.138</div>
+          <div class="time">44.124 <span class="pen">+1</span></div>
+          <div class="time">44.297</div>
+          <div class="time">43.784 <span class="pen">+1</span></div>
+          <div class="time">43.070 <span class="pen">+1</span></div>
+          <div class="time">44.809 <span class="pen">+1</span></div>
+          <div class="time">44.524</div>
+          <div class="time">43.365</div>
+          <div class="time best">43.037</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Brody Rouillard #700</td>
+        <td nowrap="nowrap">2001 Lexus Is300</td>
+        <td><strong>43.147</strong></td>
+        <td>
+          <div class="time">54.536</div>
+          <div class="time">47.839 <span class="pen">+1</span></div>
+          <div class="time">45.894 <span class="pen">+2</span></div>
+          <div class="time">44.045 <span class="pen">+1</span></div>
+          <div class="time">44.294 <span class="pen">+3</span></div>
+          <div class="time">43.318 <span class="pen">+3</span></div>
+          <div class="time">44.688 <span class="pen">+1</span></div>
+          <div class="time">43.810 <span class="pen">+1</span></div>
+          <div class="time best">43.147</div>
+          <div class="time">43.749</div>
+          <div class="time">43.350</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Bryce Allen #982</td>
+        <td nowrap="nowrap">2019 Porsche Cayman S</td>
+        <td><strong>40.217</strong></td>
+        <td>
+          <div class="time">48.221</div>
+          <div class="time">43.907 <span class="pen">+4</span></div>
+          <div class="time">43.700 <span class="pen">+2</span></div>
+          <div class="time">42.874 <span class="pen">+3</span></div>
+          <div class="time">41.850 <span class="pen">+2</span></div>
+          <div class="time">43.082</div>
+          <div class="time"><span class="pen">DNF</span></div>
+          <div class="time">42.316</div>
+          <div class="time">41.843</div>
+          <div class="time">41.974</div>
+          <div class="time">40.667</div>
+          <div class="time best">40.217</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Claire Secker #248</td>
+        <td nowrap="nowrap"> Subaru Impreza</td>
+        <td><strong>49.866</strong></td>
+        <td>
+          <div class="time">70.875</div>
+          <div class="time">62.303</div>
+          <div class="time">55.927</div>
+          <div class="time">48.059 <span class="pen">+1</span></div>
+          <div class="time">50.450 <span class="pen">+1</span></div>
+          <div class="time">51.005</div>
+          <div class="time">52.085</div>
+          <div class="time">50.533</div>
+          <div class="time">49.913 <span class="pen">+2</span></div>
+          <div class="time best">49.866</div>
+          <div class="time">49.786 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Daniel Priebe #229</td>
+        <td nowrap="nowrap">1997 Ford Probe GT</td>
+        <td><strong>44.343</strong></td>
+        <td>
+          <div class="time">56.659</div>
+          <div class="time">48.690</div>
+          <div class="time">45.899 <span class="pen">+1</span></div>
+          <div class="time">45.438 <span class="pen">+2</span></div>
+          <div class="time">45.762 <span class="pen">+3</span></div>
+          <div class="time">46.238 <span class="pen">+2</span></div>
+          <div class="time">45.342</div>
+          <div class="time">46.127 <span class="pen">+1</span></div>
+          <div class="time">44.868 <span class="pen">+1</span></div>
+          <div class="time">44.920</div>
+          <div class="time best">44.343</div>
+          <div class="time">43.725 <span class="pen">+3</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">David Secker #289</td>
+        <td nowrap="nowrap">2019 Volkswagen GTI</td>
+        <td><strong>41.889</strong></td>
+        <td>
+          <div class="time">49.705</div>
+          <div class="time">45.851</div>
+          <div class="time">43.522 <span class="pen">+1</span></div>
+          <div class="time">43.309</div>
+          <div class="time">45.454</div>
+          <div class="time">43.947</div>
+          <div class="time">44.764 <span class="pen">+1</span></div>
+          <div class="time">42.158</div>
+          <div class="time">43.015</div>
+          <div class="time">41.969</div>
+          <div class="time">42.205</div>
+          <div class="time best">41.889</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Daye Stager #969</td>
+        <td nowrap="nowrap">2022 Toyota GR86</td>
+        <td><strong>41.551</strong></td>
+        <td>
+          <div class="time">47.283</div>
+          <div class="time">44.189</div>
+          <div class="time">43.636 <span class="pen">+2</span></div>
+          <div class="time">42.034 <span class="pen">+1</span></div>
+          <div class="time">41.590</div>
+          <div class="time">41.399 <span class="pen">+1</span></div>
+          <div class="time">42.431 <span class="pen">+1</span></div>
+          <div class="time">42.029</div>
+          <div class="time">42.790</div>
+          <div class="time best">41.551</div>
+          <div class="time">41.689</div>
+          <div class="time">41.576</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Dennis Boyum #11</td>
+        <td nowrap="nowrap">2012 Honda Fit</td>
+        <td><strong>44.331</strong></td>
+        <td>
+          <div class="time">54.647</div>
+          <div class="time">48.460</div>
+          <div class="time">45.352</div>
+          <div class="time">44.714 <span class="pen">+2</span></div>
+          <div class="time">46.245</div>
+          <div class="time">54.316 <span class="pen">RRN</span></div>
+          <div class="time">45.135</div>
+          <div class="time">44.756</div>
+          <div class="time">44.024 <span class="pen">+2</span></div>
+          <div class="time best">44.331</div>
+          <div class="time">43.943 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Dominick Dunn #907</td>
+        <td nowrap="nowrap">2007 Mini Cooper s</td>
+        <td><strong>41.817</strong></td>
+        <td>
+          <div class="time">44.919</div>
+          <div class="time">44.982</div>
+          <div class="time">42.542</div>
+          <div class="time">42.856 <span class="pen">+1</span></div>
+          <div class="time">42.790</div>
+          <div class="time">42.288 <span class="pen">+3</span></div>
+          <div class="time">42.928</div>
+          <div class="time best">41.817</div>
+          <div class="time">41.388 <span class="pen">+1</span></div>
+          <div class="time">41.133 <span class="pen">+1</span></div>
+          <div class="time">42.024 <span class="pen">+1</span></div>
+          <div class="time">41.377 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Elliott Lang #935</td>
+        <td nowrap="nowrap">2006 Mini Cooper S</td>
+        <td><strong>44.423</strong></td>
+        <td>
+          <div class="time">52.029</div>
+          <div class="time">47.897</div>
+          <div class="time">47.279 <span class="pen">+1</span></div>
+          <div class="time">47.670</div>
+          <div class="time">47.477</div>
+          <div class="time">47.674</div>
+          <div class="time">46.347</div>
+          <div class="time">45.651</div>
+          <div class="time">45.734</div>
+          <div class="time">44.884</div>
+          <div class="time best">44.423</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Gaston Lang #539</td>
+        <td nowrap="nowrap">2006 Mini Cooper S</td>
+        <td><strong>45.419</strong></td>
+        <td>
+          <div class="time">54.563</div>
+          <div class="time">52.893</div>
+          <div class="time">50.594</div>
+          <div class="time">47.486</div>
+          <div class="time">47.748</div>
+          <div class="time">47.849</div>
+          <div class="time">47.556</div>
+          <div class="time">46.920</div>
+          <div class="time">46.717</div>
+          <div class="time">47.142</div>
+          <div class="time best">45.419</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Grant Gapinski #789</td>
+        <td nowrap="nowrap">2017 Ford Focus RS</td>
+        <td><strong>40.506</strong></td>
+        <td>
+          <div class="time">45.302 <span class="pen">+1</span></div>
+          <div class="time">43.662 <span class="pen">+2</span></div>
+          <div class="time">43.785 <span class="pen">+2</span></div>
+          <div class="time">41.550</div>
+          <div class="time">41.808</div>
+          <div class="time">41.293 <span class="pen">+1</span></div>
+          <div class="time">40.891 <span class="pen">+2</span></div>
+          <div class="time">41.161</div>
+          <div class="time best">40.506</div>
+          <div class="time">40.724</div>
+          <div class="time">41.760 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Hailey Temple #21</td>
+        <td nowrap="nowrap">2009 Pontiac G8</td>
+        <td><strong>60.291</strong></td>
+        <td>
+          <div class="time">65.870 <span class="pen">+1</span></div>
+          <div class="time best">60.291</div>
+          <div class="time">59.138 <span class="pen">+2</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Henry Simonson #640</td>
+        <td nowrap="nowrap">2015 Volkswagen GTI</td>
+        <td><strong>42.456</strong></td>
+        <td>
+          <div class="time">57.180</div>
+          <div class="time">51.820</div>
+          <div class="time">50.252</div>
+          <div class="time">45.452 <span class="pen">+1</span></div>
+          <div class="time">43.688</div>
+          <div class="time best">42.456</div>
+          <div class="time">41.451 <span class="pen">+1</span></div>
+          <div class="time">41.823 <span class="pen">+2</span></div>
+          <div class="time">41.462 <span class="pen">+1</span></div>
+          <div class="time">41.821 <span class="pen">+1</span></div>
+          <div class="time">41.183 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Jacob Soberski #400</td>
+        <td nowrap="nowrap">2018 Honda Civic Hatchback</td>
+        <td><strong>43.579</strong></td>
+        <td>
+          <div class="time">61.103</div>
+          <div class="time">51.981</div>
+          <div class="time">47.907</div>
+          <div class="time">48.568</div>
+          <div class="time">47.368</div>
+          <div class="time">45.225</div>
+          <div class="time">45.221 <span class="pen">+1</span></div>
+          <div class="time">44.751</div>
+          <div class="time">44.455</div>
+          <div class="time">44.178</div>
+          <div class="time best">43.579</div>
+          <div class="time">43.897</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Jessica Kloss #724</td>
+        <td nowrap="nowrap">2008 Infiniti M45x</td>
+        <td><strong>58.891</strong></td>
+        <td>
+          <div class="time">56.478 <span class="pen">+5</span></div>
+          <div class="time">57.580 <span class="pen">+5</span></div>
+          <div class="time best">54.891 <span class="pen">+2</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Jim Moskalik #385</td>
+        <td nowrap="nowrap">2013 Scion FR-S</td>
+        <td><strong>43.489</strong></td>
+        <td>
+          <div class="time">50.036</div>
+          <div class="time">46.654 <span class="pen">+1</span></div>
+          <div class="time">44.421</div>
+          <div class="time">44.517 <span class="pen">+1</span></div>
+          <div class="time">44.124</div>
+          <div class="time best">43.489</div>
+          <div class="time">43.952</div>
+          <div class="time">44.128 <span class="pen">+1</span></div>
+          <div class="time">44.519 <span class="pen">+1</span></div>
+          <div class="time">43.846</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Joe Jaspers #197</td>
+        <td nowrap="nowrap">1991 Nissan 240sx</td>
+        <td><strong>42.752</strong></td>
+        <td>
+          <div class="time">46.954</div>
+          <div class="time"><span class="pen">DNF</span></div>
+          <div class="time">41.257 <span class="pen">+2</span></div>
+          <div class="time">43.028</div>
+          <div class="time">42.381 <span class="pen">+1</span></div>
+          <div class="time best">40.752 <span class="pen">+1</span></div>
+          <div class="time">53.214 <span class="pen">+1</span></div>
+          <div class="time">46.732 <span class="pen">+1</span></div>
+          <div class="time">40.468 <span class="pen">+2</span></div>
+          <div class="time">41.054 <span class="pen">+1</span></div>
+          <div class="time">42.838 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">John Tschida #152</td>
+        <td nowrap="nowrap">2023 Chevrolet Corvette</td>
+        <td><strong>40.84</strong></td>
+        <td>
+          <div class="time">48.504</div>
+          <div class="time">45.255</div>
+          <div class="time">43.233</div>
+          <div class="time">42.434</div>
+          <div class="time"><span class="pen">DNF</span></div>
+          <div class="time">41.824</div>
+          <div class="time">41.162</div>
+          <div class="time">41.555</div>
+          <div class="time">41.274</div>
+          <div class="time best">40.840</div>
+          <div class="time">40.994</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Jonathan Decker #477</td>
+        <td nowrap="nowrap">2001 Mazda Miata SE</td>
+        <td><strong>41.996</strong></td>
+        <td>
+          <div class="time">44.994</div>
+          <div class="time">43.722 <span class="pen">+1</span></div>
+          <div class="time">43.011 <span class="pen">+1</span></div>
+          <div class="time">43.446</div>
+          <div class="time">41.894 <span class="pen">+3</span></div>
+          <div class="time">43.488 <span class="pen">+2</span></div>
+          <div class="time">45.302</div>
+          <div class="time">44.347</div>
+          <div class="time best">41.996</div>
+          <div class="time">43.012 <span class="pen">+1</span></div>
+          <div class="time">43.291</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Julien Lang #35</td>
+        <td nowrap="nowrap">2006 Mini Cooper S</td>
+        <td><strong>43.357</strong></td>
+        <td>
+          <div class="time">54.362</div>
+          <div class="time">47.933</div>
+          <div class="time">46.483</div>
+          <div class="time">46.184</div>
+          <div class="time">44.978</div>
+          <div class="time">45.127</div>
+          <div class="time">44.188 <span class="pen">+1</span></div>
+          <div class="time">44.099</div>
+          <div class="time">43.632</div>
+          <div class="time">44.118</div>
+          <div class="time best">43.357</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Kenyon Barnette #356</td>
+        <td nowrap="nowrap">2015 BMW 328i</td>
+        <td><strong>43.425</strong></td>
+        <td>
+          <div class="time">53.778</div>
+          <div class="time">48.337</div>
+          <div class="time">47.409</div>
+          <div class="time">45.642</div>
+          <div class="time">45.901</div>
+          <div class="time">44.626</div>
+          <div class="time">44.812 <span class="pen">+2</span></div>
+          <div class="time">45.585</div>
+          <div class="time">45.349</div>
+          <div class="time best">43.425</div>
+          <div class="time">44.078 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Kevin Raff #151</td>
+        <td nowrap="nowrap">2024 Porsche 911 c2s</td>
+        <td><strong>38.565</strong></td>
+        <td>
+          <div class="time">43.869</div>
+          <div class="time">40.120 <span class="pen">+1</span></div>
+          <div class="time">39.424 <span class="pen">+2</span></div>
+          <div class="time">40.975 <span class="pen">+2</span></div>
+          <div class="time">39.100 <span class="pen">+2</span></div>
+          <div class="time">40.126</div>
+          <div class="time">39.504</div>
+          <div class="time">39.080 <span class="pen">+1</span></div>
+          <div class="time">38.547 <span class="pen">+1</span></div>
+          <div class="time">39.114</div>
+          <div class="time">38.226 <span class="pen">+2</span></div>
+          <div class="time best">38.565</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Kevin Thalhuber #7</td>
+        <td nowrap="nowrap">1995 Toyota Celica GT</td>
+        <td><strong>46.117</strong></td>
+        <td>
+          <div class="time">53.270</div>
+          <div class="time">51.736 <span class="pen">+1</span></div>
+          <div class="time">50.056</div>
+          <div class="time">48.602 <span class="pen">+2</span></div>
+          <div class="time">49.180 <span class="pen">+2</span></div>
+          <div class="time">50.310</div>
+          <div class="time">48.914</div>
+          <div class="time best">46.117</div>
+          <div class="time">48.730</div>
+          <div class="time">47.481</div>
+          <div class="time">47.862</div>
+          <div class="time">47.297</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Loren Temple #211</td>
+        <td nowrap="nowrap">2009 Pontiac G8</td>
+        <td><strong>42.498</strong></td>
+        <td>
+          <div class="time">49.195</div>
+          <div class="time">45.703</div>
+          <div class="time">43.504 <span class="pen">+1</span></div>
+          <div class="time">42.777 <span class="pen">+1</span></div>
+          <div class="time">42.880 <span class="pen">+2</span></div>
+          <div class="time">42.715</div>
+          <div class="time">43.537 <span class="pen">+2</span></div>
+          <div class="time best">42.498</div>
+          <div class="time">42.224 <span class="pen">+1</span></div>
+          <div class="time">41.784 <span class="pen">+1</span></div>
+          <div class="time">42.771</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Lucas Garcia Mansilla #505</td>
+        <td nowrap="nowrap">2024 Volkswagen GOLF R</td>
+        <td><strong>40.734</strong></td>
+        <td>
+          <div class="time">50.317</div>
+          <div class="time">46.517</div>
+          <div class="time">45.631</div>
+          <div class="time">42.840</div>
+          <div class="time">42.521</div>
+          <div class="time">41.511</div>
+          <div class="time">41.731</div>
+          <div class="time">41.317</div>
+          <div class="time">40.796</div>
+          <div class="time">41.180</div>
+          <div class="time">41.124</div>
+          <div class="time best">40.734</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Lue Lee #301</td>
+        <td nowrap="nowrap">2023 Hyundai Kona N</td>
+        <td><strong>44.14</strong></td>
+        <td>
+          <div class="time">51.565</div>
+          <div class="time">51.807 <span class="pen">+1</span></div>
+          <div class="time">49.929</div>
+          <div class="time">45.855</div>
+          <div class="time best">44.140</div>
+          <div class="time">46.663</div>
+          <div class="time">44.359 <span class="pen">+1</span></div>
+          <div class="time">44.230</div>
+          <div class="time">45.166</div>
+          <div class="time">45.639</div>
+          <div class="time">45.172</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Luis Lopez #574</td>
+        <td nowrap="nowrap">2019 Subaru BRZ</td>
+        <td><strong>41.43</strong></td>
+        <td>
+          <div class="time">43.498</div>
+          <div class="time">42.346</div>
+          <div class="time best">41.430</div>
+          <div class="time">41.740 <span class="pen">+2</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Matt Moskalik #305</td>
+        <td nowrap="nowrap">2013 Scion FRS</td>
+        <td><strong>44.827</strong></td>
+        <td>
+          <div class="time">61.413</div>
+          <div class="time">54.633</div>
+          <div class="time">51.753</div>
+          <div class="time">47.868 <span class="pen">+1</span></div>
+          <div class="time">46.432 <span class="pen">+2</span></div>
+          <div class="time">46.752</div>
+          <div class="time">46.911</div>
+          <div class="time">45.422 <span class="pen">+2</span></div>
+          <div class="time best">44.827</div>
+          <div class="time">45.411</div>
+          <div class="time">45.536 <span class="pen">+1</span></div>
+          <div class="time">44.879</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Matthew Secker #89</td>
+        <td nowrap="nowrap">2019 Volkswagen GTI</td>
+        <td><strong>46.566</strong></td>
+        <td>
+          <div class="time">56.878 <span class="pen">+3</span></div>
+          <div class="time">58.912</div>
+          <div class="time">59.909 <span class="pen">+5</span></div>
+          <div class="time">59.671 <span class="pen">+2</span></div>
+          <div class="time">51.953 <span class="pen">+4</span></div>
+          <div class="time">50.581 <span class="pen">+3</span></div>
+          <div class="time">48.294 <span class="pen">+3</span></div>
+          <div class="time">47.458 <span class="pen">+2</span></div>
+          <div class="time">46.007 <span class="pen">+1</span></div>
+          <div class="time">44.830 <span class="pen">+1</span></div>
+          <div class="time best">44.566 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Michael Mandigo #471</td>
+        <td nowrap="nowrap">1987 Chevrolet Camaro</td>
+        <td><strong>41.413</strong></td>
+        <td>
+          <div class="time">56.735 <span class="pen">+1</span></div>
+          <div class="time">48.589 <span class="pen">+1</span></div>
+          <div class="time">47.825</div>
+          <div class="time">50.397 <span class="pen">+1</span></div>
+          <div class="time">48.547 <span class="pen">+1</span></div>
+          <div class="time">46.998</div>
+          <div class="time">47.938 <span class="pen">+1</span></div>
+          <div class="time">111.831 <span class="pen">RRN</span></div>
+          <div class="time">47.887</div>
+          <div class="time best">41.413</div>
+          <div class="time">47.142</div>
+          <div class="time">46.231</div>
+          <div class="time">46.364</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Mike Engelhaupt #105</td>
+        <td nowrap="nowrap">2024 Honda Accord</td>
+        <td><strong>45.765</strong></td>
+        <td>
+          <div class="time">51.857 <span class="pen">+4</span></div>
+          <div class="time">48.656 <span class="pen">+2</span></div>
+          <div class="time">45.778 <span class="pen">+1</span></div>
+          <div class="time">45.982</div>
+          <div class="time">45.210 <span class="pen">+1</span></div>
+          <div class="time"><span class="pen">DNF</span></div>
+          <div class="time">45.811 <span class="pen">+1</span></div>
+          <div class="time">46.603</div>
+          <div class="time best">45.765</div>
+          <div class="time">47.334 <span class="pen">+2</span></div>
+          <div class="time">44.856 <span class="pen">+2</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Mindy Forsman #710</td>
+        <td nowrap="nowrap">2013 Fiat 500 Abarth</td>
+        <td><strong>42.394</strong></td>
+        <td>
+          <div class="time">53.308</div>
+          <div class="time">47.155</div>
+          <div class="time">45.372</div>
+          <div class="time">44.888</div>
+          <div class="time">44.820</div>
+          <div class="time">44.567</div>
+          <div class="time">45.583</div>
+          <div class="time">44.453 <span class="pen">+1</span></div>
+          <div class="time">45.083 <span class="pen">+1</span></div>
+          <div class="time">43.887</div>
+          <div class="time">43.119</div>
+          <div class="time best">42.394</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Nathan Li #96</td>
+        <td nowrap="nowrap">2023 Acura Integra</td>
+        <td><strong>41.409</strong></td>
+        <td>
+          <div class="time">44.667 <span class="pen">+2</span></div>
+          <div class="time">42.688 <span class="pen">+1</span></div>
+          <div class="time">42.425 <span class="pen">+1</span></div>
+          <div class="time">41.252 <span class="pen">+4</span></div>
+          <div class="time">42.297</div>
+          <div class="time">41.784</div>
+          <div class="time">41.230 <span class="pen">+1</span></div>
+          <div class="time best">41.409</div>
+          <div class="time">41.354 <span class="pen">+1</span></div>
+          <div class="time">41.556</div>
+          <div class="time"><span class="pen">DNF</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Pheng Her #525</td>
+        <td nowrap="nowrap">2023 Subaru BRZ</td>
+        <td><strong>40.49</strong></td>
+        <td>
+          <div class="time">41.148 <span class="pen">+1</span></div>
+          <div class="time">42.721 <span class="pen">+1</span></div>
+          <div class="time">41.930 <span class="pen">+1</span></div>
+          <div class="time">41.805 <span class="pen">+1</span></div>
+          <div class="time">41.495 <span class="pen">+2</span></div>
+          <div class="time">42.596</div>
+          <div class="time">40.722</div>
+          <div class="time best">40.490</div>
+          <div class="time">40.013 <span class="pen">+1</span></div>
+          <div class="time">39.855 <span class="pen">+1</span></div>
+          <div class="time">39.980 <span class="pen">+2</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Randal Priebe #230</td>
+        <td nowrap="nowrap">1993 Ford Probe GT</td>
+        <td><strong>47.457</strong></td>
+        <td>
+          <div class="time">50.780 <span class="pen">+1</span></div>
+          <div class="time">50.572</div>
+          <div class="time best">47.457</div>
+          <div class="time">49.217</div>
+          <div class="time">49.460 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Rixin Zhao #233</td>
+        <td nowrap="nowrap">2024 Acura Integra</td>
+        <td><strong>42.27</strong></td>
+        <td>
+          <div class="time">44.871</div>
+          <div class="time">43.344 <span class="pen">+2</span></div>
+          <div class="time">41.239 <span class="pen">+1</span></div>
+          <div class="time best">42.270</div>
+          <div class="time">43.827 <span class="pen">+2</span></div>
+          <div class="time">99.857</div>
+          <div class="time">42.071 <span class="pen">+2</span></div>
+          <div class="time">42.351 <span class="pen">+3</span></div>
+          <div class="time">44.995 <span class="pen">+1</span></div>
+          <div class="time">41.439 <span class="pen">+2</span></div>
+          <div class="time">40.977 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Sam Boryczka #176</td>
+        <td nowrap="nowrap">2018 Subaru Wrx</td>
+        <td><strong>42.749</strong></td>
+        <td>
+          <div class="time">50.471</div>
+          <div class="time">46.156 <span class="pen">+1</span></div>
+          <div class="time">46.628</div>
+          <div class="time">42.819 <span class="pen">+3</span></div>
+          <div class="time">43.441 <span class="pen">+2</span></div>
+          <div class="time">43.775 <span class="pen">+1</span></div>
+          <div class="time">42.876 <span class="pen">+2</span></div>
+          <div class="time">42.923 <span class="pen">+1</span></div>
+          <div class="time best">42.749</div>
+          <div class="time">43.186</div>
+          <div class="time">42.800 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Scott Newville #984</td>
+        <td nowrap="nowrap">2016 Volkswagen GTI Red</td>
+        <td><strong>42.246</strong></td>
+        <td>
+          <div class="time">47.534</div>
+          <div class="time">44.701</div>
+          <div class="time">44.924</div>
+          <div class="time">44.292 <span class="pen">+2</span></div>
+          <div class="time">42.632</div>
+          <div class="time">41.766 <span class="pen">+1</span></div>
+          <div class="time">42.652 <span class="pen">+1</span></div>
+          <div class="time best">42.246</div>
+          <div class="time">42.320</div>
+          <div class="time">42.261 <span class="pen">+1</span></div>
+          <div class="time">41.364 <span class="pen">+1</span></div>
+          <div class="time">42.664 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Steve Truax #347</td>
+        <td nowrap="nowrap"> Ford Ranchero</td>
+        <td><strong>46.217</strong></td>
+        <td>
+          <div class="time">47.659 <span class="pen">+1</span></div>
+          <div class="time">48.423</div>
+          <div class="time">46.756</div>
+          <div class="time">46.650</div>
+          <div class="time">46.386</div>
+          <div class="time">46.597 <span class="pen">+1</span></div>
+          <div class="time best">46.217</div>
+          <div class="time">46.366</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Toby Begnaud #429</td>
+        <td nowrap="nowrap"> Ford Mustang</td>
+        <td><strong>44.802</strong></td>
+        <td>
+          <div class="time">51.422 <span class="pen">+3</span></div>
+          <div class="time">46.120</div>
+          <div class="time">45.924</div>
+          <div class="time">46.719</div>
+          <div class="time best">44.802</div>
+          <div class="time">46.067 <span class="pen">+2</span></div>
+          <div class="time">46.357</div>
+          <div class="time">46.794</div>
+          <div class="time">45.544 <span class="pen">+1</span></div>
+          <div class="time">45.795</div>
+          <div class="time">46.468 <span class="pen">+1</span></div>
+          <div class="time">45.793</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Todd Larson #144</td>
+        <td nowrap="nowrap">2004 Mazda Mazdaspeed Miata</td>
+        <td><strong>43.537</strong></td>
+        <td>
+          <div class="time">50.868</div>
+          <div class="time">45.182</div>
+          <div class="time">42.400 <span class="pen">+1</span></div>
+          <div class="time">44.275</div>
+          <div class="time">43.921 <span class="pen">+1</span></div>
+          <div class="time">44.138 <span class="pen">+1</span></div>
+          <div class="time">44.766 <span class="pen">+2</span></div>
+          <div class="time">45.206</div>
+          <div class="time">45.746</div>
+          <div class="time">44.044</div>
+          <div class="time best">43.537</div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+      <tr class="row">
+        <td nowrap="nowrap">Tyler Schabacker #368</td>
+        <td nowrap="nowrap">2014 Infiniti Q60s</td>
+        <td><strong>41.467</strong></td>
+        <td>
+          <div class="time">46.068</div>
+          <div class="time">44.039 <span class="pen">+1</span></div>
+          <div class="time">46.729 <span class="pen">+1</span></div>
+          <div class="time">45.849</div>
+          <div class="time">43.587</div>
+          <div class="time">42.074</div>
+          <div class="time">41.978</div>
+          <div class="time">42.473</div>
+          <div class="time">41.476</div>
+          <div class="time">40.958 <span class="pen">+1</span></div>
+          <div class="time best">41.467</div>
+          <div class="time">40.532 <span class="pen">+1</span></div>
+          <div style="clear:left"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

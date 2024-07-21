@@ -7,4 +7,5 @@ poetry shell
 ./publish_event.py -n 'MOWOG 7' -d 'Sunday, 14 July, 2024' -l 'MN State Fair' 2024/2024-mowog7.json 2024/2024-mowog7-fin.html
 
 ./publish_doty.py -t 'MAC DOTY 2024' -n 9 -b 5 -o 2024/doty.html 2024/2024-mowog1.json 2024/2024-mowog2.json 2024/2024-mowog3.json 2024/2024-mowog4.json 2024/2024-mowog5.json 2024/2024-mowog6.json 2024/2024-mowog7.json
+./publish_doty_raw.py -t 'MAC DOTY RAW 2024' -n 9 -b 5 -o 2024/doty_raw.html 2024/2024-mowog1.json 2024/2024-mowog2.json 2024/2024-mowog3.json 2024/2024-mowog4.json 2024/2024-mowog5.json 2024/2024-mowog6.json 2024/2024-mowog7.json
 ./publish_series.py -c 2024/mowog-series-conf.json

@@ -101,6 +101,8 @@ def main(args):
     event_results = event_results.apply(add_best_times, axis=1, args=[config])
     event_results['doty_points'] = \
       event_results['best_pax_time'].min() / event_results['best_pax_time'] * 100.0
+    event_results['doty_raw_points'] = \
+        event_results['best_raw_time'].min() / event_results['best_raw_time'] * 100.0
 
     # For debugging, print out what we found.
     # summarize_classes(event_results)

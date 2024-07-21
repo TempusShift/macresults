@@ -1,6 +1,7 @@
 const fs = require('fs');
 const { files } = require('./rookie_most_improved_config.json');
 const htmlparser2 = require('htmlparser2');
+const aliases = require('../aliases.json')
 
 const results = [];
 const promises = [];
@@ -21,6 +22,13 @@ files
 
 const driverYears = {};
 
+const checkAlias = (name) => {
+  if (aliases[name.toLowerCase()]) {
+    return aliases[name.toLowerCase()]
+  }
+  return name
+}
+
 Promise.all(promises).then(filesData => {
   filesData.forEach((fileData, fileIndex) => {
     const dom = htmlparser2.parseDocument(fileData);
@@ -36,17 +44,20 @@ Promise.all(promises).then(filesData => {
         driverRow
       );
       const eventCount = parseInt(htmlparser2.DomUtils.getText(driverCells[3]));
-      if (eventCount >= scoredEventCount) {
+      const driverName = checkAlias(htmlparser2.DomUtils.getText(driverCells[1]));
+      if (!driverYears[driverName]) {
+        driverYears[driverName] = {present:[],complete:[]};
+      }
+      driverYears[driverName].present.push(files[fileIndex])
+      drivers[driverName] = {
+        driverName,
+        place: driverIndex + 1,
+        eventCount,
+        completeSeason: eventCount >= scoredEventCount
+      };
+      if (eventCount >= scoredEventCount) { // || driverName === 'Andrew Deck') {
         scoredEventCount = eventCount;
-        const driverName = htmlparser2.DomUtils.getText(driverCells[1]);
-        if (!driverYears[driverName]) {
-          driverYears[driverName] = [];
-        }
-        driverYears[driverName].push(files[fileIndex]);
-        drivers[driverName] = {
-          driverName,
-          place: driverIndex + 1,
-        };
+        driverYears[driverName].complete.push(files[fileIndex]);
       }
     });
     results.push(drivers);
@@ -54,13 +65,13 @@ Promise.all(promises).then(filesData => {
   const newDrivers = [];
   let improvedDrivers = [];
   Object.keys(driverYears).forEach(driverName => {
-    const years = driverYears[driverName];
-    if (years.length === 1 && years[0] === files[files.length - 1]) {
+    const {present, complete} = driverYears[driverName];
+    if (present.length === 1 && present[0] === files[files.length - 1]) {
       newDrivers.push(driverName);
     }
     if (
-      years.includes(files[files.length - 1]) &&
-      years.includes(files[files.length - 2])
+      complete.includes(files[files.length - 1]) &&
+      complete.includes(files[files.length - 2])
     ) {
       improvedDrivers.push(driverName);
     }
@@ -71,7 +82,7 @@ Promise.all(promises).then(filesData => {
     .sort((a, b) => {
       return currentYear[a].place > currentYear[b].place ? 1 : -1;
     })
-    .map(driver => `${driver} - ${currentYear[driver].place}`);
+    .map(driver => `${driver} - ${currentYear[driver].place} -- ${currentYear[driver].completeSeason}`);
 
   const previousYear = results[results.length - 2];
   improvedDrivers = improvedDrivers
@@ -86,6 +97,6 @@ Promise.all(promises).then(filesData => {
       };
     })
     .sort((a, b) => (a.difference < b.difference ? 1 : -1));
-    console.log('new drivers:',rookieOfTheYear)
-    console.log('doty place changes:',improvedDrivers)
+    console.log(`new drivers: (${rookieOfTheYear.length})\nName - Place -- Complete Season`,rookieOfTheYear)
+    console.log(`doty place changes: (${improvedDrivers.length})`,improvedDrivers)
 });

@@ -1,9 +1,9 @@
 poetry shell
 
-./compute_results.py -m 0 2024/2024-mowog8.csv 2024/2024-mowog8.json
+./compute_results.py -m 3 2024/2024-mowog9.csv 2024/2024-mowog9.json
 
-./publish_event.py -n 'MOWOG 8' -d 'Sunday, 25 August, 2024' -l 'DCTC' 2024/2024-mowog8.json 2024/2024-mowog8-fin.html
+./publish_event.py -n 'MOWOG 9' -d 'Sunday, 6 October, 2024' -l 'DCTC' 2024/2024-mowog9.json 2024/2024-mowog9-fin.html
 
-./publish_doty.py -t 'MAC DOTY 2024' -n 9 -b 5 -o 2024/doty.html 2024/2024-mowog1.json 2024/2024-mowog2.json 2024/2024-mowog3.json 2024/2024-mowog4.json 2024/2024-mowog5.json 2024/2024-mowog6.json 2024/2024-mowog7.json 2024/2024-mowog8.json
-./publish_doty_raw.py -t 'MAC DOTY RAW 2024' -n 9 -b 5 -o 2024/doty_raw.html 2024/2024-mowog1.json 2024/2024-mowog2.json 2024/2024-mowog3.json 2024/2024-mowog4.json 2024/2024-mowog5.json 2024/2024-mowog6.json 2024/2024-mowog7.json 2024/2024-mowog8.json
+./publish_doty.py -t 'MAC DOTY 2024' -n 9 -b 5 -o 2024/doty.html 2024/2024-mowog1.json 2024/2024-mowog2.json 2024/2024-mowog3.json 2024/2024-mowog4.json 2024/2024-mowog5.json 2024/2024-mowog6.json 2024/2024-mowog7.json 2024/2024-mowog8.json 2024/2024-mowog9.json
+./publish_doty_raw.py -t 'MAC DOTY RAW 2024' -n 9 -b 5 -o 2024/doty_raw.html 2024/2024-mowog1.json 2024/2024-mowog2.json 2024/2024-mowog3.json 2024/2024-mowog4.json 2024/2024-mowog5.json 2024/2024-mowog6.json 2024/2024-mowog7.json 2024/2024-mowog8.json 2024/2024-mowog9.json
 ./publish_series.py -c 2024/mowog-series-conf.json

@@ -1,0 +1,28 @@
+{
+  "output_filename": "2025/mowog-series.html",
+  "results_filenames": [
+    "2025/2025-mowog1.json",
+    "2025/2025-mowog2.json",
+    "2025/2025-mowog3.json",
+    "2025/2025-mowog4.json",
+    "2025/2025-mowog5.json",
+    "2025/2025-mowog6.json",
+    "2025/2025-mowog7.json",
+    "2025/2025-mowog8.json",
+    "2025/2025-mowog9.json"
+  ],
+  "event_labels": [
+    "M1 4/27",
+    "M2 4/28",
+    "M3 5/19",
+    "M4 6/06",
+    "M5 6/09",
+    "M6 7/13",
+    "M7 7/14",
+    "M8 8/24",
+    "M9 10/06"
+  ],
+  "title": "MOWOG 2025",
+  "num_events": 9,
+  "num_btp_events": 5
+}

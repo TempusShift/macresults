@@ -1,8 +1,7 @@
 [
-
     {
         "name": "SS",
-        "factor": 0.835
+        "factor": 0.836
     },
     {
         "name": "SSP",
@@ -10,7 +9,7 @@
     },
     {
         "name": "XP",
-        "factor": 0.887
+        "factor": 0.89
     },
     {
         "name": "AM",
@@ -18,15 +17,15 @@
     },
     {
         "name": "AS",
-        "factor": 0.824
+        "factor": 0.826
     },
     {
-        "name": "CSP",
-        "factor": 0.86
+        "name": "ASP",
+        "factor": 0.851
     },
     {
-        "name": "CP",
-        "factor": 0.856
+        "name": "BP",
+        "factor": 0.874
     },
     {
         "name": "BM",
@@ -34,55 +33,63 @@
     },
     {
         "name": "BS",
-        "factor": 0.818
+        "factor": 0.819
     },
     {
-        "name": "DSP",
-        "factor": 0.847
+        "name": "BSP",
+        "factor": 0.855
     },
     {
-        "name": "DP",
-        "factor": 0.865
+        "name": "CP",
+        "factor": 0.863
     },
     {
         "name": "CM",
-        "factor": 0.898
+        "factor": 0.899
     },
     {
         "name": "CS",
         "factor": 0.813
     },
     {
-        "name": "ESP",
-        "factor": 0.84
+        "name": "CSP",
+        "factor": 0.859
+    },
+    {
+        "name": "DP",
+        "factor": 0.865
+    },
+    {
+        "name": "DM",
+        "factor": 0.906
+    },
+    {
+        "name": "DS",
+        "factor": 0.811
+    },
+    {
+        "name": "DSP",
+        "factor": 0.847
     },
     {
         "name": "EP",
         "factor": 0.858
     },
     {
-        "name": "DM",
-        "factor": 0.904
+        "name": "EM",
+        "factor": 0.916
     },
     {
-        "name": "DS",
-        "factor": 0.81
+        "name": "ES",
+        "factor": 0.79
     },
     {
-        "name": "FSP",
-        "factor": 0.831
+        "name": "ESP",
+        "factor": 0.84
     },
     {
         "name": "FP",
         "factor": 0.877
-    },
-    {
-        "name": "EM",
-        "factor": 0.91
-    },
-    {
-        "name": "ES",
-        "factor": 0.792
     },
     {
         "name": "FM",
@@ -90,15 +97,11 @@
     },
     {
         "name": "FS",
-        "factor": 0.814
+        "factor": 0.817
     },
     {
-        "name": "CAMT",
-        "factor": 0.82
-    },
-    {
-        "name": "HCR",
-        "factor": 0.815
+        "name": "FSP",
+        "factor": 0.831
     },
     {
         "name": "FSAE",
@@ -106,23 +109,19 @@
     },
     {
         "name": "GS",
-        "factor": 0.796
+        "factor": 0.794
     },
     {
-        "name": "CAMC",
-        "factor": 0.826
+        "name": "HCR",
+        "factor": 0.814
     },
     {
         "name": "HS",
-        "factor": 0.786
+        "factor": 0.784
     },
     {
-        "name": "CAMS",
-        "factor": 0.848
-    },
-    {
-        "name": "SMF",
-        "factor": 0.85
+        "name": "CAMT",
+        "factor": 0.821
     },
     {
         "name": "KM",
@@ -130,27 +129,51 @@
     },
     {
         "name": "HCS",
-        "factor": 0.793
+        "factor": 0.789
+    },
+    {
+        "name": "CAMC",
+        "factor": 0.825
+    },
+    {
+        "name": "SMF",
+        "factor": 0.85
+    },
+    {
+        "name": "CAMS",
+        "factor": 0.844
     },
     {
         "name": "SM",
         "factor": 0.868
     },
     {
-        "name": "XA",
-        "factor": 0.844
+        "name": "SSC",
+        "factor": 0.809
     },
     {
         "name": "SSM",
-        "factor": 0.879
+        "factor": 0.878
     },
     {
-        "name": "SSC",
-        "factor": 0.805
+        "name": "XA",
+        "factor": 0.846
+    },
+    {
+        "name": "SST",
+        "factor": 0.837
     },
     {
         "name": "XB",
-        "factor": 0.849
+        "factor": 0.848
+    },
+    {
+        "name": "CSM",
+        "factor": 0.8
+    },
+    {
+        "name": "AST",
+        "factor": 0.834
     },
     {
         "name": "XU",
@@ -158,43 +181,31 @@
     },
     {
         "name": "CSX",
-        "factor": 0.811
-    },
-    {
-        "name": "STH",
         "factor": 0.812
     },
     {
-        "name": "CSM",
-        "factor": 0.808
-    },
-    {
-        "name": "STS",
-        "factor": 0.816
-    },
-    {
-        "name": "EVX",
-        "factor": 0.834
-    },
-    {
-        "name": "STX",
-        "factor": 0.819
-    },
-    {
-        "name": "STR",
-        "factor": 0.832
-    },
-    {
-        "name": "STU",
+        "name": "BST",
         "factor": 0.833
     },
     {
-        "name": "SST",
-        "factor": 0.836
+        "name": "CST",
+        "factor": 0.83
     },
     {
-        "name": "V",
-        "factor": 1
+        "name": "EVX",
+        "factor": 0.839
+    },
+    {
+        "name": "DST",
+        "factor": 0.818
+    },
+    {
+        "name": "EST",
+        "factor": 0.815
+    },
+    {
+        "name": "GST",
+        "factor": 0.81
     },
     {
         "name": "N",
@@ -202,10 +213,6 @@
     },
     {
         "name": "X",
-        "factor": 1
-    },
-    {
-        "name": "None",
         "factor": 1
     }
 ]

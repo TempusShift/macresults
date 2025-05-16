@@ -1,9 +1,7 @@
 poetry shell
 
-./compute_results.py -m 3 2025/2025-mowog1.csv 2025/2025-mowog1.json
+./compute_results.py -m 0 2025/2025-track_cross_1.csv 2025/2025-track_cross_1.json
 
-./publish_event.py -n 'MOWOG 1' -d 'Sunday, 4 May, 2025' -l 'Canterbury' 2025/2025-mowog1.json 2025/2025-mowog1-fin.html
+./publish_event.py -n 'Trackcross 1' -d 'Saturday, 10 May, 2025' -l 'DCTC' 2025/2025-track_cross_1.json 2025/2025-track_cross_1-fin.html
 
-./publish_doty.py -t 'MAC DOTY 2025' -n 9 -b 5 -o 2025/doty.html 2025/2025-mowog1.json
-./publish_doty_raw.py -t 'MAC DOTY RAW 2025' -n 9 -b 5 -o 2025/doty_raw.html 2025/2025-mowog1.json
-./publish_series.py -c 2025/mowog-series-conf.json
+./publish_series.py -c 2025/trackcross-series-conf.json

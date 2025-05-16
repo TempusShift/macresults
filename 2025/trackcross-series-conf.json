@@ -1,0 +1,14 @@
+{
+  "output_filename": "2025/trackcross-series.html",
+  "results_filenames": [
+    "2025/2025-track_cross_1.json"
+  ],
+  "event_labels": [
+    "T1 5/10",
+    "T2 7/20",
+    "T3 7/26"
+  ],
+  "title": "Trackcross 2025",
+  "num_events": 3,
+  "num_btp_events": 3
+}

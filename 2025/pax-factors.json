@@ -206,5 +206,41 @@
     {
         "name": "GST",
         "factor": 0.81
+    },
+    {
+        "name": "N",
+        "factor": 1
+    },
+    {
+        "name": "X",
+        "factor": 1
+    },
+    {
+        "name": "Trackcross A",
+        "factor": 1
+    },
+    {
+        "name": "Trackcross B",
+        "factor": 1
+    },
+    {
+        "name": "Trackcross C",
+        "factor": 1
+    },
+    {
+        "name": "Trackcross D",
+        "factor": 1
+    },
+    {
+        "name": "Trackcross E",
+        "factor": 1
+    },
+    {
+        "name": "Trackcross F",
+        "factor": 1
+    },
+    {
+        "name": "Trackcross G",
+        "factor": 1
     }
 ]

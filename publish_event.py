@@ -18,6 +18,7 @@
 import argparse
 import base64
 import sys
+import math
 
 import pandas as pd
 
@@ -222,7 +223,8 @@ def get_results_for_template(results_df, num_trophies, time_type, config):
             result['trophy'] = 'T'
 
         result['cls'] = row['class_name']
-        if row['class_index']:
+        if row['class_index'] and not math.isnan(row['class_index']):
+            print(row['class_index'])
             result['cls'] = row['class_index'] + '-' + result['cls']
 
         result['number'] = row['CarNumber']
@@ -313,7 +315,7 @@ def prepare_all_best_times(results_df, time_col_name):
         result['rank'] = rank
 
         result['cls'] = row['class_name']
-        if row['class_index']:
+        if row['class_index'] and not math.isnan(row['class_index']):
             result['cls'] = row['class_index'] + '-' + result['cls']
 
         result['number'] = row['CarNumber']

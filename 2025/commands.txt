@@ -5,3 +5,11 @@ poetry shell
 ./publish_event.py -n 'Trackcross 1' -d 'Saturday, 10 May, 2025' -l 'DCTC' 2025/2025-track_cross_1.json 2025/2025-track_cross_1-fin.html
 
 ./publish_series.py -c 2025/trackcross-series-conf.json
+
+poetry shell
+
+./compute_results.py -m 3 2025/2025-mowog2.csv 2025/2025-mowog2.json
+
+./publish_event.py -n 'MOWOG 2' -d 'Sunday, 18 May, 2025' -l 'State Fair' 2025/2025-mowog2.json 2025/2025-mowog2-fin.html
+
+./publish_series.py -c 2025/mowog-series-conf.json

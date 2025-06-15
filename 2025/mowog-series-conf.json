@@ -2,7 +2,9 @@
   "output_filename": "2025/mowog-series.html",
   "results_filenames": [
     "2025/2025-mowog1.json",
-    "2025/2025-mowog2.json"
+    "2025/2025-mowog2.json",
+    "2025/2025-mowog3.json",
+    "2025/2025-mowog4.json"
   ],
   "event_labels": [
     "M1 5/04",

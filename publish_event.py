@@ -223,10 +223,7 @@ def get_results_for_template(results_df, num_trophies, time_type, config):
             result['trophy'] = 'T'
 
         result['cls'] = row['class_name']
-        print('f')
-        print(row['class_index'])
         if row['class_index']: # and not math.isnan(row['class_index']):
-            print(row['class_index'])
             result['cls'] = row['class_index'] + '-' + result['cls']
 
         result['number'] = row['CarNumber']

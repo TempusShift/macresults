@@ -11,18 +11,14 @@ poetry shell
 
 poetry shell
 
-./compute_results.py -m 3 2025/2025-mowog3.csv 2025/2025-mowog3.json
-./compute_results.py -m 3 2025/2025-mowog4.csv 2025/2025-mowog4.json
+./compute_results.py -m 3 2025/2025-mowog6.csv 2025/2025-mowog6.json
+./compute_results.py -m 3 2025/2025-mowog7.csv 2025/2025-mowog7.json
 
-./publish_event.py -n 'MOWOG 3' -d 'Saturday, 7 June, 2025' -l 'State Fair' 2025/2025-mowog3.json 2025/2025-mowog3-fin.html
-./publish_event.py -n 'MOWOG 4' -d 'Sunday, 8 June, 2025' -l 'State Fair' 2025/2025-mowog4.json 2025/2025-mowog4-fin.html
+./publish_event.py -n 'MOWOG 3' -d 'Saturday, 12 July, 2025' -l 'State Fair' 2025/2025-mowog6.json 2025/2025-mowog6-fin.html
+./publish_event.py -n 'MOWOG 4' -d 'Sunday, 13 July, 2025' -l 'State Fair' 2025/2025-mowog7.json 2025/2025-mowog7-fin.html
 
-
-./compute_results.py -m 3 2025/2025-mowog5.csv 2025/2025-mowog5.json
-./publish_event.py -n 'MOWOG 5' -d 'Sunday, 29 June, 2025' -l 'State Fair' 2025/2025-mowog5.json 2025/2025-mowog5-fin.html
-
-./publish_doty.py -t 'MAC DOTY 2025' -n 9 -b 5 -o 2025/doty.html 2025/2025-mowog1.json 2025/2025-mowog2.json 2025/2025-mowog3.json 2025/2025-mowog4.json 2025/2025-mowog5.json
-./publish_doty_raw.py -t 'MAC DOTY RAW 2025' -n 9 -b 5 -o 2025/doty_raw.html 2025/2025-mowog1.json 2025/2025-mowog2.json 2025/2025-mowog3.json 2025/2025-mowog4.json 2025/2025-mowog5.json
+./publish_doty.py -t 'MAC DOTY 2025' -n 9 -b 5 -o 2025/doty.html 2025/2025-mowog1.json 2025/2025-mowog2.json 2025/2025-mowog3.json 2025/2025-mowog4.json 2025/2025-mowog5.json 2025/2025-mowog6.json 2025/2025-mowog7.json
+./publish_doty_raw.py -t 'MAC DOTY RAW 2025' -n 9 -b 5 -o 2025/doty_raw.html 2025/2025-mowog1.json 2025/2025-mowog2.json 2025/2025-mowog3.json 2025/2025-mowog4.json 2025/2025-mowog5.json 2025/2025-mowog6.json 2025/2025-mowog7.json
 ./publish_series.py -c 2025/mowog-series-conf.json
 
 

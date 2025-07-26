@@ -1,10 +1,10 @@
 poetry shell
 
-./compute_results.py -m 0 2025/2025-track_cross_1.csv 2025/2025-track_cross_1.json
+./compute_results.py -m 0 2025/2025-track_cross_3.csv 2025/2025-track_cross_3.json
 
-./publish_event.py -n 'Trackcross 1' -d 'Saturday, 10 May, 2025' -l 'DCTC' 2025/2025-track_cross_1.json 2025/2025-track_cross_1-fin.html
+./publish_event.py -n 'Trackcross 3' -d 'Saturday, 26 July, 2025' -l 'DCTC' 2025/2025-track_cross_3.json 2025/2025-track_cross_3-fin.html
 
-./publish_doty_raw.py -t 'MAC Trackcross DOTY RAW 2025' -n 3 -b 2 -o 2025/trackcross_doty_raw.html 2025/2025-track_cross_1.json
+./publish_doty_raw.py -t 'MAC Trackcross DOTY RAW 2025' -n 3 -b 2 -o 2025/trackcross_doty_raw.html 2025/2025-track_cross_1.json 2025/2025-track_cross_2.json 2025/2025-track_cross_3.json
 ./publish_series.py -c 2025/trackcross-series-conf.json
 
 
@@ -14,8 +14,8 @@ poetry shell
 ./compute_results.py -m 3 2025/2025-mowog6.csv 2025/2025-mowog6.json
 ./compute_results.py -m 3 2025/2025-mowog7.csv 2025/2025-mowog7.json
 
-./publish_event.py -n 'MOWOG 3' -d 'Saturday, 12 July, 2025' -l 'State Fair' 2025/2025-mowog6.json 2025/2025-mowog6-fin.html
-./publish_event.py -n 'MOWOG 4' -d 'Sunday, 13 July, 2025' -l 'State Fair' 2025/2025-mowog7.json 2025/2025-mowog7-fin.html
+./publish_event.py -n 'MOWOG 6' -d 'Saturday, 12 July, 2025' -l 'State Fair' 2025/2025-mowog6.json 2025/2025-mowog6-fin.html
+./publish_event.py -n 'MOWOG 7' -d 'Sunday, 13 July, 2025' -l 'State Fair' 2025/2025-mowog7.json 2025/2025-mowog7-fin.html
 
 ./publish_doty.py -t 'MAC DOTY 2025' -n 9 -b 5 -o 2025/doty.html 2025/2025-mowog1.json 2025/2025-mowog2.json 2025/2025-mowog3.json 2025/2025-mowog4.json 2025/2025-mowog5.json 2025/2025-mowog6.json 2025/2025-mowog7.json
 ./publish_doty_raw.py -t 'MAC DOTY RAW 2025' -n 9 -b 5 -o 2025/doty_raw.html 2025/2025-mowog1.json 2025/2025-mowog2.json 2025/2025-mowog3.json 2025/2025-mowog4.json 2025/2025-mowog5.json 2025/2025-mowog6.json 2025/2025-mowog7.json

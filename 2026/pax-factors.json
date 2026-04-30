@@ -206,13 +206,5 @@
     {
         "name": "GST",
         "factor": 0.812
-    },
-    {
-        "name": "N",
-        "factor": 1
-    },
-    {
-        "name": "X",
-        "factor": 1
     }
 ]

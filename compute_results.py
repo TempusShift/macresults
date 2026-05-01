@@ -100,9 +100,11 @@ def main(args):
     
     event_results = event_results.apply(add_best_times, axis=1, args=[config])
     event_results['doty_points'] = \
-      event_results['best_pax_time'].min() / event_results['best_pax_time'] * 100.0
+        event_results['best_pax_time'].min() / event_results['best_pax_time'] * 100.0
+    event_results.loc[event_results['best_pax_time'] >= INVALID_TIME, 'doty_points'] = 0.0
     event_results['doty_raw_points'] = \
         event_results['best_raw_time'].min() / event_results['best_raw_time'] * 100.0
+    event_results.loc[event_results['best_raw_time'] >= INVALID_TIME, 'doty_raw_points'] = 0.0
 
     # For debugging, print out what we found.
     # summarize_classes(event_results)
@@ -141,7 +143,7 @@ def read_event_results(config):
     #
     # Improved answer:
     # https://stackoverflow.com/a/45270483
-    results = results.map(lambda x: x.strip() if isinstance(x, str) else x)
+    results = results.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 
     print(results.head())
     return results
@@ -185,7 +187,7 @@ def add_scored_times(row, config):
                 # No penalty.
                 penalty = int(0)
 
-            if penalty in ('DNF', 'OFF'):
+            if penalty in ('DNF', 'OFF', 'DQ'):
                 # This is a valid run, but a useless time.
                 raw_time = INVALID_TIME
             elif str(penalty).startswith('RERUN'):

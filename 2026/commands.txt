@@ -1,11 +1,11 @@
 poetry install
 
-poetry run ./compute_results.py -m 0 2025/2025-track_cross_3.csv 2025/2025-track_cross_3.json
+poetry run ./compute_results.py -m 0 2026/2026-trackcross_1.csv 2026/2026-trackcross_1.json
 
-poetry run ./publish_event.py -n 'Trackcross 3' -d 'Saturday, 26 July, 2025' -l 'DCTC' 2025/2025-track_cross_3.json 2025/2025-track_cross_3-fin.html
+poetry run ./publish_event.py -n 'Trackcross 1' -d 'Saturday, 3 May, 2026' -l 'DCTC' 2026/2026-trackcross_1.json 2026/2026-trackcross_1-fin.html
 
-poetry run ./publish_doty_raw.py -t 'MAC Trackcross DOTY RAW 2025' -n 3 -b 2 -o 2025/trackcross_doty_raw.html 2025/2025-track_cross_1.json 2025/2025-track_cross_2.json 2025/2025-track_cross_3.json
-poetry run ./publish_series.py -c 2025/trackcross-series-conf.json
+poetry run ./publish_doty_raw.py -t 'MAC Trackcross DOTY RAW 2026' -n 3 -b 2 -o 2026/trackcross_doty_raw.html 2026/2026-trackcross_1.json
+poetry run ./publish_series.py -c 2026/trackcross-series-conf.json
 
 
 

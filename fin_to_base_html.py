@@ -495,7 +495,6 @@ def generate_base_html(results, metadata):
         f'<tbody>{pax_rows}</tbody>'
         f'</table>'
 
-        f'<div>Created by <a href="http://www.axti.me">AXti.me</a></div>'
 
         f'<script>'
         f'var c=document.getElementById("result-class");'

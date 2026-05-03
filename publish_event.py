@@ -224,7 +224,7 @@ def get_results_for_template(results_df, num_trophies, time_type, config):
 
         result['cls'] = row['class_name']
         if row['class_index']: # and not math.isnan(row['class_index']):
-            result['cls'] = row['class_index'] + '-' + result['cls']
+            result['cls'] = str(row['class_index']) + '-' + result['cls']
 
         result['number'] = row['CarNumber']
         result['driver'] = '%s %s' % (row['FirstName'], row['LastName'])
@@ -315,7 +315,7 @@ def prepare_all_best_times(results_df, time_col_name):
 
         result['cls'] = row['class_name']
         if row['class_index']: # and not math.isnan(row['class_index']):
-            result['cls'] = row['class_index'] + '-' + result['cls']
+            result['cls'] = str(row['class_index']) + '-' + result['cls']
 
         result['number'] = row['CarNumber']
         result['driver'] = '%s %s' % (row['FirstName'], row['LastName'])

@@ -14,11 +14,13 @@ poetry install
 poetry run ./compute_results.py -m 3 2026/2026-mowog1.csv 2026/2026-mowog1.json
 poetry run ./compute_results.py -m 3 2026/2026-mowog2.csv 2026/2026-mowog2.json
 poetry run ./compute_results.py -m 3 2026/2026-mowog3.csv 2026/2026-mowog3.json
+poetry run ./compute_results.py -m 3 2026/2026-mowog4.csv 2026/2026-mowog4.json
 
 poetry run ./publish_event.py -n 'MOWOG 1' -d 'Saturday, 25 April, 2026' -l 'DCTC' 2026/2026-mowog1.json 2026/2026-mowog1-fin.html
 poetry run ./publish_event.py -n 'MOWOG 2' -d 'Sunday, 26 April, 2026' -l 'DCTC' 2026/2026-mowog2.json 2026/2026-mowog2-fin.html
 poetry run ./publish_event.py -n 'MOWOG 3' -d 'Sunday, 17 May, 2026' -l 'Minnesota State Fairgrounds' 2026/2026-mowog3.json 2026/2026-mowog3-fin.html
+poetry run ./publish_event.py -n 'MOWOG 4' -d 'Sunday, 7 June, 2026' -l 'Minnesota State Fairgrounds' 2026/2026-mowog4.json 2026/2026-mowog4-fin.html
 
-poetry run ./publish_doty.py -t 'MAC DOTY 2026' -n 10 -b 6 -o 2026/doty.html 2026/2026-mowog1.json 2026/2026-mowog2.json 2026/2026-mowog3.json
-poetry run ./publish_doty_raw.py -t 'MAC DOTY RAW 2026' -n 10 -b 6 -o 2026/doty_raw.html 2026/2026-mowog1.json 2026/2026-mowog2.json 2026/2026-mowog3.json
+poetry run ./publish_doty.py -t 'MAC DOTY 2026' -n 10 -b 6 -o 2026/doty.html 2026/2026-mowog1.json 2026/2026-mowog2.json 2026/2026-mowog3.json 2026/2026-mowog4.json
+poetry run ./publish_doty_raw.py -t 'MAC DOTY RAW 2026' -n 10 -b 6 -o 2026/doty_raw.html 2026/2026-mowog1.json 2026/2026-mowog2.json 2026/2026-mowog3.json 2026/2026-mowog4.json
 poetry run ./publish_series.py -c 2026/mowog-series-conf.json

@@ -1,7 +1,8 @@
 {
   "output_filename": "2026/trackcross-series.html",
   "results_filenames": [
-    "2026/2026-trackcross_1.json"
+    "2026/2026-trackcross_1.json",
+    "2026/2026-trackcross_2.json"
   ],
   "event_labels": [
     "T1 5/03",

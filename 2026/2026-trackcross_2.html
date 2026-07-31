@@ -1,0 +1,5172 @@
+<html>
+  <head>
+    <title>Event Results: 2026 MAC Trackcross 2</title>
+    <style>
+      body {
+        font-family: 'Trebuchet MS', Verdana, Helvetica, Sans-Serif;
+      }
+      table {
+        border: 1px solid #e8eef4;
+        border-collapse: collapse;
+      }
+      table th {
+        background-color: #e8eef4;
+        padding: 6px 5px;
+        text-align: left;
+      }
+      table th,
+      table td {
+        border: 1px solid #e8eef4;
+        color: #696969;
+      }
+      table td {
+        padding: 5px;
+      }
+      .divider {
+        background-color: #e8eef4;
+        font-weight: 700;
+      }
+      .time {
+        width: 100px;
+        padding: 2px;
+        float: left;
+      }
+      .time .pen {
+        color: red;
+      }
+      .time.best {
+        font-weight: 700;
+        background-color: #ff0;
+      }
+      #result-overall tbody tr:nth-child(even),
+      #result-pax tbody tr:nth-child(even) {
+        background-color: #fff8dc;
+      }
+      .clearfix {
+        *zoom: 1;
+      }
+      .clearfix:before,
+      .clearfix:after {
+        display: table;
+        content: '';
+        line-height: 0;
+      }
+      .clearfix:after {
+        clear: both;
+      }
+      .hide-text {
+        font: 0/0 a;
+        color: transparent;
+        text-shadow: none;
+        background-color: transparent;
+        border: 0;
+      }
+      .input-block-level {
+        display: block;
+        width: 100%;
+        min-height: 30px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .btn {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        padding: 4px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        color: #333;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+        background-color: #f5f5f5;
+        background-image: -moz-linear-gradient(top, #fff, #e6e6e6);
+        background-image: -webkit-gradient(
+          linear,
+          0 0,
+          0 100%,
+          from(#fff),
+          to(#e6e6e6)
+        );
+        background-image: -webkit-linear-gradient(top, #fff, #e6e6e6);
+        background-image: -o-linear-gradient(top, #fff, #e6e6e6);
+        background-image: linear-gradient(to bottom, #fff, #e6e6e6);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        *background-color: #e6e6e6;
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+        border: 1px solid #ccc;
+        *border: 0;
+        border-bottom-color: #b3b3b3;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        *margin-left: 0.3em;
+        -webkit-box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.2),
+          0 1px 2px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.2),
+          0 1px 2px rgba(0, 0, 0, 0.05);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.2),
+          0 1px 2px rgba(0, 0, 0, 0.05);
+      }
+      .btn:hover {
+        background-color: #e6e6e6;
+        *background-color: #d9d9d9;
+      }
+      .btn:focus,
+      .btn:active,
+      .btn.active,
+      .btn.disabled,
+      .btn[disabled] {
+        color: #333;
+        background-color: #e6e6e6;
+        *background-color: #d9d9d9;
+      }
+      .btn:active,
+      .btn.active {
+        background-color: #ccc \9;
+      }
+      .btn:first-child {
+        *margin-left: 0;
+      }
+      .btn:hover,
+      .btn:focus {
+        color: #333;
+        text-decoration: none;
+        background-position: 0 -15px;
+        -webkit-transition: background-position 0.1s linear;
+        -moz-transition: background-position 0.1s linear;
+        -o-transition: background-position 0.1s linear;
+        transition: background-position 0.1s linear;
+      }
+      .btn:focus {
+        outline: thin dotted #333;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+      }
+      .btn.active,
+      .btn:active {
+        background-image: none;
+        outline: 0;
+        -webkit-box-shadow:
+          inset 0 2px 4px rgba(0, 0, 0, 0.15),
+          0 1px 2px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow:
+          inset 0 2px 4px rgba(0, 0, 0, 0.15),
+          0 1px 2px rgba(0, 0, 0, 0.05);
+        box-shadow:
+          inset 0 2px 4px rgba(0, 0, 0, 0.15),
+          0 1px 2px rgba(0, 0, 0, 0.05);
+      }
+      .btn.disabled,
+      .btn[disabled] {
+        cursor: default;
+        background-image: none;
+        opacity: 0.65;
+        filter: alpha(opacity=65);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
+      .btn-large {
+        padding: 11px 19px;
+        font-size: 17.5px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+      }
+      .btn-large [class^='icon-'],
+      .btn-large [class*=' icon-'] {
+        margin-top: 4px;
+      }
+      .btn-small {
+        padding: 2px 10px;
+        font-size: 11.9px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+      }
+      .btn-small [class^='icon-'],
+      .btn-small [class*=' icon-'] {
+        margin-top: 0;
+      }
+      .btn-mini [class^='icon-'],
+      .btn-mini [class*=' icon-'] {
+        margin-top: -1px;
+      }
+      .btn-mini {
+        padding: 0 6px;
+        font-size: 10.5px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+      }
+      .btn-block {
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .btn-block + .btn-block {
+        margin-top: 5px;
+      }
+      input[type='submit'].btn-block,
+      input[type='reset'].btn-block,
+      input[type='button'].btn-block {
+        width: 100%;
+      }
+      .btn-primary.active,
+      .btn-warning.active,
+      .btn-danger.active,
+      .btn-success.active,
+      .btn-info.active,
+      .btn-inverse.active {
+        color: rgba(255, 255, 255, 0.75);
+      }
+      .btn-primary {
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        background-color: #006dcc;
+        background-image: -moz-linear-gradient(top, #08c, #04c);
+        background-image: -webkit-gradient(
+          linear,
+          0 0,
+          0 100%,
+          from(#08c),
+          to(#04c)
+        );
+        background-image: -webkit-linear-gradient(top, #08c, #04c);
+        background-image: -o-linear-gradient(top, #08c, #04c);
+        background-image: linear-gradient(to bottom, #08c, #04c);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+        border-color: #04c #04c #002a80;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        *background-color: #04c;
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+      }
+      .btn-primary:hover,
+      .btn-primary:focus,
+      .btn-primary:active,
+      .btn-primary.active,
+      .btn-primary.disabled,
+      .btn-primary[disabled] {
+        color: #fff;
+        background-color: #04c;
+        *background-color: #003bb3;
+      }
+      .btn-primary:active,
+      .btn-primary.active {
+        background-color: #039 \9;
+      }
+      .btn-warning {
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        background-color: #faa732;
+        background-image: -moz-linear-gradient(top, #fbb450, #f89406);
+        background-image: -webkit-gradient(
+          linear,
+          0 0,
+          0 100%,
+          from(#fbb450),
+          to(#f89406)
+        );
+        background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
+        background-image: -o-linear-gradient(top, #fbb450, #f89406);
+        background-image: linear-gradient(to bottom, #fbb450, #f89406);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
+        border-color: #f89406 #f89406 #ad6704;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        *background-color: #f89406;
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+      }
+      .btn-warning:hover,
+      .btn-warning:focus,
+      .btn-warning:active,
+      .btn-warning.active,
+      .btn-warning.disabled,
+      .btn-warning[disabled] {
+        color: #fff;
+        background-color: #f89406;
+        *background-color: #df8505;
+      }
+      .btn-warning:active,
+      .btn-warning.active {
+        background-color: #c67605 \9;
+      }
+      .btn-danger {
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        background-color: #da4f49;
+        background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+        background-image: -webkit-gradient(
+          linear,
+          0 0,
+          0 100%,
+          from(#ee5f5b),
+          to(#bd362f)
+        );
+        background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+        background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+        background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+        border-color: #bd362f #bd362f #802420;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        *background-color: #bd362f;
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+      }
+      .btn-danger:hover,
+      .btn-danger:focus,
+      .btn-danger:active,
+      .btn-danger.active,
+      .btn-danger.disabled,
+      .btn-danger[disabled] {
+        color: #fff;
+        background-color: #bd362f;
+        *background-color: #a9302a;
+      }
+      .btn-danger:active,
+      .btn-danger.active {
+        background-color: #942a25 \9;
+      }
+      .btn-success {
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        background-color: #5bb75b;
+        background-image: -moz-linear-gradient(top, #62c462, #51a351);
+        background-image: -webkit-gradient(
+          linear,
+          0 0,
+          0 100%,
+          from(#62c462),
+          to(#51a351)
+        );
+        background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+        background-image: -o-linear-gradient(top, #62c462, #51a351);
+        background-image: linear-gradient(to bottom, #62c462, #51a351);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+        border-color: #51a351 #51a351 #387038;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        *background-color: #51a351;
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+      }
+      .btn-success:hover,
+      .btn-success:focus,
+      .btn-success:active,
+      .btn-success.active,
+      .btn-success.disabled,
+      .btn-success[disabled] {
+        color: #fff;
+        background-color: #51a351;
+        *background-color: #499249;
+      }
+      .btn-success:active,
+      .btn-success.active {
+        background-color: #408140 \9;
+      }
+      .btn-info {
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        background-color: #49afcd;
+        background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+        background-image: -webkit-gradient(
+          linear,
+          0 0,
+          0 100%,
+          from(#5bc0de),
+          to(#2f96b4)
+        );
+        background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+        background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+        background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+        border-color: #2f96b4 #2f96b4 #1f6377;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        *background-color: #2f96b4;
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+      }
+      .btn-info:hover,
+      .btn-info:focus,
+      .btn-info:active,
+      .btn-info.active,
+      .btn-info.disabled,
+      .btn-info[disabled] {
+        color: #fff;
+        background-color: #2f96b4;
+        *background-color: #2a85a0;
+      }
+      .btn-info:active,
+      .btn-info.active {
+        background-color: #24748c \9;
+      }
+      .btn-inverse {
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        background-color: #363636;
+        background-image: -moz-linear-gradient(top, #444, #222);
+        background-image: -webkit-gradient(
+          linear,
+          0 0,
+          0 100%,
+          from(#444),
+          to(#222)
+        );
+        background-image: -webkit-linear-gradient(top, #444, #222);
+        background-image: -o-linear-gradient(top, #444, #222);
+        background-image: linear-gradient(to bottom, #444, #222);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);
+        border-color: #222 #222 #000;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        *background-color: #222;
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+      }
+      .btn-inverse:hover,
+      .btn-inverse:focus,
+      .btn-inverse:active,
+      .btn-inverse.active,
+      .btn-inverse.disabled,
+      .btn-inverse[disabled] {
+        color: #fff;
+        background-color: #222;
+        *background-color: #151515;
+      }
+      .btn-inverse:active,
+      .btn-inverse.active {
+        background-color: #080808 \9;
+      }
+      button.btn,
+      input[type='submit'].btn {
+        *padding-top: 3px;
+        *padding-bottom: 3px;
+      }
+      button.btn::-moz-focus-inner,
+      input[type='submit'].btn::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+      }
+      button.btn.btn-large,
+      input[type='submit'].btn.btn-large {
+        *padding-top: 7px;
+        *padding-bottom: 7px;
+      }
+      button.btn.btn-small,
+      input[type='submit'].btn.btn-small {
+        *padding-top: 3px;
+        *padding-bottom: 3px;
+      }
+      button.btn.btn-mini,
+      input[type='submit'].btn.btn-mini {
+        *padding-top: 1px;
+        *padding-bottom: 1px;
+      }
+      .btn-link,
+      .btn-link:active,
+      .btn-link[disabled] {
+        background-color: transparent;
+        background-image: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
+      .btn-link {
+        border-color: transparent;
+        cursor: pointer;
+        color: #08c;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+      }
+      .btn-link:hover,
+      .btn-link:focus {
+        color: #005580;
+        text-decoration: underline;
+        background-color: transparent;
+      }
+      .btn-link[disabled]:hover,
+      .btn-link[disabled]:focus {
+        color: #333;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="float: right">Participants: 89<br />Runs: 562</div>
+    <h1>Minnesota Autosports Club</h1>
+    <h2 style="margin-bottom: 4px">2026 MAC #00</h2>
+    <h4 style="margin-top: 0px">07/25/2026</h4>
+    <div class="clearfix"></div>
+    <p>
+      <button class="btn btn-large btn-info" onclick="showo()">Overall</button
+      ><button class="btn btn-large btn-success" onclick="showc()">Class</button
+      ><button class="btn btn-large btn-warning" onclick="showp()">PAX</button>
+    </p>
+    <table id="result-class">
+      <thead>
+        <tr>
+          <th colspan="7">Class</th>
+        </tr>
+        <tr>
+          <th>Position</th>
+          <th>Driver</th>
+          <th>Car</th>
+          <th>Best</th>
+          <th>Diff.</th>
+          <th>Diff. Prev.</th>
+          <th>Raw Times</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="divider">
+          <td colspan="7">Trackcross A</td>
+        </tr>
+        <tr class="row">
+          <td align="center">1</td>
+          <td nowrap>Brandon Cottrell #403</td>
+          <td nowrap>2021 Toyota Supra</td>
+          <td><strong>58.223</strong></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <div class="time">59.444</div>
+            <div class="time">59.782</div>
+            <div class="time">59.117</div>
+            <div class="time">58.911</div>
+            <div class="time">59.467</div>
+            <div class="time best">58.223</div>
+            <div class="time">58.505</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">2</td>
+          <td nowrap>Sean Forthun #190</td>
+          <td nowrap>2005 Mazda Rx8</td>
+          <td><strong>58.65</strong></td>
+          <td>+0.426</td>
+          <td>+0.426</td>
+          <td>
+            <div class="time">64.548</div>
+            <div class="time">61.070</div>
+            <div class="time">60.389</div>
+            <div class="time">60.550</div>
+            <div class="time">60.193</div>
+            <div class="time">90.079</div>
+            <div class="time best">58.650</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">3</td>
+          <td nowrap>Leigh Collyer #84</td>
+          <td nowrap>2013 Subaru WRX</td>
+          <td><strong>62.587</strong></td>
+          <td>+4.364</td>
+          <td>+3.937</td>
+          <td>
+            <div class="time">66.428</div>
+            <div class="time">77.399</div>
+            <div class="time"><span class="pen">OFF</span></div>
+            <div class="time">66.381</div>
+            <div class="time">63.457</div>
+            <div class="time">63.495</div>
+            <div class="time best">62.587</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">4</td>
+          <td nowrap>Teng Moua #230</td>
+          <td nowrap>2020 Toyota Supra</td>
+          <td><strong>65.679</strong></td>
+          <td>+7.456</td>
+          <td>+3.091</td>
+          <td>
+            <div class="time">72.077</div>
+            <div class="time">69.640</div>
+            <div class="time">67.476</div>
+            <div class="time">69.439</div>
+            <div class="time best">65.679</div>
+            <div class="time">66.037</div>
+            <div class="time">65.877</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">5</td>
+          <td nowrap>Philip Ethier #7</td>
+          <td nowrap>1963 Lotus Super Seven</td>
+          <td><strong>70.696</strong></td>
+          <td>+12.472</td>
+          <td>+5.016</td>
+          <td>
+            <div class="time">87.080</div>
+            <div class="time">79.044</div>
+            <div class="time">75.621</div>
+            <div class="time">75.320</div>
+            <div class="time best">70.696</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="divider">
+          <td colspan="7">Trackcross B</td>
+        </tr>
+        <tr class="row">
+          <td align="center">1</td>
+          <td nowrap>Shawn Krebsbach #221</td>
+          <td nowrap>2006 Mitsabishi Evo</td>
+          <td><strong>58.03</strong></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <div class="time">74.725 <span class="pen">RRN</span></div>
+            <div class="time">59.558</div>
+            <div class="time">58.646</div>
+            <div class="time best">58.030</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">2</td>
+          <td nowrap>Simon Robins #107</td>
+          <td nowrap>2004 Chevrolet Corvette Z06</td>
+          <td><strong>59.86</strong></td>
+          <td>+1.829</td>
+          <td>+1.829</td>
+          <td>
+            <div class="time">65.322</div>
+            <div class="time">60.560</div>
+            <div class="time best">59.860</div>
+            <div class="time">60.056</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">3</td>
+          <td nowrap>Matthew Sebelski #707</td>
+          <td nowrap>2004 Chevrolet Corvette Z06</td>
+          <td><strong>60.278</strong></td>
+          <td>+2.247</td>
+          <td>+0.417</td>
+          <td>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time best">60.278</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">4</td>
+          <td nowrap>Tyler Mack #33</td>
+          <td nowrap>1984 Chevrolet Camaro</td>
+          <td><strong>62.55</strong></td>
+          <td>+4.519</td>
+          <td>+2.271</td>
+          <td>
+            <div class="time">64.001</div>
+            <div class="time">63.740</div>
+            <div class="time">63.635</div>
+            <div class="time">62.615</div>
+            <div class="time">63.114</div>
+            <div class="time best">62.550</div>
+            <div class="time">62.766</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">5</td>
+          <td nowrap>Joe Sexton #204</td>
+          <td nowrap>2002 BMW M3</td>
+          <td><strong>62.921</strong></td>
+          <td>+4.89</td>
+          <td>+0.371</td>
+          <td>
+            <div class="time">85.517 <span class="pen">RRN</span></div>
+            <div class="time">64.010</div>
+            <div class="time">63.590</div>
+            <div class="time">63.470</div>
+            <div class="time">63.492</div>
+            <div class="time">63.194</div>
+            <div class="time best">62.921</div>
+            <div class="time">70.009</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">6</td>
+          <td nowrap>Koun Phah Moua #317</td>
+          <td nowrap>2017 Volkswagen GTI</td>
+          <td><strong>63.033</strong></td>
+          <td>+5.003</td>
+          <td>+0.112</td>
+          <td>
+            <div class="time">64.727</div>
+            <div class="time">64.302</div>
+            <div class="time">63.520</div>
+            <div class="time">63.644</div>
+            <div class="time">64.129</div>
+            <div class="time">82.626 <span class="pen">RRN</span></div>
+            <div class="time">63.647</div>
+            <div class="time best">63.033</div>
+            <div class="time">64.112 <span class="pen">RRN</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">7</td>
+          <td nowrap>Andrew Youngquist #998</td>
+          <td nowrap>1998 Chevrolet Corvette silver</td>
+          <td><strong>64.405</strong></td>
+          <td>+6.375</td>
+          <td>+1.372</td>
+          <td>
+            <div class="time">66.914</div>
+            <div class="time">64.457</div>
+            <div class="time best">64.405</div>
+            <div class="time">65.148</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">8</td>
+          <td nowrap>Dave Matson #132</td>
+          <td nowrap>1991 Chevrolet camaro</td>
+          <td><strong>64.418</strong></td>
+          <td>+6.388</td>
+          <td>+0.013</td>
+          <td>
+            <div class="time">65.520</div>
+            <div class="time">65.479</div>
+            <div class="time">65.808</div>
+            <div class="time">65.215</div>
+            <div class="time best">64.418</div>
+            <div class="time">64.838</div>
+            <div class="time">65.607</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">9</td>
+          <td nowrap>Mike Mohr #308</td>
+          <td nowrap>2010 Chevrolet Camaro</td>
+          <td><strong>68.582</strong></td>
+          <td>+10.551</td>
+          <td>+4.163</td>
+          <td>
+            <div class="time">75.435</div>
+            <div class="time">72.056</div>
+            <div class="time">72.174</div>
+            <div class="time">72.244</div>
+            <div class="time">69.414</div>
+            <div class="time best">68.582</div>
+            <div class="time">82.362</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">10</td>
+          <td nowrap>Thomas Haider #104</td>
+          <td nowrap>2022 Ford Shelby GT 500</td>
+          <td><strong>69.153</strong></td>
+          <td>+11.123</td>
+          <td>+0.571</td>
+          <td>
+            <div class="time">77.066</div>
+            <div class="time">74.031</div>
+            <div class="time">71.777</div>
+            <div class="time">71.996</div>
+            <div class="time">70.685</div>
+            <div class="time best">69.153</div>
+            <div class="time">69.806</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="divider">
+          <td colspan="7">Trackcross C</td>
+        </tr>
+        <tr class="row">
+          <td align="center">1</td>
+          <td nowrap>Bryce Allen #19</td>
+          <td nowrap>2019 Porsche Cayman S</td>
+          <td><strong>60.734</strong></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <div class="time">61.846</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">61.135</div>
+            <div class="time best">60.734</div>
+            <div class="time">61.597</div>
+            <div class="time">60.754</div>
+            <div class="time">61.233</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">2</td>
+          <td nowrap>Bryan Ganz #741</td>
+          <td nowrap>2002 Chevrolet Corvette C5 Z06</td>
+          <td><strong>62.405</strong></td>
+          <td>+1.67</td>
+          <td>+1.67</td>
+          <td>
+            <div class="time">64.024</div>
+            <div class="time">63.232</div>
+            <div class="time">63.115</div>
+            <div class="time">63.023</div>
+            <div class="time">63.254</div>
+            <div class="time">63.703</div>
+            <div class="time best">62.405</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">3</td>
+          <td nowrap>Miguel Torres #711</td>
+          <td nowrap>Chevrolet C8</td>
+          <td><strong>62.681</strong></td>
+          <td>+1.946</td>
+          <td>+0.275</td>
+          <td>
+            <div class="time">65.529</div>
+            <div class="time">63.244</div>
+            <div class="time">62.879</div>
+            <div class="time">62.777</div>
+            <div class="time">66.859</div>
+            <div class="time">62.793</div>
+            <div class="time best">62.681</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">4</td>
+          <td nowrap>Alex McCleskey #969</td>
+          <td nowrap>2007 Chevrolet Corvette</td>
+          <td><strong>62.909</strong></td>
+          <td>+2.174</td>
+          <td>+0.228</td>
+          <td>
+            <div class="time">83.320 <span class="pen">RRN</span></div>
+            <div class="time">65.324</div>
+            <div class="time">63.372</div>
+            <div class="time">63.161</div>
+            <div class="time">62.917</div>
+            <div class="time">63.355</div>
+            <div class="time">63.480</div>
+            <div class="time best">62.909</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">5</td>
+          <td nowrap>Jon Stef #805</td>
+          <td nowrap>2011 Subaru Paycheck Destroyer</td>
+          <td><strong>63.425</strong></td>
+          <td>+2.69</td>
+          <td>+0.515</td>
+          <td>
+            <div class="time">69.758</div>
+            <div class="time">65.886</div>
+            <div class="time">65.112</div>
+            <div class="time">64.265</div>
+            <div class="time">64.682</div>
+            <div class="time">63.678</div>
+            <div class="time best">63.425</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">6</td>
+          <td nowrap>Justin Hirschuber #541</td>
+          <td nowrap>2007 Chevrolet C6 Base</td>
+          <td><strong>63.652</strong></td>
+          <td>+2.917</td>
+          <td>+0.227</td>
+          <td>
+            <div class="time">68.494</div>
+            <div class="time">66.126</div>
+            <div class="time">65.535</div>
+            <div class="time best">63.652</div>
+            <div class="time">64.321</div>
+            <div class="time">63.960</div>
+            <div class="time">63.841</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">7</td>
+          <td nowrap>Brian Shoultz #714</td>
+          <td nowrap>2022 Chevrolet Camaro SS 1LE</td>
+          <td><strong>64.456</strong></td>
+          <td>+3.722</td>
+          <td>+0.804</td>
+          <td>
+            <div class="time">67.929</div>
+            <div class="time">66.470</div>
+            <div class="time">65.113</div>
+            <div class="time">64.560</div>
+            <div class="time">65.098</div>
+            <div class="time best">64.456</div>
+            <div class="time">64.583</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">8</td>
+          <td nowrap>Max Otzenberger #275</td>
+          <td nowrap>1998 Chevrolet Corvette</td>
+          <td><strong>64.908</strong></td>
+          <td>+4.173</td>
+          <td>+0.451</td>
+          <td>
+            <div class="time">69.174</div>
+            <div class="time">67.744</div>
+            <div class="time">66.464</div>
+            <div class="time best">64.908</div>
+            <div class="time">66.276</div>
+            <div class="time">65.407</div>
+            <div class="time">65.433</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">9</td>
+          <td nowrap>Steve Algren #144</td>
+          <td nowrap>2009 Chevrolet Corvette</td>
+          <td><strong>65.996</strong></td>
+          <td>+5.261</td>
+          <td>+1.087</td>
+          <td>
+            <div class="time">69.024</div>
+            <div class="time">67.503</div>
+            <div class="time">66.809</div>
+            <div class="time">66.154</div>
+            <div class="time">66.398</div>
+            <div class="time">66.233</div>
+            <div class="time best">65.996</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">10</td>
+          <td nowrap>Randy Cameron #302</td>
+          <td nowrap>2012 Ford Mustang Boss 302</td>
+          <td><strong>66.439</strong></td>
+          <td>+5.704</td>
+          <td>+0.442</td>
+          <td>
+            <div class="time">69.191</div>
+            <div class="time">67.696</div>
+            <div class="time">67.248</div>
+            <div class="time">66.786</div>
+            <div class="time">66.755</div>
+            <div class="time">67.698</div>
+            <div class="time best">66.439</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">11</td>
+          <td nowrap>Steven Hill #701</td>
+          <td nowrap>2012 Ford Mustang GT</td>
+          <td><strong>68.63</strong></td>
+          <td>+7.895</td>
+          <td>+2.191</td>
+          <td>
+            <div class="time">71.710</div>
+            <div class="time">71.273</div>
+            <div class="time">69.180</div>
+            <div class="time">74.234</div>
+            <div class="time">69.806</div>
+            <div class="time">69.112</div>
+            <div class="time best">68.630</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">12</td>
+          <td nowrap>John Witthaus #539</td>
+          <td nowrap>2004 Mercury Grand Mar</td>
+          <td><strong>68.915</strong></td>
+          <td>+8.181</td>
+          <td>+0.285</td>
+          <td>
+            <div class="time">70.329</div>
+            <div class="time">70.740</div>
+            <div class="time">73.248</div>
+            <div class="time">69.466</div>
+            <div class="time">70.219</div>
+            <div class="time">69.027</div>
+            <div class="time best">68.915</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">13</td>
+          <td nowrap>Chanhue Vang #506</td>
+          <td nowrap>2017 Honda Type R</td>
+          <td><strong>69.369</strong></td>
+          <td>+8.634</td>
+          <td>+0.453</td>
+          <td>
+            <div class="time">74.751</div>
+            <div class="time">70.178</div>
+            <div class="time">70.058</div>
+            <div class="time">69.900</div>
+            <div class="time">70.017</div>
+            <div class="time best">69.369</div>
+            <div class="time">69.683</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">14</td>
+          <td nowrap>Dennis OMeara #111</td>
+          <td nowrap>2019 Chevrolet Corvette Grand Sport</td>
+          <td><strong>71.769</strong></td>
+          <td>+11.035</td>
+          <td>+2.4</td>
+          <td>
+            <div class="time">74.741</div>
+            <div class="time">73.680</div>
+            <div class="time best">71.769</div>
+            <div class="time">73.092</div>
+            <div class="time">75.116</div>
+            <div class="time">74.643</div>
+            <div class="time">73.507</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">15</td>
+          <td nowrap>Patrick Olheiser #299</td>
+          <td nowrap>2004 Chevrolet corvette</td>
+          <td><strong>74.532</strong></td>
+          <td>+13.797</td>
+          <td>+2.762</td>
+          <td>
+            <div class="time">76.272</div>
+            <div class="time">76.273</div>
+            <div class="time best">74.532</div>
+            <div class="time">74.788</div>
+            <div class="time">76.251</div>
+            <div class="time">75.942</div>
+            <div class="time">76.324</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">16</td>
+          <td nowrap>Brittany Grant #547</td>
+          <td nowrap>2007 Chevrolet C6 Base</td>
+          <td><strong>77.084</strong></td>
+          <td>+16.35</td>
+          <td>+2.552</td>
+          <td>
+            <div class="time">87.226</div>
+            <div class="time">81.704</div>
+            <div class="time">78.646</div>
+            <div class="time best">77.084</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">17</td>
+          <td nowrap>Frederick Nolting #138</td>
+          <td nowrap>Chevrolet Corvette</td>
+          <td><strong>77.733</strong></td>
+          <td>+16.999</td>
+          <td>+0.649</td>
+          <td>
+            <div class="time">80.404</div>
+            <div class="time">78.840</div>
+            <div class="time">77.915</div>
+            <div class="time best">77.733</div>
+            <div class="time">78.586</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="divider">
+          <td colspan="7">Trackcross D</td>
+        </tr>
+        <tr class="row">
+          <td align="center">1</td>
+          <td nowrap>Vong Moua #797</td>
+          <td nowrap>2013 Subaru BRZ</td>
+          <td><strong>61.153</strong></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <div class="time">68.923</div>
+            <div class="time">65.065</div>
+            <div class="time">63.084</div>
+            <div class="time">62.100</div>
+            <div class="time">83.441 <span class="pen">RRN</span></div>
+            <div class="time">62.296</div>
+            <div class="time">61.285</div>
+            <div class="time best">61.153</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">2</td>
+          <td nowrap>Nick Hiney #423</td>
+          <td nowrap>2026 Toyota Supra</td>
+          <td><strong>61.697</strong></td>
+          <td>+0.544</td>
+          <td>+0.544</td>
+          <td>
+            <div class="time">66.347</div>
+            <div class="time">64.063</div>
+            <div class="time">63.332</div>
+            <div class="time">62.814</div>
+            <div class="time">63.736</div>
+            <div class="time">62.974</div>
+            <div class="time best">61.697</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">3</td>
+          <td nowrap>Chase Malkow #358</td>
+          <td nowrap>2005 Nissan 350z</td>
+          <td><strong>62.512</strong></td>
+          <td>+1.359</td>
+          <td>+0.814</td>
+          <td>
+            <div class="time">68.130</div>
+            <div class="time">65.908</div>
+            <div class="time">64.850</div>
+            <div class="time">64.102</div>
+            <div class="time">63.197</div>
+            <div class="time">63.013</div>
+            <div class="time best">62.512</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">4</td>
+          <td nowrap>Dan Doroff #995</td>
+          <td nowrap>2017 Chevrolet ss</td>
+          <td><strong>65.007</strong></td>
+          <td>+3.854</td>
+          <td>+2.495</td>
+          <td>
+            <div class="time">67.945</div>
+            <div class="time">66.686</div>
+            <div class="time">66.281</div>
+            <div class="time">65.492</div>
+            <div class="time">65.282</div>
+            <div class="time">65.450</div>
+            <div class="time best">65.007</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">5</td>
+          <td nowrap>Ashton Carver #145</td>
+          <td nowrap>2022 Subaru WRX</td>
+          <td><strong>65.738</strong></td>
+          <td>+4.585</td>
+          <td>+0.73</td>
+          <td>
+            <div class="time">66.675</div>
+            <div class="time best">65.738</div>
+            <div class="time">66.079</div>
+            <div class="time">66.298</div>
+            <div class="time">76.868 <span class="pen">RRN</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">66.474</div>
+            <div class="time">66.824</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">6</td>
+          <td nowrap>Jon Miska #773</td>
+          <td nowrap>2006 BMW 330i</td>
+          <td><strong>65.935</strong></td>
+          <td>+4.782</td>
+          <td>+0.197</td>
+          <td>
+            <div class="time">67.472</div>
+            <div class="time">66.014</div>
+            <div class="time">66.806</div>
+            <div class="time">66.120</div>
+            <div class="time">66.131</div>
+            <div class="time">99.922 <span class="pen">RRN</span></div>
+            <div class="time">66.065</div>
+            <div class="time">83.214 <span class="pen">RRN</span></div>
+            <div class="time best">65.935</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">7</td>
+          <td nowrap>Brayden Harr #618</td>
+          <td nowrap>2009 Lexus Is250</td>
+          <td><strong>65.951</strong></td>
+          <td>+4.797</td>
+          <td>+0.015</td>
+          <td>
+            <div class="time">71.039</div>
+            <div class="time">68.295</div>
+            <div class="time">67.281</div>
+            <div class="time">68.145</div>
+            <div class="time">66.446</div>
+            <div class="time">66.589</div>
+            <div class="time best">65.951</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">8</td>
+          <td nowrap>Nick Dorschner #137</td>
+          <td nowrap>2023 Hyundai Elantra N</td>
+          <td><strong>66.497</strong></td>
+          <td>+5.344</td>
+          <td>+0.546</td>
+          <td>
+            <div class="time">72.037</div>
+            <div class="time">70.097</div>
+            <div class="time">68.569</div>
+            <div class="time">67.673</div>
+            <div class="time">66.908</div>
+            <div class="time">67.060</div>
+            <div class="time best">66.497</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">9</td>
+          <td nowrap>Erick Nolting #550</td>
+          <td nowrap>2000 Subaru 2.5RS</td>
+          <td><strong>68.14</strong></td>
+          <td>+6.987</td>
+          <td>+1.643</td>
+          <td>
+            <div class="time">70.899</div>
+            <div class="time">68.692</div>
+            <div class="time">68.597</div>
+            <div class="time best">68.140</div>
+            <div class="time">68.706</div>
+            <div class="time">69.602</div>
+            <div class="time">69.494</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">10</td>
+          <td nowrap>Anthony Decker #774</td>
+          <td nowrap>1993 Honda Del Sol</td>
+          <td><strong>69.848</strong></td>
+          <td>+8.695</td>
+          <td>+1.707</td>
+          <td>
+            <div class="time">74.006</div>
+            <div class="time">72.889</div>
+            <div class="time">71.552</div>
+            <div class="time">70.279</div>
+            <div class="time">70.745</div>
+            <div class="time best">69.848</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">11</td>
+          <td nowrap>Suewa Vang #505</td>
+          <td nowrap>2006 Acura RSX</td>
+          <td><strong>70.135</strong></td>
+          <td>+8.982</td>
+          <td>+0.287</td>
+          <td>
+            <div class="time">72.097</div>
+            <div class="time">71.281</div>
+            <div class="time best">70.135</div>
+            <div class="time">70.142</div>
+            <div class="time"><span class="pen">OFF</span></div>
+            <div class="time">71.490</div>
+            <div class="time">70.386</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">12</td>
+          <td nowrap>Brody Rouillard #207</td>
+          <td nowrap>2008 Lexus ISF</td>
+          <td><strong>70.496</strong></td>
+          <td>+9.342</td>
+          <td>+0.36</td>
+          <td>
+            <div class="time">71.222</div>
+            <div class="time">71.637</div>
+            <div class="time">70.716</div>
+            <div class="time">70.905</div>
+            <div class="time">70.539</div>
+            <div class="time">71.692</div>
+            <div class="time best">70.496</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">13</td>
+          <td nowrap>Max Parker #996</td>
+          <td nowrap>1996 Mazda Miata</td>
+          <td><strong>71.638</strong></td>
+          <td>+10.485</td>
+          <td>+1.142</td>
+          <td>
+            <div class="time">102.174</div>
+            <div class="time">80.068</div>
+            <div class="time">73.391</div>
+            <div class="time best">71.638</div>
+            <div class="time">71.754</div>
+            <div class="time">106.531 <span class="pen">RRN</span></div>
+            <div class="time">73.239</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">14</td>
+          <td nowrap>Ryker Huseby #660</td>
+          <td nowrap>1991 Honda Beat</td>
+          <td><strong>72.608</strong></td>
+          <td>+11.455</td>
+          <td>+0.969</td>
+          <td>
+            <div class="time">80.260</div>
+            <div class="time">78.259</div>
+            <div class="time">77.433</div>
+            <div class="time">75.947</div>
+            <div class="time">73.994</div>
+            <div class="time best">72.608</div>
+            <div class="time">72.834</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">15</td>
+          <td nowrap>Don Gettinger #4</td>
+          <td nowrap>2001 Chevrolet Z-06 Corvette</td>
+          <td><strong>72.744</strong></td>
+          <td>+11.591</td>
+          <td>+0.135</td>
+          <td>
+            <div class="time">80.192</div>
+            <div class="time">75.024</div>
+            <div class="time">77.099</div>
+            <div class="time">73.695</div>
+            <div class="time">77.769</div>
+            <div class="time best">72.744</div>
+            <div class="time">74.877</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">16</td>
+          <td nowrap>Sandy Powell #124</td>
+          <td nowrap>2009 Nissan 370z</td>
+          <td><strong>76.335</strong></td>
+          <td>+15.181</td>
+          <td>+3.59</td>
+          <td>
+            <div class="time">81.886</div>
+            <div class="time">78.905</div>
+            <div class="time">78.142</div>
+            <div class="time">91.956 <span class="pen">RRN</span></div>
+            <div class="time">76.521</div>
+            <div class="time">76.642</div>
+            <div class="time">77.659</div>
+            <div class="time best">76.335</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="divider">
+          <td colspan="7">Trackcross E</td>
+        </tr>
+        <tr class="row">
+          <td align="center">1</td>
+          <td nowrap>Piero Pucci #510</td>
+          <td nowrap>2013 Scion Frs</td>
+          <td><strong>59.486</strong></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <div class="time">62.471</div>
+            <div class="time">60.453</div>
+            <div class="time">59.839</div>
+            <div class="time best">59.486</div>
+            <div class="time">59.921</div>
+            <div class="time">59.863</div>
+            <div class="time">59.569</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">2</td>
+          <td nowrap>Bernie Kaeferlein #421</td>
+          <td nowrap>2022 Toyota GR86</td>
+          <td><strong>60.381</strong></td>
+          <td>+0.895</td>
+          <td>+0.895</td>
+          <td>
+            <div class="time">63.762</div>
+            <div class="time">61.418</div>
+            <div class="time">60.981</div>
+            <div class="time best">60.381</div>
+            <div class="time">62.033</div>
+            <div class="time">61.679</div>
+            <div class="time">60.657</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">3</td>
+          <td nowrap>Tyler Salminen #68</td>
+          <td nowrap>2015 Scion Fr-s</td>
+          <td><strong>62.237</strong></td>
+          <td>+2.751</td>
+          <td>+1.856</td>
+          <td>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">62.860</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">62.789</div>
+            <div class="time">62.835</div>
+            <div class="time best">62.237</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">4</td>
+          <td nowrap>Nicholas Lemerond #388</td>
+          <td nowrap>2025 Toyota GR Corolla</td>
+          <td><strong>62.939</strong></td>
+          <td>+3.453</td>
+          <td>+0.701</td>
+          <td>
+            <div class="time">67.243</div>
+            <div class="time">64.632</div>
+            <div class="time">63.792</div>
+            <div class="time">64.042</div>
+            <div class="time best">62.939</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">63.194</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">5</td>
+          <td nowrap>Jake Algren #410</td>
+          <td nowrap>2011 Honda Civic Si</td>
+          <td><strong>63.243</strong></td>
+          <td>+3.757</td>
+          <td>+0.304</td>
+          <td>
+            <div class="time">64.196</div>
+            <div class="time">64.411</div>
+            <div class="time">63.837</div>
+            <div class="time best">63.243</div>
+            <div class="time">63.447</div>
+            <div class="time">63.387</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">6</td>
+          <td nowrap>Daniel Personius #500</td>
+          <td nowrap>1997 BMW 318ti</td>
+          <td><strong>63.412</strong></td>
+          <td>+3.926</td>
+          <td>+0.168</td>
+          <td>
+            <div class="time">67.265</div>
+            <div class="time">65.191</div>
+            <div class="time">64.331</div>
+            <div class="time">64.028</div>
+            <div class="time">64.505</div>
+            <div class="time best">63.412</div>
+            <div class="time">63.617</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">7</td>
+          <td nowrap>Carter Smith #727</td>
+          <td nowrap>2015 Scion FR-S</td>
+          <td><strong>63.423</strong></td>
+          <td>+3.937</td>
+          <td>+0.011</td>
+          <td>
+            <div class="time">66.400</div>
+            <div class="time">64.696</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">64.550</div>
+            <div class="time">64.516</div>
+            <div class="time best">63.423</div>
+            <div class="time">63.616</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">8</td>
+          <td nowrap>Michael Keiser #42</td>
+          <td nowrap>2011 BMW 128i</td>
+          <td><strong>65.04</strong></td>
+          <td>+5.554</td>
+          <td>+1.617</td>
+          <td>
+            <div class="time">66.523</div>
+            <div class="time">65.058</div>
+            <div class="time best">65.040</div>
+            <div class="time">65.382</div>
+            <div class="time">67.455</div>
+            <div class="time">66.435</div>
+            <div class="time">65.573</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">9</td>
+          <td nowrap>Brady Lubenow #209</td>
+          <td nowrap>2004 Nissan 350z Silverstone</td>
+          <td><strong>65.375</strong></td>
+          <td>+5.889</td>
+          <td>+0.334</td>
+          <td>
+            <div class="time">75.543</div>
+            <div class="time">67.029</div>
+            <div class="time">65.941</div>
+            <div class="time">66.179</div>
+            <div class="time">67.277</div>
+            <div class="time">65.465</div>
+            <div class="time best">65.375</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">10</td>
+          <td nowrap>Oliver Moore #377</td>
+          <td nowrap>2004 Mini Cooper MC40 S</td>
+          <td><strong>66.325</strong></td>
+          <td>+6.839</td>
+          <td>+0.95</td>
+          <td>
+            <div class="time">72.765</div>
+            <div class="time">69.568</div>
+            <div class="time">68.583</div>
+            <div class="time">67.426</div>
+            <div class="time">70.392</div>
+            <div class="time">67.797</div>
+            <div class="time best">66.325</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">11</td>
+          <td nowrap>Pryce Cha #141</td>
+          <td nowrap>2005 Honda S2000</td>
+          <td><strong>66.392</strong></td>
+          <td>+6.905</td>
+          <td>+0.066</td>
+          <td>
+            <div class="time">71.927</div>
+            <div class="time">69.413</div>
+            <div class="time">68.202</div>
+            <div class="time">67.965</div>
+            <div class="time">66.830</div>
+            <div class="time best">66.392</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">12</td>
+          <td nowrap>Abel Lao #333</td>
+          <td nowrap>2026 Subaru BRZ TS</td>
+          <td><strong>66.424</strong></td>
+          <td>+6.938</td>
+          <td>+0.032</td>
+          <td>
+            <div class="time">69.355</div>
+            <div class="time">67.550</div>
+            <div class="time">68.819</div>
+            <div class="time">66.886</div>
+            <div class="time">81.021</div>
+            <div class="time">69.603</div>
+            <div class="time best">66.424</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">13</td>
+          <td nowrap>Brandon Rhoades #50</td>
+          <td nowrap>1994 Chevrolet Camero</td>
+          <td><strong>67.455</strong></td>
+          <td>+7.969</td>
+          <td>+1.03</td>
+          <td>
+            <div class="time">71.765</div>
+            <div class="time">68.538</div>
+            <div class="time best">67.455</div>
+            <div class="time">67.802</div>
+            <div class="time">67.896</div>
+            <div class="time">67.759</div>
+            <div class="time">67.748</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">14</td>
+          <td nowrap>Owen Balcer #108</td>
+          <td nowrap>2003 Volkswagen Golf GTI</td>
+          <td><strong>67.914</strong></td>
+          <td>+8.428</td>
+          <td>+0.459</td>
+          <td>
+            <div class="time">77.410</div>
+            <div class="time">70.797</div>
+            <div class="time">69.578</div>
+            <div class="time">69.849</div>
+            <div class="time">70.156</div>
+            <div class="time">69.046</div>
+            <div class="time best">67.914</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">15</td>
+          <td nowrap>Travis Williams #696</td>
+          <td nowrap>2004 Mazda Rx8</td>
+          <td><strong>69.037</strong></td>
+          <td>+9.551</td>
+          <td>+1.123</td>
+          <td>
+            <div class="time">72.819</div>
+            <div class="time">70.638</div>
+            <div class="time">70.495</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">69.891</div>
+            <div class="time">71.282</div>
+            <div class="time best">69.037</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">16</td>
+          <td nowrap>Jonathan Decker #477</td>
+          <td nowrap>1993 Honda Del Sol</td>
+          <td><strong>70.255</strong></td>
+          <td>+10.768</td>
+          <td>+1.217</td>
+          <td>
+            <div class="time">75.431</div>
+            <div class="time">72.081</div>
+            <div class="time">70.927</div>
+            <div class="time best">70.255</div>
+            <div class="time">72.564</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">17</td>
+          <td nowrap>Brandon Rowlett #406</td>
+          <td nowrap>1991 Toyota MR2</td>
+          <td><strong>70.531</strong></td>
+          <td>+11.045</td>
+          <td>+0.276</td>
+          <td>
+            <div class="time">74.843 <span class="pen">RRN</span></div>
+            <div class="time">75.360</div>
+            <div class="time">70.825</div>
+            <div class="time best">70.531</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">18</td>
+          <td nowrap>Varun Sarathy #210</td>
+          <td nowrap>2020 Hyundai Veloster N</td>
+          <td><strong>70.654</strong></td>
+          <td>+11.168</td>
+          <td>+0.122</td>
+          <td>
+            <div class="time">79.522</div>
+            <div class="time">75.094</div>
+            <div class="time">72.987</div>
+            <div class="time">72.590</div>
+            <div class="time">71.861</div>
+            <div class="time">92.563 <span class="pen">RRN</span></div>
+            <div class="time best">70.654</div>
+            <div class="time">71.167</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">19</td>
+          <td nowrap>Braydon Sparks #201</td>
+          <td nowrap>2009 BMW 128i</td>
+          <td><strong>72.034</strong></td>
+          <td>+12.548</td>
+          <td>+1.38</td>
+          <td>
+            <div class="time">77.584</div>
+            <div class="time">72.151</div>
+            <div class="time best">72.034</div>
+            <div class="time">72.120</div>
+            <div class="time">74.809</div>
+            <div class="time">73.865</div>
+            <div class="time">72.615</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">20</td>
+          <td nowrap>Faarouq Luqman #992</td>
+          <td nowrap>2008 Nissan 350z</td>
+          <td><strong>73.969</strong></td>
+          <td>+14.482</td>
+          <td>+1.934</td>
+          <td>
+            <div class="time">98.678</div>
+            <div class="time">90.558</div>
+            <div class="time">83.883</div>
+            <div class="time">79.188</div>
+            <div class="time">84.959</div>
+            <div class="time">75.860</div>
+            <div class="time best">73.969</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">21</td>
+          <td nowrap>Gary Keim #157</td>
+          <td nowrap>2008 Nissan ALTIMA</td>
+          <td><strong>77.559</strong></td>
+          <td>+18.073</td>
+          <td>+3.59</td>
+          <td>
+            <div class="time">79.966</div>
+            <div class="time">80.597</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time best">77.559</div>
+            <div class="time">77.772</div>
+            <div class="time">80.702</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="divider">
+          <td colspan="7">Trackcross F</td>
+        </tr>
+        <tr class="row">
+          <td align="center">1</td>
+          <td nowrap>Jake Rogers #990</td>
+          <td nowrap>2004 Mazda RX-8</td>
+          <td><strong>61.959</strong></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <div class="time">63.869</div>
+            <div class="time">63.055</div>
+            <div class="time">62.078</div>
+            <div class="time">62.115</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">62.489</div>
+            <div class="time best">61.959</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">2</td>
+          <td nowrap>Cory Smith #105</td>
+          <td nowrap>2004 Mazda RX-8</td>
+          <td><strong>62.817</strong></td>
+          <td>+0.857</td>
+          <td>+0.857</td>
+          <td>
+            <div class="time">66.884</div>
+            <div class="time">64.052</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">63.637</div>
+            <div class="time">64.104</div>
+            <div class="time best">62.817</div>
+            <div class="time">64.023</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">3</td>
+          <td nowrap>Peter Nolden #726</td>
+          <td nowrap>2020 Mazda MX-5 Club</td>
+          <td><strong>66.244</strong></td>
+          <td>+4.284</td>
+          <td>+3.426</td>
+          <td>
+            <div class="time">68.889</div>
+            <div class="time">67.367</div>
+            <div class="time">66.976</div>
+            <div class="time best">66.244</div>
+            <div class="time">66.338</div>
+            <div class="time">66.372</div>
+            <div class="time">67.100</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">4</td>
+          <td nowrap>Blake Wilson #789</td>
+          <td nowrap>2020 Mazda MX-5 RF GT White</td>
+          <td><strong>67.028</strong></td>
+          <td>+5.069</td>
+          <td>+0.784</td>
+          <td>
+            <div class="time">70.375</div>
+            <div class="time">67.927</div>
+            <div class="time">67.069</div>
+            <div class="time best">67.028</div>
+            <div class="time">67.487</div>
+            <div class="time">67.074</div>
+            <div class="time">67.828</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">5</td>
+          <td nowrap>Sou Vang #9</td>
+          <td nowrap>2013 Mazda Miata</td>
+          <td><strong>67.456</strong></td>
+          <td>+5.497</td>
+          <td>+0.427</td>
+          <td>
+            <div class="time">70.325</div>
+            <div class="time">69.515</div>
+            <div class="time">67.791</div>
+            <div class="time">67.774</div>
+            <div class="time">72.185</div>
+            <div class="time">72.261</div>
+            <div class="time best">67.456</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">6</td>
+          <td nowrap>Luiz Vasconcelos #199</td>
+          <td nowrap>2024 Subaru WRX</td>
+          <td><strong>68.256</strong></td>
+          <td>+6.296</td>
+          <td>+0.799</td>
+          <td>
+            <div class="time">72.092</div>
+            <div class="time">72.712</div>
+            <div class="time">74.043</div>
+            <div class="time">69.724</div>
+            <div class="time">70.910</div>
+            <div class="time">70.019</div>
+            <div class="time best">68.256</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">7</td>
+          <td nowrap>Randall Johnson #630</td>
+          <td nowrap>2023 Mazda Miata</td>
+          <td><strong>69.339</strong></td>
+          <td>+7.379</td>
+          <td>+1.082</td>
+          <td>
+            <div class="time">73.571</div>
+            <div class="time">72.133</div>
+            <div class="time">70.956</div>
+            <div class="time">69.786</div>
+            <div class="time best">69.339</div>
+            <div class="time">70.207</div>
+            <div class="time">70.124</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">8</td>
+          <td nowrap>Ed Wildeman #200</td>
+          <td nowrap>1999 BMW M Roadster</td>
+          <td><strong>71.026</strong></td>
+          <td>+9.066</td>
+          <td>+1.686</td>
+          <td>
+            <div class="time">74.291</div>
+            <div class="time best">71.026</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">74.689</div>
+            <div class="time">73.751</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">9</td>
+          <td nowrap>Carter Grimes #922</td>
+          <td nowrap>2013 Hyundai Veloster Turbo</td>
+          <td><strong>72.415</strong></td>
+          <td>+10.456</td>
+          <td>+1.389</td>
+          <td>
+            <div class="time">76.664</div>
+            <div class="time">75.406</div>
+            <div class="time">73.861</div>
+            <div class="time">73.400</div>
+            <div class="time">74.653</div>
+            <div class="time">72.648</div>
+            <div class="time best">72.415</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="divider">
+          <td colspan="7">Trackcross G</td>
+        </tr>
+        <tr class="row">
+          <td align="center">1</td>
+          <td nowrap>Isaac Karrer #787</td>
+          <td nowrap>2020 Fiat Abarth 124 Spider White</td>
+          <td><strong>67.936</strong></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <div class="time">80.417</div>
+            <div class="time">68.001</div>
+            <div class="time">83.930</div>
+            <div class="time best">67.936</div>
+            <div class="time">68.240</div>
+            <div class="time">68.810</div>
+            <div class="time">68.312</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">2</td>
+          <td nowrap>Grant Wodny #924</td>
+          <td nowrap>2008 Mazda MX-5 Miata</td>
+          <td><strong>72.204</strong></td>
+          <td>+4.267</td>
+          <td>+4.267</td>
+          <td>
+            <div class="time">78.779</div>
+            <div class="time">75.056</div>
+            <div class="time best">72.204</div>
+            <div class="time">73.446</div>
+            <div class="time">73.962</div>
+            <div class="time">72.818</div>
+            <div class="time">72.486</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">3</td>
+          <td nowrap>Joe Freeborn #808</td>
+          <td nowrap>2006 Mazda Miata</td>
+          <td><strong>73.105</strong></td>
+          <td>+5.168</td>
+          <td>+0.901</td>
+          <td>
+            <div class="time">83.911</div>
+            <div class="time">74.836</div>
+            <div class="time">75.557</div>
+            <div class="time best">73.105</div>
+            <div class="time">74.035</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">75.500</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td align="center">4</td>
+          <td nowrap>Luke Hill #348</td>
+          <td nowrap>2007 Honda Fit</td>
+          <td><strong>75.192</strong></td>
+          <td>+7.255</td>
+          <td>+2.086</td>
+          <td>
+            <div class="time">79.602</div>
+            <div class="time">77.358</div>
+            <div class="time">75.893</div>
+            <div class="time">75.767</div>
+            <div class="time">75.237</div>
+            <div class="time">75.525</div>
+            <div class="time best">75.192</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table id="result-overall" style="display: none">
+      <thead>
+        <tr>
+          <th colspan="8">Overall</th>
+        </tr>
+        <tr>
+          <th>Rank</th>
+          <th>Class</th>
+          <th>Driver</th>
+          <th>Car</th>
+          <th>Best</th>
+          <th>Diff.</th>
+          <th>Diff. Prev.</th>
+          <th>Raw Times</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row">
+          <td>1</td>
+          <td>Trackcross B</td>
+          <td nowrap>Shawn Krebsbach #221</td>
+          <td nowrap>2006 Mitsabishi Evo</td>
+          <td><strong>58.03</strong></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <div class="time">74.725 <span class="pen">RRN</span></div>
+            <div class="time">59.558</div>
+            <div class="time">58.646</div>
+            <div class="time best">58.030</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>2</td>
+          <td>Trackcross A</td>
+          <td nowrap>Brandon Cottrell #403</td>
+          <td nowrap>2021 Toyota Supra</td>
+          <td><strong>58.223</strong></td>
+          <td>+0.192</td>
+          <td>+0.192</td>
+          <td>
+            <div class="time">59.444</div>
+            <div class="time">59.782</div>
+            <div class="time">59.117</div>
+            <div class="time">58.911</div>
+            <div class="time">59.467</div>
+            <div class="time best">58.223</div>
+            <div class="time">58.505</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>3</td>
+          <td>Trackcross A</td>
+          <td nowrap>Sean Forthun #190</td>
+          <td nowrap>2005 Mazda Rx8</td>
+          <td><strong>58.65</strong></td>
+          <td>+0.619</td>
+          <td>+0.426</td>
+          <td>
+            <div class="time">64.548</div>
+            <div class="time">61.070</div>
+            <div class="time">60.389</div>
+            <div class="time">60.550</div>
+            <div class="time">60.193</div>
+            <div class="time">90.079</div>
+            <div class="time best">58.650</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>4</td>
+          <td>Trackcross E</td>
+          <td nowrap>Piero Pucci #510</td>
+          <td nowrap>2013 Scion Frs</td>
+          <td><strong>59.486</strong></td>
+          <td>+1.455</td>
+          <td>+0.835</td>
+          <td>
+            <div class="time">62.471</div>
+            <div class="time">60.453</div>
+            <div class="time">59.839</div>
+            <div class="time best">59.486</div>
+            <div class="time">59.921</div>
+            <div class="time">59.863</div>
+            <div class="time">59.569</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>5</td>
+          <td>Trackcross B</td>
+          <td nowrap>Simon Robins #107</td>
+          <td nowrap>2004 Chevrolet Corvette Z06</td>
+          <td><strong>59.86</strong></td>
+          <td>+1.829</td>
+          <td>+0.374</td>
+          <td>
+            <div class="time">65.322</div>
+            <div class="time">60.560</div>
+            <div class="time best">59.860</div>
+            <div class="time">60.056</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>6</td>
+          <td>Trackcross B</td>
+          <td nowrap>Matthew Sebelski #707</td>
+          <td nowrap>2004 Chevrolet Corvette Z06</td>
+          <td><strong>60.278</strong></td>
+          <td>+2.247</td>
+          <td>+0.417</td>
+          <td>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time best">60.278</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>7</td>
+          <td>Trackcross E</td>
+          <td nowrap>Bernie Kaeferlein #421</td>
+          <td nowrap>2022 Toyota GR86</td>
+          <td><strong>60.381</strong></td>
+          <td>+2.35</td>
+          <td>+0.103</td>
+          <td>
+            <div class="time">63.762</div>
+            <div class="time">61.418</div>
+            <div class="time">60.981</div>
+            <div class="time best">60.381</div>
+            <div class="time">62.033</div>
+            <div class="time">61.679</div>
+            <div class="time">60.657</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>8</td>
+          <td>Trackcross C</td>
+          <td nowrap>Bryce Allen #19</td>
+          <td nowrap>2019 Porsche Cayman S</td>
+          <td><strong>60.734</strong></td>
+          <td>+2.704</td>
+          <td>+0.353</td>
+          <td>
+            <div class="time">61.846</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">61.135</div>
+            <div class="time best">60.734</div>
+            <div class="time">61.597</div>
+            <div class="time">60.754</div>
+            <div class="time">61.233</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>9</td>
+          <td>Trackcross D</td>
+          <td nowrap>Vong Moua #797</td>
+          <td nowrap>2013 Subaru BRZ</td>
+          <td><strong>61.153</strong></td>
+          <td>+3.122</td>
+          <td>+0.418</td>
+          <td>
+            <div class="time">68.923</div>
+            <div class="time">65.065</div>
+            <div class="time">63.084</div>
+            <div class="time">62.100</div>
+            <div class="time">83.441 <span class="pen">RRN</span></div>
+            <div class="time">62.296</div>
+            <div class="time">61.285</div>
+            <div class="time best">61.153</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>10</td>
+          <td>Trackcross D</td>
+          <td nowrap>Nick Hiney #423</td>
+          <td nowrap>2026 Toyota Supra</td>
+          <td><strong>61.697</strong></td>
+          <td>+3.667</td>
+          <td>+0.544</td>
+          <td>
+            <div class="time">66.347</div>
+            <div class="time">64.063</div>
+            <div class="time">63.332</div>
+            <div class="time">62.814</div>
+            <div class="time">63.736</div>
+            <div class="time">62.974</div>
+            <div class="time best">61.697</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>11</td>
+          <td>Trackcross F</td>
+          <td nowrap>Jake Rogers #990</td>
+          <td nowrap>2004 Mazda RX-8</td>
+          <td><strong>61.959</strong></td>
+          <td>+3.929</td>
+          <td>+0.262</td>
+          <td>
+            <div class="time">63.869</div>
+            <div class="time">63.055</div>
+            <div class="time">62.078</div>
+            <div class="time">62.115</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">62.489</div>
+            <div class="time best">61.959</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>12</td>
+          <td>Trackcross E</td>
+          <td nowrap>Tyler Salminen #68</td>
+          <td nowrap>2015 Scion Fr-s</td>
+          <td><strong>62.237</strong></td>
+          <td>+4.207</td>
+          <td>+0.277</td>
+          <td>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">62.860</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">62.789</div>
+            <div class="time">62.835</div>
+            <div class="time best">62.237</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>13</td>
+          <td>Trackcross C</td>
+          <td nowrap>Bryan Ganz #741</td>
+          <td nowrap>2002 Chevrolet Corvette C5 Z06</td>
+          <td><strong>62.405</strong></td>
+          <td>+4.375</td>
+          <td>+0.167</td>
+          <td>
+            <div class="time">64.024</div>
+            <div class="time">63.232</div>
+            <div class="time">63.115</div>
+            <div class="time">63.023</div>
+            <div class="time">63.254</div>
+            <div class="time">63.703</div>
+            <div class="time best">62.405</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>14</td>
+          <td>Trackcross D</td>
+          <td nowrap>Chase Malkow #358</td>
+          <td nowrap>2005 Nissan 350z</td>
+          <td><strong>62.512</strong></td>
+          <td>+4.481</td>
+          <td>+0.106</td>
+          <td>
+            <div class="time">68.130</div>
+            <div class="time">65.908</div>
+            <div class="time">64.850</div>
+            <div class="time">64.102</div>
+            <div class="time">63.197</div>
+            <div class="time">63.013</div>
+            <div class="time best">62.512</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>15</td>
+          <td>Trackcross B</td>
+          <td nowrap>Tyler Mack #33</td>
+          <td nowrap>1984 Chevrolet Camaro</td>
+          <td><strong>62.55</strong></td>
+          <td>+4.519</td>
+          <td>+0.037</td>
+          <td>
+            <div class="time">64.001</div>
+            <div class="time">63.740</div>
+            <div class="time">63.635</div>
+            <div class="time">62.615</div>
+            <div class="time">63.114</div>
+            <div class="time best">62.550</div>
+            <div class="time">62.766</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>16</td>
+          <td>Trackcross A</td>
+          <td nowrap>Leigh Collyer #84</td>
+          <td nowrap>2013 Subaru WRX</td>
+          <td><strong>62.587</strong></td>
+          <td>+4.557</td>
+          <td>+0.037</td>
+          <td>
+            <div class="time">66.428</div>
+            <div class="time">77.399</div>
+            <div class="time"><span class="pen">OFF</span></div>
+            <div class="time">66.381</div>
+            <div class="time">63.457</div>
+            <div class="time">63.495</div>
+            <div class="time best">62.587</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>17</td>
+          <td>Trackcross C</td>
+          <td nowrap>Miguel Torres #711</td>
+          <td nowrap>Chevrolet C8</td>
+          <td><strong>62.681</strong></td>
+          <td>+4.65</td>
+          <td>+0.093</td>
+          <td>
+            <div class="time">65.529</div>
+            <div class="time">63.244</div>
+            <div class="time">62.879</div>
+            <div class="time">62.777</div>
+            <div class="time">66.859</div>
+            <div class="time">62.793</div>
+            <div class="time best">62.681</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>18</td>
+          <td>Trackcross F</td>
+          <td nowrap>Cory Smith #105</td>
+          <td nowrap>2004 Mazda RX-8</td>
+          <td><strong>62.817</strong></td>
+          <td>+4.786</td>
+          <td>+0.136</td>
+          <td>
+            <div class="time">66.884</div>
+            <div class="time">64.052</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">63.637</div>
+            <div class="time">64.104</div>
+            <div class="time best">62.817</div>
+            <div class="time">64.023</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>19</td>
+          <td>Trackcross C</td>
+          <td nowrap>Alex McCleskey #969</td>
+          <td nowrap>2007 Chevrolet Corvette</td>
+          <td><strong>62.909</strong></td>
+          <td>+4.878</td>
+          <td>+0.091</td>
+          <td>
+            <div class="time">83.320 <span class="pen">RRN</span></div>
+            <div class="time">65.324</div>
+            <div class="time">63.372</div>
+            <div class="time">63.161</div>
+            <div class="time">62.917</div>
+            <div class="time">63.355</div>
+            <div class="time">63.480</div>
+            <div class="time best">62.909</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>20</td>
+          <td>Trackcross B</td>
+          <td nowrap>Joe Sexton #204</td>
+          <td nowrap>2002 BMW M3</td>
+          <td><strong>62.921</strong></td>
+          <td>+4.89</td>
+          <td>+0.012</td>
+          <td>
+            <div class="time">85.517 <span class="pen">RRN</span></div>
+            <div class="time">64.010</div>
+            <div class="time">63.590</div>
+            <div class="time">63.470</div>
+            <div class="time">63.492</div>
+            <div class="time">63.194</div>
+            <div class="time best">62.921</div>
+            <div class="time">70.009</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>21</td>
+          <td>Trackcross E</td>
+          <td nowrap>Nicholas Lemerond #388</td>
+          <td nowrap>2025 Toyota GR Corolla</td>
+          <td><strong>62.939</strong></td>
+          <td>+4.908</td>
+          <td>+0.018</td>
+          <td>
+            <div class="time">67.243</div>
+            <div class="time">64.632</div>
+            <div class="time">63.792</div>
+            <div class="time">64.042</div>
+            <div class="time best">62.939</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">63.194</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>22</td>
+          <td>Trackcross B</td>
+          <td nowrap>Koun Phah Moua #317</td>
+          <td nowrap>2017 Volkswagen GTI</td>
+          <td><strong>63.033</strong></td>
+          <td>+5.003</td>
+          <td>+0.094</td>
+          <td>
+            <div class="time">64.727</div>
+            <div class="time">64.302</div>
+            <div class="time">63.520</div>
+            <div class="time">63.644</div>
+            <div class="time">64.129</div>
+            <div class="time">82.626 <span class="pen">RRN</span></div>
+            <div class="time">63.647</div>
+            <div class="time best">63.033</div>
+            <div class="time">64.112 <span class="pen">RRN</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>23</td>
+          <td>Trackcross E</td>
+          <td nowrap>Jake Algren #410</td>
+          <td nowrap>2011 Honda Civic Si</td>
+          <td><strong>63.243</strong></td>
+          <td>+5.213</td>
+          <td>+0.21</td>
+          <td>
+            <div class="time">64.196</div>
+            <div class="time">64.411</div>
+            <div class="time">63.837</div>
+            <div class="time best">63.243</div>
+            <div class="time">63.447</div>
+            <div class="time">63.387</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>24</td>
+          <td>Trackcross E</td>
+          <td nowrap>Daniel Personius #500</td>
+          <td nowrap>1997 BMW 318ti</td>
+          <td><strong>63.412</strong></td>
+          <td>+5.381</td>
+          <td>+0.168</td>
+          <td>
+            <div class="time">67.265</div>
+            <div class="time">65.191</div>
+            <div class="time">64.331</div>
+            <div class="time">64.028</div>
+            <div class="time">64.505</div>
+            <div class="time best">63.412</div>
+            <div class="time">63.617</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>25</td>
+          <td>Trackcross E</td>
+          <td nowrap>Carter Smith #727</td>
+          <td nowrap>2015 Scion FR-S</td>
+          <td><strong>63.423</strong></td>
+          <td>+5.393</td>
+          <td>+0.011</td>
+          <td>
+            <div class="time">66.400</div>
+            <div class="time">64.696</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">64.550</div>
+            <div class="time">64.516</div>
+            <div class="time best">63.423</div>
+            <div class="time">63.616</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>26</td>
+          <td>Trackcross C</td>
+          <td nowrap>Jon Stef #805</td>
+          <td nowrap>2011 Subaru Paycheck Destroyer</td>
+          <td><strong>63.425</strong></td>
+          <td>+5.394</td>
+          <td>+0.001</td>
+          <td>
+            <div class="time">69.758</div>
+            <div class="time">65.886</div>
+            <div class="time">65.112</div>
+            <div class="time">64.265</div>
+            <div class="time">64.682</div>
+            <div class="time">63.678</div>
+            <div class="time best">63.425</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>27</td>
+          <td>Trackcross C</td>
+          <td nowrap>Justin Hirschuber #541</td>
+          <td nowrap>2007 Chevrolet C6 Base</td>
+          <td><strong>63.652</strong></td>
+          <td>+5.622</td>
+          <td>+0.227</td>
+          <td>
+            <div class="time">68.494</div>
+            <div class="time">66.126</div>
+            <div class="time">65.535</div>
+            <div class="time best">63.652</div>
+            <div class="time">64.321</div>
+            <div class="time">63.960</div>
+            <div class="time">63.841</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>28</td>
+          <td>Trackcross B</td>
+          <td nowrap>Andrew Youngquist #998</td>
+          <td nowrap>1998 Chevrolet Corvette silver</td>
+          <td><strong>64.405</strong></td>
+          <td>+6.375</td>
+          <td>+0.753</td>
+          <td>
+            <div class="time">66.914</div>
+            <div class="time">64.457</div>
+            <div class="time best">64.405</div>
+            <div class="time">65.148</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>29</td>
+          <td>Trackcross B</td>
+          <td nowrap>Dave Matson #132</td>
+          <td nowrap>1991 Chevrolet camaro</td>
+          <td><strong>64.418</strong></td>
+          <td>+6.388</td>
+          <td>+0.013</td>
+          <td>
+            <div class="time">65.520</div>
+            <div class="time">65.479</div>
+            <div class="time">65.808</div>
+            <div class="time">65.215</div>
+            <div class="time best">64.418</div>
+            <div class="time">64.838</div>
+            <div class="time">65.607</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>30</td>
+          <td>Trackcross C</td>
+          <td nowrap>Brian Shoultz #714</td>
+          <td nowrap>2022 Chevrolet Camaro SS 1LE</td>
+          <td><strong>64.456</strong></td>
+          <td>+6.426</td>
+          <td>+0.037</td>
+          <td>
+            <div class="time">67.929</div>
+            <div class="time">66.470</div>
+            <div class="time">65.113</div>
+            <div class="time">64.560</div>
+            <div class="time">65.098</div>
+            <div class="time best">64.456</div>
+            <div class="time">64.583</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>31</td>
+          <td>Trackcross C</td>
+          <td nowrap>Max Otzenberger #275</td>
+          <td nowrap>1998 Chevrolet Corvette</td>
+          <td><strong>64.908</strong></td>
+          <td>+6.878</td>
+          <td>+0.451</td>
+          <td>
+            <div class="time">69.174</div>
+            <div class="time">67.744</div>
+            <div class="time">66.464</div>
+            <div class="time best">64.908</div>
+            <div class="time">66.276</div>
+            <div class="time">65.407</div>
+            <div class="time">65.433</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>32</td>
+          <td>Trackcross D</td>
+          <td nowrap>Dan Doroff #995</td>
+          <td nowrap>2017 Chevrolet ss</td>
+          <td><strong>65.007</strong></td>
+          <td>+6.977</td>
+          <td>+0.099</td>
+          <td>
+            <div class="time">67.945</div>
+            <div class="time">66.686</div>
+            <div class="time">66.281</div>
+            <div class="time">65.492</div>
+            <div class="time">65.282</div>
+            <div class="time">65.450</div>
+            <div class="time best">65.007</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>33</td>
+          <td>Trackcross E</td>
+          <td nowrap>Michael Keiser #42</td>
+          <td nowrap>2011 BMW 128i</td>
+          <td><strong>65.04</strong></td>
+          <td>+7.01</td>
+          <td>+0.033</td>
+          <td>
+            <div class="time">66.523</div>
+            <div class="time">65.058</div>
+            <div class="time best">65.040</div>
+            <div class="time">65.382</div>
+            <div class="time">67.455</div>
+            <div class="time">66.435</div>
+            <div class="time">65.573</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>34</td>
+          <td>Trackcross E</td>
+          <td nowrap>Brady Lubenow #209</td>
+          <td nowrap>2004 Nissan 350z Silverstone</td>
+          <td><strong>65.375</strong></td>
+          <td>+7.344</td>
+          <td>+0.334</td>
+          <td>
+            <div class="time">75.543</div>
+            <div class="time">67.029</div>
+            <div class="time">65.941</div>
+            <div class="time">66.179</div>
+            <div class="time">67.277</div>
+            <div class="time">65.465</div>
+            <div class="time best">65.375</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>35</td>
+          <td>Trackcross A</td>
+          <td nowrap>Teng Moua #230</td>
+          <td nowrap>2020 Toyota Supra</td>
+          <td><strong>65.679</strong></td>
+          <td>+7.649</td>
+          <td>+0.304</td>
+          <td>
+            <div class="time">72.077</div>
+            <div class="time">69.640</div>
+            <div class="time">67.476</div>
+            <div class="time">69.439</div>
+            <div class="time best">65.679</div>
+            <div class="time">66.037</div>
+            <div class="time">65.877</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>36</td>
+          <td>Trackcross D</td>
+          <td nowrap>Ashton Carver #145</td>
+          <td nowrap>2022 Subaru WRX</td>
+          <td><strong>65.738</strong></td>
+          <td>+7.707</td>
+          <td>+0.058</td>
+          <td>
+            <div class="time">66.675</div>
+            <div class="time best">65.738</div>
+            <div class="time">66.079</div>
+            <div class="time">66.298</div>
+            <div class="time">76.868 <span class="pen">RRN</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">66.474</div>
+            <div class="time">66.824</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>37</td>
+          <td>Trackcross D</td>
+          <td nowrap>Jon Miska #773</td>
+          <td nowrap>2006 BMW 330i</td>
+          <td><strong>65.935</strong></td>
+          <td>+7.905</td>
+          <td>+0.197</td>
+          <td>
+            <div class="time">67.472</div>
+            <div class="time">66.014</div>
+            <div class="time">66.806</div>
+            <div class="time">66.120</div>
+            <div class="time">66.131</div>
+            <div class="time">99.922 <span class="pen">RRN</span></div>
+            <div class="time">66.065</div>
+            <div class="time">83.214 <span class="pen">RRN</span></div>
+            <div class="time best">65.935</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>38</td>
+          <td>Trackcross D</td>
+          <td nowrap>Brayden Harr #618</td>
+          <td nowrap>2009 Lexus Is250</td>
+          <td><strong>65.951</strong></td>
+          <td>+7.92</td>
+          <td>+0.015</td>
+          <td>
+            <div class="time">71.039</div>
+            <div class="time">68.295</div>
+            <div class="time">67.281</div>
+            <div class="time">68.145</div>
+            <div class="time">66.446</div>
+            <div class="time">66.589</div>
+            <div class="time best">65.951</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>39</td>
+          <td>Trackcross C</td>
+          <td nowrap>Steve Algren #144</td>
+          <td nowrap>2009 Chevrolet Corvette</td>
+          <td><strong>65.996</strong></td>
+          <td>+7.965</td>
+          <td>+0.045</td>
+          <td>
+            <div class="time">69.024</div>
+            <div class="time">67.503</div>
+            <div class="time">66.809</div>
+            <div class="time">66.154</div>
+            <div class="time">66.398</div>
+            <div class="time">66.233</div>
+            <div class="time best">65.996</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>40</td>
+          <td>Trackcross F</td>
+          <td nowrap>Peter Nolden #726</td>
+          <td nowrap>2020 Mazda MX-5 Club</td>
+          <td><strong>66.244</strong></td>
+          <td>+8.213</td>
+          <td>+0.248</td>
+          <td>
+            <div class="time">68.889</div>
+            <div class="time">67.367</div>
+            <div class="time">66.976</div>
+            <div class="time best">66.244</div>
+            <div class="time">66.338</div>
+            <div class="time">66.372</div>
+            <div class="time">67.100</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>41</td>
+          <td>Trackcross E</td>
+          <td nowrap>Oliver Moore #377</td>
+          <td nowrap>2004 Mini Cooper MC40 S</td>
+          <td><strong>66.325</strong></td>
+          <td>+8.295</td>
+          <td>+0.081</td>
+          <td>
+            <div class="time">72.765</div>
+            <div class="time">69.568</div>
+            <div class="time">68.583</div>
+            <div class="time">67.426</div>
+            <div class="time">70.392</div>
+            <div class="time">67.797</div>
+            <div class="time best">66.325</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>42</td>
+          <td>Trackcross E</td>
+          <td nowrap>Pryce Cha #141</td>
+          <td nowrap>2005 Honda S2000</td>
+          <td><strong>66.392</strong></td>
+          <td>+8.361</td>
+          <td>+0.066</td>
+          <td>
+            <div class="time">71.927</div>
+            <div class="time">69.413</div>
+            <div class="time">68.202</div>
+            <div class="time">67.965</div>
+            <div class="time">66.830</div>
+            <div class="time best">66.392</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>43</td>
+          <td>Trackcross E</td>
+          <td nowrap>Abel Lao #333</td>
+          <td nowrap>2026 Subaru BRZ TS</td>
+          <td><strong>66.424</strong></td>
+          <td>+8.394</td>
+          <td>+0.032</td>
+          <td>
+            <div class="time">69.355</div>
+            <div class="time">67.550</div>
+            <div class="time">68.819</div>
+            <div class="time">66.886</div>
+            <div class="time">81.021</div>
+            <div class="time">69.603</div>
+            <div class="time best">66.424</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>44</td>
+          <td>Trackcross C</td>
+          <td nowrap>Randy Cameron #302</td>
+          <td nowrap>2012 Ford Mustang Boss 302</td>
+          <td><strong>66.439</strong></td>
+          <td>+8.408</td>
+          <td>+0.014</td>
+          <td>
+            <div class="time">69.191</div>
+            <div class="time">67.696</div>
+            <div class="time">67.248</div>
+            <div class="time">66.786</div>
+            <div class="time">66.755</div>
+            <div class="time">67.698</div>
+            <div class="time best">66.439</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>45</td>
+          <td>Trackcross D</td>
+          <td nowrap>Nick Dorschner #137</td>
+          <td nowrap>2023 Hyundai Elantra N</td>
+          <td><strong>66.497</strong></td>
+          <td>+8.466</td>
+          <td>+0.058</td>
+          <td>
+            <div class="time">72.037</div>
+            <div class="time">70.097</div>
+            <div class="time">68.569</div>
+            <div class="time">67.673</div>
+            <div class="time">66.908</div>
+            <div class="time">67.060</div>
+            <div class="time best">66.497</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>46</td>
+          <td>Trackcross F</td>
+          <td nowrap>Blake Wilson #789</td>
+          <td nowrap>2020 Mazda MX-5 RF GT White</td>
+          <td><strong>67.028</strong></td>
+          <td>+8.998</td>
+          <td>+0.531</td>
+          <td>
+            <div class="time">70.375</div>
+            <div class="time">67.927</div>
+            <div class="time">67.069</div>
+            <div class="time best">67.028</div>
+            <div class="time">67.487</div>
+            <div class="time">67.074</div>
+            <div class="time">67.828</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>47</td>
+          <td>Trackcross E</td>
+          <td nowrap>Brandon Rhoades #50</td>
+          <td nowrap>1994 Chevrolet Camero</td>
+          <td><strong>67.455</strong></td>
+          <td>+9.424</td>
+          <td>+0.426</td>
+          <td>
+            <div class="time">71.765</div>
+            <div class="time">68.538</div>
+            <div class="time best">67.455</div>
+            <div class="time">67.802</div>
+            <div class="time">67.896</div>
+            <div class="time">67.759</div>
+            <div class="time">67.748</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>48</td>
+          <td>Trackcross F</td>
+          <td nowrap>Sou Vang #9</td>
+          <td nowrap>2013 Mazda Miata</td>
+          <td><strong>67.456</strong></td>
+          <td>+9.426</td>
+          <td>+0.001</td>
+          <td>
+            <div class="time">70.325</div>
+            <div class="time">69.515</div>
+            <div class="time">67.791</div>
+            <div class="time">67.774</div>
+            <div class="time">72.185</div>
+            <div class="time">72.261</div>
+            <div class="time best">67.456</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>49</td>
+          <td>Trackcross E</td>
+          <td nowrap>Owen Balcer #108</td>
+          <td nowrap>2003 Volkswagen Golf GTI</td>
+          <td><strong>67.914</strong></td>
+          <td>+9.884</td>
+          <td>+0.457</td>
+          <td>
+            <div class="time">77.410</div>
+            <div class="time">70.797</div>
+            <div class="time">69.578</div>
+            <div class="time">69.849</div>
+            <div class="time">70.156</div>
+            <div class="time">69.046</div>
+            <div class="time best">67.914</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>50</td>
+          <td>Trackcross G</td>
+          <td nowrap>Isaac Karrer #787</td>
+          <td nowrap>2020 Fiat Abarth 124 Spider White</td>
+          <td><strong>67.936</strong></td>
+          <td>+9.906</td>
+          <td>+0.022</td>
+          <td>
+            <div class="time">80.417</div>
+            <div class="time">68.001</div>
+            <div class="time">83.930</div>
+            <div class="time best">67.936</div>
+            <div class="time">68.240</div>
+            <div class="time">68.810</div>
+            <div class="time">68.312</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>51</td>
+          <td>Trackcross D</td>
+          <td nowrap>Erick Nolting #550</td>
+          <td nowrap>2000 Subaru 2.5RS</td>
+          <td><strong>68.14</strong></td>
+          <td>+10.11</td>
+          <td>+0.203</td>
+          <td>
+            <div class="time">70.899</div>
+            <div class="time">68.692</div>
+            <div class="time">68.597</div>
+            <div class="time best">68.140</div>
+            <div class="time">68.706</div>
+            <div class="time">69.602</div>
+            <div class="time">69.494</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>52</td>
+          <td>Trackcross F</td>
+          <td nowrap>Luiz Vasconcelos #199</td>
+          <td nowrap>2024 Subaru WRX</td>
+          <td><strong>68.256</strong></td>
+          <td>+10.226</td>
+          <td>+0.115</td>
+          <td>
+            <div class="time">72.092</div>
+            <div class="time">72.712</div>
+            <div class="time">74.043</div>
+            <div class="time">69.724</div>
+            <div class="time">70.910</div>
+            <div class="time">70.019</div>
+            <div class="time best">68.256</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>53</td>
+          <td>Trackcross B</td>
+          <td nowrap>Mike Mohr #308</td>
+          <td nowrap>2010 Chevrolet Camaro</td>
+          <td><strong>68.582</strong></td>
+          <td>+10.551</td>
+          <td>+0.325</td>
+          <td>
+            <div class="time">75.435</div>
+            <div class="time">72.056</div>
+            <div class="time">72.174</div>
+            <div class="time">72.244</div>
+            <div class="time">69.414</div>
+            <div class="time best">68.582</div>
+            <div class="time">82.362</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>54</td>
+          <td>Trackcross C</td>
+          <td nowrap>Steven Hill #701</td>
+          <td nowrap>2012 Ford Mustang GT</td>
+          <td><strong>68.63</strong></td>
+          <td>+10.599</td>
+          <td>+0.048</td>
+          <td>
+            <div class="time">71.710</div>
+            <div class="time">71.273</div>
+            <div class="time">69.180</div>
+            <div class="time">74.234</div>
+            <div class="time">69.806</div>
+            <div class="time">69.112</div>
+            <div class="time best">68.630</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>55</td>
+          <td>Trackcross C</td>
+          <td nowrap>John Witthaus #539</td>
+          <td nowrap>2004 Mercury Grand Mar</td>
+          <td><strong>68.915</strong></td>
+          <td>+10.885</td>
+          <td>+0.285</td>
+          <td>
+            <div class="time">70.329</div>
+            <div class="time">70.740</div>
+            <div class="time">73.248</div>
+            <div class="time">69.466</div>
+            <div class="time">70.219</div>
+            <div class="time">69.027</div>
+            <div class="time best">68.915</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>56</td>
+          <td>Trackcross E</td>
+          <td nowrap>Travis Williams #696</td>
+          <td nowrap>2004 Mazda Rx8</td>
+          <td><strong>69.037</strong></td>
+          <td>+11.007</td>
+          <td>+0.121</td>
+          <td>
+            <div class="time">72.819</div>
+            <div class="time">70.638</div>
+            <div class="time">70.495</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">69.891</div>
+            <div class="time">71.282</div>
+            <div class="time best">69.037</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>57</td>
+          <td>Trackcross B</td>
+          <td nowrap>Thomas Haider #104</td>
+          <td nowrap>2022 Ford Shelby GT 500</td>
+          <td><strong>69.153</strong></td>
+          <td>+11.123</td>
+          <td>+0.115</td>
+          <td>
+            <div class="time">77.066</div>
+            <div class="time">74.031</div>
+            <div class="time">71.777</div>
+            <div class="time">71.996</div>
+            <div class="time">70.685</div>
+            <div class="time best">69.153</div>
+            <div class="time">69.806</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>58</td>
+          <td>Trackcross F</td>
+          <td nowrap>Randall Johnson #630</td>
+          <td nowrap>2023 Mazda Miata</td>
+          <td><strong>69.339</strong></td>
+          <td>+11.308</td>
+          <td>+0.185</td>
+          <td>
+            <div class="time">73.571</div>
+            <div class="time">72.133</div>
+            <div class="time">70.956</div>
+            <div class="time">69.786</div>
+            <div class="time best">69.339</div>
+            <div class="time">70.207</div>
+            <div class="time">70.124</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>59</td>
+          <td>Trackcross C</td>
+          <td nowrap>Chanhue Vang #506</td>
+          <td nowrap>2017 Honda Type R</td>
+          <td><strong>69.369</strong></td>
+          <td>+11.338</td>
+          <td>+0.03</td>
+          <td>
+            <div class="time">74.751</div>
+            <div class="time">70.178</div>
+            <div class="time">70.058</div>
+            <div class="time">69.900</div>
+            <div class="time">70.017</div>
+            <div class="time best">69.369</div>
+            <div class="time">69.683</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>60</td>
+          <td>Trackcross D</td>
+          <td nowrap>Anthony Decker #774</td>
+          <td nowrap>1993 Honda Del Sol</td>
+          <td><strong>69.848</strong></td>
+          <td>+11.817</td>
+          <td>+0.478</td>
+          <td>
+            <div class="time">74.006</div>
+            <div class="time">72.889</div>
+            <div class="time">71.552</div>
+            <div class="time">70.279</div>
+            <div class="time">70.745</div>
+            <div class="time best">69.848</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>61</td>
+          <td>Trackcross D</td>
+          <td nowrap>Suewa Vang #505</td>
+          <td nowrap>2006 Acura RSX</td>
+          <td><strong>70.135</strong></td>
+          <td>+12.105</td>
+          <td>+0.287</td>
+          <td>
+            <div class="time">72.097</div>
+            <div class="time">71.281</div>
+            <div class="time best">70.135</div>
+            <div class="time">70.142</div>
+            <div class="time"><span class="pen">OFF</span></div>
+            <div class="time">71.490</div>
+            <div class="time">70.386</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>62</td>
+          <td>Trackcross E</td>
+          <td nowrap>Jonathan Decker #477</td>
+          <td nowrap>1993 Honda Del Sol</td>
+          <td><strong>70.255</strong></td>
+          <td>+12.224</td>
+          <td>+0.119</td>
+          <td>
+            <div class="time">75.431</div>
+            <div class="time">72.081</div>
+            <div class="time">70.927</div>
+            <div class="time best">70.255</div>
+            <div class="time">72.564</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>63</td>
+          <td>Trackcross D</td>
+          <td nowrap>Brody Rouillard #207</td>
+          <td nowrap>2008 Lexus ISF</td>
+          <td><strong>70.496</strong></td>
+          <td>+12.465</td>
+          <td>+0.24</td>
+          <td>
+            <div class="time">71.222</div>
+            <div class="time">71.637</div>
+            <div class="time">70.716</div>
+            <div class="time">70.905</div>
+            <div class="time">70.539</div>
+            <div class="time">71.692</div>
+            <div class="time best">70.496</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>64</td>
+          <td>Trackcross E</td>
+          <td nowrap>Brandon Rowlett #406</td>
+          <td nowrap>1991 Toyota MR2</td>
+          <td><strong>70.531</strong></td>
+          <td>+12.501</td>
+          <td>+0.035</td>
+          <td>
+            <div class="time">74.843 <span class="pen">RRN</span></div>
+            <div class="time">75.360</div>
+            <div class="time">70.825</div>
+            <div class="time best">70.531</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>65</td>
+          <td>Trackcross E</td>
+          <td nowrap>Varun Sarathy #210</td>
+          <td nowrap>2020 Hyundai Veloster N</td>
+          <td><strong>70.654</strong></td>
+          <td>+12.623</td>
+          <td>+0.122</td>
+          <td>
+            <div class="time">79.522</div>
+            <div class="time">75.094</div>
+            <div class="time">72.987</div>
+            <div class="time">72.590</div>
+            <div class="time">71.861</div>
+            <div class="time">92.563 <span class="pen">RRN</span></div>
+            <div class="time best">70.654</div>
+            <div class="time">71.167</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>66</td>
+          <td>Trackcross A</td>
+          <td nowrap>Philip Ethier #7</td>
+          <td nowrap>1963 Lotus Super Seven</td>
+          <td><strong>70.696</strong></td>
+          <td>+12.665</td>
+          <td>+0.042</td>
+          <td>
+            <div class="time">87.080</div>
+            <div class="time">79.044</div>
+            <div class="time">75.621</div>
+            <div class="time">75.320</div>
+            <div class="time best">70.696</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>67</td>
+          <td>Trackcross F</td>
+          <td nowrap>Ed Wildeman #200</td>
+          <td nowrap>1999 BMW M Roadster</td>
+          <td><strong>71.026</strong></td>
+          <td>+12.995</td>
+          <td>+0.329</td>
+          <td>
+            <div class="time">74.291</div>
+            <div class="time best">71.026</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">74.689</div>
+            <div class="time">73.751</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>68</td>
+          <td>Trackcross D</td>
+          <td nowrap>Max Parker #996</td>
+          <td nowrap>1996 Mazda Miata</td>
+          <td><strong>71.638</strong></td>
+          <td>+13.608</td>
+          <td>+0.612</td>
+          <td>
+            <div class="time">102.174</div>
+            <div class="time">80.068</div>
+            <div class="time">73.391</div>
+            <div class="time best">71.638</div>
+            <div class="time">71.754</div>
+            <div class="time">106.531 <span class="pen">RRN</span></div>
+            <div class="time">73.239</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>69</td>
+          <td>Trackcross C</td>
+          <td nowrap>Dennis OMeara #111</td>
+          <td nowrap>2019 Chevrolet Corvette Grand Sport</td>
+          <td><strong>71.769</strong></td>
+          <td>+13.739</td>
+          <td>+0.131</td>
+          <td>
+            <div class="time">74.741</div>
+            <div class="time">73.680</div>
+            <div class="time best">71.769</div>
+            <div class="time">73.092</div>
+            <div class="time">75.116</div>
+            <div class="time">74.643</div>
+            <div class="time">73.507</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>70</td>
+          <td>Trackcross E</td>
+          <td nowrap>Braydon Sparks #201</td>
+          <td nowrap>2009 BMW 128i</td>
+          <td><strong>72.034</strong></td>
+          <td>+14.004</td>
+          <td>+0.265</td>
+          <td>
+            <div class="time">77.584</div>
+            <div class="time">72.151</div>
+            <div class="time best">72.034</div>
+            <div class="time">72.120</div>
+            <div class="time">74.809</div>
+            <div class="time">73.865</div>
+            <div class="time">72.615</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>71</td>
+          <td>Trackcross G</td>
+          <td nowrap>Grant Wodny #924</td>
+          <td nowrap>2008 Mazda MX-5 Miata</td>
+          <td><strong>72.204</strong></td>
+          <td>+14.173</td>
+          <td>+0.169</td>
+          <td>
+            <div class="time">78.779</div>
+            <div class="time">75.056</div>
+            <div class="time best">72.204</div>
+            <div class="time">73.446</div>
+            <div class="time">73.962</div>
+            <div class="time">72.818</div>
+            <div class="time">72.486</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>72</td>
+          <td>Trackcross F</td>
+          <td nowrap>Carter Grimes #922</td>
+          <td nowrap>2013 Hyundai Veloster Turbo</td>
+          <td><strong>72.415</strong></td>
+          <td>+14.385</td>
+          <td>+0.211</td>
+          <td>
+            <div class="time">76.664</div>
+            <div class="time">75.406</div>
+            <div class="time">73.861</div>
+            <div class="time">73.400</div>
+            <div class="time">74.653</div>
+            <div class="time">72.648</div>
+            <div class="time best">72.415</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>73</td>
+          <td>Trackcross D</td>
+          <td nowrap>Ryker Huseby #660</td>
+          <td nowrap>1991 Honda Beat</td>
+          <td><strong>72.608</strong></td>
+          <td>+14.578</td>
+          <td>+0.192</td>
+          <td>
+            <div class="time">80.260</div>
+            <div class="time">78.259</div>
+            <div class="time">77.433</div>
+            <div class="time">75.947</div>
+            <div class="time">73.994</div>
+            <div class="time best">72.608</div>
+            <div class="time">72.834</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>74</td>
+          <td>Trackcross D</td>
+          <td nowrap>Don Gettinger #4</td>
+          <td nowrap>2001 Chevrolet Z-06 Corvette</td>
+          <td><strong>72.744</strong></td>
+          <td>+14.713</td>
+          <td>+0.135</td>
+          <td>
+            <div class="time">80.192</div>
+            <div class="time">75.024</div>
+            <div class="time">77.099</div>
+            <div class="time">73.695</div>
+            <div class="time">77.769</div>
+            <div class="time best">72.744</div>
+            <div class="time">74.877</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>75</td>
+          <td>Trackcross G</td>
+          <td nowrap>Joe Freeborn #808</td>
+          <td nowrap>2006 Mazda Miata</td>
+          <td><strong>73.105</strong></td>
+          <td>+15.075</td>
+          <td>+0.361</td>
+          <td>
+            <div class="time">83.911</div>
+            <div class="time">74.836</div>
+            <div class="time">75.557</div>
+            <div class="time best">73.105</div>
+            <div class="time">74.035</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">75.500</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>76</td>
+          <td>Trackcross E</td>
+          <td nowrap>Faarouq Luqman #992</td>
+          <td nowrap>2008 Nissan 350z</td>
+          <td><strong>73.969</strong></td>
+          <td>+15.938</td>
+          <td>+0.863</td>
+          <td>
+            <div class="time">98.678</div>
+            <div class="time">90.558</div>
+            <div class="time">83.883</div>
+            <div class="time">79.188</div>
+            <div class="time">84.959</div>
+            <div class="time">75.860</div>
+            <div class="time best">73.969</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>77</td>
+          <td>Trackcross C</td>
+          <td nowrap>Patrick Olheiser #299</td>
+          <td nowrap>2004 Chevrolet corvette</td>
+          <td><strong>74.532</strong></td>
+          <td>+16.501</td>
+          <td>+0.563</td>
+          <td>
+            <div class="time">76.272</div>
+            <div class="time">76.273</div>
+            <div class="time best">74.532</div>
+            <div class="time">74.788</div>
+            <div class="time">76.251</div>
+            <div class="time">75.942</div>
+            <div class="time">76.324</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>78</td>
+          <td>Trackcross G</td>
+          <td nowrap>Luke Hill #348</td>
+          <td nowrap>2007 Honda Fit</td>
+          <td><strong>75.192</strong></td>
+          <td>+17.161</td>
+          <td>+0.659</td>
+          <td>
+            <div class="time">79.602</div>
+            <div class="time">77.358</div>
+            <div class="time">75.893</div>
+            <div class="time">75.767</div>
+            <div class="time">75.237</div>
+            <div class="time">75.525</div>
+            <div class="time best">75.192</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>79</td>
+          <td>Trackcross D</td>
+          <td nowrap>Sandy Powell #124</td>
+          <td nowrap>2009 Nissan 370z</td>
+          <td><strong>76.335</strong></td>
+          <td>+18.304</td>
+          <td>+1.143</td>
+          <td>
+            <div class="time">81.886</div>
+            <div class="time">78.905</div>
+            <div class="time">78.142</div>
+            <div class="time">91.956 <span class="pen">RRN</span></div>
+            <div class="time">76.521</div>
+            <div class="time">76.642</div>
+            <div class="time">77.659</div>
+            <div class="time best">76.335</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>80</td>
+          <td>Trackcross C</td>
+          <td nowrap>Brittany Grant #547</td>
+          <td nowrap>2007 Chevrolet C6 Base</td>
+          <td><strong>77.084</strong></td>
+          <td>+19.054</td>
+          <td>+0.749</td>
+          <td>
+            <div class="time">87.226</div>
+            <div class="time">81.704</div>
+            <div class="time">78.646</div>
+            <div class="time best">77.084</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>81</td>
+          <td>Trackcross E</td>
+          <td nowrap>Gary Keim #157</td>
+          <td nowrap>2008 Nissan ALTIMA</td>
+          <td><strong>77.559</strong></td>
+          <td>+19.528</td>
+          <td>+0.474</td>
+          <td>
+            <div class="time">79.966</div>
+            <div class="time">80.597</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time best">77.559</div>
+            <div class="time">77.772</div>
+            <div class="time">80.702</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>82</td>
+          <td>Trackcross C</td>
+          <td nowrap>Frederick Nolting #138</td>
+          <td nowrap>Chevrolet Corvette</td>
+          <td><strong>77.733</strong></td>
+          <td>+19.703</td>
+          <td>+0.174</td>
+          <td>
+            <div class="time">80.404</div>
+            <div class="time">78.840</div>
+            <div class="time">77.915</div>
+            <div class="time best">77.733</div>
+            <div class="time">78.586</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table id="result-pax" style="display: none">
+      <thead>
+        <tr>
+          <th colspan="8">PAX</th>
+        </tr>
+        <tr>
+          <th>Rank</th>
+          <th>Class</th>
+          <th>Driver</th>
+          <th>Car</th>
+          <th>Best</th>
+          <th>Diff.</th>
+          <th>Diff. Prev.</th>
+          <th>Raw Times</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row">
+          <td>1</td>
+          <td>Trackcross B</td>
+          <td nowrap>Shawn Krebsbach #221</td>
+          <td nowrap>2006 Mitsabishi Evo</td>
+          <td><strong>58.03</strong></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <div class="time">74.725 <span class="pen">RRN</span></div>
+            <div class="time">59.558</div>
+            <div class="time">58.646</div>
+            <div class="time best">58.030</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>2</td>
+          <td>Trackcross A</td>
+          <td nowrap>Brandon Cottrell #403</td>
+          <td nowrap>2021 Toyota Supra</td>
+          <td><strong>58.223</strong></td>
+          <td>+0.192</td>
+          <td>+0.192</td>
+          <td>
+            <div class="time">59.444</div>
+            <div class="time">59.782</div>
+            <div class="time">59.117</div>
+            <div class="time">58.911</div>
+            <div class="time">59.467</div>
+            <div class="time best">58.223</div>
+            <div class="time">58.505</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>3</td>
+          <td>Trackcross A</td>
+          <td nowrap>Sean Forthun #190</td>
+          <td nowrap>2005 Mazda Rx8</td>
+          <td><strong>58.65</strong></td>
+          <td>+0.619</td>
+          <td>+0.426</td>
+          <td>
+            <div class="time">64.548</div>
+            <div class="time">61.070</div>
+            <div class="time">60.389</div>
+            <div class="time">60.550</div>
+            <div class="time">60.193</div>
+            <div class="time">90.079</div>
+            <div class="time best">58.650</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>4</td>
+          <td>Trackcross E</td>
+          <td nowrap>Piero Pucci #510</td>
+          <td nowrap>2013 Scion Frs</td>
+          <td><strong>59.486</strong></td>
+          <td>+1.455</td>
+          <td>+0.835</td>
+          <td>
+            <div class="time">62.471</div>
+            <div class="time">60.453</div>
+            <div class="time">59.839</div>
+            <div class="time best">59.486</div>
+            <div class="time">59.921</div>
+            <div class="time">59.863</div>
+            <div class="time">59.569</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>5</td>
+          <td>Trackcross B</td>
+          <td nowrap>Simon Robins #107</td>
+          <td nowrap>2004 Chevrolet Corvette Z06</td>
+          <td><strong>59.86</strong></td>
+          <td>+1.829</td>
+          <td>+0.374</td>
+          <td>
+            <div class="time">65.322</div>
+            <div class="time">60.560</div>
+            <div class="time best">59.860</div>
+            <div class="time">60.056</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>6</td>
+          <td>Trackcross B</td>
+          <td nowrap>Matthew Sebelski #707</td>
+          <td nowrap>2004 Chevrolet Corvette Z06</td>
+          <td><strong>60.278</strong></td>
+          <td>+2.247</td>
+          <td>+0.417</td>
+          <td>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time best">60.278</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>7</td>
+          <td>Trackcross E</td>
+          <td nowrap>Bernie Kaeferlein #421</td>
+          <td nowrap>2022 Toyota GR86</td>
+          <td><strong>60.381</strong></td>
+          <td>+2.35</td>
+          <td>+0.103</td>
+          <td>
+            <div class="time">63.762</div>
+            <div class="time">61.418</div>
+            <div class="time">60.981</div>
+            <div class="time best">60.381</div>
+            <div class="time">62.033</div>
+            <div class="time">61.679</div>
+            <div class="time">60.657</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>8</td>
+          <td>Trackcross C</td>
+          <td nowrap>Bryce Allen #19</td>
+          <td nowrap>2019 Porsche Cayman S</td>
+          <td><strong>60.734</strong></td>
+          <td>+2.704</td>
+          <td>+0.353</td>
+          <td>
+            <div class="time">61.846</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">61.135</div>
+            <div class="time best">60.734</div>
+            <div class="time">61.597</div>
+            <div class="time">60.754</div>
+            <div class="time">61.233</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>9</td>
+          <td>Trackcross D</td>
+          <td nowrap>Vong Moua #797</td>
+          <td nowrap>2013 Subaru BRZ</td>
+          <td><strong>61.153</strong></td>
+          <td>+3.122</td>
+          <td>+0.418</td>
+          <td>
+            <div class="time">68.923</div>
+            <div class="time">65.065</div>
+            <div class="time">63.084</div>
+            <div class="time">62.100</div>
+            <div class="time">83.441 <span class="pen">RRN</span></div>
+            <div class="time">62.296</div>
+            <div class="time">61.285</div>
+            <div class="time best">61.153</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>10</td>
+          <td>Trackcross D</td>
+          <td nowrap>Nick Hiney #423</td>
+          <td nowrap>2026 Toyota Supra</td>
+          <td><strong>61.697</strong></td>
+          <td>+3.667</td>
+          <td>+0.544</td>
+          <td>
+            <div class="time">66.347</div>
+            <div class="time">64.063</div>
+            <div class="time">63.332</div>
+            <div class="time">62.814</div>
+            <div class="time">63.736</div>
+            <div class="time">62.974</div>
+            <div class="time best">61.697</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>11</td>
+          <td>Trackcross F</td>
+          <td nowrap>Jake Rogers #990</td>
+          <td nowrap>2004 Mazda RX-8</td>
+          <td><strong>61.959</strong></td>
+          <td>+3.929</td>
+          <td>+0.262</td>
+          <td>
+            <div class="time">63.869</div>
+            <div class="time">63.055</div>
+            <div class="time">62.078</div>
+            <div class="time">62.115</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">62.489</div>
+            <div class="time best">61.959</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>12</td>
+          <td>Trackcross E</td>
+          <td nowrap>Tyler Salminen #68</td>
+          <td nowrap>2015 Scion Fr-s</td>
+          <td><strong>62.237</strong></td>
+          <td>+4.207</td>
+          <td>+0.277</td>
+          <td>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">62.860</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">62.789</div>
+            <div class="time">62.835</div>
+            <div class="time best">62.237</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>13</td>
+          <td>Trackcross C</td>
+          <td nowrap>Bryan Ganz #741</td>
+          <td nowrap>2002 Chevrolet Corvette C5 Z06</td>
+          <td><strong>62.405</strong></td>
+          <td>+4.375</td>
+          <td>+0.167</td>
+          <td>
+            <div class="time">64.024</div>
+            <div class="time">63.232</div>
+            <div class="time">63.115</div>
+            <div class="time">63.023</div>
+            <div class="time">63.254</div>
+            <div class="time">63.703</div>
+            <div class="time best">62.405</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>14</td>
+          <td>Trackcross D</td>
+          <td nowrap>Chase Malkow #358</td>
+          <td nowrap>2005 Nissan 350z</td>
+          <td><strong>62.512</strong></td>
+          <td>+4.481</td>
+          <td>+0.106</td>
+          <td>
+            <div class="time">68.130</div>
+            <div class="time">65.908</div>
+            <div class="time">64.850</div>
+            <div class="time">64.102</div>
+            <div class="time">63.197</div>
+            <div class="time">63.013</div>
+            <div class="time best">62.512</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>15</td>
+          <td>Trackcross B</td>
+          <td nowrap>Tyler Mack #33</td>
+          <td nowrap>1984 Chevrolet Camaro</td>
+          <td><strong>62.55</strong></td>
+          <td>+4.519</td>
+          <td>+0.037</td>
+          <td>
+            <div class="time">64.001</div>
+            <div class="time">63.740</div>
+            <div class="time">63.635</div>
+            <div class="time">62.615</div>
+            <div class="time">63.114</div>
+            <div class="time best">62.550</div>
+            <div class="time">62.766</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>16</td>
+          <td>Trackcross A</td>
+          <td nowrap>Leigh Collyer #84</td>
+          <td nowrap>2013 Subaru WRX</td>
+          <td><strong>62.587</strong></td>
+          <td>+4.557</td>
+          <td>+0.037</td>
+          <td>
+            <div class="time">66.428</div>
+            <div class="time">77.399</div>
+            <div class="time"><span class="pen">OFF</span></div>
+            <div class="time">66.381</div>
+            <div class="time">63.457</div>
+            <div class="time">63.495</div>
+            <div class="time best">62.587</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>17</td>
+          <td>Trackcross C</td>
+          <td nowrap>Miguel Torres #711</td>
+          <td nowrap>Chevrolet C8</td>
+          <td><strong>62.681</strong></td>
+          <td>+4.65</td>
+          <td>+0.093</td>
+          <td>
+            <div class="time">65.529</div>
+            <div class="time">63.244</div>
+            <div class="time">62.879</div>
+            <div class="time">62.777</div>
+            <div class="time">66.859</div>
+            <div class="time">62.793</div>
+            <div class="time best">62.681</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>18</td>
+          <td>Trackcross F</td>
+          <td nowrap>Cory Smith #105</td>
+          <td nowrap>2004 Mazda RX-8</td>
+          <td><strong>62.817</strong></td>
+          <td>+4.786</td>
+          <td>+0.136</td>
+          <td>
+            <div class="time">66.884</div>
+            <div class="time">64.052</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">63.637</div>
+            <div class="time">64.104</div>
+            <div class="time best">62.817</div>
+            <div class="time">64.023</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>19</td>
+          <td>Trackcross C</td>
+          <td nowrap>Alex McCleskey #969</td>
+          <td nowrap>2007 Chevrolet Corvette</td>
+          <td><strong>62.909</strong></td>
+          <td>+4.878</td>
+          <td>+0.091</td>
+          <td>
+            <div class="time">83.320 <span class="pen">RRN</span></div>
+            <div class="time">65.324</div>
+            <div class="time">63.372</div>
+            <div class="time">63.161</div>
+            <div class="time">62.917</div>
+            <div class="time">63.355</div>
+            <div class="time">63.480</div>
+            <div class="time best">62.909</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>20</td>
+          <td>Trackcross B</td>
+          <td nowrap>Joe Sexton #204</td>
+          <td nowrap>2002 BMW M3</td>
+          <td><strong>62.921</strong></td>
+          <td>+4.89</td>
+          <td>+0.012</td>
+          <td>
+            <div class="time">85.517 <span class="pen">RRN</span></div>
+            <div class="time">64.010</div>
+            <div class="time">63.590</div>
+            <div class="time">63.470</div>
+            <div class="time">63.492</div>
+            <div class="time">63.194</div>
+            <div class="time best">62.921</div>
+            <div class="time">70.009</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>21</td>
+          <td>Trackcross E</td>
+          <td nowrap>Nicholas Lemerond #388</td>
+          <td nowrap>2025 Toyota GR Corolla</td>
+          <td><strong>62.939</strong></td>
+          <td>+4.908</td>
+          <td>+0.018</td>
+          <td>
+            <div class="time">67.243</div>
+            <div class="time">64.632</div>
+            <div class="time">63.792</div>
+            <div class="time">64.042</div>
+            <div class="time best">62.939</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">63.194</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>22</td>
+          <td>Trackcross B</td>
+          <td nowrap>Koun Phah Moua #317</td>
+          <td nowrap>2017 Volkswagen GTI</td>
+          <td><strong>63.033</strong></td>
+          <td>+5.003</td>
+          <td>+0.094</td>
+          <td>
+            <div class="time">64.727</div>
+            <div class="time">64.302</div>
+            <div class="time">63.520</div>
+            <div class="time">63.644</div>
+            <div class="time">64.129</div>
+            <div class="time">82.626 <span class="pen">RRN</span></div>
+            <div class="time">63.647</div>
+            <div class="time best">63.033</div>
+            <div class="time">64.112 <span class="pen">RRN</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>23</td>
+          <td>Trackcross E</td>
+          <td nowrap>Jake Algren #410</td>
+          <td nowrap>2011 Honda Civic Si</td>
+          <td><strong>63.243</strong></td>
+          <td>+5.213</td>
+          <td>+0.21</td>
+          <td>
+            <div class="time">64.196</div>
+            <div class="time">64.411</div>
+            <div class="time">63.837</div>
+            <div class="time best">63.243</div>
+            <div class="time">63.447</div>
+            <div class="time">63.387</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>24</td>
+          <td>Trackcross E</td>
+          <td nowrap>Daniel Personius #500</td>
+          <td nowrap>1997 BMW 318ti</td>
+          <td><strong>63.412</strong></td>
+          <td>+5.381</td>
+          <td>+0.168</td>
+          <td>
+            <div class="time">67.265</div>
+            <div class="time">65.191</div>
+            <div class="time">64.331</div>
+            <div class="time">64.028</div>
+            <div class="time">64.505</div>
+            <div class="time best">63.412</div>
+            <div class="time">63.617</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>25</td>
+          <td>Trackcross E</td>
+          <td nowrap>Carter Smith #727</td>
+          <td nowrap>2015 Scion FR-S</td>
+          <td><strong>63.423</strong></td>
+          <td>+5.393</td>
+          <td>+0.011</td>
+          <td>
+            <div class="time">66.400</div>
+            <div class="time">64.696</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">64.550</div>
+            <div class="time">64.516</div>
+            <div class="time best">63.423</div>
+            <div class="time">63.616</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>26</td>
+          <td>Trackcross C</td>
+          <td nowrap>Jon Stef #805</td>
+          <td nowrap>2011 Subaru Paycheck Destroyer</td>
+          <td><strong>63.425</strong></td>
+          <td>+5.394</td>
+          <td>+0.001</td>
+          <td>
+            <div class="time">69.758</div>
+            <div class="time">65.886</div>
+            <div class="time">65.112</div>
+            <div class="time">64.265</div>
+            <div class="time">64.682</div>
+            <div class="time">63.678</div>
+            <div class="time best">63.425</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>27</td>
+          <td>Trackcross C</td>
+          <td nowrap>Justin Hirschuber #541</td>
+          <td nowrap>2007 Chevrolet C6 Base</td>
+          <td><strong>63.652</strong></td>
+          <td>+5.622</td>
+          <td>+0.227</td>
+          <td>
+            <div class="time">68.494</div>
+            <div class="time">66.126</div>
+            <div class="time">65.535</div>
+            <div class="time best">63.652</div>
+            <div class="time">64.321</div>
+            <div class="time">63.960</div>
+            <div class="time">63.841</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>28</td>
+          <td>Trackcross B</td>
+          <td nowrap>Andrew Youngquist #998</td>
+          <td nowrap>1998 Chevrolet Corvette silver</td>
+          <td><strong>64.405</strong></td>
+          <td>+6.375</td>
+          <td>+0.753</td>
+          <td>
+            <div class="time">66.914</div>
+            <div class="time">64.457</div>
+            <div class="time best">64.405</div>
+            <div class="time">65.148</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>29</td>
+          <td>Trackcross B</td>
+          <td nowrap>Dave Matson #132</td>
+          <td nowrap>1991 Chevrolet camaro</td>
+          <td><strong>64.418</strong></td>
+          <td>+6.388</td>
+          <td>+0.013</td>
+          <td>
+            <div class="time">65.520</div>
+            <div class="time">65.479</div>
+            <div class="time">65.808</div>
+            <div class="time">65.215</div>
+            <div class="time best">64.418</div>
+            <div class="time">64.838</div>
+            <div class="time">65.607</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>30</td>
+          <td>Trackcross C</td>
+          <td nowrap>Brian Shoultz #714</td>
+          <td nowrap>2022 Chevrolet Camaro SS 1LE</td>
+          <td><strong>64.456</strong></td>
+          <td>+6.426</td>
+          <td>+0.037</td>
+          <td>
+            <div class="time">67.929</div>
+            <div class="time">66.470</div>
+            <div class="time">65.113</div>
+            <div class="time">64.560</div>
+            <div class="time">65.098</div>
+            <div class="time best">64.456</div>
+            <div class="time">64.583</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>31</td>
+          <td>Trackcross C</td>
+          <td nowrap>Max Otzenberger #275</td>
+          <td nowrap>1998 Chevrolet Corvette</td>
+          <td><strong>64.908</strong></td>
+          <td>+6.878</td>
+          <td>+0.451</td>
+          <td>
+            <div class="time">69.174</div>
+            <div class="time">67.744</div>
+            <div class="time">66.464</div>
+            <div class="time best">64.908</div>
+            <div class="time">66.276</div>
+            <div class="time">65.407</div>
+            <div class="time">65.433</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>32</td>
+          <td>Trackcross D</td>
+          <td nowrap>Dan Doroff #995</td>
+          <td nowrap>2017 Chevrolet ss</td>
+          <td><strong>65.007</strong></td>
+          <td>+6.977</td>
+          <td>+0.099</td>
+          <td>
+            <div class="time">67.945</div>
+            <div class="time">66.686</div>
+            <div class="time">66.281</div>
+            <div class="time">65.492</div>
+            <div class="time">65.282</div>
+            <div class="time">65.450</div>
+            <div class="time best">65.007</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>33</td>
+          <td>Trackcross E</td>
+          <td nowrap>Michael Keiser #42</td>
+          <td nowrap>2011 BMW 128i</td>
+          <td><strong>65.04</strong></td>
+          <td>+7.01</td>
+          <td>+0.033</td>
+          <td>
+            <div class="time">66.523</div>
+            <div class="time">65.058</div>
+            <div class="time best">65.040</div>
+            <div class="time">65.382</div>
+            <div class="time">67.455</div>
+            <div class="time">66.435</div>
+            <div class="time">65.573</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>34</td>
+          <td>Trackcross E</td>
+          <td nowrap>Brady Lubenow #209</td>
+          <td nowrap>2004 Nissan 350z Silverstone</td>
+          <td><strong>65.375</strong></td>
+          <td>+7.344</td>
+          <td>+0.334</td>
+          <td>
+            <div class="time">75.543</div>
+            <div class="time">67.029</div>
+            <div class="time">65.941</div>
+            <div class="time">66.179</div>
+            <div class="time">67.277</div>
+            <div class="time">65.465</div>
+            <div class="time best">65.375</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>35</td>
+          <td>Trackcross A</td>
+          <td nowrap>Teng Moua #230</td>
+          <td nowrap>2020 Toyota Supra</td>
+          <td><strong>65.679</strong></td>
+          <td>+7.649</td>
+          <td>+0.304</td>
+          <td>
+            <div class="time">72.077</div>
+            <div class="time">69.640</div>
+            <div class="time">67.476</div>
+            <div class="time">69.439</div>
+            <div class="time best">65.679</div>
+            <div class="time">66.037</div>
+            <div class="time">65.877</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>36</td>
+          <td>Trackcross D</td>
+          <td nowrap>Ashton Carver #145</td>
+          <td nowrap>2022 Subaru WRX</td>
+          <td><strong>65.738</strong></td>
+          <td>+7.707</td>
+          <td>+0.058</td>
+          <td>
+            <div class="time">66.675</div>
+            <div class="time best">65.738</div>
+            <div class="time">66.079</div>
+            <div class="time">66.298</div>
+            <div class="time">76.868 <span class="pen">RRN</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">66.474</div>
+            <div class="time">66.824</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>37</td>
+          <td>Trackcross D</td>
+          <td nowrap>Jon Miska #773</td>
+          <td nowrap>2006 BMW 330i</td>
+          <td><strong>65.935</strong></td>
+          <td>+7.905</td>
+          <td>+0.197</td>
+          <td>
+            <div class="time">67.472</div>
+            <div class="time">66.014</div>
+            <div class="time">66.806</div>
+            <div class="time">66.120</div>
+            <div class="time">66.131</div>
+            <div class="time">99.922 <span class="pen">RRN</span></div>
+            <div class="time">66.065</div>
+            <div class="time">83.214 <span class="pen">RRN</span></div>
+            <div class="time best">65.935</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>38</td>
+          <td>Trackcross D</td>
+          <td nowrap>Brayden Harr #618</td>
+          <td nowrap>2009 Lexus Is250</td>
+          <td><strong>65.951</strong></td>
+          <td>+7.92</td>
+          <td>+0.015</td>
+          <td>
+            <div class="time">71.039</div>
+            <div class="time">68.295</div>
+            <div class="time">67.281</div>
+            <div class="time">68.145</div>
+            <div class="time">66.446</div>
+            <div class="time">66.589</div>
+            <div class="time best">65.951</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>39</td>
+          <td>Trackcross C</td>
+          <td nowrap>Steve Algren #144</td>
+          <td nowrap>2009 Chevrolet Corvette</td>
+          <td><strong>65.996</strong></td>
+          <td>+7.965</td>
+          <td>+0.045</td>
+          <td>
+            <div class="time">69.024</div>
+            <div class="time">67.503</div>
+            <div class="time">66.809</div>
+            <div class="time">66.154</div>
+            <div class="time">66.398</div>
+            <div class="time">66.233</div>
+            <div class="time best">65.996</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>40</td>
+          <td>Trackcross F</td>
+          <td nowrap>Peter Nolden #726</td>
+          <td nowrap>2020 Mazda MX-5 Club</td>
+          <td><strong>66.244</strong></td>
+          <td>+8.213</td>
+          <td>+0.248</td>
+          <td>
+            <div class="time">68.889</div>
+            <div class="time">67.367</div>
+            <div class="time">66.976</div>
+            <div class="time best">66.244</div>
+            <div class="time">66.338</div>
+            <div class="time">66.372</div>
+            <div class="time">67.100</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>41</td>
+          <td>Trackcross E</td>
+          <td nowrap>Oliver Moore #377</td>
+          <td nowrap>2004 Mini Cooper MC40 S</td>
+          <td><strong>66.325</strong></td>
+          <td>+8.295</td>
+          <td>+0.081</td>
+          <td>
+            <div class="time">72.765</div>
+            <div class="time">69.568</div>
+            <div class="time">68.583</div>
+            <div class="time">67.426</div>
+            <div class="time">70.392</div>
+            <div class="time">67.797</div>
+            <div class="time best">66.325</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>42</td>
+          <td>Trackcross E</td>
+          <td nowrap>Pryce Cha #141</td>
+          <td nowrap>2005 Honda S2000</td>
+          <td><strong>66.392</strong></td>
+          <td>+8.361</td>
+          <td>+0.066</td>
+          <td>
+            <div class="time">71.927</div>
+            <div class="time">69.413</div>
+            <div class="time">68.202</div>
+            <div class="time">67.965</div>
+            <div class="time">66.830</div>
+            <div class="time best">66.392</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>43</td>
+          <td>Trackcross E</td>
+          <td nowrap>Abel Lao #333</td>
+          <td nowrap>2026 Subaru BRZ TS</td>
+          <td><strong>66.424</strong></td>
+          <td>+8.394</td>
+          <td>+0.032</td>
+          <td>
+            <div class="time">69.355</div>
+            <div class="time">67.550</div>
+            <div class="time">68.819</div>
+            <div class="time">66.886</div>
+            <div class="time">81.021</div>
+            <div class="time">69.603</div>
+            <div class="time best">66.424</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>44</td>
+          <td>Trackcross C</td>
+          <td nowrap>Randy Cameron #302</td>
+          <td nowrap>2012 Ford Mustang Boss 302</td>
+          <td><strong>66.439</strong></td>
+          <td>+8.408</td>
+          <td>+0.014</td>
+          <td>
+            <div class="time">69.191</div>
+            <div class="time">67.696</div>
+            <div class="time">67.248</div>
+            <div class="time">66.786</div>
+            <div class="time">66.755</div>
+            <div class="time">67.698</div>
+            <div class="time best">66.439</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>45</td>
+          <td>Trackcross D</td>
+          <td nowrap>Nick Dorschner #137</td>
+          <td nowrap>2023 Hyundai Elantra N</td>
+          <td><strong>66.497</strong></td>
+          <td>+8.466</td>
+          <td>+0.058</td>
+          <td>
+            <div class="time">72.037</div>
+            <div class="time">70.097</div>
+            <div class="time">68.569</div>
+            <div class="time">67.673</div>
+            <div class="time">66.908</div>
+            <div class="time">67.060</div>
+            <div class="time best">66.497</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>46</td>
+          <td>Trackcross F</td>
+          <td nowrap>Blake Wilson #789</td>
+          <td nowrap>2020 Mazda MX-5 RF GT White</td>
+          <td><strong>67.028</strong></td>
+          <td>+8.998</td>
+          <td>+0.531</td>
+          <td>
+            <div class="time">70.375</div>
+            <div class="time">67.927</div>
+            <div class="time">67.069</div>
+            <div class="time best">67.028</div>
+            <div class="time">67.487</div>
+            <div class="time">67.074</div>
+            <div class="time">67.828</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>47</td>
+          <td>Trackcross E</td>
+          <td nowrap>Brandon Rhoades #50</td>
+          <td nowrap>1994 Chevrolet Camero</td>
+          <td><strong>67.455</strong></td>
+          <td>+9.424</td>
+          <td>+0.426</td>
+          <td>
+            <div class="time">71.765</div>
+            <div class="time">68.538</div>
+            <div class="time best">67.455</div>
+            <div class="time">67.802</div>
+            <div class="time">67.896</div>
+            <div class="time">67.759</div>
+            <div class="time">67.748</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>48</td>
+          <td>Trackcross F</td>
+          <td nowrap>Sou Vang #9</td>
+          <td nowrap>2013 Mazda Miata</td>
+          <td><strong>67.456</strong></td>
+          <td>+9.426</td>
+          <td>+0.001</td>
+          <td>
+            <div class="time">70.325</div>
+            <div class="time">69.515</div>
+            <div class="time">67.791</div>
+            <div class="time">67.774</div>
+            <div class="time">72.185</div>
+            <div class="time">72.261</div>
+            <div class="time best">67.456</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>49</td>
+          <td>Trackcross E</td>
+          <td nowrap>Owen Balcer #108</td>
+          <td nowrap>2003 Volkswagen Golf GTI</td>
+          <td><strong>67.914</strong></td>
+          <td>+9.884</td>
+          <td>+0.457</td>
+          <td>
+            <div class="time">77.410</div>
+            <div class="time">70.797</div>
+            <div class="time">69.578</div>
+            <div class="time">69.849</div>
+            <div class="time">70.156</div>
+            <div class="time">69.046</div>
+            <div class="time best">67.914</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>50</td>
+          <td>Trackcross G</td>
+          <td nowrap>Isaac Karrer #787</td>
+          <td nowrap>2020 Fiat Abarth 124 Spider White</td>
+          <td><strong>67.936</strong></td>
+          <td>+9.906</td>
+          <td>+0.022</td>
+          <td>
+            <div class="time">80.417</div>
+            <div class="time">68.001</div>
+            <div class="time">83.930</div>
+            <div class="time best">67.936</div>
+            <div class="time">68.240</div>
+            <div class="time">68.810</div>
+            <div class="time">68.312</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>51</td>
+          <td>Trackcross D</td>
+          <td nowrap>Erick Nolting #550</td>
+          <td nowrap>2000 Subaru 2.5RS</td>
+          <td><strong>68.14</strong></td>
+          <td>+10.11</td>
+          <td>+0.203</td>
+          <td>
+            <div class="time">70.899</div>
+            <div class="time">68.692</div>
+            <div class="time">68.597</div>
+            <div class="time best">68.140</div>
+            <div class="time">68.706</div>
+            <div class="time">69.602</div>
+            <div class="time">69.494</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>52</td>
+          <td>Trackcross F</td>
+          <td nowrap>Luiz Vasconcelos #199</td>
+          <td nowrap>2024 Subaru WRX</td>
+          <td><strong>68.256</strong></td>
+          <td>+10.226</td>
+          <td>+0.115</td>
+          <td>
+            <div class="time">72.092</div>
+            <div class="time">72.712</div>
+            <div class="time">74.043</div>
+            <div class="time">69.724</div>
+            <div class="time">70.910</div>
+            <div class="time">70.019</div>
+            <div class="time best">68.256</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>53</td>
+          <td>Trackcross B</td>
+          <td nowrap>Mike Mohr #308</td>
+          <td nowrap>2010 Chevrolet Camaro</td>
+          <td><strong>68.582</strong></td>
+          <td>+10.551</td>
+          <td>+0.325</td>
+          <td>
+            <div class="time">75.435</div>
+            <div class="time">72.056</div>
+            <div class="time">72.174</div>
+            <div class="time">72.244</div>
+            <div class="time">69.414</div>
+            <div class="time best">68.582</div>
+            <div class="time">82.362</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>54</td>
+          <td>Trackcross C</td>
+          <td nowrap>Steven Hill #701</td>
+          <td nowrap>2012 Ford Mustang GT</td>
+          <td><strong>68.63</strong></td>
+          <td>+10.599</td>
+          <td>+0.048</td>
+          <td>
+            <div class="time">71.710</div>
+            <div class="time">71.273</div>
+            <div class="time">69.180</div>
+            <div class="time">74.234</div>
+            <div class="time">69.806</div>
+            <div class="time">69.112</div>
+            <div class="time best">68.630</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>55</td>
+          <td>Trackcross C</td>
+          <td nowrap>John Witthaus #539</td>
+          <td nowrap>2004 Mercury Grand Mar</td>
+          <td><strong>68.915</strong></td>
+          <td>+10.885</td>
+          <td>+0.285</td>
+          <td>
+            <div class="time">70.329</div>
+            <div class="time">70.740</div>
+            <div class="time">73.248</div>
+            <div class="time">69.466</div>
+            <div class="time">70.219</div>
+            <div class="time">69.027</div>
+            <div class="time best">68.915</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>56</td>
+          <td>Trackcross E</td>
+          <td nowrap>Travis Williams #696</td>
+          <td nowrap>2004 Mazda Rx8</td>
+          <td><strong>69.037</strong></td>
+          <td>+11.007</td>
+          <td>+0.121</td>
+          <td>
+            <div class="time">72.819</div>
+            <div class="time">70.638</div>
+            <div class="time">70.495</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">69.891</div>
+            <div class="time">71.282</div>
+            <div class="time best">69.037</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>57</td>
+          <td>Trackcross B</td>
+          <td nowrap>Thomas Haider #104</td>
+          <td nowrap>2022 Ford Shelby GT 500</td>
+          <td><strong>69.153</strong></td>
+          <td>+11.123</td>
+          <td>+0.115</td>
+          <td>
+            <div class="time">77.066</div>
+            <div class="time">74.031</div>
+            <div class="time">71.777</div>
+            <div class="time">71.996</div>
+            <div class="time">70.685</div>
+            <div class="time best">69.153</div>
+            <div class="time">69.806</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>58</td>
+          <td>Trackcross F</td>
+          <td nowrap>Randall Johnson #630</td>
+          <td nowrap>2023 Mazda Miata</td>
+          <td><strong>69.339</strong></td>
+          <td>+11.308</td>
+          <td>+0.185</td>
+          <td>
+            <div class="time">73.571</div>
+            <div class="time">72.133</div>
+            <div class="time">70.956</div>
+            <div class="time">69.786</div>
+            <div class="time best">69.339</div>
+            <div class="time">70.207</div>
+            <div class="time">70.124</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>59</td>
+          <td>Trackcross C</td>
+          <td nowrap>Chanhue Vang #506</td>
+          <td nowrap>2017 Honda Type R</td>
+          <td><strong>69.369</strong></td>
+          <td>+11.338</td>
+          <td>+0.03</td>
+          <td>
+            <div class="time">74.751</div>
+            <div class="time">70.178</div>
+            <div class="time">70.058</div>
+            <div class="time">69.900</div>
+            <div class="time">70.017</div>
+            <div class="time best">69.369</div>
+            <div class="time">69.683</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>60</td>
+          <td>Trackcross D</td>
+          <td nowrap>Anthony Decker #774</td>
+          <td nowrap>1993 Honda Del Sol</td>
+          <td><strong>69.848</strong></td>
+          <td>+11.817</td>
+          <td>+0.478</td>
+          <td>
+            <div class="time">74.006</div>
+            <div class="time">72.889</div>
+            <div class="time">71.552</div>
+            <div class="time">70.279</div>
+            <div class="time">70.745</div>
+            <div class="time best">69.848</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>61</td>
+          <td>Trackcross D</td>
+          <td nowrap>Suewa Vang #505</td>
+          <td nowrap>2006 Acura RSX</td>
+          <td><strong>70.135</strong></td>
+          <td>+12.105</td>
+          <td>+0.287</td>
+          <td>
+            <div class="time">72.097</div>
+            <div class="time">71.281</div>
+            <div class="time best">70.135</div>
+            <div class="time">70.142</div>
+            <div class="time"><span class="pen">OFF</span></div>
+            <div class="time">71.490</div>
+            <div class="time">70.386</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>62</td>
+          <td>Trackcross E</td>
+          <td nowrap>Jonathan Decker #477</td>
+          <td nowrap>1993 Honda Del Sol</td>
+          <td><strong>70.255</strong></td>
+          <td>+12.224</td>
+          <td>+0.119</td>
+          <td>
+            <div class="time">75.431</div>
+            <div class="time">72.081</div>
+            <div class="time">70.927</div>
+            <div class="time best">70.255</div>
+            <div class="time">72.564</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>63</td>
+          <td>Trackcross D</td>
+          <td nowrap>Brody Rouillard #207</td>
+          <td nowrap>2008 Lexus ISF</td>
+          <td><strong>70.496</strong></td>
+          <td>+12.465</td>
+          <td>+0.24</td>
+          <td>
+            <div class="time">71.222</div>
+            <div class="time">71.637</div>
+            <div class="time">70.716</div>
+            <div class="time">70.905</div>
+            <div class="time">70.539</div>
+            <div class="time">71.692</div>
+            <div class="time best">70.496</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>64</td>
+          <td>Trackcross E</td>
+          <td nowrap>Brandon Rowlett #406</td>
+          <td nowrap>1991 Toyota MR2</td>
+          <td><strong>70.531</strong></td>
+          <td>+12.501</td>
+          <td>+0.035</td>
+          <td>
+            <div class="time">74.843 <span class="pen">RRN</span></div>
+            <div class="time">75.360</div>
+            <div class="time">70.825</div>
+            <div class="time best">70.531</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>65</td>
+          <td>Trackcross E</td>
+          <td nowrap>Varun Sarathy #210</td>
+          <td nowrap>2020 Hyundai Veloster N</td>
+          <td><strong>70.654</strong></td>
+          <td>+12.623</td>
+          <td>+0.122</td>
+          <td>
+            <div class="time">79.522</div>
+            <div class="time">75.094</div>
+            <div class="time">72.987</div>
+            <div class="time">72.590</div>
+            <div class="time">71.861</div>
+            <div class="time">92.563 <span class="pen">RRN</span></div>
+            <div class="time best">70.654</div>
+            <div class="time">71.167</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>66</td>
+          <td>Trackcross A</td>
+          <td nowrap>Philip Ethier #7</td>
+          <td nowrap>1963 Lotus Super Seven</td>
+          <td><strong>70.696</strong></td>
+          <td>+12.665</td>
+          <td>+0.042</td>
+          <td>
+            <div class="time">87.080</div>
+            <div class="time">79.044</div>
+            <div class="time">75.621</div>
+            <div class="time">75.320</div>
+            <div class="time best">70.696</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>67</td>
+          <td>Trackcross F</td>
+          <td nowrap>Ed Wildeman #200</td>
+          <td nowrap>1999 BMW M Roadster</td>
+          <td><strong>71.026</strong></td>
+          <td>+12.995</td>
+          <td>+0.329</td>
+          <td>
+            <div class="time">74.291</div>
+            <div class="time best">71.026</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">74.689</div>
+            <div class="time">73.751</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>68</td>
+          <td>Trackcross D</td>
+          <td nowrap>Max Parker #996</td>
+          <td nowrap>1996 Mazda Miata</td>
+          <td><strong>71.638</strong></td>
+          <td>+13.608</td>
+          <td>+0.612</td>
+          <td>
+            <div class="time">102.174</div>
+            <div class="time">80.068</div>
+            <div class="time">73.391</div>
+            <div class="time best">71.638</div>
+            <div class="time">71.754</div>
+            <div class="time">106.531 <span class="pen">RRN</span></div>
+            <div class="time">73.239</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>69</td>
+          <td>Trackcross C</td>
+          <td nowrap>Dennis OMeara #111</td>
+          <td nowrap>2019 Chevrolet Corvette Grand Sport</td>
+          <td><strong>71.769</strong></td>
+          <td>+13.739</td>
+          <td>+0.131</td>
+          <td>
+            <div class="time">74.741</div>
+            <div class="time">73.680</div>
+            <div class="time best">71.769</div>
+            <div class="time">73.092</div>
+            <div class="time">75.116</div>
+            <div class="time">74.643</div>
+            <div class="time">73.507</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>70</td>
+          <td>Trackcross E</td>
+          <td nowrap>Braydon Sparks #201</td>
+          <td nowrap>2009 BMW 128i</td>
+          <td><strong>72.034</strong></td>
+          <td>+14.004</td>
+          <td>+0.265</td>
+          <td>
+            <div class="time">77.584</div>
+            <div class="time">72.151</div>
+            <div class="time best">72.034</div>
+            <div class="time">72.120</div>
+            <div class="time">74.809</div>
+            <div class="time">73.865</div>
+            <div class="time">72.615</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>71</td>
+          <td>Trackcross G</td>
+          <td nowrap>Grant Wodny #924</td>
+          <td nowrap>2008 Mazda MX-5 Miata</td>
+          <td><strong>72.204</strong></td>
+          <td>+14.173</td>
+          <td>+0.169</td>
+          <td>
+            <div class="time">78.779</div>
+            <div class="time">75.056</div>
+            <div class="time best">72.204</div>
+            <div class="time">73.446</div>
+            <div class="time">73.962</div>
+            <div class="time">72.818</div>
+            <div class="time">72.486</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>72</td>
+          <td>Trackcross F</td>
+          <td nowrap>Carter Grimes #922</td>
+          <td nowrap>2013 Hyundai Veloster Turbo</td>
+          <td><strong>72.415</strong></td>
+          <td>+14.385</td>
+          <td>+0.211</td>
+          <td>
+            <div class="time">76.664</div>
+            <div class="time">75.406</div>
+            <div class="time">73.861</div>
+            <div class="time">73.400</div>
+            <div class="time">74.653</div>
+            <div class="time">72.648</div>
+            <div class="time best">72.415</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>73</td>
+          <td>Trackcross D</td>
+          <td nowrap>Ryker Huseby #660</td>
+          <td nowrap>1991 Honda Beat</td>
+          <td><strong>72.608</strong></td>
+          <td>+14.578</td>
+          <td>+0.192</td>
+          <td>
+            <div class="time">80.260</div>
+            <div class="time">78.259</div>
+            <div class="time">77.433</div>
+            <div class="time">75.947</div>
+            <div class="time">73.994</div>
+            <div class="time best">72.608</div>
+            <div class="time">72.834</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>74</td>
+          <td>Trackcross D</td>
+          <td nowrap>Don Gettinger #4</td>
+          <td nowrap>2001 Chevrolet Z-06 Corvette</td>
+          <td><strong>72.744</strong></td>
+          <td>+14.713</td>
+          <td>+0.135</td>
+          <td>
+            <div class="time">80.192</div>
+            <div class="time">75.024</div>
+            <div class="time">77.099</div>
+            <div class="time">73.695</div>
+            <div class="time">77.769</div>
+            <div class="time best">72.744</div>
+            <div class="time">74.877</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>75</td>
+          <td>Trackcross G</td>
+          <td nowrap>Joe Freeborn #808</td>
+          <td nowrap>2006 Mazda Miata</td>
+          <td><strong>73.105</strong></td>
+          <td>+15.075</td>
+          <td>+0.361</td>
+          <td>
+            <div class="time">83.911</div>
+            <div class="time">74.836</div>
+            <div class="time">75.557</div>
+            <div class="time best">73.105</div>
+            <div class="time">74.035</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time">75.500</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>76</td>
+          <td>Trackcross E</td>
+          <td nowrap>Faarouq Luqman #992</td>
+          <td nowrap>2008 Nissan 350z</td>
+          <td><strong>73.969</strong></td>
+          <td>+15.938</td>
+          <td>+0.863</td>
+          <td>
+            <div class="time">98.678</div>
+            <div class="time">90.558</div>
+            <div class="time">83.883</div>
+            <div class="time">79.188</div>
+            <div class="time">84.959</div>
+            <div class="time">75.860</div>
+            <div class="time best">73.969</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>77</td>
+          <td>Trackcross C</td>
+          <td nowrap>Patrick Olheiser #299</td>
+          <td nowrap>2004 Chevrolet corvette</td>
+          <td><strong>74.532</strong></td>
+          <td>+16.501</td>
+          <td>+0.563</td>
+          <td>
+            <div class="time">76.272</div>
+            <div class="time">76.273</div>
+            <div class="time best">74.532</div>
+            <div class="time">74.788</div>
+            <div class="time">76.251</div>
+            <div class="time">75.942</div>
+            <div class="time">76.324</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>78</td>
+          <td>Trackcross G</td>
+          <td nowrap>Luke Hill #348</td>
+          <td nowrap>2007 Honda Fit</td>
+          <td><strong>75.192</strong></td>
+          <td>+17.161</td>
+          <td>+0.659</td>
+          <td>
+            <div class="time">79.602</div>
+            <div class="time">77.358</div>
+            <div class="time">75.893</div>
+            <div class="time">75.767</div>
+            <div class="time">75.237</div>
+            <div class="time">75.525</div>
+            <div class="time best">75.192</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>79</td>
+          <td>Trackcross D</td>
+          <td nowrap>Sandy Powell #124</td>
+          <td nowrap>2009 Nissan 370z</td>
+          <td><strong>76.335</strong></td>
+          <td>+18.304</td>
+          <td>+1.143</td>
+          <td>
+            <div class="time">81.886</div>
+            <div class="time">78.905</div>
+            <div class="time">78.142</div>
+            <div class="time">91.956 <span class="pen">RRN</span></div>
+            <div class="time">76.521</div>
+            <div class="time">76.642</div>
+            <div class="time">77.659</div>
+            <div class="time best">76.335</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>80</td>
+          <td>Trackcross C</td>
+          <td nowrap>Brittany Grant #547</td>
+          <td nowrap>2007 Chevrolet C6 Base</td>
+          <td><strong>77.084</strong></td>
+          <td>+19.054</td>
+          <td>+0.749</td>
+          <td>
+            <div class="time">87.226</div>
+            <div class="time">81.704</div>
+            <div class="time">78.646</div>
+            <div class="time best">77.084</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>81</td>
+          <td>Trackcross E</td>
+          <td nowrap>Gary Keim #157</td>
+          <td nowrap>2008 Nissan ALTIMA</td>
+          <td><strong>77.559</strong></td>
+          <td>+19.528</td>
+          <td>+0.474</td>
+          <td>
+            <div class="time">79.966</div>
+            <div class="time">80.597</div>
+            <div class="time"><span class="pen">DNF</span></div>
+            <div class="time best">77.559</div>
+            <div class="time">77.772</div>
+            <div class="time">80.702</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>82</td>
+          <td>Trackcross C</td>
+          <td nowrap>Frederick Nolting #138</td>
+          <td nowrap>Chevrolet Corvette</td>
+          <td><strong>77.733</strong></td>
+          <td>+19.703</td>
+          <td>+0.174</td>
+          <td>
+            <div class="time">80.404</div>
+            <div class="time">78.840</div>
+            <div class="time">77.915</div>
+            <div class="time best">77.733</div>
+            <div class="time">78.586</div>
+            <div style="clear: left"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var c = document.getElementById('result-class');
+      var o = document.getElementById('result-overall');
+      var p = document.getElementById('result-pax');
+      function showc() {
+        c.style.display = '';
+        o.style.display = 'none';
+        p.style.display = 'none';
+      }
+      function showo() {
+        c.style.display = 'none';
+        o.style.display = '';
+        p.style.display = 'none';
+      }
+      function showp() {
+        c.style.display = 'none';
+        o.style.display = 'none';
+        p.style.display = '';
+      }
+    </script>
+  </body>
+</html>

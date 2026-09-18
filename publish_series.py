@@ -138,7 +138,7 @@ def load_results(config):
 
         # Strip whitespace wherever possible.
         # https://stackoverflow.com/a/45270483
-        event_results = event_results.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+        event_results = event_results.map(lambda x: x.strip() if isinstance(x, str) else x)
 
         # Prepare the driver names.
         if 'NAME' in event_results:
@@ -176,7 +176,7 @@ def load_results(config):
         event_results = event_results.dropna(subset=['series_class'])
 
         # Compute the points for this event.
-        event_class_groups = event_results.groupby(by=['series_class'])
+        event_class_groups = event_results.groupby(by='series_class')
         # print(event_class_groups.groups)
         event_results = event_results.apply(add_series_points,
                                             axis=1,

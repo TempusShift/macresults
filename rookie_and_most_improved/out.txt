@@ -1,234 +1,205 @@
-OK: ./../2022/doty.html
-OK: ./../2026/doty.html
-OK: ./../2024/doty.html
-OK: ./../2025/doty.html
-OK: ./../2023/doty.html
-OK: ./../2020/doty.html
-OK: ./../2021/doty.html
-OK: ./../2019/doty.html
 OK: ./../2018/doty.html
-new drivers: (76)
+OK: ./../2022/doty.html
+OK: ./../2019/doty.html
+OK: ./../2025/doty.html
+OK: ./../2024/doty.html
+OK: ./../2026/doty.html
+OK: ./../2023/doty.html
+OK: ./../2021/doty.html
+OK: ./../2020/doty.html
+new drivers: (114)
 Name - Place -- Complete Season [
-  'Chris Fayter - 46 -- true',
-  'Thomas Fischer - 74 -- false',
-  'Erich Kinder - 79 -- true',
-  'Corey Staas - 82 -- false',
-  'Isaac Karrer - 98 -- false',
-  'Sean Devlin - 99 -- false',
-  'Carter Grimes - 105 -- false',
-  'Brenda Devlin - 106 -- false',
-  'Josh Hernandez - 108 -- false',
-  'Andrew Dostal - 111 -- false',
-  'Brad Robinette - 116 -- false',
-  'Dave Matson - 122 -- false',
-  'Andrew Walz - 133 -- false',
-  'Ashton Carver - 135 -- false',
-  'William Venis - 137 -- false',
-  'Bryston Padelford - 139 -- false',
-  'Anthony Sahagun - 141 -- false',
-  'Luke Hill - 142 -- false',
-  'Sean Blum - 143 -- false',
-  'Bryan Chem - 144 -- false',
-  'Aaron Jacobsen - 167 -- false',
-  'Zac Zaffke - 170 -- false',
-  'Adam Tingle - 172 -- false',
-  'Gus Krough - 173 -- false',
-  'Rayner Erazo - 176 -- false',
-  'Ian O’Malley - 177 -- false',
-  'Asher Bergh - 178 -- false',
-  'James (Jim) Pittelko - 180 -- false',
-  'Keegan Shepard - 184 -- false',
-  'Ryan Klopf - 185 -- false',
-  'Jeff Hahn - 193 -- false',
-  'Brandon Roehl - 195 -- false',
-  'Christian Ruud - 201 -- false',
-  'Zach Halvorson - 206 -- false',
-  'Mark Ruud - 211 -- false',
-  'Aaron Tweed - 216 -- false',
-  'Joshua Brekke - 219 -- false',
-  'Jacob Van Norman - 222 -- false',
-  'Michael Bottelberghe - 226 -- false',
-  'Anit Chumber - 229 -- false',
-  'Eddie Tenison - 234 -- false',
-  'Patti Isaacs - 236 -- false',
-  'Rob Mahaney - 241 -- false',
-  'Alex Karrer - 242 -- false',
-  'Richie Pasumarty - 245 -- false',
-  'Tianna nelson Tianna nelson - 246 -- false',
-  'Anthony Virgilio - 249 -- false',
-  'Adam Graham - 253 -- false',
-  'Leah Nawrocki - 255 -- false',
-  'Blake Weiss - 257 -- false',
-  'Alex Johnson - 258 -- false',
-  'Grant Wodny - 259 -- false',
-  'John Goebel - 261 -- false',
-  'Richard Brodsky - 263 -- false',
-  'Joe Freeborn - 264 -- false',
-  'Matthew Brandt - 265 -- false',
-  'Gavin Johnson - 266 -- false',
-  'Dennis Stark - 267 -- false',
-  'Justyn Martin - 268 -- false',
-  'Garon Sutherland - 269 -- false',
-  'Katherine Ruud - 270 -- false',
-  'Dalton Roehl - 271 -- false',
-  'Jens Kullman - 272 -- false',
-  'Zach Waldauer - 273 -- false',
-  'John Nord - 274 -- false',
-  'Nolan Murray - 275 -- false',
-  'Katherine Baird - 276 -- false',
-  'Shane Kullman - 277 -- false',
-  'Stacie Zaffke - 278 -- false',
-  'Evelyn Barker - 279 -- false',
-  'Vitaly Syutyk - 281 -- false',
-  'Brandon Larson - 282 -- false',
-  'Aaron Larson - 283 -- false',
-  'Jerry Erlandson - 287 -- false',
-  'Beckett Kobussen - 288 -- false',
-  'Jim Bell - 289 -- false'
+  'Thomas Fischer - 51 -- true',
+  'Chris Fayter - 60 -- true',
+  'Corey Staas - 72 -- true',
+  'Josh Hernandez - 84 -- true',
+  'Dave Matson - 92 -- false',
+  'Isaac Karrer - 97 -- false',
+  'Erich Kinder - 101 -- true',
+  'Sean Devlin - 103 -- true',
+  'Luke Hill - 104 -- false',
+  'Brenda Devlin - 106 -- true',
+  'Sean Blum - 111 -- false',
+  'Bryston Padelford - 122 -- false',
+  'Carter Grimes - 123 -- false',
+  'Andrew Dostal - 125 -- false',
+  'Brad Robinette - 128 -- false',
+  'Asher Bergh - 139 -- false',
+  'Andrew Walz - 141 -- false',
+  'Leah Nawrocki - 142 -- false',
+  'Ashton Carver - 143 -- false',
+  'William Venis - 149 -- false',
+  'Zac Zaffke - 152 -- false',
+  'Anthony Sahagun - 153 -- false',
+  'John Nord - 155 -- false',
+  'Gus Krough - 156 -- false',
+  'Bryan Chem - 157 -- false',
+  'Joe Freeborn - 158 -- false',
+  'Patti Isaacs - 160 -- false',
+  'Evelyn Barker - 163 -- false',
+  'Brandon Roehl - 170 -- false',
+  'Troy Mangatal - 173 -- false',
+  'Aaron Jacobsen - 185 -- false',
+  'Luiz Vasconcelos - 187 -- false',
+  'Richard Brodsky - 188 -- false',
+  'Adam Tingle - 190 -- false',
+  'Grant Wodny - 193 -- false',
+  'Justyn Martin - 195 -- false',
+  'Rayner Erazo - 196 -- false',
+  'Alex Johnson - 197 -- false',
+  'Max Swierczek - 198 -- false',
+  'Ian O’Malley - 199 -- false',
+  'Ryan Senensky - 200 -- false',
+  'brennan adkins - 201 -- false',
+  'James (Jim) Pittelko - 203 -- false',
+  'Jim Bell - 204 -- false',
+  'Heath Helmick - 206 -- false',
+  'Keegan Shepard - 207 -- false',
+  'Ryan Klopf - 208 -- false',
+  'Jesse Myhre - 218 -- false',
+  'Jeff Hahn - 219 -- false',
+  'Blayne Rios - 221 -- false',
+  'Violet Ernst - 222 -- false',
+  'Christian Ruud - 228 -- false',
+  'Zach Halvorson - 235 -- false',
+  'Jack Whittier - 239 -- false',
+  'Mark Ruud - 243 -- false',
+  'Aaron Tweed - 248 -- false',
+  'Joshua Brekke - 251 -- false',
+  'Brandon Rischmiller - 254 -- false',
+  'Jacob Van Norman - 256 -- false',
+  'Michael Bottelberghe - 261 -- false',
+  'Anit Chumber - 264 -- false',
+  'Steve Huseby - 265 -- false',
+  'Brie Lucio - 268 -- false',
+  'Eddie Tenison - 272 -- false',
+  'Rob Mahaney - 279 -- false',
+  'Alex Karrer - 280 -- false',
+  'Allie Crawford - 281 -- false',
+  'Faarouq Luqman - 282 -- false',
+  'Richie Pasumarty - 288 -- false',
+  'Max Allers - 289 -- false',
+  'Tianna nelson Tianna nelson - 290 -- false',
+  'Brennan Billow - 291 -- false',
+  'Anthony Virgilio - 294 -- false',
+  'Adam Graham - 297 -- false',
+  'Blake Weiss - 299 -- false',
+  'Joe Garfield - 301 -- false',
+  'Brennan Gerstner - 302 -- false',
+  'Richard MacElroy - 303 -- false',
+  'John Goebel - 304 -- false',
+  'Tom Adams - 306 -- false',
+  'Matthew Brandt - 307 -- false',
+  'Kyle Hockert - 308 -- false',
+  'Gavin Johnson - 309 -- false',
+  'Dennis Stark - 310 -- false',
+  'Tj Mitchell - 311 -- false',
+  'Jason Goddard - 312 -- false',
+  'Garon Sutherland - 313 -- false',
+  'Katherine Ruud - 314 -- false',
+  'Ethan Zdon - 315 -- false',
+  'Dalton Roehl - 316 -- false',
+  'Jens Kullman - 317 -- false',
+  'Matt Hurst - 318 -- false',
+  'Zach Waldauer - 319 -- false',
+  'Nolan Murray - 320 -- false',
+  'Katherine Baird - 321 -- false',
+  'Adam Swierczek - 322 -- false',
+  'Shane Kullman - 323 -- false',
+  'Caleb McMenamin - 324 -- false',
+  'Ermias Aregay - 325 -- false',
+  'Stacie Zaffke - 326 -- false',
+  ... 14 more items
 ]
-doty place changes: (44) [
+doty place changes: (66) [
   {
     driver: 'Argel Musngi',
-    currentPlace: 37,
+    currentPlace: 64,
     previousPlace: 116,
-    difference: 79
+    difference: 52
   },
   {
     driver: 'William Kim',
-    currentPlace: 35,
+    currentPlace: 57,
     previousPlace: 100,
-    difference: 65
+    difference: 43
   },
   {
     driver: 'Joseph Anderson',
-    currentPlace: 32,
+    currentPlace: 52,
     previousPlace: 87,
-    difference: 55
-  },
-  {
-    driver: 'Don Gettinger',
-    currentPlace: 53,
-    previousPlace: 95,
-    difference: 42
-  },
-  {
-    driver: 'Andrew Deck',
-    currentPlace: 47,
-    previousPlace: 88,
-    difference: 41
-  },
-  {
-    driver: 'Dennis OMeara',
-    currentPlace: 57,
-    previousPlace: 97,
-    difference: 40
-  },
-  {
-    driver: 'Kim John Crumb',
-    currentPlace: 48,
-    previousPlace: 86,
-    difference: 38
-  },
-  {
-    driver: 'Bryan Ganz',
-    currentPlace: 44,
-    previousPlace: 79,
     difference: 35
   },
   {
-    driver: 'Patrick Olheiser',
-    currentPlace: 76,
-    previousPlace: 111,
-    difference: 35
+    driver: 'Benjamin Brochman',
+    currentPlace: 77,
+    previousPlace: 109,
+    difference: 32
   },
   {
-    driver: 'Mark McLean',
-    currentPlace: 41,
-    previousPlace: 74,
-    difference: 33
-  },
-  {
-    driver: 'Erik Ernst',
-    currentPlace: 36,
-    previousPlace: 69,
-    difference: 33
-  },
-  {
-    driver: 'Anthony Onceler',
-    currentPlace: 20,
-    previousPlace: 51,
+    driver: 'Emily Winward',
+    currentPlace: 75,
+    previousPlace: 106,
     difference: 31
   },
   {
-    driver: 'Philip Ethier',
-    currentPlace: 60,
-    previousPlace: 90,
-    difference: 30
+    driver: 'Ethan Collins',
+    currentPlace: 49,
+    previousPlace: 80,
+    difference: 31
   },
   {
-    driver: 'Thomas Haider',
-    currentPlace: 73,
-    previousPlace: 102,
-    difference: 29
-  },
-  {
-    driver: 'Max Currie',
-    currentPlace: 45,
-    previousPlace: 73,
-    difference: 28
-  },
-  {
-    driver: 'Jess Meyer',
-    currentPlace: 38,
-    previousPlace: 61,
-    difference: 23
-  },
-  {
-    driver: 'Max Parker',
-    currentPlace: 40,
-    previousPlace: 63,
-    difference: 23
-  },
-  {
-    driver: 'Dwight Anderson',
-    currentPlace: 23,
-    previousPlace: 46,
-    difference: 23
-  },
-  {
-    driver: 'Curt Crouse',
-    currentPlace: 39,
-    previousPlace: 60,
+    driver: 'Scott Allen',
+    currentPlace: 56,
+    previousPlace: 77,
     difference: 21
   },
   {
     driver: 'Bryce Allen',
-    currentPlace: 7,
+    currentPlace: 4,
     previousPlace: 24,
+    difference: 20
+  },
+  {
+    driver: 'Ryker Huseby',
+    currentPlace: 79,
+    previousPlace: 96,
     difference: 17
   },
   {
-    driver: 'Gary Schmidt',
-    currentPlace: 42,
-    previousPlace: 59,
+    driver: 'Patrick Olheiser',
+    currentPlace: 94,
+    previousPlace: 111,
     difference: 17
   },
   {
-    driver: 'Peter Nolden',
-    currentPlace: 26,
-    previousPlace: 41,
+    driver: 'Anthony Onceler',
+    currentPlace: 35,
+    previousPlace: 51,
+    difference: 16
+  },
+  {
+    driver: 'Dennis OMeara',
+    currentPlace: 82,
+    previousPlace: 97,
+    difference: 15
+  },
+  {
+    driver: 'Andrew Deck',
+    currentPlace: 73,
+    previousPlace: 88,
     difference: 15
   },
   {
     driver: 'Matthew Sebelski',
-    currentPlace: 6,
+    currentPlace: 7,
     previousPlace: 20,
-    difference: 14
+    difference: 13
   },
   {
-    driver: 'Ian Schmitz',
-    currentPlace: 19,
-    previousPlace: 32,
+    driver: 'Thomas Haider',
+    currentPlace: 89,
+    previousPlace: 102,
     difference: 13
   },
   {
@@ -238,57 +209,117 @@ doty place changes: (44) [
     difference: 13
   },
   {
-    driver: 'Dustin Peterson',
-    currentPlace: 30,
-    previousPlace: 37,
-    difference: 7
+    driver: 'Kevin Berndt',
+    currentPlace: 17,
+    previousPlace: 30,
+    difference: 13
+  },
+  {
+    driver: 'Don Gettinger',
+    currentPlace: 83,
+    previousPlace: 95,
+    difference: 12
+  },
+  {
+    driver: 'Erik Ernst',
+    currentPlace: 58,
+    previousPlace: 69,
+    difference: 11
+  },
+  {
+    driver: 'Christopher Stromme',
+    currentPlace: 81,
+    previousPlace: 92,
+    difference: 11
   },
   {
     driver: 'Ted Hough',
-    currentPlace: 17,
+    currentPlace: 14,
     previousPlace: 23,
+    difference: 9
+  },
+  {
+    driver: 'Bryan Ganz',
+    currentPlace: 70,
+    previousPlace: 79,
+    difference: 9
+  },
+  {
+    driver: 'Max Parker',
+    currentPlace: 54,
+    previousPlace: 63,
+    difference: 9
+  },
+  {
+    driver: 'Dwight Anderson',
+    currentPlace: 37,
+    previousPlace: 46,
+    difference: 9
+  },
+  {
+    driver: 'Peter Nolden',
+    currentPlace: 33,
+    previousPlace: 41,
+    difference: 8
+  },
+  {
+    driver: 'Dave Farrell',
+    currentPlace: 47,
+    previousPlace: 55,
+    difference: 8
+  },
+  {
+    driver: 'Randy Cameron',
+    currentPlace: 66,
+    previousPlace: 72,
     difference: 6
   },
   {
-    driver: 'Chase Malkow',
+    driver: 'Kim John Crumb',
+    currentPlace: 80,
+    previousPlace: 86,
+    difference: 6
+  },
+  {
+    driver: 'Mark McLean',
+    currentPlace: 69,
+    previousPlace: 74,
+    difference: 5
+  },
+  {
+    driver: 'Ian Schmitz',
     currentPlace: 27,
-    previousPlace: 31,
+    previousPlace: 32,
+    difference: 5
+  },
+  {
+    driver: 'Tanner Gruba',
+    currentPlace: 44,
+    previousPlace: 49,
+    difference: 5
+  },
+  {
+    driver: 'Philip Ethier',
+    currentPlace: 85,
+    previousPlace: 90,
+    difference: 5
+  },
+  {
+    driver: 'Tim Malzahn',
+    currentPlace: 24,
+    previousPlace: 28,
     difference: 4
   },
   {
-    driver: 'Blake Wilson',
-    currentPlace: 29,
-    previousPlace: 33,
-    difference: 4
-  },
-  {
-    driver: 'Kyle Greene',
-    currentPlace: 8,
-    previousPlace: 12,
-    difference: 4
+    driver: 'Max Currie',
+    currentPlace: 71,
+    previousPlace: 73,
+    difference: 2
   },
   {
     driver: 'Lucas Reller',
-    currentPlace: 4,
+    currentPlace: 6,
     previousPlace: 7,
-    difference: 3
-  },
-  {
-    driver: 'Patrick Malzahn',
-    currentPlace: 16,
-    previousPlace: 18,
-    difference: 2
-  },
-  {
-    driver: 'Ryan Thompson',
-    currentPlace: 24,
-    previousPlace: 26,
-    difference: 2
-  },
-  {
-    driver: 'Simon Robins',
-    currentPlace: 13,
-    previousPlace: 14,
     difference: 1
   },
   {
@@ -304,51 +335,177 @@ doty place changes: (44) [
     difference: 1
   },
   {
-    driver: 'Harold Kachelmyer',
-    currentPlace: 43,
-    previousPlace: 43,
+    driver: 'Kyle Greene',
+    currentPlace: 12,
+    previousPlace: 12,
     difference: 0
   },
   {
-    driver: 'Brandon Cottrell',
-    currentPlace: 18,
-    previousPlace: 17,
+    driver: 'Michael Waich',
+    currentPlace: 8,
+    previousPlace: 8,
+    difference: 0
+  },
+  {
+    driver: 'Ryan Etheridge',
+    currentPlace: 39,
+    previousPlace: 38,
     difference: -1
   },
   {
-    driver: 'Michael Waich',
-    currentPlace: 11,
-    previousPlace: 8,
+    driver: 'Curt Crouse',
+    currentPlace: 62,
+    previousPlace: 60,
+    difference: -2
+  },
+  {
+    driver: 'Nathan Thalhuber',
+    currentPlace: 48,
+    previousPlace: 45,
     difference: -3
   },
   {
-    driver: 'Bernie Kaeferlein',
-    currentPlace: 9,
-    previousPlace: 5,
+    driver: 'Patrick Malzahn',
+    currentPlace: 21,
+    previousPlace: 18,
+    difference: -3
+  },
+  {
+    driver: 'Jess Meyer',
+    currentPlace: 65,
+    previousPlace: 61,
     difference: -4
   },
   {
-    driver: 'Peter Hsu',
-    currentPlace: 15,
-    previousPlace: 10,
+    driver: 'Simon Robins',
+    currentPlace: 19,
+    previousPlace: 14,
     difference: -5
   },
   {
     driver: 'Ross Jacobs',
-    currentPlace: 10,
+    currentPlace: 9,
     previousPlace: 4,
+    difference: -5
+  },
+  {
+    driver: 'Tyler Salminen',
+    currentPlace: 16,
+    previousPlace: 11,
+    difference: -5
+  },
+  {
+    driver: 'Ryan Thompson',
+    currentPlace: 32,
+    previousPlace: 26,
     difference: -6
   },
   {
-    driver: 'Jon Stef',
-    currentPlace: 31,
-    previousPlace: 22,
+    driver: 'Sean Wilke',
+    currentPlace: 22,
+    previousPlace: 15,
+    difference: -7
+  },
+  {
+    driver: 'Gary Schmidt',
+    currentPlace: 67,
+    previousPlace: 59,
+    difference: -8
+  },
+  {
+    driver: 'Bernie Kaeferlein',
+    currentPlace: 13,
+    previousPlace: 5,
+    difference: -8
+  },
+  {
+    driver: 'Dustin Peterson',
+    currentPlace: 46,
+    previousPlace: 37,
     difference: -9
   },
   {
+    driver: 'Chase Malkow',
+    currentPlace: 41,
+    previousPlace: 31,
+    difference: -10
+  },
+  {
+    driver: 'Blake Wilson',
+    currentPlace: 43,
+    previousPlace: 33,
+    difference: -10
+  },
+  {
+    driver: 'Giuseppe Pellizzer',
+    currentPlace: 45,
+    previousPlace: 35,
+    difference: -10
+  },
+  {
+    driver: 'Brandon Cottrell',
+    currentPlace: 28,
+    previousPlace: 17,
+    difference: -11
+  },
+  {
+    driver: 'Joe Deleon',
+    currentPlace: 36,
+    previousPlace: 25,
+    difference: -11
+  },
+  {
+    driver: 'John Mensch',
+    currentPlace: 18,
+    previousPlace: 6,
+    difference: -12
+  },
+  {
+    driver: 'Brandon Rowlett',
+    currentPlace: 78,
+    previousPlace: 64,
+    difference: -14
+  },
+  {
+    driver: 'Carter Smith',
+    currentPlace: 68,
+    previousPlace: 53,
+    difference: -15
+  },
+  {
+    driver: 'Chris Weiske',
+    currentPlace: 25,
+    previousPlace: 9,
+    difference: -16
+  },
+  {
+    driver: 'Peter Hsu',
+    currentPlace: 26,
+    previousPlace: 10,
+    difference: -16
+  },
+  {
+    driver: 'Harold Kachelmyer',
+    currentPlace: 61,
+    previousPlace: 43,
+    difference: -18
+  },
+  {
+    driver: 'Jon Stef',
+    currentPlace: 42,
+    previousPlace: 22,
+    difference: -20
+  },
+  {
+    driver: 'Sou Vang',
+    currentPlace: 59,
+    previousPlace: 36,
+    difference: -23
+  },
+  {
     driver: 'Nic Bedell',
-    currentPlace: 34,
+    currentPlace: 55,
     previousPlace: 13,
-    difference: -21
+    difference: -42
   }
 ]
